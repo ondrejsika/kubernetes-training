@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: counter
+spec:
+  rules:
+  - host: counter.k1n1.xsika.cz
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: counter-counter
+          servicePort: 80
