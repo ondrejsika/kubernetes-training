@@ -27,6 +27,21 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
 ```
 
+### Bash Completion
+
+```
+source <(kubectl completion bash)
+source <(minikube completion bash)
+```
+
+Or save to `.bashrc`
+
+```
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+echo "source <(minikube completion bash)" >> ~/.bashrc
+```
+
+
 ### Start Minikube
 
 ```
