@@ -134,3 +134,31 @@ kubectl apply -f 04_02_deployment.yml
 ```
 kubectl delete deploy/hello-world-deploy
 ```
+
+### Create Service ClusterIP
+
+```
+kubectl apply -f 05_cluster_service.yml
+```
+
+### Create Service NodePort
+
+```
+kubectl apply -f 06_nodeport_service.yml
+```
+
+### List Services
+
+```
+kubectl get services
+kubectl get svc
+kubectl get po,rs,deploy,svc
+kubectl get all
+```
+
+### Delete Service
+
+```
+kubectl delete svc/hello-world-nodeport
+kubectl delete svc/hello-world-clusterip
+```
