@@ -77,6 +77,12 @@ kubectl get pods
 kubectl get po
 ```
 
+### Exec (Connect) Pod
+
+```
+kubectl exec -ti multi-container-pod bash
+```
+
 ### Delete Pod
 
 ```
