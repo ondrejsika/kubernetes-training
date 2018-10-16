@@ -102,3 +102,35 @@ kubectl apply -f 03_02_replica_set.yml
 ```
 kubectl delete rs/hello-world-rs
 ```
+
+### Create Deployment
+
+```
+kubectl apply -f 04_01_deployment.yml
+```
+
+### List Deployments
+
+```
+kubectl get deployments
+kubectl get deploy
+kubectl get po,rs,deploy
+```
+
+### Update Deployment
+
+See the difference
+
+```
+vimdif 04_01_deployment.yml 04_02_deployment.yml
+```
+
+```
+kubectl apply -f 04_02_deployment.yml
+```
+
+### Delete Deployment
+
+```
+kubectl delete deploy/hello-world-deploy
+```

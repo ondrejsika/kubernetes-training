@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  selector:
+    matchLabels:
+      app: hello-world-deploy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-world-deploy
+    spec:
+      containers:
+      - name: helloworld
+        image: ondrejsika/go-hello-world:2
+        ports:
+        - containerPort: 80
