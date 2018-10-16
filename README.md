@@ -48,7 +48,20 @@ echo "source <(minikube completion bash)" >> ~/.bashrc
 minikube start --kubernetes-version v1.12.1
 ```
 
+### Dashboard
+
+```
+minikube dashboard
+```
+
+
 ## Examples
+
+### Get Nodes
+
+```
+kubectl get nodes
+```
 
 ### Create Pod
 
