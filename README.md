@@ -162,3 +162,30 @@ kubectl get all
 kubectl delete svc/hello-world-nodeport
 kubectl delete svc/hello-world-clusterip
 ```
+
+### Deploy Application (Multiple Deployments and Services)
+
+```
+kubectl apply -f 07_counter.yml
+```
+
+### List components
+
+```
+kubectl get all -l project=counter
+```
+
+### Open in Browser
+
+```
+minikube service counter-counter
+```
+
+### Delete Application
+
+```
+kubectl delete svc/counter-counter \
+               svc/counter-redis \
+               deploy/counter-counter \
+               deploy/counter-redis
+```

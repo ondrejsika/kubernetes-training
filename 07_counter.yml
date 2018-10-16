@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-redis
+spec:
+  selector:
+    matchLabels:
+      project: counter
+      app: redis
+      tier: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        project: counter
+        app: redis
+        tier: backend
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter-redis
+  labels:
+    project: counter
+    app: redis
+    tier: backend
+spec:
+  ports:
+  - port: 6379
+    targetPort: 6379
+  selector:
+    project: counter
+    app: redis
+    tier: backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-counter
+spec:
+  selector:
+    matchLabels:
+      project: counter
+      app: counter
+      tier: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        project: counter
+        app: counter
+        tier: frontend
+    spec:
+      containers:
+      - name: counter
+        image: ondrejsika/counter
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: REDIS
+          value: redis.default.svc.cluster.local
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter-counter
+  labels:
+    project: counter
+    app: counter
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    project: counter
+    app: counter
+    tier: frontend
