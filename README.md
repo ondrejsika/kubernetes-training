@@ -240,3 +240,24 @@ kubectl apply -f 07_counter.yml -n counter
 ```
 kubectl delete ns/counter
 ```
+
+### Wordpress Example
+
+Start
+
+```
+kubectl create namespace wp
+kubectl -n wp apply -f 08_wordpress.yml
+```
+
+Open
+
+```
+minikube -n wp service wordpress
+```
+
+Stop & delete
+
+```
+kubectl delete namespace wp
+```

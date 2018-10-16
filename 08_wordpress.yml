@@ -1,0 +1,127 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      project: wordpress
+      app: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        project: wordpress
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        resources:
+          requests:
+            cpu: 500m
+            memory: 300Mi
+        env:
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_PASSWORD
+          value: wordpress
+        - name: MYSQL_ROOT_PASSWORD
+          value: somewordpress
+        - name: MYSQL_USER
+          value: wordpress 
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysql
+      volumes:
+      - name: mysql
+        persistentVolumeClaim:
+          claimName: mysql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
+  selector:
+    project: wordpress
+    app: mysql
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  selector:
+    matchLabels:
+      project: wordpress
+      app: wordpress
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        project: wordpress
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress
+        resources:
+          requests:
+            cpu: 500m
+            memory: 50Mi
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: mysql:3306
+        - name: WORDPRESS_DB_PASSWORD
+          value: wordpress
+        - name: WORDPRESS_DB_USER
+          value: wordpress
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: wordpress
+      volumes:
+      - name: wordpress
+        persistentVolumeClaim:
+          claimName: wordpress
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    project: wordpress
+    app: wordpress
