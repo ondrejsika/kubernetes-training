@@ -202,3 +202,28 @@ kubectl delete svc/counter-counter \
                deploy/counter-counter \
                deploy/counter-redis
 ```
+
+### Create Namespace
+
+```
+kubectl create namespace counter
+```
+
+### List Namespaces
+
+```
+kubectl get namespaces
+kubectl get ns
+```
+
+### Deploy to Namespace
+
+```
+kubectl apply -f 07_counter.yml -n counter
+```
+
+### Delete Namespace
+
+```
+kubectl delete ns/counter
+```
