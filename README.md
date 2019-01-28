@@ -173,6 +173,15 @@ kubectl get deploy
 kubectl get po,rs,deploy
 ```
 
+### Expose Deployment Set (Create Service)
+
+```
+kubectl expose deploy hello-world --type=NodePort
+```
+
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
+
+
 ### Update Deployment
 
 See the difference
@@ -185,10 +194,14 @@ vimdif 04_01_deployment.yml 04_02_deployment.yml
 kubectl apply -f 04_02_deployment.yml
 ```
 
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
+
 ### Delete Deployment
 
 ```
 kubectl delete deploy/hello-world
+# and service
+kubectl delete svc/hello-world
 ```
 
 ### Create Service ClusterIP
