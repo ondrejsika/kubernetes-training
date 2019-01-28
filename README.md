@@ -327,3 +327,36 @@ Stop & delete
 ```
 kubectl delete namespace wp
 ```
+
+## Ingress
+
+### Enable Ingress on Minikube
+
+```
+minikube addons enable ingress
+```
+
+### Create Ingress
+
+Create some services (& deploymnets)
+
+```
+kubectl apply -f webservers.yml
+```
+
+See:
+
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
+
+
+Create Ingress
+
+```
+kubectl apply -f 10_ingress.yml
+```
+
+See:
+
+- http://nginx.192.168.99.100.xip.io
+- http://apache.192.168.99.100.xip.io
