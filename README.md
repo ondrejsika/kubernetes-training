@@ -90,6 +90,19 @@ kubectl expose pod simple-hello-world --type=NodePort
 kubectl expose pod multi-container-pod --type=NodePort
 ```
 
+### Proxy to cluster
+
+Start proxy
+
+```
+kubectl proxy
+```
+
+and connect your services
+
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/simple-hello-world/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/multi-container-pod/proxy/
+
 ### Delete Pod
 
 ```
