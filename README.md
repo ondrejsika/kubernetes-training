@@ -116,7 +116,7 @@ kubectl get rs,po
 See the difference
 
 ```
-vimdif 03_01_replica_set.yml 03_02_replica_set.yml
+vimdiff 03_01_replica_set.yml 03_02_replica_set.yml
 ```
 
 ```
