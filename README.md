@@ -188,7 +188,7 @@ kubectl apply -f 04_02_deployment.yml
 ### Delete Deployment
 
 ```
-kubectl delete deploy/hello-world-deploy
+kubectl delete deploy/hello-world
 ```
 
 ### Create Service ClusterIP
