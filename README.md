@@ -86,7 +86,7 @@ kubectl exec -ti multi-container-pod bash
 ### Expose Pod (Create Service)
 
 ```
-kubectl expose pod simple-hello-world --type=NodePort
+kubectl expose pod simple-hello-world
 kubectl expose pod multi-container-pod --type=NodePort
 ```
 
