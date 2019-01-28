@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld
+  name: hello-world
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
         app: hello-world-deploy
     spec:
       containers:
-      - name: helloworld
+      - name: hello-world
         image: ondrejsika/go-hello-world:2
         ports:
         - containerPort: 80
