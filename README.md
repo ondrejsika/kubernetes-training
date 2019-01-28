@@ -206,15 +206,27 @@ kubectl delete svc/hello-world
 
 ### Create Service ClusterIP
 
+Create deploymnet again:
+
+```
+kubectl apply -f 04_02_deployment.yml
+```
+
+And create service:
+
 ```
 kubectl apply -f 05_cluster_service.yml
 ```
+
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip/proxy/
 
 ### Create Service NodePort
 
 ```
 kubectl apply -f 06_nodeport_service.yml
 ```
+
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-nodeport/proxy/
 
 ### List Services
 
@@ -230,6 +242,8 @@ kubectl get all
 ```
 kubectl delete svc/hello-world-nodeport
 kubectl delete svc/hello-world-clusterip
+# and deployment
+kubectl delete deploy/hello-world
 ```
 
 ### Deploy Application (Multiple Deployments and Services)
