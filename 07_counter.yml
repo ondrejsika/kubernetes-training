@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: counter-redis
+  name: redis
+  labels:
+    project: counter
 spec:
   selector:
     matchLabels:
@@ -27,7 +29,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: counter-redis
+  name: redis
+  labels:
+    project: counter
 spec:
   ports:
   - port: 6379
@@ -39,7 +43,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: counter-counter
+  name: counter
+  labels:
+    project: counter
 spec:
   selector:
     matchLabels:
@@ -61,14 +67,16 @@ spec:
             memory: 50Mi
         env:
         - name: REDIS
-          value: counter-redis
+          value: redis
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: counter-counter
+  name: counter
+  labels:
+    project: counter
 spec:
   type: NodePort
   ports:

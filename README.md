@@ -252,6 +252,8 @@ kubectl delete deploy/hello-world
 kubectl apply -f 07_counter.yml
 ```
 
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/counter/proxy/
+
 ### List components
 
 ```
@@ -261,16 +263,13 @@ kubectl get all -l project=counter
 ### Open in Browser
 
 ```
-minikube service counter-counter
+minikube service counter
 ```
 
 ### Delete Application
 
 ```
-kubectl delete svc/counter-counter \
-               svc/counter-redis \
-               deploy/counter-counter \
-               deploy/counter-redis
+kubectl delete deploy,svc -l project=counter
 ```
 
 ### Create Namespace
