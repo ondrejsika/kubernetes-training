@@ -278,6 +278,12 @@ kubectl delete deploy,svc -l project=counter
 kubectl create namespace counter
 ```
 
+or
+
+```
+kubectl apply -f 08_namespace.yml
+```
+
 ### List Namespaces
 
 ```
@@ -291,6 +297,8 @@ kubectl get ns
 kubectl apply -f 07_counter.yml -n counter
 ```
 
+See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
+
 ### Delete Namespace
 
 ```
@@ -303,8 +311,10 @@ Start
 
 ```
 kubectl create namespace wp
-kubectl -n wp apply -f 08_wordpress.yml
+kubectl -n wp apply -f 09_wordpress.yml
 ```
+
+See: http://127.0.0.1:8001/api/v1/namespaces/wp/services/wordpress/proxy/
 
 Open
 
