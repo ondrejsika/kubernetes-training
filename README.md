@@ -130,6 +130,14 @@ kubectl get rs
 kubectl get rs,po
 ```
 
+### Expose Replica Set (Create Service)
+
+```
+kubectl expose rs hello-world-rs --type=NodePort
+```
+
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-rs/proxy/
+
 ### Update Replica Set
 
 See the difference
@@ -146,6 +154,9 @@ kubectl apply -f 03_02_replica_set.yml
 
 ```
 kubectl delete rs/hello-world-rs
+
+# and the service
+kubectl delete svc/hello-world-rs
 ```
 
 ### Create Deployment
