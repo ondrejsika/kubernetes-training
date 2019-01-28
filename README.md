@@ -110,6 +110,12 @@ kubectl delete po/simple-hello-world
 kubectl delete po/multi-container-pod
 ```
 
+and delete services (creaded by `kubectl expose`)
+
+```
+kubectl delete svc/simple-hello-world svc/multi-container-pod
+```
+
 ### Create Replica Set
 
 ```
