@@ -192,7 +192,7 @@ See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
 See the difference
 
 ```
-vimdif 04_01_deployment.yml 04_02_deployment.yml
+vimdiff 04_01_deployment.yml 04_02_deployment.yml
 ```
 
 ```
