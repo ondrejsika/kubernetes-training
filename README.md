@@ -365,3 +365,47 @@ See:
 
 - http://nginx.192.168.99.100.xip.io
 - http://apache.192.168.99.100.xip.io
+
+## ConfigMaps & Secrets
+
+### Create Secrets
+
+```
+kubectl create secret generic my-secret \
+    --from-file=key=key.txt \
+    --from-literal=token=secrettoken
+```
+
+### Create secret form config file
+
+```
+kubectl apply -f 11_secret.yml
+```
+
+### Get Values
+
+Base64 encoded
+
+```
+echo $(kubectl get secret my-secret -o jsonpath="{.data.key}")
+echo $(kubectl get secret my-secret -o jsonpath="{.data.token}")
+```
+
+Decoded
+
+```
+echo $(kubectl get secret my-secret -o jsonpath="{.data.key}" | base64 --decode)
+echo $(kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode)
+```
+
+### Create ConfigMap
+
+```
+kubectl apply -f 12_config_map.yml
+```
+
+### Example usage
+
+```
+kubectl apply -f 13_secret_example.yml
+```
