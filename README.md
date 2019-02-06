@@ -226,7 +226,7 @@ kubectl apply -f 04_02_deployment.yml
 And create service:
 
 ```
-kubectl apply -f 05_cluster_service.yml
+kubectl apply -f 05_clusterip_service.yml
 ```
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip/proxy/
