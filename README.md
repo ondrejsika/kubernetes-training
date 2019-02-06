@@ -68,6 +68,14 @@ minikube dashboard
 kubectl get nodes
 ```
 
+### Proxy to cluster
+
+Start proxy
+
+```
+kubectl proxy
+```
+
 ### Create Pod
 
 ```
@@ -82,6 +90,12 @@ kubectl get pods
 kubectl get po
 ```
 
+See:
+
+- http://127.0.0.1:8001/api/v1/namespaces/default/pods/simple-hello-world/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/pods/multi-container-pod/proxy/
+
+
 ### Exec (Connect) Pod
 
 ```
@@ -95,15 +109,7 @@ kubectl expose pod simple-hello-world
 kubectl expose pod multi-container-pod --type=NodePort
 ```
 
-### Proxy to cluster
-
-Start proxy
-
-```
-kubectl proxy
-```
-
-and connect your services
+Connect your services
 
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/simple-hello-world/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/multi-container-pod/proxy/
