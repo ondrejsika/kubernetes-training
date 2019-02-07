@@ -415,3 +415,43 @@ kubectl apply -f 12_config_map.yml
 ```
 kubectl apply -f 13_secret_example.yml
 ```
+
+### RBAC
+
+### Create cluster admin
+
+```
+kubectl apply -f 14_admin.yml
+```
+
+### Create kubeconfig for admin
+
+Export actual config
+
+```
+kubectl config view --raw > config
+```
+
+Get token:
+
+```
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+```
+
+Clean users:
+
+```
+kubectl --kubeconfig=config config unset users
+```
+
+Set token to user:
+
+```
+kubectl --kubeconfig=config config set-credentials admin --token=<token>
+```
+
+Set new user to context:
+
+```
+kubectl --kubeconfig=config config set-context --user=admin <context>
+```
