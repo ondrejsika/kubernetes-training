@@ -455,3 +455,16 @@ Set new user to context:
 ```
 kubectl --kubeconfig=config config set-context --user=admin <context>
 ```
+
+### Create pod reader
+
+```
+kubectl apply -f 15_read.yml
+```
+
+Add to user to config and change context user
+
+```
+kubectl --kubeconfig=config config set-credentials read --token=<token>
+kubectl --kubeconfig=config config set-context --user=read <context>
+```
