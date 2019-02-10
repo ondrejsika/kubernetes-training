@@ -468,3 +468,256 @@ Add to user to config and change context user
 kubectl --kubeconfig=config config set-credentials read --token=<token>
 kubectl --kubeconfig=config config set-context --user=read <context>
 ```
+
+## Helm
+
+### Install Helm Client
+
+Docs <https://github.com/helm/helm/blob/master/docs/install.md>
+
+Or oneliner for Linux:
+
+```
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
+```
+
+on Mac:
+
+```
+brew install kubernetes-helm
+```
+
+and on Windows:
+
+```
+choco install kubernetes-helm
+```
+
+### Bash Completion
+
+```
+source <(helm completion bash)
+```
+
+## Init Helm & Tiller
+
+```
+helm init
+```
+
+If you have Tiller installed on your cluster, you can init helm client only.
+
+```
+helm init --client-only
+```
+
+### Create Service Account for Tiller
+
+```
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+```
+
+### Search Package
+
+```
+helm search db
+helm search redis
+```
+
+### Inspect Package
+
+```
+helm inspect stable/redis
+```
+
+### Install Package
+
+```
+helm install stable/redis
+helm install stable/redis --name redis
+```
+
+Or dry run (see the Kubernetes config)
+
+```
+helm install stable/redis --dry-run --debug
+helm install stable/redis --dry-run --debug --name redis
+```
+
+### List Installed Packages
+
+```
+helm ls
+helm ls -q
+```
+
+List all (not jutst DEPLOYED)
+
+```
+helm ls --all
+helm ls -a -q
+```
+
+### Status of Package
+
+```
+helm status redis
+```
+
+### Inspect Values
+
+```
+helm inspect values stable/redis
+```
+
+### Delete Package
+
+```
+helm del redis
+helm del redis --purge
+```
+
+Delete all & purge
+
+```
+helm del --purge $(helm ls -a -q)
+```
+
+### Helm Repositiories
+
+#### List repositories
+
+```
+helm repo list
+```
+
+#### Add repository
+
+```
+helm repo add ondrejsika https://helm.oxs.cz
+
+helm repo update
+helm search ondrejsika
+```
+
+#### Install ondrejsika/simple-image
+
+Inspect Package
+
+```
+helm inspect ondrejsika/simple-image
+```
+
+Install with values in args
+
+```
+helm install ondrejsika/simple-image --name hello-world --set ingress.hosts={hello-world.192.168.99.100.xip.io} --set replicaCount=4
+```
+
+Install with values file
+
+```
+helm install ondrejsika/simple-image --name nginx --values simple-image-nginx-values.yml
+helm install ondrejsika/simple-image --name apache --values simple-image-apache-values.yml
+```
+
+Install with values file and values args 
+
+```
+helm install ondrejsika/simple-image --name nginx2 --values simple-image-nginx-values.yml --set ingress.hosts={nginx2.192.168.99.100.xip.io}
+```
+
+
+### Own Helm Package
+
+```
+helm create hello-world
+```
+
+```
+cd hello-world
+tree
+```
+
+```
+cat << EOF > templates/configMap.yaml
+apiVersion: v1
+data:
+  nginx.conf: |
+    events { worker_connections  1024;}
+    http { server { listen 80; location / {
+        return 200 "Nginx Hello World";
+    } } }
+kind: ConfigMap
+metadata:
+  name: nginx-config
+EOF
+```
+
+Add volume to deployment
+
+```
+volumes:
+  - name: config
+    configMap:
+      name: nginx-config
+```
+
+```
+volumeMounts:
+  - name: config
+    mountPath: /etc/nginx/nginx.conf
+    subPath: nginx.conf
+```
+
+#### See Template
+
+```
+helm template .
+helm template . --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io}  --set ingress.paths={/}
+```
+
+#### Install
+
+```
+helm install . --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io}  --set ingress.paths={/}
+```
+
+#### Build Package
+
+```
+cd ..
+helm package hello-world
+```
+
+### Create own repository
+
+```
+mkdir my-repo
+cp hello-world-0.1.0.tgz my-repo/
+helm repo index my-repo/ --url https://dr.h4y.cz/my-repo/
+```
+
+Publish it!
+
+#### Use it
+
+Delete previous deployment
+
+```
+helm del --purge hello
+```
+
+Add repo
+
+```
+helm repo add my-repo https://dr.h4y.cz/my-repo
+```
+
+Install package
+
+```
+helm install my-repo/hello-world --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io} --set ingress.paths={/}
+```
