@@ -59,6 +59,13 @@ minikube start --kubernetes-version v1.13.1
 minikube dashboard
 ```
 
+or
+
+```
+kubectl proxy
+```
+
+And go to <http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy>
 
 ## Examples
 
