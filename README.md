@@ -454,7 +454,19 @@ kubectl --kubeconfig=config config set-credentials admin --token=<token>
 Set new user to context:
 
 ```
-kubectl --kubeconfig=config config set-context --user=admin --cluster=minikube <context>
+kubectl --kubeconfig=config config set-context --user=admin --cluster=minikube admin
+```
+
+Use new user to context:
+
+```
+kubectl --kubeconfig=config config use-context admin
+```
+
+And try:
+
+```
+kubectl --kubeconfig=config get nodes,svc
 ```
 
 ### Create pod reader
