@@ -445,12 +445,6 @@ Get token:
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 ```
 
-Clean users:
-
-```
-kubectl --kubeconfig=config config unset users
-```
-
 Set token to user:
 
 ```
