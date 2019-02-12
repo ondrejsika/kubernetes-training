@@ -734,3 +734,8 @@ Install package
 ```
 helm install my-repo/hello-world --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io} --set ingress.paths={/}
 ```
+
+
+## Links
+
+- Logging - https://kubernetes.io/docs/concepts/cluster-administration/logging/
