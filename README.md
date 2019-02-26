@@ -5,6 +5,22 @@
 
 Code examples for my Kubernetes Training.
 
+## About Course
+
+### Kubernetes training in Czech Republic
+
+- [ondrej-sika.cz/skoleni/kubernetes](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-dte)
+- [skoleni-kubernetes.cz](https://skoleni-docker.cz/?_s=gh-dte)
+
+### Docker training in Europe
+
+- [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-dte)
+
+### Any Questions?
+
+Write me mail to <ondrej@ondrejsika.com>
+
+
 ## Useful Links
 
 - Kubernetes Cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
