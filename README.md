@@ -138,6 +138,12 @@ Connect your services
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/simple-hello-world/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/multi-container-pod/proxy/
 
+Or using `minikube service` (just for NodePort)
+
+```
+minikube service multi-container-pod
+```
+
 ### Delete Pod
 
 ```
@@ -172,6 +178,12 @@ kubectl expose rs hello-world-rs --type=NodePort
 ```
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-rs/proxy/
+
+Or using `minikube service` (just for NodePort)
+
+```
+minikube service hello-world-rs
+```
 
 ### Update Replica Set
 
@@ -215,6 +227,12 @@ kubectl expose deploy hello-world --type=NodePort
 ```
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
+
+Or using `minikube service` (just for NodePort)
+
+```
+minikube service hello-world
+```
 
 
 ### Update Deployment
