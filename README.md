@@ -161,6 +161,35 @@ and delete services (creaded by `kubectl expose`)
 kubectl delete svc/simple-hello-world svc/multi-container-pod
 ```
 
+### Private Container Registry
+
+Deploy private pod
+
+```
+kubectl apply -f private_pod.yml
+```
+
+See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/private-pod/proxy/>
+
+See config file
+
+```
+echo $(kubectl get secret registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode)
+```
+
+And see credentials (of example `registry.sikahq.com`)
+
+```
+echo $(kubectl get secret registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode | jq '.auths["registry.sikahq.com"].auth' -r | base64 --decode)
+```
+
+Cleanup
+
+```
+kubectl delete -f private_pod.yml
+```
+
+
 ### Create Replica Set
 
 ```
