@@ -71,7 +71,7 @@ echo "source <(minikube completion bash)" >> ~/.bashrc
 ### Start Minikube
 
 ```
-minikube start --kubernetes-version v1.13.1
+minikube start --kubernetes-version v1.14.0
 ```
 
 ### Dashboard
