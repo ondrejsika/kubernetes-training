@@ -1,3 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100M
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,10 +32,17 @@ spec:
         image: redis
         resources:
           requests:
-            cpu: 100m
+            cpu: 30m
             memory: 50Mi
         ports:
         - containerPort: 6379
+        volumeMounts:
+        - mountPath: /data
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: redis
 ---
 apiVersion: v1
 kind: Service
@@ -35,7 +53,6 @@ metadata:
 spec:
   ports:
   - port: 6379
-    targetPort: 6379
   selector:
     project: counter
     app: redis
@@ -63,8 +80,8 @@ spec:
         image: ondrejsika/counter
         resources:
           requests:
-            cpu: 100m
-            memory: 50Mi
+            cpu: 20m
+            memory: 10Mi
         env:
         - name: REDIS
           value: redis
