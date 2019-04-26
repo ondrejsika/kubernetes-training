@@ -615,6 +615,11 @@ kubectl --kubeconfig=config config set-credentials read --token=<token>
 kubectl --kubeconfig=config config set-context --user=read <context>
 ```
 
+## Liveness & Readiness Probes
+
+Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
+
+
 ## Helm
 
 ### Install Helm Client
