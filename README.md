@@ -282,6 +282,26 @@ kubectl apply -f 04_02_deployment.yml
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
 
+### History of deployments
+
+```
+kubectl rollout history deploy hello-world
+```
+
+### Rollback (Rollout)
+
+One version back
+
+```
+kubectl rollout undo deploy hello-world
+```
+
+To specific revision
+
+```
+kubectl rollout undo deploy hello-world --to-revision=2
+```
+
 ### Delete Deployment
 
 ```
