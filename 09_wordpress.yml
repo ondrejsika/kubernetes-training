@@ -30,7 +30,7 @@ spec:
         image: mysql:5.6
         resources:
           requests:
-            cpu: 500m
+            cpu: 50m
             memory: 300Mi
         env:
         - name: MYSQL_DATABASE
@@ -95,7 +95,7 @@ spec:
         image: wordpress
         resources:
           requests:
-            cpu: 500m
+            cpu: 50m
             memory: 50Mi
         env:
         - name: WORDPRESS_DB_HOST
