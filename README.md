@@ -556,6 +556,8 @@ kubectl apply -f 12_config_map.yml
 kubectl apply -f 13_secret_example.yml
 ```
 
+See <http://127.0.0.1:8001/api/v1/namespaces/default/services/secret-example/proxy/>
+
 ### RBAC
 
 ### Create cluster admin
