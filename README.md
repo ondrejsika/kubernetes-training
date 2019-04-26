@@ -447,6 +447,71 @@ See:
 - http://nginx.192.168.99.100.xip.io
 - http://apache.192.168.99.100.xip.io
 
+## PersistentVolume & PersistentVolumeClaim
+
+### Claim default PV
+
+From default __StorageClass__ (`kubectl get storageclass`)
+
+```
+kubectl apply -f pvc_defaul.yml
+```
+
+See PV and PVC
+
+```
+kubectl get pv,pvc
+```
+
+Delete claim & volume
+
+```
+kubectl delete -f pvc_default.yml
+kubectl get pv,pvc
+```
+
+
+### Create PV
+
+For example NFS storage
+
+```
+kubectl apply -f pv_nfs.yml
+```
+
+See PV
+
+```
+kubectl get pv
+```
+
+### Claim PV
+
+```
+kubectl apply -f pvc_nfs.yml
+```
+
+See
+
+```
+kubectl get pv,pvc
+```
+
+Use PVC
+
+```
+kubectl apply -f pvc_mount_example.yml
+```
+
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/>
+
+Clean up
+
+```
+kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml 
+```
+
+
 ## ConfigMaps & Secrets
 
 ### Create Secrets
