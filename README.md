@@ -304,6 +304,17 @@ kubectl delete deploy/hello-world
 kubectl delete svc/hello-world
 ```
 
+### kubectl run
+
+Create deployment from command line
+
+```
+kubectl run -it --rm --image=debian my-debian -- bash
+```
+
+Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
+
+
 ### Create Service ClusterIP
 
 Create deploymnet again:
