@@ -19,3 +19,10 @@ spec:
         image: ondrejsika/go-hello-world:2
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+          limits:
+            memory: 20Mi
+            cpu: 20m

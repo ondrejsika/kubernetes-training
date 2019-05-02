@@ -21,6 +21,13 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 20m
+            memory: 30Mi
+          limits:
+            cpu: 50m
+            memory: 50Mi
 ---
 apiVersion: v1
 kind: Service
@@ -59,6 +66,13 @@ spec:
         image: httpd
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 20m
+            memory: 30Mi
+          limits:
+            cpu: 50m
+            memory: 50Mi
 ---
 apiVersion: v1
 kind: Service
