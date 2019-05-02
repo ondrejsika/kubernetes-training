@@ -47,6 +47,8 @@ brew install kubernetes-cli
 
 <https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube>
 
+Minikube requires VirtualBox - <https://www.virtualbox.org/wiki/Downloads>
+
 #### Linux
 
 ```
