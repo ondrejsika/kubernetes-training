@@ -37,6 +37,12 @@ Write me mail to <ondrej@ondrejsika.com>
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
+#### macOS
+
+```
+brew install kubernetes-cli
+```
+
 ### Minikube
 
 <https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube>
@@ -45,6 +51,12 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+```
+
+#### macOS
+
+```
+brew cask install minikube
 ```
 
 ### Bash Completion
