@@ -145,6 +145,9 @@ minikube service multi-container-pod
 ### Delete Pod
 
 ```
+kubectl delete -f 01_pod.yml -f 02_pod.yml
+
+# or
 kubectl delete po/simple-hello-world
 kubectl delete po/multi-container-pod
 ```
@@ -227,6 +230,9 @@ kubectl apply -f 03_02_replica_set.yml
 ### Delete Replica Set
 
 ```
+kubectl delete -f 03_01_replica_set.yml
+
+# or
 kubectl delete rs/hello-world-rs
 
 # and the service
@@ -299,7 +305,11 @@ kubectl rollout undo deploy hello-world --to-revision=2
 ### Delete Deployment
 
 ```
+kubectl delete -f 04_01_deployment.yml
+
+# or
 kubectl delete deploy/hello-world
+
 # and service
 kubectl delete svc/hello-world
 ```
@@ -351,8 +361,13 @@ kubectl get all
 ### Delete Service
 
 ```
+kubectl delete -f 05_clusterip_service.yml
+kubectl delete -f 06_nodeport_service.yml
+
+# or
 kubectl delete svc/hello-world-nodeport
 kubectl delete svc/hello-world-clusterip
+
 # and deployment
 kubectl delete deploy/hello-world
 ```
@@ -380,7 +395,7 @@ minikube service counter
 ### Delete Application
 
 ```
-kubectl delete deploy,svc -l project=counter
+kubectl delete -f 07_counter.yml
 ```
 
 ### Create Namespace
@@ -413,6 +428,9 @@ See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
 ### Delete Namespace
 
 ```
+kubectl delete -f 08_namespace.yml
+
+# or
 kubectl delete ns/counter
 ```
 
@@ -471,6 +489,12 @@ See:
 
 - http://nginx.192.168.99.100.xip.io
 - http://apache.192.168.99.100.xip.io
+
+Cleanup
+
+```
+kubectl delete -f webservers.yml -f 10_ingress.yml
+```
 
 ## PersistentVolume & PersistentVolumeClaim
 
