@@ -529,7 +529,7 @@ kubectl delete -f webservers.yml -f 10_ingress.yml
 From default __StorageClass__ (`kubectl get storageclass`)
 
 ```
-kubectl apply -f pvc_defaul.yml
+kubectl apply -f pvc_default.yml
 ```
 
 See PV and PVC
