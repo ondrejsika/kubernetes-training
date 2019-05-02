@@ -138,6 +138,18 @@ See:
 kubectl exec -ti multi-container-pod bash
 ```
 
+### Pod Logs
+
+```
+kubectl logs simple-hello-world
+```
+
+or following logs
+
+```
+kubectl logs simple-hello-world -f
+```
+
 ### Expose Pod (Create Service)
 
 ```
