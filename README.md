@@ -91,6 +91,7 @@ minikube dashboard
 or
 
 ```
+minikube addons enable dashboard
 kubectl proxy
 ```
 
