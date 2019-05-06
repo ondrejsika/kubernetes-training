@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ramped
+  annotations:
+    kubernetes.io/change-cause: ver2
+spec:
+  selector:
+    matchLabels:
+      app: ramped
+  replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: ramped
+    spec:
+      containers:
+      - name: hello-world
+        image: ondrejsika/go-hello-world:2
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+          limits:
+            memory: 20Mi
+            cpu: 20m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ramped
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ramped
