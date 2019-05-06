@@ -636,6 +636,13 @@ See <http://127.0.0.1:8001/api/v1/namespaces/default/services/secret-example/pro
 
 ### RBAC
 
+Show all api resources (with verbs)
+
+```
+kubectl api-resources -o wide
+```
+
+
 ### Create cluster admin
 
 ```
