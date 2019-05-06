@@ -768,6 +768,13 @@ and clean up
 kubectl delete hpa/hello-world -f 04_01_deployment.yml
 ```
 
+## Deployment Strategies
+
+Great resources by Container Solutions
+
+- [article](https://container-solutions.com/kubernetes-deployment-strategies)
+- [repository](https://github.com/ContainerSolutions/k8s-deployment-strategies)
+
 
 ## Helm
 
@@ -1029,3 +1036,4 @@ helm install my-repo/hello-world --name hello --set ingress.enabled=true --set i
 - Autoscaling based on CPU/Memory - https://blog.powerupcloud.com/autoscaling-based-on-cpu-memory-in-kubernetes-part-ii-fe2e495bddd4
 - Kubernetes Cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 - Minikube & Hyper-V - https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c
+- Deployment Strategies - https://container-solutions.com/kubernetes-deployment-strategies/
