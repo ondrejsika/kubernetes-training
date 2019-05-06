@@ -698,6 +698,77 @@ kubectl --kubeconfig=config config set-context --user=read <context>
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
 
 
+## Autoscaling (Horizontal Pod Autoscaler)
+
+- <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
+
+We have to have metrics server enabled
+
+```
+minikube addons enable metrics-server
+```
+
+### Create HPA (command)
+
+Create deployment & service
+
+```
+kubectl apply -f 04_01_deployment.yml
+```
+
+Autoscale
+
+```
+kubectl autoscale deployment hello-world --min=2 --max=5 --cpu-percent=80
+```
+
+### Create HPA (YAML)
+
+Api v1 (same as `kubectl autoscale`)
+
+```
+kubectl apply -f hpa_v1.yml
+```
+
+Api v2
+
+```
+kubectl apply -f hpa.yml
+```
+
+### Get HPAs
+
+```
+kubectl get hpa
+```
+
+### Test Autoscaling
+
+Run AB
+
+```
+ab -kc 20 -t 60 $(minikube service apache --url)/
+```
+
+And see
+
+```
+kubectl get hpa,po
+```
+
+### Delete HPA
+
+```
+kubectl delete -f hpa.yml
+```
+
+and clean up
+
+```
+kubectl delete hpa/hello-world -f 04_01_deployment.yml
+```
+
+
 ## Helm
 
 ### Install Helm Client
