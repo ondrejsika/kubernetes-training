@@ -748,6 +748,12 @@ We have to have metrics server enabled
 minikube addons enable metrics-server
 ```
 
+optionaly, you can enabled __heapster__ for Grafana charts
+
+```
+minikube addons enable heapster
+```
+
 ### Create HPA (command)
 
 Create deployment & service
