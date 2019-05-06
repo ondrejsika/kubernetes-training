@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: liveness
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: liveness
+  template:
+    metadata:
+      labels:
+        app: liveness
+    spec:
+      containers:
+      - image: ondrejsika/health
+        name: health
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5

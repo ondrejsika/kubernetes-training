@@ -697,6 +697,25 @@ kubectl --kubeconfig=config config set-context --user=read <context>
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
 
+### Liveness Probe
+
+```
+kubectl apply -f probes_liveness.yml
+```
+
+### Readiness Probe
+
+```
+kubectl apply -f probes_readiness.yml
+```
+
+
+Cleanup
+
+```
+kubectl delete -f probes_liveness.yml -f probes_readiness.yml
+```
+
 
 ## Autoscaling (Horizontal Pod Autoscaler)
 
