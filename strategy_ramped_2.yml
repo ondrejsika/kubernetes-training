@@ -8,11 +8,11 @@ spec:
   selector:
     matchLabels:
       app: ramped
-  replicas: 10
+  replicas: 20
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
+      maxSurge: 3
       maxUnavailable: 0
   template:
     metadata:
