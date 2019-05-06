@@ -1108,3 +1108,4 @@ helm install my-repo/hello-world --name hello --set ingress.enabled=true --set i
 - Kubernetes Cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 - Minikube & Hyper-V - https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c
 - Deployment Strategies - https://container-solutions.com/kubernetes-deployment-strategies/
+- Sticky Sessions - https://medium.com/@zhimin.wen/sticky-sessions-in-kubernetes-56eb0e8f257d
