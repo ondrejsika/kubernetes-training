@@ -700,6 +700,13 @@ kubectl --kubeconfig=config config set-credentials read --token=<token>
 kubectl --kubeconfig=config config set-context --user=read <context>
 ```
 
+### Create Namespace Admin
+
+```
+kubectl apply -f 16_namespace_admin.yml
+```
+
+
 ## Liveness & Readiness Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
