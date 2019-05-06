@@ -680,6 +680,13 @@ And try:
 kubectl --kubeconfig=config get nodes,svc
 ```
 
+### Join multiple kubeconfigs
+
+```
+KUBECONFIG=.kube/config:kuberners-config-new.yml kubectl config view --raw > .kube/config
+```
+
+
 ### Create pod reader
 
 ```
