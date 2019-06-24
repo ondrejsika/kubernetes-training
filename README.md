@@ -110,6 +110,12 @@ echo "source <(minikube completion bash)" >> ~/.bashrc
 minikube start --kubernetes-version v1.14.0
 ```
 
+Run with Hyper-V (on Windows) - <https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c>
+
+```
+minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
+```
+
 ### Dashboard
 
 ```
