@@ -395,6 +395,36 @@ kubectl delete deploy/hello-world
 kubectl delete svc/hello-world
 ```
 
+### Create Job 
+
+- <https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/>
+- <https://eksworkshop.com/batch/jobs/>
+
+Create job:
+
+```
+kubectl apply -f job.yml
+```
+
+Create parallel job:
+
+```
+kubectl apply -f parallel_jobs.yml
+```
+
+### Create Cron Job
+
+```
+kubernetes apply -f cronjob.yml
+```
+
+### Delete Jobs
+
+```
+kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
+```
+
+
 ### kubectl run
 
 Create deployment from command line
