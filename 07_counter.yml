@@ -2,12 +2,14 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: redis
+  labels:
+    project: counter
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 100M
+      storage: 1Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
