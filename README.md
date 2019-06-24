@@ -9,16 +9,21 @@ Code examples for my Kubernetes Training.
 
 ### Kubernetes training in Czech Republic
 
-- [ondrej-sika.cz/skoleni/kubernetes](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-dte)
-- [skoleni-kubernetes.cz](https://skoleni-kubernetes.cz/?_s=gh-dte)
+- [ondrej-sika.cz/skoleni/kubernetes](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-kte)
+- [skoleni-kubernetes.cz](https://skoleni-kubernetes.cz/?_s=gh-kte)
 
 ### Docker training in Europe
 
-- [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-dte)
+- [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
 
 ### Related courses
 
 - Install Kubernetes on Bare Metal - [ondrejsika/kubernetes-install-bare-metal](https://github.com/ondrejsika/kubernetes-install-bare-metal) (on Github)
+
+### Slides
+
+<https://sika.link/k8s>
+
 
 ### Any Questions?
 
