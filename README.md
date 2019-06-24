@@ -410,6 +410,16 @@ kubectl apply -f 06_nodeport_service.yml
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-nodeport/proxy/
 
+
+### Create LoadBalancer Service (Public Cloud only)
+
+```
+kubectl apply -f loadbalancer.yml
+```
+
+Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube.
+
+
 ### List Services
 
 ```
