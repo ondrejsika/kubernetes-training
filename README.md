@@ -66,6 +66,12 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minik
 brew cask install minikube
 ```
 
+If you dont have VirtualBox, you can install it using Brew.
+
+```
+brew cask install virtualbox
+```
+
 ### Bash Completion
 
 ```
