@@ -116,6 +116,26 @@ Run with Hyper-V (on Windows) - <https://medium.com/@JockDaRock/minikube-on-wind
 minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
 ```
 
+### Connect My Demo Cluster
+
+Download & use my Digital Ocean Kubernetes confing
+
+```
+wget https://sika.link/kubeconfig
+mv kubeconfig ~/.kube/config
+```
+
+Create own namespace (eg.: `ondrejsika`) and set it as default
+
+```
+kubectl create ns ondrejsika
+kubectl config set-context sikademo --namespace=ondrejsika
+```
+
+Sources:
+
+- Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/> 
+
 ### Dashboard
 
 ```
