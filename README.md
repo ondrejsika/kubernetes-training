@@ -48,6 +48,14 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 brew install kubernetes-cli
 ```
 
+#### Windows
+
+Using Chocolatey
+
+```
+choco install kubernetes-cli
+```
+
 ### Minikube
 
 <https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube>
@@ -71,6 +79,15 @@ If you dont have VirtualBox, you can install it using Brew.
 ```
 brew cask install virtualbox
 ```
+
+#### Windows
+
+Using Chocolatey
+
+```
+choco install minikube
+```
+
 
 ### Bash Completion
 
