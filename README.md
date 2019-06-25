@@ -414,6 +414,8 @@ kubectl apply -f parallel_jobs.yml
 
 ### Create Cron Job
 
+- <https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/>
+
 ```
 kubernetes apply -f cronjob.yml
 ```
