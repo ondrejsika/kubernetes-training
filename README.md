@@ -118,7 +118,7 @@ minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switc
 
 ### Connect My Demo Cluster
 
-Download & use my Digital Ocean Kubernetes confing
+Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo/](https://github.com/ondrejsika/kubeconfig-sikademo/))
 
 ```
 wget https://sika.link/kubeconfig
