@@ -48,6 +48,11 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 ```
 brew install kubernetes-cli
 ```
+If it doesn't work correctly (for instance you have Docker installed) you need to point kubectl to the right binary.
+```
+rm /usr/local/bin/kubectl
+brew link --overwrite kubernetes-cli
+```
 
 #### Windows
 
