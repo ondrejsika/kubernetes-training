@@ -16,9 +16,10 @@ Code examples for my Kubernetes Training.
 
 - [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
 
-### Related courses
+### Related Courses
 
-- Install Kubernetes on Bare Metal - [ondrejsika/kubernetes-install-bare-metal](https://github.com/ondrejsika/kubernetes-install-bare-metal) (on Github)
+- Bare Metal Kubernetes - [ondrejsika/bare-metal-kubernetes](https://github.com/ondrejsika/bare-metal-kubernetes) (on Github)
+
 
 ### Slides
 
