@@ -123,6 +123,31 @@ Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubec
 
 ```
 wget https://sika.link/kubeconfig
+```
+
+Set `KUBECONFIG` environment variable to this file.
+
+On Unix:
+
+```
+export KUBECONFIG=kubeconfig
+```
+
+On Windows (in PowerShell):
+
+```
+Set-Variable -Name "KUBECONFIG" -Value "kubeconfig"
+```
+
+On Windows (in CMD):
+
+```
+SET KUBECONFIG=kubeconfig
+```
+
+Or save it to `.kube/config`:
+
+```
 mv kubeconfig ~/.kube/config
 ```
 
