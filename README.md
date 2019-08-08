@@ -66,7 +66,7 @@ Minikube requires VirtualBox - <https://www.virtualbox.org/wiki/Downloads>
 #### Linux
 
 ```
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
 ```
 
 #### macOS
@@ -123,31 +123,6 @@ Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubec
 
 ```
 wget https://sika.link/kubeconfig
-```
-
-Set `KUBECONFIG` environment variable to this file.
-
-On Unix:
-
-```
-export KUBECONFIG=kubeconfig
-```
-
-On Windows (in PowerShell):
-
-```
-Set-Variable -Name "KUBECONFIG" -Value "kubeconfig"
-```
-
-On Windows (in CMD):
-
-```
-SET KUBECONFIG=kubeconfig
-```
-
-Or save it to `.kube/config`:
-
-```
 mv kubeconfig ~/.kube/config
 ```
 
