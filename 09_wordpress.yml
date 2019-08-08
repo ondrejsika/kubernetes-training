@@ -40,7 +40,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: somewordpress
         - name: MYSQL_USER
-          value: wordpress 
+          value: wordpress
         ports:
         - containerPort: 3306
         volumeMounts:

@@ -134,7 +134,7 @@ kubectl config set-context sikademo --namespace=ondrejsika
 
 Sources:
 
-- Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/> 
+- Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
 
 ### Dashboard
 
@@ -395,7 +395,7 @@ kubectl delete deploy/hello-world
 kubectl delete svc/hello-world
 ```
 
-### Create Job 
+### Create Job
 
 - <https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/>
 - <https://eksworkshop.com/batch/jobs/>
@@ -680,7 +680,7 @@ See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/>
 Clean up
 
 ```
-kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml 
+kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 ```
 
 
@@ -1113,7 +1113,7 @@ helm install ondrejsika/simple-image --name nginx --values simple-image-nginx-va
 helm install ondrejsika/simple-image --name apache --values simple-image-apache-values.yml
 ```
 
-Install with values file and values args 
+Install with values file and values args
 
 ```
 helm install ondrejsika/simple-image --name nginx2 --values simple-image-nginx-values.yml --set ingress.hosts={nginx2.192.168.99.100.xip.io}
