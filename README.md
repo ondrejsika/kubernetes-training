@@ -119,7 +119,7 @@ minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switc
 
 ### Connect My Demo Cluster
 
-Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo/](https://github.com/ondrejsika/kubeconfig-sikademo/))
+Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
 
 ```
 wget https://sika.link/kubeconfig
