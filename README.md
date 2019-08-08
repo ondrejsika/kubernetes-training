@@ -12,7 +12,7 @@ Code examples for my Kubernetes Training.
 - [ondrej-sika.cz/skoleni/kubernetes](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-kte)
 - [skoleni-kubernetes.cz](https://skoleni-kubernetes.cz/?_s=gh-kte)
 
-### Docker training in Europe
+### Kubernetes training in Europe
 
 - [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
 
