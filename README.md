@@ -800,7 +800,7 @@ Add to user to config and change context user
 
 ```
 kubectl --kubeconfig=config config set-credentials read --token=<token>
-kubectl --kubeconfig=config config set-context --user=read <context>
+kubectl --kubeconfig=config config set-context --user=read --cluster=minikube <context>
 ```
 
 ### Create Namespace Admin
