@@ -443,7 +443,7 @@ kubectl apply -f parallel_jobs.yml
 - <https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/>
 
 ```
-kubernetes apply -f cronjob.yml
+kubectl apply -f cronjob.yml
 ```
 
 ### Delete Jobs
