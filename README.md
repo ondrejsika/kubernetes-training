@@ -1,4 +1,4 @@
-# Kubernetes Training Examples
+# Kubernetes Training
 
     Ondrej Sika <ondrej@ondrejsika.com>
     https://github.com/ondrejsika/kubernetes-training-examples
