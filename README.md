@@ -1020,6 +1020,22 @@ helm install stable/redis --dry-run --debug
 helm install stable/redis --dry-run --debug --name redis
 ```
 
+### Upgrade Package
+
+If you want to upgrade instance of chart, you have to call:
+
+```
+helm upgrade redis stable/redis --set pullPolicy=Always
+```
+
+### Install or Upgrade
+
+You can add `--install` to `helm upgrade` to install package if not exists. When chart exists, it will be upgraded.
+
+```
+helm upgrade --install redis stable/redis --set pullPolicy=Always
+```
+
 ### List Installed Packages
 
 ```
