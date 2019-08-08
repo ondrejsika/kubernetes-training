@@ -22,7 +22,7 @@ Code examples for my Kubernetes Training.
 
 ### Slides
 
-<https://sika.link/k8s>
+<https://sika.link/k8s-slides>
 
 
 ### Any Questions?
