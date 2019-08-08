@@ -432,7 +432,7 @@ kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
 Create deployment from command line
 
 ```
-kubectl run -it --rm --image=debian my-debian -- bash
+kubectl run -it --rm --image=debian --generator=run-pod/v1 my-debian -- bash
 ```
 
 Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
