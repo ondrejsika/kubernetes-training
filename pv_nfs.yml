@@ -8,10 +8,12 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
+  # persistentVolumeReclaimPolicy: Recycle
+  # persistentVolumeReclaimPolicy: Delete
   storageClassName: nfs
   mountOptions:
     - hard
   nfs:
     path: /nfs
-    server: nfs.xsika.cz
+    server: nfs.sikademo.com
