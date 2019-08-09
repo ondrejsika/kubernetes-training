@@ -1,9 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: httpd
-  tag: alpine
-
-ingress:
-  hosts:
-    - apache.192.168.99.100.xip.io

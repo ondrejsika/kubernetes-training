@@ -1,0 +1,2 @@
+image: nginx:alpine
+host: nginx.192.168.99.100.xip.io

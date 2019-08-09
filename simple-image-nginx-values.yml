@@ -1,9 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: nginx
-  tag: alpine
-
-ingress:
-  hosts:
-    - nginx.192.168.99.100.xip.io

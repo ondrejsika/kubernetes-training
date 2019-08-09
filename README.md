@@ -1119,35 +1119,36 @@ helm repo list
 ```
 helm repo add ondrejsika https://helm.oxs.cz
 
-helm repo update
 helm search ondrejsika
 ```
 
-#### Install ondrejsika/simple-image
+#### Install ondrejsika/one-image
+
+Sources of Chart `ondrejsika/one-image` are <https://github.com/ondrejsika/one-image-helm>
 
 Inspect Package
 
 ```
-helm inspect ondrejsika/simple-image
+helm inspect ondrejsika/one-image
 ```
 
 Install with values in args
 
 ```
-helm install ondrejsika/simple-image --name hello-world --set ingress.hosts={hello-world.192.168.99.100.xip.io} --set replicaCount=4
+helm install ondrejsika/one-image --name hello-world --set host=hello-world.192.168.99.100.xip.io
 ```
 
 Install with values file
 
 ```
-helm install ondrejsika/simple-image --name nginx --values simple-image-nginx-values.yml
-helm install ondrejsika/simple-image --name apache --values simple-image-apache-values.yml
+helm install ondrejsika/one-image --name nginx --values one-image-nginx-values.yml
+helm install ondrejsika/one-image --name apache --values one-image-apache-values.yml
 ```
 
 Install with values file and values args
 
 ```
-helm install ondrejsika/simple-image --name nginx2 --values simple-image-nginx-values.yml --set ingress.hosts={nginx2.192.168.99.100.xip.io}
+helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.xip.io
 ```
 
 
