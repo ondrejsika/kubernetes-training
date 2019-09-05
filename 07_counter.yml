@@ -12,12 +12,13 @@ spec:
       storage: 1Gi
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: redis
   labels:
     project: counter
 spec:
+  serviceName: redis
   selector:
     matchLabels:
       project: counter

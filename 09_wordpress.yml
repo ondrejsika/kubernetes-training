@@ -75,10 +75,11 @@ spec:
       storage: 1Gi
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: wordpress
 spec:
+  serviceName: wordpress
   selector:
     matchLabels:
       project: wordpress
