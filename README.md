@@ -167,20 +167,6 @@ Sources:
 
 - Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
 
-### Dashboard
-
-```
-minikube dashboard
-```
-
-or
-
-```
-minikube addons enable dashboard
-kubectl proxy
-```
-
-And go to <http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy>
 
 ## Examples
 
