@@ -613,6 +613,16 @@ kubectl delete namespace wp
 minikube addons enable ingress
 ```
 
+### Traefik Ingress Controller
+
+See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubernetes-ingress-traefik)
+
+Install Traefik Ingress Controller:
+
+```
+kubect apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
+```
+
 ### Create Ingress
 
 Create some services (& deploymnets)
