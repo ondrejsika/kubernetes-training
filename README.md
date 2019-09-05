@@ -28,7 +28,7 @@ Code examples for my Kubernetes Training.
 
 ### Any Questions?
 
-Write me mail to <ondrej@ondrejsika.com>
+Write me mail to <ondrej@sika.io>
 
 
 ## Install
@@ -1279,8 +1279,8 @@ helm install my-repo/hello-world --name hello --set ingress.enabled=true --set i
 
 ### Ondrej Sika
 
-- email:	<ondrej@ondrejsika.com>
-- web:	<https://ondrejsika.com>
+- email:	<ondrej@sika.io>
+- web:	<https://sika.io>
 - twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
