@@ -825,13 +825,22 @@ Add to user to config and change context user
 
 ```
 kubectl --kubeconfig=config config set-credentials read --token=<token>
-kubectl --kubeconfig=config config set-context --user=read --cluster=minikube <context>
+kubectl --kubeconfig=config config set-context --user=read --cluster=minikube read
+kubectl --kubeconfig=config config use-context read
 ```
 
 ### Create Namespace Admin
 
 ```
 kubectl apply -f 16_namespace_admin.yml
+```
+
+And create user, also with default namespace changed to `devel`
+
+```
+kubectl --kubeconfig=config config set-credentials devel --token=<token>
+kubectl --kubeconfig=config config set-context --user=devel --cluster=minikube  --namespace=devel devel
+kubectl --kubeconfig=config config use-context devel
 ```
 
 
