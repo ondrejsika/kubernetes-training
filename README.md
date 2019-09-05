@@ -565,6 +565,14 @@ kubectl apply -f 07_counter.yml -n counter
 
 See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
 
+
+### Switch Namespace in Current Context
+
+```
+kubectl config set-context $(kubectl config current-context) --namespace=counter
+```
+
+
 ### Delete Namespace
 
 ```
