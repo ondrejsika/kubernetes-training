@@ -170,6 +170,14 @@ Sources:
 
 ## Examples
 
+### Check Cluster Status
+
+Validate cluster health after setup
+
+```
+kubectl get cs
+```
+
 ### Get Nodes
 
 ```
