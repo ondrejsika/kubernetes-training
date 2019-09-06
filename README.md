@@ -1312,6 +1312,7 @@ helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.x
 - Minikube & Hyper-V - https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c
 - Deployment Strategies - https://container-solutions.com/kubernetes-deployment-strategies/
 - Sticky Sessions - https://medium.com/@zhimin.wen/sticky-sessions-in-kubernetes-56eb0e8f257d
+- How To Set Up an Elasticsearch, Fluentd and Kibana (EFK) Logging Stack on Kubernetes - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes
 
 ## Thank you & Questions
 
