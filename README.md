@@ -156,6 +156,19 @@ Run with Hyper-V (on Windows) - <https://medium.com/@JockDaRock/minikube-on-wind
 minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
 ```
 
+Verify cluster health by
+
+```
+kubectl get cs
+```
+
+If you see something like this
+
+![minikube-cluster-up-and-running](images/minikube-cluster-up-and-running.png)
+
+Your cluster is up and running. Good job!
+
+
 ### Connect My Demo Cluster
 
 Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
