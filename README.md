@@ -1272,12 +1272,16 @@ helm package hello-world
 ### Create own repository
 
 ```
-mkdir my-repo
-cp hello-world-0.1.0.tgz my-repo/
-helm repo index my-repo/ --url https://dr.h4y.cz/my-repo/
+mkdir repo
+mv hello-world-*.tgz repo/
+helm repo index repo/
 ```
 
 Publish it!
+
+```
+scp repo/* root@helm.sikademo.com:/helm/
+```
 
 #### Use it
 
@@ -1290,13 +1294,13 @@ helm del --purge hello
 Add repo
 
 ```
-helm repo add my-repo https://dr.h4y.cz/my-repo
+helm repo add sikademo https://helm.sikademo.com
 ```
 
 Install package
 
 ```
-helm install my-repo/hello-world --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io} --set ingress.paths={/}
+helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.xip.io
 ```
 
 
