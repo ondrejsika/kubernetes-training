@@ -27,3 +27,16 @@ spec:
           limits:
             memory: 20Mi
             cpu: 20m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: liveness
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: liveness
