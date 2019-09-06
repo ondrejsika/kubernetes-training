@@ -10,10 +10,11 @@ spec:
       storage: 1Gi
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mysql
 spec:
+  serviceName: mysql
   selector:
     matchLabels:
       project: wordpress
@@ -75,11 +76,10 @@ spec:
       storage: 1Gi
 ---
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: wordpress
 spec:
-  serviceName: wordpress
   selector:
     matchLabels:
       project: wordpress
