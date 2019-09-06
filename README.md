@@ -1253,13 +1253,13 @@ You can also split your components to own files, it will be easier to read.
 
 ```
 helm template .
-helm template . --name hello --set host={hello.192.168.99.100.xip.io}
+helm template . --name hello --set host=hello.192.168.99.100.xip.io
 ```
 
 #### Install
 
 ```
-helm install . --name hello --set ingress.host={hello.192.168.99.100.xip.io}
+helm install . --name hello --set host=hello.192.168.99.100.xip.io
 ```
 
 #### Build Package
