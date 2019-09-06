@@ -1194,57 +1194,72 @@ helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.
 
 ### Own Helm Package
 
+You can init package using
+
 ```
 helm create hello-world
 ```
+
+See what's inside
 
 ```
 cd hello-world
 tree
 ```
 
-```
-cat << EOF > templates/configMap.yaml
-apiVersion: v1
-data:
-  nginx.conf: |
-    events { worker_connections  1024;}
-    http { server { listen 80; location / {
-        return 200 "Nginx Hello World";
-    } } }
-kind: ConfigMap
+This default manifests are too much complicated, if you want simple examle, check out my [ondrejsika/one-image-helm](https://github.com/ondrejsika/one-image-helm).
+
+We can try create helm package for our Wordpress example (09_wordpress.yml).
+
+We have to replace few names & labes with `{{ .Release.Name }}` to allow multiple deployments (installations) of chart. For labels, I use `release: {{ .Release.Name }}`, it works, it's simple and make sense.
+
+I also replace all variable part with values like `image: {{ .Values.image }}`, which I can overwrite.
+
+See example (`one-image/deployment.yaml`)
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nginx-config
-EOF
+  name: {{ .Release.Name }}
+  {{ if .Values.changeCause }}
+  annotations:
+    kubernetes.io/change-cause: {{ .Values.changeCause }}
+  {{ end }}
+  labels:
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
 ```
 
-Add volume to deployment
-
-```
-volumes:
-  - name: config
-    configMap:
-      name: nginx-config
-```
-
-```
-volumeMounts:
-  - name: config
-    mountPath: /etc/nginx/nginx.conf
-    subPath: nginx.conf
-```
+You can also split your components to own files, it will be easier to read.
 
 #### See Template
 
 ```
 helm template .
-helm template . --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io}  --set ingress.paths={/}
+helm template . --name hello --set host={hello.192.168.99.100.xip.io}
 ```
 
 #### Install
 
 ```
-helm install . --name hello --set ingress.enabled=true --set ingress.hosts={hello.192.168.99.100.xip.io}  --set ingress.paths={/}
+helm install . --name hello --set ingress.host={hello.192.168.99.100.xip.io}
 ```
 
 #### Build Package
