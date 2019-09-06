@@ -30,20 +30,20 @@ Code examples for my Kubernetes Training.
 
 Write me mail to <ondrej@sika.io>
 
+<!-- BEGIN Install -->
 
 ## Install
 
-### Kubectl
+You have to install these tools:
 
-<https://kubernetes.io/docs/tasks/tools/install-kubectl/>
+- __kubectl__ - Kubernetes client [official instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- __helm__ - Package manager for Kubernetes [official instructions](https://github.com/helm/helm/blob/master/docs/install.md)
+- __minikube__ - Tool for local setup of Kubernetes cluster [official instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube), may require __VirtualBox__
 
-#### Linux
 
-```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
-```
+### Mac
 
-#### macOS
+#### Kubectl on Mac
 
 ```
 brew install kubernetes-cli
@@ -54,27 +54,13 @@ rm /usr/local/bin/kubectl
 brew link --overwrite kubernetes-cli
 ```
 
-#### Windows
-
-Using Chocolatey
+#### Helm on Mac
 
 ```
-choco install kubernetes-cli
+brew install kubernetes-helm
 ```
 
-### Minikube
-
-<https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube>
-
-Minikube requires VirtualBox - <https://www.virtualbox.org/wiki/Downloads>
-
-#### Linux
-
-```
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
-```
-
-#### macOS
+#### Minikube on Mac
 
 ```
 brew cask install minikube
@@ -86,20 +72,63 @@ If you dont have VirtualBox, you can install it using Brew.
 brew cask install virtualbox
 ```
 
-#### Windows
+### Linux
 
-Using Chocolatey
+#### Kubectl on Linux
+
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
+#### Helm on Linux
+
+
+Docs <https://github.com/helm/helm/blob/master/docs/install.md>
+
+Install using snap:
+
+```
+sudo snap install helm --classic
+```
+
+Or oneliner for Linux:
+
+```
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
+```
+
+#### Minikube on Linux
+
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+```
+
+### Windows
+
+#### Kubectl for Windows
+
+```
+choco install kubernetes-cli
+```
+
+#### Helm for Windows
+
+```
+choco install kubernetes-helm
+```
+
+#### Minikube for Windows
 
 ```
 choco install minikube
 ```
-
 
 ### Bash Completion
 
 ```
 source <(kubectl completion bash)
 source <(minikube completion bash)
+source <(helm completion bash)
 ```
 
 Or save to `.bashrc`
@@ -107,7 +136,12 @@ Or save to `.bashrc`
 ```
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 echo "source <(minikube completion bash)" >> ~/.bashrc
+echo "source <(helm completion bash)" >> ~/.bashrc
 ```
+
+Also work for zsh, eg.: `source <(kubectl completion zsh)`
+
+<!-- END Install -->
 
 
 ### Start Minikube
@@ -996,34 +1030,6 @@ kubectl delete -f strategy_ramped.yml
 ```
 
 ## Helm
-
-### Install Helm Client
-
-Docs <https://github.com/helm/helm/blob/master/docs/install.md>
-
-Or oneliner for Linux:
-
-```
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
-```
-
-on Mac:
-
-```
-brew install kubernetes-helm
-```
-
-and on Windows:
-
-```
-choco install kubernetes-helm
-```
-
-### Bash Completion
-
-```
-source <(helm completion bash)
-```
 
 ## Init Helm & Tiller
 
