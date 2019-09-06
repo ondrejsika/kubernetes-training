@@ -2,4 +2,6 @@
 
 config
 repo
-hello-world-*.tgz
+/counter/**
+counter-*.tgz
+

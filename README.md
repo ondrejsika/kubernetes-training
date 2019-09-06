@@ -1197,13 +1197,13 @@ helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.
 You can init package using
 
 ```
-helm create hello-world
+helm create counter
 ```
 
 See what's inside
 
 ```
-cd hello-world
+cd counter
 tree
 ```
 
@@ -1248,6 +1248,15 @@ spec:
 ```
 
 You can also split your components to own files, it will be easier to read.
+
+If you're lazy, you can just use `helm-counter.yaml`.
+
+Just remove everything in templates dir & copy there that prepared file.
+
+```
+rm -rf templates/*
+cp ../helm-counter.yaml templates/counter.yml
+```
 
 #### See Template
 
