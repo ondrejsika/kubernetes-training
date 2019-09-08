@@ -101,11 +101,44 @@ Or oneliner for Linux:
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
 ```
 
-#### Minikube on Linux
+#### Minikube on Linux (Linux on host)
+
+Also requires [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
 ```
+
+#### Minikube on Linux (Linux in virtual machine)
+
+If you want run Kubernetes inside of custom virtual machine, you can also use __minikube__ with VM Driver none.
+
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+```
+
+You can start Kubernetes cluster using
+
+```
+minikube start --vm-driver=none
+```
+
+#### Microk8s.io on Linux (Linux in virtual machine)
+
+If you run Ubuntu (or another linux with __snap__), you can use [microk8s.io](https://microk8s.io)
+
+```
+sudo snap install microk8s --classic
+```
+
+See more information at <https://microk8s.io/docs/>
+
+#### k3s (minimalistic kubernetes for Linux)
+
+If you can't run __minikube__ (with VirtualBox or VM driver none) or __microk8s__, you can try __k3s__.
+
+See more on <https://k3s.io/>
+
 
 ### Windows
 
