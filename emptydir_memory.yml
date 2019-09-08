@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir-memory
+spec:
+  initContainers:
+  - name: init
+    image: debian
+    command:
+      - /bin/sh
+      - -c
+      - date > /data/index.html.tmp; mv /data/index.html.tmp /data/index.html;
+    volumeMounts:
+    - mountPath: /data
+      name: data
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests:
+        memory: 10Mi
+        cpu: 10m
+      limits:
+        memory: 20Mi
+        cpu: 20m
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: data
+  volumes:
+  - name: data
+    emptyDir:
+      medium: Memory

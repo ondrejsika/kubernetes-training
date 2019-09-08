@@ -715,6 +715,34 @@ kubectl delete -f webservers.yml -f 10_ingress.yml
 
 ## PersistentVolume & PersistentVolumeClaim
 
+### EmptyDir
+
+Docs: <https://kubernetes.io/docs/concepts/storage/volumes/#emptydir>
+
+
+#### Stored on disk
+
+```
+kubectl apply -f emptydir.yaml
+```
+
+Empty dir volemes are stored in `/var/lib/kubelet/pods/<pod uid>/volumes/kubernetes.io~empty-dir`
+
+See volumes on node:
+
+```
+tree /var/lib/kubelet/pods/$(kubectl get pods/emptydir -o jsonpath='{.metadata.uid}')/volumes/kubernetes.io~empty-dir/
+```
+
+#### Stored in memory (ramdisk)
+
+```
+kubectl apply -f emptydir_memory.yaml
+```
+
+If you use in memory volumes, files stored there counts into container's memory limit.
+
+
 ### Claim default PV
 
 From default __StorageClass__ (`kubectl get storageclass`)
