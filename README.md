@@ -852,6 +852,17 @@ kubectl apply -f 13_secret_example.yml
 
 See <http://127.0.0.1:8001/api/v1/namespaces/default/services/secret-example/proxy/>
 
+
+### EnvFrom
+
+Mount every variables from ConfigMap or Secret. See example:
+
+```
+kubectl apply -f configmap_envfrom.yml
+kubectl logs envfrom
+```
+
+
 ### Config
 
 See / export kubeconfig
