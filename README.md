@@ -299,6 +299,49 @@ Or using `minikube service` (just for NodePort)
 minikube service multi-container-pod
 ```
 
+### Assigning Pods to Nodes
+
+Docs - <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/>
+
+#### See node labels
+
+```
+kubectl get nodes --show-labels
+```
+
+#### Create new labels
+
+You can create own labels
+
+```
+kubectl label nodes <node-name> <label-key>=<label-value>
+```
+
+Example
+
+```
+kubectl label nodes minikube node=primary
+```
+
+### Select by node name (nodeName)
+
+```
+kubectl apply -f nodename.yml
+```
+
+### Select by label (nodeSelector)
+
+```
+kubectl apply -f nodeselector.yml
+```
+
+### Affinity and anti-affinity
+
+If you need more than __nodeSelector__, you can try __Affinity and anti-affinity__
+
+<https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>
+
+
 ### Delete Pod
 
 ```
