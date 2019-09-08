@@ -1,3 +1,7 @@
+[sika.io](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
+
+![](images/kubernetes_github.svg)
+
 # Kubernetes Training
 
     Ondrej Sika <ondrej@ondrejsika.com>
@@ -32,7 +36,7 @@ Write me mail to <ondrej@sika.io>
 
 <!-- BEGIN Install -->
 
-## Install
+## Install Kubernetes
 
 You have to install these tools:
 
@@ -215,7 +219,7 @@ Sources:
 - Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
 
 
-## Examples
+## Course
 
 ### Check Cluster Status
 
