@@ -824,6 +824,29 @@ kubectl apply -f 13_secret_example.yml
 
 See <http://127.0.0.1:8001/api/v1/namespaces/default/services/secret-example/proxy/>
 
+### Config
+
+See / export kubeconfig
+
+```
+kubectl config view
+```
+
+Parameters
+
+- `--raw` - by default, sensitive data are redacted, see raw config unsing `--raw`
+- `--flatten` - embed certificates for portable kubeconfig
+- `--minify` - see / export only actual context
+
+Examples
+
+```
+kubectl config view --raw
+kubectl config view --raw --flatten
+kubectl config view --raw --flatten --minify
+```
+
+
 ### RBAC
 
 Show all api resources (with verbs)
