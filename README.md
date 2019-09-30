@@ -314,23 +314,6 @@ or following logs
 kubectl logs simple-hello-world -f
 ```
 
-### Expose Pod (Create Service)
-
-```
-kubectl expose pod simple-hello-world
-kubectl expose pod multi-container-pod --type=NodePort
-```
-
-Connect your services
-
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/simple-hello-world/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/multi-container-pod/proxy/
-
-Or using `minikube service` (just for NodePort)
-
-```
-minikube service multi-container-pod
-```
 
 ### Assigning Pods to Nodes
 
@@ -385,11 +368,6 @@ kubectl delete po/simple-hello-world
 kubectl delete po/multi-container-pod
 ```
 
-and delete services (creaded by `kubectl expose`)
-
-```
-kubectl delete svc/simple-hello-world svc/multi-container-pod
-```
 
 ### Private Container Registry
 
@@ -434,19 +412,6 @@ kubectl get rs
 kubectl get rs,po
 ```
 
-### Expose Replica Set (Create Service)
-
-```
-kubectl expose rs hello-world-rs --type=NodePort
-```
-
-See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-rs/proxy/
-
-Or using `minikube service` (just for NodePort)
-
-```
-minikube service hello-world-rs
-```
 
 ### Update Replica Set
 
@@ -467,9 +432,6 @@ kubectl delete -f 03_01_replica_set.yml
 
 # or
 kubectl delete rs/hello-world-rs
-
-# and the service
-kubectl delete svc/hello-world-rs
 ```
 
 ### Create Deployment
@@ -484,20 +446,6 @@ kubectl apply -f 04_01_deployment.yml
 kubectl get deployments
 kubectl get deploy
 kubectl get po,rs,deploy
-```
-
-### Expose Deployment Set (Create Service)
-
-```
-kubectl expose deploy hello-world --type=NodePort
-```
-
-See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/
-
-Or using `minikube service` (just for NodePort)
-
-```
-minikube service hello-world
 ```
 
 
