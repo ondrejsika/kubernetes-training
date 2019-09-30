@@ -490,9 +490,6 @@ kubectl delete -f 04_01_deployment.yml
 
 # or
 kubectl delete deploy/hello-world
-
-# and service
-kubectl delete svc/hello-world
 ```
 
 ### Create Job
