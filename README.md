@@ -397,6 +397,15 @@ Cleanup
 kubectl delete -f private_pod.yml
 ```
 
+### Service
+
+Create service which point to your ReplicaSets, Deployments and DaemonSets.
+
+We will talk about services later.
+
+```
+kubectl apply -f service.yml
+```
 
 ### Create Replica Set
 
@@ -412,6 +421,7 @@ kubectl get rs
 kubectl get rs,po
 ```
 
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
 
 ### Update Replica Set
 
@@ -448,6 +458,7 @@ kubectl get deploy
 kubectl get po,rs,deploy
 ```
 
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
 
 ### Update Deployment
 
@@ -603,6 +614,7 @@ kubectl get ds
 kubectl get ds,po
 ```
 
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
 
 ### Update DaemonSet
 
@@ -642,6 +654,7 @@ kubectl get sts
 kubectl get sts,po
 ```
 
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/>
 
 ### Update StatefulSet
 

@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: hello-world-rs
+        pods: all
     spec:
       containers:
       - name: hello-world
