@@ -1027,7 +1027,7 @@ kubectl apply -f 14_admin.yml
 Export actual config
 
 ```
-kubectl config view --raw > config
+kubectl config view --raw --minify > config
 ```
 
 Get token:
