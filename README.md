@@ -501,6 +501,85 @@ kubectl delete -f 04_01_deployment.yml
 kubectl delete deploy/hello-world
 ```
 
+### Create DaemonSet
+
+```
+kubectl apply -f daemonset.yml
+```
+
+### List DaemonSets
+
+```
+kubectl get ds
+kubectl get ds,po
+```
+
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
+
+### Update DaemonSet
+
+See the difference
+
+```
+vimdiff daemonset.yml daemonset2.yml
+```
+
+Upgrade daemonset set
+
+```
+kubectl apply -f daemonset2.yml
+```
+
+
+### Delete DaemonSet
+
+```
+kubectl delete -f daemonset.yml
+
+# or
+kubectl delete ds/hello-world
+```
+
+
+### Create StatefulSet
+
+```
+kubectl apply -f statefulset.yml
+```
+
+### List StatefulSets
+
+```
+kubectl get sts
+kubectl get sts,po
+```
+
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/>
+
+### Update StatefulSet
+
+See the difference
+
+```
+vimdiff statefulset.yml statefulset2.yml
+```
+
+Upgrade statefull set
+
+```
+kubectl apply -f statefulset2.yml
+```
+
+
+### Delete StatefulSet
+
+```
+kubectl delete -f statefulset.yml
+
+# or
+kubectl delete sts/hello-world
+```
+
 ### Create Job
 
 - <https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/>
@@ -599,85 +678,6 @@ kubectl delete svc/hello-world-clusterip
 
 # and deployment
 kubectl delete deploy/hello-world
-```
-
-### Create DaemonSet
-
-```
-kubectl apply -f daemonset.yml
-```
-
-### List DaemonSets
-
-```
-kubectl get ds
-kubectl get ds,po
-```
-
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
-
-### Update DaemonSet
-
-See the difference
-
-```
-vimdiff daemonset.yml daemonset2.yml
-```
-
-Upgrade daemonset set
-
-```
-kubectl apply -f daemonset2.yml
-```
-
-
-### Delete DaemonSet
-
-```
-kubectl delete -f daemonset.yml
-
-# or
-kubectl delete ds/hello-world
-```
-
-
-### Create StatefulSet
-
-```
-kubectl apply -f statefulset.yml
-```
-
-### List StatefulSets
-
-```
-kubectl get sts
-kubectl get sts,po
-```
-
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/>
-
-### Update StatefulSet
-
-See the difference
-
-```
-vimdiff statefulset.yml statefulset2.yml
-```
-
-Upgrade statefull set
-
-```
-kubectl apply -f statefulset2.yml
-```
-
-
-### Delete StatefulSet
-
-```
-kubectl delete -f statefulset.yml
-
-# or
-kubectl delete sts/hello-world
 ```
 
 ### Deploy Application (Multiple Deployments and Services)
