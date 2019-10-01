@@ -800,7 +800,7 @@ See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubern
 Install Traefik Ingress Controller:
 
 ```
-kubect apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
+kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
 ```
 
 ### Create Ingress
