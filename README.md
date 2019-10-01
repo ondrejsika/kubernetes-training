@@ -433,7 +433,7 @@ kubectl get rs
 kubectl get rs,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 
 ### Update Replica Set
 
@@ -470,7 +470,7 @@ kubectl get deploy
 kubectl get po,rs,deploy
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 
 ### Update Deployment
 
@@ -526,7 +526,7 @@ kubectl get ds
 kubectl get ds,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/all/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 
 ### Update DaemonSet
 

@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: hello-world-ds
-        pods: all
+        svc: example
     spec:
       containers:
       - name: hello-world
