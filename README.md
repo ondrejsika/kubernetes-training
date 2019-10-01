@@ -264,6 +264,16 @@ Validate cluster health after setup
 kubectl get cs
 ```
 
+### Explain Kubernetes Resources
+
+```
+kubectl explain node
+kubectl explain node.spec
+
+kubectl explain pod
+kubectl explain pod.spec
+```
+
 ### Get Nodes
 
 ```
