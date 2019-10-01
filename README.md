@@ -213,7 +213,7 @@ I recommend you using Minikube (or Kubernetes support in Docker Desktop), but if
 Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
 
 ```
-wget https://sika.link/kubeconfig
+wget https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kubeconfig
 ```
 
 Set `KUBECONFIG` environment variable to this file.
