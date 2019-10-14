@@ -1511,6 +1511,7 @@ helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.x
 
 ## Links
 
+- Awesome Operators - <https://github.com/operator-framework/awesome-operators>
 - Logging - https://kubernetes.io/docs/concepts/cluster-administration/logging/
 - Autoscaling based on CPU/Memory - https://blog.powerupcloud.com/autoscaling-based-on-cpu-memory-in-kubernetes-part-ii-fe2e495bddd4
 - Kubernetes Cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
