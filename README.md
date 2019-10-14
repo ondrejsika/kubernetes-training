@@ -1550,3 +1550,9 @@ spec:
   - name: simple-hello-world
     image: ondrejsika/go-hello-world:2
 ```
+
+### Show Node Taints
+
+```
+kubectl get nodes -o json | jq .items[].spec.taints
+```
