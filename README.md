@@ -1508,6 +1508,11 @@ Install package
 helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.xip.io
 ```
 
+## What's Next? Kubernetes Advance
+
+- Logging (EFK / ELK)
+- Monitoring & Metrics (Prometheus)
+- Operators
 
 ## Links
 
