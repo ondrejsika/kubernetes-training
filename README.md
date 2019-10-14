@@ -1529,3 +1529,24 @@ helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.x
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
 _Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn. Thanks._
+
+
+## FAQ
+
+### Time Between SIGTERM and SIGKILL (Termination Grace Period)
+
+You can set termination grace period on pod using `terminationGracePeriodSeconds`, default is `10`.
+
+See example usage:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+  - name: simple-hello-world
+    image: ondrejsika/go-hello-world:2
+```
