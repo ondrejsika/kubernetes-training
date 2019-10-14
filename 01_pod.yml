@@ -4,6 +4,7 @@ metadata:
   name: simple-hello-world
   labels:
     app: simple-hello-world
+    svc: example
 spec:
   containers:
   - name: simple-hello-world

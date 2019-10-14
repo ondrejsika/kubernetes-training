@@ -4,6 +4,7 @@ metadata:
   name: multi-container-pod
   labels:
     app: multi-container-pod
+    svc: example
 spec:
   volumes:
   - name: html
