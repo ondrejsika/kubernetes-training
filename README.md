@@ -456,6 +456,12 @@ kubectl delete rs/hello-world-rs
 kubectl apply -f 04_01_deployment.yml
 ```
 
+You can wait until Deployment (DaemonSet, StatefulSet) will be rolled out
+
+```
+kubectl rollout status deployment hello-world
+```
+
 ### List Deployments
 
 ```
@@ -511,6 +517,7 @@ kubectl delete deploy/hello-world
 
 ```
 kubectl apply -f daemonset.yml
+kubectl rollout status ds hello-world
 ```
 
 ### List DaemonSets
@@ -551,6 +558,7 @@ kubectl delete ds/hello-world
 
 ```
 kubectl apply -f statefulset.yml
+kubectl rollout status sts hello-world
 ```
 
 ### List StatefulSets
