@@ -1524,7 +1524,7 @@ helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.x
 ### Ondrej Sika
 
 - email:	<ondrej@sika.io>
-- web:	<https://sika.io>
+- web:	[sika.io](https://which.sika.io)
 - twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
