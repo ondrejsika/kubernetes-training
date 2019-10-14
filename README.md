@@ -1,4 +1,4 @@
-[Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
+[Ondrej Sika (sika.io)](https://which.sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
 
 ![](images/kubernetes_github.svg)
 
@@ -11,14 +11,8 @@ Source of my Kubernetes Training.
 
 ## About Course
 
-### Kubernetes training in Czech Republic
-
-- [ondrej-sika.cz/skoleni/kubernetes](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-kte)
-- [skoleni-kubernetes.cz](https://skoleni-kubernetes.cz/?_s=gh-kte)
-
-### Kubernetes training in Europe
-
-- [ondrej-sika.com/training/kubernetes](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
+- [Kubernetes training in Czech Republic](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-kte)
+- [Kubernetes training in Europe](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
 
 ### Related Courses
 
