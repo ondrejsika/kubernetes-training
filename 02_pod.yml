@@ -37,8 +37,8 @@ spec:
         done
     resources:
       requests:
-        memory: 10Mi
+        memory: 15Mi
         cpu: 10m
       limits:
-        memory: 10Mi
+        memory: 15Mi
         cpu: 10m
