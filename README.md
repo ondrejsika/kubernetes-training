@@ -1128,6 +1128,8 @@ kubectl delete -f probes_liveness.yml -f probes_readiness.yml
 
 We have to have metrics server enabled
 
+If you requests 200 milli-cores to pod, 50% means that Kubernetes autoscaler keeps it on 100 mili-cores. More info here: [Create Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#create-horizontal-pod-autoscaler) and [Algorithm Details](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details).
+
 ```
 minikube addons enable metrics-server
 ```
