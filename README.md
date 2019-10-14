@@ -852,7 +852,7 @@ Docs: <https://kubernetes.io/docs/concepts/storage/volumes/#emptydir>
 #### Stored on disk
 
 ```
-kubectl apply -f emptydir.yaml
+kubectl apply -f emptydir.yml
 ```
 
 Empty dir volemes are stored in `/var/lib/kubelet/pods/<pod uid>/volumes/kubernetes.io~empty-dir`
