@@ -308,6 +308,12 @@ See:
 kubectl exec -ti multi-container-pod bash
 ```
 
+Connect specific container
+
+```
+kubectl exec -ti multi-container-pod bash -c 2nd
+```
+
 ### Pod Logs
 
 ```
