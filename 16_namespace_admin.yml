@@ -10,7 +10,7 @@ metadata:
   namespace: devel
 ---
 kind: Role
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: devel-user-full-access
   namespace: devel
@@ -20,7 +20,7 @@ rules:
   verbs: ["*"]
 ---
 kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: devel-user-role-binding
   namespace: devel
