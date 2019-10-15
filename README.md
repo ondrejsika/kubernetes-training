@@ -1046,7 +1046,7 @@ kubectl config view --raw --minify > config
 Get token:
 
 ```
-kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+kubectl -n kube-system describe secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}")
 ```
 
 Set token to user:
