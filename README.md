@@ -495,7 +495,7 @@ kubectl rollout status deployment hello-world
 ```
 kubectl get deployments
 kubectl get deploy
-kubectl get po,rs,deploy
+kubectl get deploy,rs,po
 ```
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
