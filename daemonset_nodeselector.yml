@@ -16,6 +16,8 @@ spec:
         app: hello-world-ds
         svc: example
     spec:
+      nodeSelector:
+        node: primary
       containers:
       - name: hello-world
         image: ondrejsika/go-hello-world:1
