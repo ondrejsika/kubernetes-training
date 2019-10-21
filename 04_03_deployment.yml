@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: hello-world
   labels:
-        app: hello-world-deploy
+    app: hello-world-deploy
   annotations:
-    kubernetes.io/change-cause: ver1
+    kubernetes.io/change-cause: nginx
 spec:
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: ondrejsika/go-hello-world:1
+        image: nginx
         ports:
         - containerPort: 80
         resources:
