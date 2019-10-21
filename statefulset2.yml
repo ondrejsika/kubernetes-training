@@ -14,6 +14,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: hello-world
+  labels:
+        app: hello-world-sts
   annotations:
     kubernetes.io/change-cause: ver2
 spec:
