@@ -425,6 +425,22 @@ We will talk about services later.
 kubectl apply -f service.yml
 ```
 
+See proxy to service: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+
+Try apply pods:
+
+```
+kubectl apply -f 01_pod.yml -f 02_pod.yml -f private_pod.yml
+```
+
+Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+
+Delete pods
+
+```
+kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml
+```
+
 ### Create Replica Set
 
 ```
