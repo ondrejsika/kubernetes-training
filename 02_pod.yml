@@ -10,7 +10,7 @@ spec:
   - name: html
     emptyDir: {}
   containers:
-  - name: 1st
+  - name: nginx
     image: nginx
     ports:
     - containerPort: 80
@@ -24,7 +24,7 @@ spec:
       limits:
         memory: 50Mi
         cpu: 30m
-  - name: 2nd
+  - name: date
     image: debian
     volumeMounts:
     - name: html

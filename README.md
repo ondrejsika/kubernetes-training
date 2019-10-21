@@ -311,7 +311,7 @@ kubectl exec -ti multi-container-pod bash
 Connect specific container
 
 ```
-kubectl exec -ti multi-container-pod bash -c 2nd
+kubectl exec -ti multi-container-pod bash -c date
 ```
 
 ### Pod Logs
@@ -326,6 +326,12 @@ or following logs
 kubectl logs simple-hello-world -f
 ```
 
+Logs from multi container pod
+
+```
+kubectl logs multi-container-pod nginx
+kubectl logs multi-container-pod date
+```
 
 ### Assigning Pods to Nodes
 
