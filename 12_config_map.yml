@@ -4,6 +4,6 @@ metadata:
   name: my-config
 data:
   config: hello
-  index.html: |
+  hello.html: |
     <h1>Hello from ConfigMap</h1>
     <p>This is stored in ConfigMap</p>

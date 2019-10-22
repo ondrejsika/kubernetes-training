@@ -963,7 +963,7 @@ kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 
 ```
 kubectl create secret generic my-secret \
-    --from-file=key=key.txt \
+    --from-file=password=password.txt \
     --from-literal=token=secrettoken
 ```
 
