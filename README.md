@@ -1077,6 +1077,12 @@ Set token to user:
 kubectl --kubeconfig=config config set-credentials admin --token=<token>
 ```
 
+Or get token and create user in config on oneliner:
+
+```
+kubectl --kubeconfig=config config set-credentials admin --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+```
+
 Set new user to context:
 
 ```
