@@ -1207,6 +1207,18 @@ Api v1 (same as `kubectl autoscale`)
 kubectl apply -f hpa_v1.yml
 ```
 
+Run AB:
+
+```
+ab -kc 20 -t 60 $(minikube service hpav1-web --url)/
+```
+
+See autoscaling at work
+
+```
+watch -n 0.3 -d kubectl get -f hpa_v1.yml
+```
+
 Api v2
 
 ```
