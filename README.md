@@ -1104,7 +1104,7 @@ kubectl --kubeconfig=config get nodes,svc
 ### Join multiple kubeconfigs
 
 ```
-KUBECONFIG=.kube/config:kuberners-config-new.yml kubectl config view --raw > .kube/config
+KUBECONFIG=.kube/config:kuberners-config-new.yml kubectl config view --raw > /tmp/kubeconfig && mv /tmp/kubeconfig .kube/config
 ```
 
 
