@@ -855,8 +855,8 @@ kubectl apply -f 10_ingress.yml
 
 See:
 
-- http://nginx.192.168.99.100.xip.io
-- http://apache.192.168.99.100.xip.io
+- http://nginx.192.168.99.100.nip.io
+- http://apache.192.168.99.100.nip.io
 
 Cleanup
 
@@ -1423,7 +1423,7 @@ helm inspect ondrejsika/one-image
 Install with values in args
 
 ```
-helm install ondrejsika/one-image --name hello-world --set host=hello-world.192.168.99.100.xip.io
+helm install ondrejsika/one-image --name hello-world --set host=hello-world.192.168.99.100.nip.io
 ```
 
 Install with values file
@@ -1436,7 +1436,7 @@ helm install ondrejsika/one-image --name apache --values one-image-apache-values
 Install with values file and values args
 
 ```
-helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.xip.io
+helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.nip.io
 ```
 
 
@@ -1510,13 +1510,13 @@ cp ../helm-counter.yaml templates/counter.yml
 
 ```
 helm template .
-helm template . --name hello --set host=hello.192.168.99.100.xip.io
+helm template . --name hello --set host=hello.192.168.99.100.nip.io
 ```
 
 #### Install
 
 ```
-helm install . --name hello --set host=hello.192.168.99.100.xip.io
+helm install . --name hello --set host=hello.192.168.99.100.nip.io
 ```
 
 #### Build Package
@@ -1557,7 +1557,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.xip.io
+helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.nip.io
 ```
 
 ## What's Next? Kubernetes Advance

@@ -133,7 +133,7 @@ metadata:
   name: wordpress
 spec:
   rules:
-  - host: wordpress.192.168.99.100.xip.io
+  - host: wordpress.192.168.99.100.nip.io
     http:
       paths:
       - path: /
