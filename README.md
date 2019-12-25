@@ -1,4 +1,4 @@
-[Ondrej Sika (sika.io)](https://which.sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
+[Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
 
 ![](images/kubernetes_github.svg)
 
@@ -1582,7 +1582,7 @@ helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.n
 ### Ondrej Sika
 
 - email:	<ondrej@sika.io>
-- web:	[sika.io](https://which.sika.io)
+- web:	[sika.io](https://sika.io)
 - twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
