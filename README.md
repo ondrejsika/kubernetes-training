@@ -24,6 +24,13 @@ Source of my Kubernetes Training.
 <https://sika.link/k8s-slides>
 
 
+## 12 Factor Apps
+
+[12factor.net](https://12factor.net)
+
+Set of 12 rules how to write modern applications.
+
+
 ### Any Questions?
 
 Write me mail to <ondrej@sika.io>
