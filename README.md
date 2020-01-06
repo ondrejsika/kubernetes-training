@@ -1370,6 +1370,12 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 Source of all stable charts are in this repository: <https://github.com/helm/charts>
 
+If you want update charts info, call update:
+
+```
+helm repo update
+```
+
 
 ### Search Package
 
