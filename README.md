@@ -1360,6 +1360,9 @@ kubectl delete -f strategy_ramped.yml
 
 ## Helm
 
+Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://ondrej-sika.cz/blog/helm3/>
+
+
 ## Init Helm & Tiller
 
 ```
