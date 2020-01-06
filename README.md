@@ -813,6 +813,19 @@ kubectl get namespaces
 kubectl get ns
 ```
 
+### Get Resources from All Namespaces
+
+Try
+
+```
+kubect get pods
+
+# and
+
+kubectl get pods --all-namespaces
+```
+
+
 ### Deploy to Namespace
 
 ```
