@@ -773,6 +773,33 @@ minikube service counter
 kubectl delete -f 07_counter.yml
 ```
 
+## InitContainers
+
+More about init containers here: <https://kubernetes.io/docs/concepts/workloads/pods/init-containers/>
+
+See example [init_containers.yml](init_containers.yml)
+
+See also diff with counter example
+
+```
+vimdiff 07_counter.yml init_containers.yml
+```
+
+Example:
+
+```
+kubectl apply -f init_containers.yml
+
+kubectl get -f init_containers.yml
+
+minikube service counter
+
+kubectl delete -f init_containers.yml
+```
+
+See example of [ondrejsika/wait-for-it](https://github.com/ondrejsika/docker-training/tree/master/examples/wait-for-it)
+
+
 ### Create Namespace
 
 ```
