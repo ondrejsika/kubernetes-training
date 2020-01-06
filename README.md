@@ -1337,6 +1337,11 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 ```
 
+### Default Helm Repository (Stable Charts)
+
+All stable (default) charts are in this repository: <https://github.com/helm/charts>
+
+
 ### Search Package
 
 ```
