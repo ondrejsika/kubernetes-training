@@ -59,16 +59,34 @@ rm /usr/local/bin/kubectl
 brew link --overwrite kubernetes-cli
 ```
 
+Or upgrade
+
+```
+brew upgrade kubernetes-cli
+```
+
 #### Helm on Mac
 
 ```
 brew install kubernetes-helm
 ```
 
+Or upgrade
+
+```
+brew upgrade kubernetes-helm
+```
+
 #### Minikube on Mac
 
 ```
-brew cask install minikube
+brew install minikube
+```
+
+Or upgrade
+
+```
+brew upgrade minikube
 ```
 
 If you dont have VirtualBox, you can install it using Brew.
