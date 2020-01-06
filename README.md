@@ -327,6 +327,15 @@ See:
 - http://127.0.0.1:8001/api/v1/namespaces/default/pods/multi-container-pod/proxy/
 
 
+### Describe Pod
+
+See informations & events in pretty output
+
+```
+kubectl describe -f 01_pod.yml
+kubectl describe -f 02_pod.yml
+```
+
 ### Exec (Connect) Pod
 
 ```
