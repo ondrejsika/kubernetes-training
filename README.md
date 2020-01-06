@@ -422,13 +422,7 @@ kubectl apply -f private_pod.yml
 
 See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/private-pod/proxy/>
 
-See config file
-
-```
-echo $(kubectl get secret private-registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode)
-```
-
-And see credentials (of example `registry.sikahq.com`)
+See credentials (of example `registry.sikahq.com`)
 
 ```
 echo $(kubectl get secret private-registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode | jq '.auths["registry.sikahq.com"].auth' -r | base64 --decode)

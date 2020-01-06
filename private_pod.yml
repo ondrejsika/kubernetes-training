@@ -23,5 +23,5 @@ kind: Secret
 type: kubernetes.io/dockerconfigjson
 metadata:
   name: private-registry-credentials
-data:
-  .dockerconfigjson: eyJhdXRocyI6IHsicmVnaXN0cnkuc2lrYWhxLmNvbSI6IHsiYXV0aCI6ICJjSE5sZFdSdkxYQnlhWFpoZEdVdGRYTmxjanBoYzJSbVlYTmtaZz09In19fQ==
+stringData:
+  .dockerconfigjson: '{"auths": {"registry.sikahq.com": {"auth": "cHNldWRvLXByaXZhdGUtdXNlcjphc2RmYXNkZg=="}}}'
