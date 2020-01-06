@@ -1362,57 +1362,55 @@ kubectl delete -f strategy_ramped.yml
 
 Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://ondrej-sika.cz/blog/helm3/>
 
-
-## Init Helm & Tiller
-
-```
-helm init
-```
-
-If you have Tiller installed on your cluster, you can init helm client only.
+### Initialize Stable Charts Repository
 
 ```
-helm init --client-only
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 ```
 
-### Create Service Account for Tiller
-
-```
-kubectl create serviceaccount --namespace kube-system tiller
-kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
-kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
-```
-
-### Default Helm Repository (Stable Charts)
-
-All stable (default) charts are in this repository: <https://github.com/helm/charts>
+Source of all stable charts are in this repository: <https://github.com/helm/charts>
 
 
 ### Search Package
 
+Search Helm Hub ([hub.helm.sh](https://hub.helm.sh/))
+
 ```
-helm search db
-helm search redis
+helm search hub db
+```
+
+Search local repositories
+
+```
+helm search repo redis
 ```
 
 ### Inspect Package
 
 ```
-helm inspect stable/redis
+helm show chart stable/redis
+helm show values stable/redis
+helm show readme stable/redis
+
+helm show all stable/redis
 ```
 
 ### Install Package
 
 ```
-helm install stable/redis
-helm install stable/redis --name redis
+helm install <deployment_name> <chart>
+```
+
+Example:
+
+```
+helm install redis stable/redis
 ```
 
 Or dry run (see the Kubernetes config)
 
 ```
-helm install stable/redis --dry-run --debug
-helm install stable/redis --dry-run --debug --name redis
+helm install redis stable/redis --dry-run --debug
 ```
 
 ### Upgrade Package
@@ -1438,36 +1436,22 @@ helm ls
 helm ls -q
 ```
 
-List all (not jutst DEPLOYED)
-
-```
-helm ls --all
-helm ls -a -q
-```
-
 ### Status of Package
 
 ```
 helm status redis
 ```
 
-### Inspect Values
-
-```
-helm inspect values stable/redis
-```
-
 ### Delete Package
 
 ```
-helm del redis
-helm del redis --purge
+helm uninstall redis
 ```
 
 Delete all & purge
 
 ```
-helm del --purge $(helm ls -a -q)
+helm uninstall $(helm ls -a -q)
 ```
 
 ### Helm Repositiories
@@ -1483,7 +1467,7 @@ helm repo list
 ```
 helm repo add ondrejsika https://helm.oxs.cz
 
-helm search ondrejsika
+helm search repo ondrejsika
 ```
 
 #### Install ondrejsika/one-image
@@ -1493,26 +1477,26 @@ Sources of Chart `ondrejsika/one-image` are <https://github.com/ondrejsika/one-i
 Inspect Package
 
 ```
-helm inspect ondrejsika/one-image
+helm show ondrejsika/one-image
 ```
 
 Install with values in args
 
 ```
-helm install ondrejsika/one-image --name hello-world --set host=hello-world.192.168.99.100.nip.io
+helm install hello-world ondrejsika/one-image --set host=hello-world.192.168.99.100.nip.io
 ```
 
 Install with values file
 
 ```
-helm install ondrejsika/one-image --name nginx --values one-image-nginx-values.yml
-helm install ondrejsika/one-image --name apache --values one-image-apache-values.yml
+helm install nginx ondrejsika/one-image --values one-image-nginx-values.yml
+helm install apache ondrejsika/one-image --values one-image-apache-values.yml
 ```
 
 Install with values file and values args
 
 ```
-helm install ondrejsika/one-image --name nginx2 --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.nip.io
+helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.nip.io
 ```
 
 
@@ -1585,14 +1569,14 @@ cp ../helm-counter.yaml templates/counter.yml
 #### See Template
 
 ```
-helm template .
-helm template . --name hello --set host=hello.192.168.99.100.nip.io
+helm template hello .
+helm template hello . --set host=hello.192.168.99.100.nip.io
 ```
 
 #### Install
 
 ```
-helm install . --name hello --set host=hello.192.168.99.100.nip.io
+helm install hello . --set host=hello.192.168.99.100.nip.io
 ```
 
 #### Build Package
@@ -1621,7 +1605,7 @@ scp repo/* root@helm.sikademo.com:/helm/
 Delete previous deployment
 
 ```
-helm del --purge hello
+helm uninstall hello
 ```
 
 Add repo
@@ -1633,7 +1617,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install sikademo/hello-world --name hello --set host=hello.192.168.99.100.nip.io
+helm install hello sikademo/hello-world --set host=hello.192.168.99.100.nip.io
 ```
 
 ## What's Next? Kubernetes Advance
