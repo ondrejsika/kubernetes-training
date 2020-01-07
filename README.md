@@ -827,7 +827,7 @@ kubectl get ns
 Try
 
 ```
-kubect get pods
+kubectl get pods
 
 # and
 
