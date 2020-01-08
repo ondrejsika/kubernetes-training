@@ -1038,14 +1038,14 @@ kubectl apply -f 11_secret.yml
 Base64 encoded
 
 ```
-echo $(kubectl get secret my-secret -o jsonpath="{.data.key}")
+echo $(kubectl get secret my-secret -o jsonpath="{.data.password}")
 echo $(kubectl get secret my-secret -o jsonpath="{.data.token}")
 ```
 
 Decoded
 
 ```
-echo $(kubectl get secret my-secret -o jsonpath="{.data.key}" | base64 --decode)
+echo $(kubectl get secret my-secret -o jsonpath="{.data.password}" | base64 --decode)
 echo $(kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode)
 ```
 
