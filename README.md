@@ -1314,7 +1314,8 @@ kubectl delete -f hpa.yml
 and clean up
 
 ```
-kubectl delete hpa/hello-world -f 04_01_deployment.yml
+kubectl delete hpa/hello-world
+kubectl delete -f 04_01_deployment.yml
 ```
 
 ## Deployment Strategies
