@@ -1616,7 +1616,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install hello sikademo/hello-world --set host=hello.192.168.99.100.nip.io
+helm install hello sikademo/counter --set host=hello.192.168.99.100.nip.io
 ```
 
 ## What's Next? Kubernetes Advance
