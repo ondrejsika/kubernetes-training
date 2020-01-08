@@ -1409,7 +1409,7 @@ helm install redis stable/redis
 Or dry run (see the Kubernetes config)
 
 ```
-helm install redis stable/redis --dry-run --debug
+helm install redis stable/redis --dry-run
 ```
 
 ### Upgrade Package
