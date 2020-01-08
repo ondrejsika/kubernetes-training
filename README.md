@@ -1582,7 +1582,7 @@ helm install hello . --set host=hello.192.168.99.100.nip.io
 
 ```
 cd ..
-helm package hello-world
+helm package counter
 ```
 
 ### Create own repository
