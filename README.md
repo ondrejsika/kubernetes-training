@@ -1589,7 +1589,7 @@ helm package counter
 
 ```
 mkdir repo
-mv hello-world-*.tgz repo/
+mv counter-*.tgz repo/
 helm repo index repo/
 ```
 
