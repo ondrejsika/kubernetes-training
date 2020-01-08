@@ -1027,15 +1027,7 @@ kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 
 ## ConfigMaps & Secrets
 
-### Create Secrets
-
-```
-kubectl create secret generic my-secret \
-    --from-file=password=password.txt \
-    --from-literal=token=secrettoken
-```
-
-### Create secret form config file
+### Create secret
 
 ```
 kubectl apply -f 11_secret.yml
