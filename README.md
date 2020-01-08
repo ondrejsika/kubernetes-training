@@ -1476,7 +1476,7 @@ Sources of Chart `ondrejsika/one-image` are <https://github.com/ondrejsika/one-i
 Inspect Package
 
 ```
-helm show ondrejsika/one-image
+helm show all ondrejsika/one-image
 ```
 
 Install with values in args
