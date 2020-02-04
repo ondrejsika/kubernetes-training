@@ -20,6 +20,8 @@ spec:
             path: /health
             port: 80
           initialDelaySeconds: 5
+          failureThreshold: 2
+          periodSeconds: 1
         resources:
           requests:
             memory: 10Mi
