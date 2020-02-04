@@ -1351,6 +1351,32 @@ Clean up
 kubectl delete -f strategy_ramped.yml
 ```
 
+### Recreate
+
+Create deployment & service
+
+```
+kubectl apply -f strategy_recreate.yml
+```
+
+See update
+
+```
+vimdiff strategy_recreate.yml strategy_recreate_2.yml
+```
+
+Update without downtime
+
+```
+kubectl apply -f strategy_recreate_2.yml
+```
+
+Clean up
+
+```
+kubectl delete -f strategy_recreate.yml
+```
+
 ## Helm
 
 Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://ondrej-sika.cz/blog/helm3/>
