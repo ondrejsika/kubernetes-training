@@ -1,0 +1,7 @@
+version: '1'
+
+tools:
+  kubeval:
+    files:
+      - "**/*.yml"
+      - "!**/*-values.yml"
