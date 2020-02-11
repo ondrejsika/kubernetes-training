@@ -1703,16 +1703,20 @@ helm install hello sikademo/counter --set host=hello.192.168.99.100.nip.io
 - Sticky Sessions - https://medium.com/@zhimin.wen/sticky-sessions-in-kubernetes-56eb0e8f257d
 - How To Set Up an Elasticsearch, Fluentd and Kibana (EFK) Logging Stack on Kubernetes - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes
 
-## Thank you & Questions
+## Thank you! & Questions?
+
+That's it. Do you have any questions? __Let's go for a beer!__
 
 ### Ondrej Sika
 
-- email:	<ondrej@sika.io>
-- web:	[sika.io](https://sika.io)
-- twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
+- email: <ondrej@sika.io>
+- web: <https://sika.io>
+- twitter: [@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
-_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn. Thanks._
+_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn (add me [/in/ondrejsika](https://www.linkedin.com/in/ondrejsika/) and I'll send you request for recommendation). __Thanks__._
+
+Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
 
 
 ## FAQ
