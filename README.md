@@ -1004,7 +1004,7 @@ tree /var/lib/kubelet/pods/$(kubectl get pods/emptydir -o jsonpath='{.metadata.u
 #### Stored in memory (ramdisk)
 
 ```
-kubectl apply -f emptydir_memory.yaml
+kubectl apply -f emptydir_memory.yml
 ```
 
 If you use in memory volumes, files stored there counts into container's memory limit.
