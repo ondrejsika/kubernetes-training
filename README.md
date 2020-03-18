@@ -1287,11 +1287,6 @@ If you requests 200 milli-cores to pod, 50% means that Kubernetes autoscaler kee
 minikube addons enable metrics-server
 ```
 
-optionaly, you can enabled __heapster__ for Grafana charts
-
-```
-minikube addons enable heapster
-```
 
 ### Create HPA (command)
 
