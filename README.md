@@ -843,6 +843,12 @@ kubectl delete -f init_containers.yml
 
 See example of [ondrejsika/wait-for-it](https://github.com/ondrejsika/docker-training/tree/master/examples/wait-for-it)
 
+#### Setup some env example using Init Containers
+
+```
+kubect apply -f init_cointainers_setup.yml
+```
+
 
 ### Create Namespace
 
