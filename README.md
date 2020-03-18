@@ -1012,7 +1012,7 @@ If you use in memory volumes, files stored there counts into container's memory 
 
 ### Claim default PV
 
-From default __StorageClass__ (`kubectl get storageclass`)
+From default __StorageClass__ (`kubectl get storageclass` or `kubectl get sc`)
 
 ```
 kubectl apply -f pvc_default.yml
