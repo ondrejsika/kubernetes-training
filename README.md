@@ -878,6 +878,7 @@ kubectl get pods
 
 # and
 
+kubectl get pods -A
 kubectl get pods --all-namespaces
 ```
 
