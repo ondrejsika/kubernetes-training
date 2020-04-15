@@ -4,6 +4,8 @@ metadata:
   name: cronjob
 spec:
   schedule: "*/1 * * * *"
+  failedJobsHistoryLimit: 10
+  successfulJobsHistoryLimit: 10
   jobTemplate:
     spec:
       template:
