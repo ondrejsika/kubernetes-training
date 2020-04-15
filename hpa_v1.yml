@@ -42,10 +42,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: hpav1
 spec:
-  maxReplicas: 5
+  maxReplicas: 10
   minReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: hpav1-web
-  targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 10
