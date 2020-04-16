@@ -786,6 +786,18 @@ kubectl apply -f 06_nodeport_service.yml
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-nodeport/proxy/
 
 
+You can also open NodePort directly using:
+
+```
+minikube service hello-world-nodeport
+```
+
+or see url:
+
+```
+minikube service hello-world-nodeport --url
+```
+
 ### Create LoadBalancer Service (Public Cloud only)
 
 ```
