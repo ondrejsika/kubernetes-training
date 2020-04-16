@@ -22,6 +22,8 @@ spec:
           initialDelaySeconds: 5
           failureThreshold: 2
           periodSeconds: 1
+        ports:
+          - containerPort: 80
         resources:
           requests:
             memory: 10Mi
