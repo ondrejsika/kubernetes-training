@@ -368,6 +368,15 @@ See:
 - http://127.0.0.1:8001/api/v1/namespaces/default/pods/multi-container-pod/proxy/
 
 
+or using port forward:
+
+```
+kubectl port-forward pod/simple-hello-world 8000:80
+```
+
+See: <http://127.0.0.1:8000>
+
+
 ### Describe Pod
 
 See informations & events in pretty output
@@ -526,6 +535,15 @@ kubectl get rs,po
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 
+or using port forward:
+
+```
+kubectl port-forward rs/hello-world-rs 8000:80
+```
+
+See: <http://127.0.0.1:8000>
+
+
 ### Update Replica Set
 
 See the difference
@@ -568,6 +586,15 @@ kubectl get deploy,rs,po
 ```
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+
+or using port forward:
+
+```
+kubectl port-forward deploy/hello-world 8000:80
+```
+
+See: <http://127.0.0.1:8000>
+
 
 ### Update Deployment
 
