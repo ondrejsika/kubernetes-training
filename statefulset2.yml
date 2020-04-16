@@ -28,6 +28,7 @@ spec:
     metadata:
       labels:
         app: hello-world-sts
+        svc: example
     spec:
       containers:
       - name: hello-world
