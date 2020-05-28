@@ -11,8 +11,8 @@ spec:
       name: pi
     spec:
       containers:
-      - name: pi
-        image: perl
-        command: ["perl"]
-        args: ["-Mbignum=bpi", "-wle", "print bpi(20)"]
+        - name: pi
+          image: perl
+          command: ["perl"]
+          args: ["-Mbignum=bpi", "-wle", "print bpi(20)"]
       restartPolicy: Never

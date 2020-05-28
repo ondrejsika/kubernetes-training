@@ -17,17 +17,17 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            cpu: 20m
-            memory: 30Mi
-          limits:
-            cpu: 50m
-            memory: 50Mi
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
 ---
 apiVersion: v1
 kind: Service
@@ -37,8 +37,8 @@ metadata:
     project: webservers
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   selector:
     project: webservers
     app: nginx
@@ -62,17 +62,17 @@ spec:
         app: apache
     spec:
       containers:
-      - name: apache
-        image: httpd
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            cpu: 20m
-            memory: 30Mi
-          limits:
-            cpu: 50m
-            memory: 50Mi
+        - name: apache
+          image: httpd
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
 ---
 apiVersion: v1
 kind: Service
@@ -82,9 +82,10 @@ metadata:
     project: webservers
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   selector:
     project: webservers
     app: apache
 ---
+

@@ -6,17 +6,17 @@ metadata:
     svc: example
 spec:
   containers:
-  - name: hello
-    image: registry.sikahq.com/pseudo-private/hello-world:latest
-    resources:
-      requests:
-        memory: 10Mi
-        cpu: 10m
-      limits:
-        memory: 20Mi
-        cpu: 20m
+    - name: hello
+      image: registry.sikahq.com/pseudo-private/hello-world:latest
+      resources:
+        requests:
+          memory: 10Mi
+          cpu: 10m
+        limits:
+          memory: 20Mi
+          cpu: 20m
   imagePullSecrets:
-  - name: private-registry-credentials
+    - name: private-registry-credentials
 ---
 apiVersion: v1
 kind: Secret

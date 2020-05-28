@@ -12,13 +12,13 @@ metadata:
   name: envfrom
 spec:
   containers:
-  - name: debian
-    image: debian
-    command:
-      - /bin/sh
-      - -c
-      - env | grep MY_
-    envFrom:
-    - configMapRef:
-        name: envfrom
+    - name: debian
+      image: debian
+      command:
+        - /bin/sh
+        - -c
+        - env | grep MY_
+      envFrom:
+        - configMapRef:
+            name: envfrom
   restartPolicy: Never

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Release.Name }}-redis
+  name: "{{ .Release.Name }}-redis"
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
@@ -12,94 +12,93 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ .Release.Name }}-redis
+  name: "{{ .Release.Name }}-redis"
 spec:
-  serviceName: {{ .Release.Name }}-redis
+  serviceName: "{{ .Release.Name }}-redis"
   selector:
     matchLabels:
-      release: {{ .Release.Name }}-redis
+      release: "{{ .Release.Name }}-redis"
   replicas: 1
   template:
     metadata:
       labels:
-        release: {{ .Release.Name }}-redis
+        release: "{{ .Release.Name }}-redis"
     spec:
       containers:
-      - name: redis
-        image: redis
-        resources:
-          requests:
-            cpu: 30m
-            memory: 50Mi
-        ports:
-        - containerPort: 6379
-        volumeMounts:
-        - mountPath: /data
-          name: data
+        - name: redis
+          image: redis
+          resources:
+            requests:
+              cpu: 30m
+              memory: 50Mi
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - mountPath: /data
+              name: data
       volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-redis
+        - name: data
+          persistentVolumeClaim:
+            claimName: "{{ .Release.Name }}-redis"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-redis
+  name: "{{ .Release.Name }}-redis"
 spec:
   ports:
-  - port: 6379
+    - port: 6379
   selector:
-    release: {{ .Release.Name }}-redis
+    release: "{{ .Release.Name }}-redis"
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-counter
+  name: "{{ .Release.Name }}-counter"
 spec:
   selector:
     matchLabels:
-      release: {{ .Release.Name }}-counter
+      release: "{{ .Release.Name }}-counter"
   replicas: 2
   template:
     metadata:
       labels:
-        release: {{ .Release.Name }}-counter
+        release: "{{ .Release.Name }}-counter"
     spec:
       containers:
-      - name: counter
-        image: {{ .Values.image }}
-        resources:
-          requests:
-            cpu: 20m
-            memory: 10Mi
-        env:
-        - name: REDIS
-          value: {{ .Release.Name }}-redis
-        ports:
-        - containerPort: 80
+        - name: counter
+          image: "{{ .Values.image }}"
+          resources:
+            requests:
+              cpu: 20m
+              memory: 10Mi
+          env:
+            - name: REDIS
+              value: "{{ .Release.Name }}-redis"
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-counter
+  name: "{{ .Release.Name }}-counter"
 spec:
   type: NodePort
   ports:
-  - port: 80
+    - port: 80
   selector:
-    release: {{ .Release.Name }}-counter
+    release: "{{ .Release.Name }}-counter"
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}
+  name: "{{ .Release.Name }}"
 spec:
   rules:
-  - host: {{ .Values.host }}
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: {{ .Release.Name }}-counter
-          servicePort: 80
-
+    - host: "{{ .Values.host }}"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: "{{ .Release.Name }}-counter"
+              servicePort: 80

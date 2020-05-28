@@ -13,24 +13,24 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:alpine
-        resources:
-          requests:
-            cpu: 20m
-            memory: 30Mi
-          limits:
-            cpu: 50m
-            memory: 50Mi
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - mountPath: /usr/share/nginx/html
-          name: data
+        - name: nginx
+          image: nginx:alpine
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: data
       volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: nginx-data
+        - name: data
+          persistentVolumeClaim:
+            claimName: nginx-data
 ---
 apiVersion: v1
 kind: Service
@@ -39,8 +39,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
+    - port: 80
+      protocol: TCP
+      targetPort: 80
   selector:
     app: nginx

@@ -13,24 +13,24 @@ spec:
         app: liveness
     spec:
       containers:
-      - image: ondrejsika/health
-        name: health
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 80
-          initialDelaySeconds: 5
-          failureThreshold: 2
-          periodSeconds: 1
-        ports:
-          - containerPort: 80
-        resources:
-          requests:
-            memory: 10Mi
-            cpu: 10m
-          limits:
-            memory: 20Mi
-            cpu: 20m
+        - image: ondrejsika/health
+          name: health
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            failureThreshold: 2
+            periodSeconds: 1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 10Mi
+              cpu: 10m
+            limits:
+              memory: 20Mi
+              cpu: 20m
 ---
 apiVersion: v1
 kind: Service
@@ -39,8 +39,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
+    - port: 80
+      protocol: TCP
+      targetPort: 80
   selector:
     app: liveness

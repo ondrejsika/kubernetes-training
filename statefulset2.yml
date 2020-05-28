@@ -4,9 +4,9 @@ metadata:
   name: hello-world
 spec:
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
+    - port: 80
+      protocol: TCP
+      targetPort: 80
   selector:
     app: hello-world-sts
 ---
@@ -15,7 +15,7 @@ kind: StatefulSet
 metadata:
   name: hello-world
   labels:
-        app: hello-world-sts
+    app: hello-world-sts
   annotations:
     kubernetes.io/change-cause: ver2
 spec:
@@ -31,14 +31,14 @@ spec:
         svc: example
     spec:
       containers:
-      - name: hello-world
-        image: ondrejsika/go-hello-world:2
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            cpu: 10m
-            memory: 10Mi
-          limits:
-            memory: 20Mi
-            cpu: 20m
+        - name: hello-world
+          image: ondrejsika/go-hello-world:2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m

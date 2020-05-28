@@ -18,18 +18,15 @@ Source of my Kubernetes Training.
 
 - Bare Metal Kubernetes - [ondrejsika/bare-metal-kubernetes](https://github.com/ondrejsika/bare-metal-kubernetes) (on Github)
 
-
 ### Slides
 
 <https://sika.link/k8s-slides>
-
 
 ## 12 Factor Apps
 
 [12factor.net](https://12factor.net)
 
 Set of 12 rules how to write modern applications.
-
 
 ### Any Questions?
 
@@ -41,10 +38,9 @@ Write me mail to <ondrej@sika.io>
 
 You have to install these tools:
 
-- __kubectl__ - Kubernetes client [official instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- __helm__ - Package manager for Kubernetes [official instructions](https://github.com/helm/helm/blob/master/docs/install.md)
-- __minikube__ - Tool for local setup of Kubernetes cluster [official instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube), may require __VirtualBox__
-
+- **kubectl** - Kubernetes client [official instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- **helm** - Package manager for Kubernetes [official instructions](https://github.com/helm/helm/blob/master/docs/install.md)
+- **minikube** - Tool for local setup of Kubernetes cluster [official instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube), may require **VirtualBox**
 
 ### Mac
 
@@ -53,7 +49,9 @@ You have to install these tools:
 ```
 brew install kubernetes-cli
 ```
+
 If it doesn't work correctly (for instance you have Docker installed) you need to point kubectl to the right binary.
+
 ```
 rm /usr/local/bin/kubectl
 brew link --overwrite kubernetes-cli
@@ -105,7 +103,6 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 
 #### Helm on Linux
 
-
 Docs <https://github.com/helm/helm/blob/master/docs/install.md>
 
 Install using snap:
@@ -130,7 +127,7 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 
 #### Minikube on Linux (Linux in virtual machine)
 
-If you want run Kubernetes inside of custom virtual machine, you can also use __minikube__ with VM Driver none.
+If you want run Kubernetes inside of custom virtual machine, you can also use **minikube** with VM Driver none.
 
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
@@ -144,7 +141,7 @@ minikube start --vm-driver=none
 
 #### Microk8s.io on Linux (Linux in virtual machine)
 
-If you run Ubuntu (or another linux with __snap__), you can use [microk8s.io](https://microk8s.io)
+If you run Ubuntu (or another linux with **snap**), you can use [microk8s.io](https://microk8s.io)
 
 ```
 sudo snap install microk8s --classic
@@ -154,10 +151,9 @@ See more information at <https://microk8s.io/docs/>
 
 #### k3s (minimalistic kubernetes for Linux)
 
-If you can't run __minikube__ (with VirtualBox or VM driver none) or __microk8s__, you can try __k3s__.
+If you can't run **minikube** (with VirtualBox or VM driver none) or **microk8s**, you can try **k3s**.
 
 See more on <https://k3s.io/>
-
 
 ### Windows
 
@@ -199,7 +195,6 @@ Also work for zsh, eg.: `source <(kubectl completion zsh)`
 
 <!-- END Install -->
 
-
 ### Start Minikube
 
 ```
@@ -223,7 +218,6 @@ If you see something like this
 ![minikube-cluster-up-and-running](images/minikube-cluster-up-and-running.png)
 
 Your cluster is up and running. Good job!
-
 
 ### Connect My Demo Cluster
 
@@ -271,7 +265,6 @@ kubectl config set-context do-fra1-sikademo --namespace=ondrejsika
 Sources:
 
 - Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
-
 
 ## Course
 
@@ -367,7 +360,6 @@ See:
 - http://127.0.0.1:8001/api/v1/namespaces/default/pods/simple-hello-world/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/default/pods/multi-container-pod/proxy/
 
-
 or using port forward:
 
 ```
@@ -375,7 +367,6 @@ kubectl port-forward pod/simple-hello-world 8000:80
 ```
 
 See: <http://127.0.0.1:8000>
-
 
 ### Describe Pod
 
@@ -455,10 +446,9 @@ kubectl apply -f nodeselector.yml
 
 ### Affinity and anti-affinity
 
-If you need more than __nodeSelector__, you can try __Affinity and anti-affinity__
+If you need more than **nodeSelector**, you can try **Affinity and anti-affinity**
 
 <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>
-
 
 ### Delete Pod
 
@@ -469,7 +459,6 @@ kubectl delete -f 01_pod.yml -f 02_pod.yml
 kubectl delete po/simple-hello-world
 kubectl delete po/multi-container-pod
 ```
-
 
 ### Private Container Registry
 
@@ -543,7 +532,6 @@ kubectl port-forward rs/hello-world-rs 8000:80
 
 See: <http://127.0.0.1:8000>
 
-
 ### Update Replica Set
 
 See the difference
@@ -594,7 +582,6 @@ kubectl port-forward deploy/hello-world 8000:80
 ```
 
 See: <http://127.0.0.1:8000>
-
 
 ### Update Deployment
 
@@ -667,7 +654,6 @@ Upgrade daemonset set
 kubectl apply -f daemonset2.yml
 ```
 
-
 ### Delete DaemonSet
 
 ```
@@ -676,7 +662,6 @@ kubectl delete -f daemonset.yml
 # or
 kubectl delete ds/hello-world
 ```
-
 
 ### Create StatefulSet
 
@@ -707,7 +692,6 @@ Upgrade statefull set
 ```
 kubectl apply -f statefulset2.yml
 ```
-
 
 ### Delete StatefulSet
 
@@ -749,7 +733,6 @@ kubectl apply -f cronjob.yml
 kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
 ```
 
-
 ### kubectl run
 
 Create deployment from command line
@@ -759,7 +742,6 @@ kubectl run -it --rm --image=debian --generator=run-pod/v1 my-debian -- bash
 ```
 
 Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
-
 
 ### Create Service ClusterIP
 
@@ -785,7 +767,6 @@ kubectl apply -f 06_nodeport_service.yml
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-nodeport/proxy/
 
-
 You can also open NodePort directly using:
 
 ```
@@ -805,7 +786,6 @@ kubectl apply -f loadbalancer.yml
 ```
 
 Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube.
-
 
 ### List Services
 
@@ -888,7 +868,6 @@ See example of [ondrejsika/wait-for-it](https://github.com/ondrejsika/docker-tra
 kubect apply -f init_cointainers_setup.yml
 ```
 
-
 ### Create Namespace
 
 ```
@@ -921,7 +900,6 @@ kubectl get pods -A
 kubectl get pods --all-namespaces
 ```
 
-
 ### Deploy to Namespace
 
 ```
@@ -930,13 +908,11 @@ kubectl apply -f 07_counter.yml -n counter
 
 See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
 
-
 ### Switch Namespace in Current Context
 
 ```
 kubectl config set-context $(kubectl config current-context) --namespace=counter
 ```
-
 
 ### Delete Namespace
 
@@ -1001,7 +977,6 @@ See:
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
 
-
 Create Ingress
 
 ```
@@ -1025,7 +1000,6 @@ kubectl delete -f webservers.yml -f 10_ingress.yml
 
 Docs: <https://kubernetes.io/docs/concepts/storage/volumes/#emptydir>
 
-
 #### Stored on disk
 
 ```
@@ -1048,10 +1022,9 @@ kubectl apply -f emptydir_memory.yml
 
 If you use in memory volumes, files stored there counts into container's memory limit.
 
-
 ### Claim default PV
 
-From default __StorageClass__ (`kubectl get storageclass` or `kubectl get sc`)
+From default **StorageClass** (`kubectl get storageclass` or `kubectl get sc`)
 
 ```
 kubectl apply -f pvc_default.yml
@@ -1069,7 +1042,6 @@ Delete claim & volume
 kubectl delete -f pvc_default.yml
 kubectl get pv,pvc
 ```
-
 
 ### Create PV
 
@@ -1110,7 +1082,6 @@ Clean up
 ```
 kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 ```
-
 
 ## ConfigMaps & Secrets
 
@@ -1165,7 +1136,6 @@ kubectl apply -f configmap_envfrom.yml
 kubectl logs envfrom
 ```
 
-
 ### Config
 
 See / export kubeconfig
@@ -1188,7 +1158,6 @@ kubectl config view --raw --flatten
 kubectl config view --raw --flatten --minify
 ```
 
-
 ### RBAC
 
 Show all api resources (with verbs)
@@ -1196,7 +1165,6 @@ Show all api resources (with verbs)
 ```
 kubectl api-resources -o wide
 ```
-
 
 ### Create cluster admin
 
@@ -1254,7 +1222,6 @@ kubectl --kubeconfig=config get nodes,svc
 KUBECONFIG=.kube/config:kuberners-config-new.yml kubectl config view --raw > /tmp/kubeconfig && mv /tmp/kubeconfig .kube/config
 ```
 
-
 ### Create pod reader
 
 ```
@@ -1289,7 +1256,6 @@ kubectl --kubeconfig=config config set-context --user=devel --cluster=minikube  
 kubectl --kubeconfig=config config use-context devel
 ```
 
-
 ## Liveness & Readiness Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
@@ -1306,13 +1272,11 @@ kubectl apply -f probes_liveness.yml
 kubectl apply -f probes_readiness.yml
 ```
 
-
 Cleanup
 
 ```
 kubectl delete -f probes_liveness.yml -f probes_readiness.yml
 ```
-
 
 ## Autoscaling (Horizontal Pod Autoscaler)
 
@@ -1325,7 +1289,6 @@ If you requests 200 milli-cores to pod, 50% means that Kubernetes autoscaler kee
 ```
 minikube addons enable metrics-server
 ```
-
 
 ### Create HPA (command)
 
@@ -1477,7 +1440,6 @@ If you want update charts info, call update:
 helm repo update
 ```
 
-
 ### Search Package
 
 Search Helm Hub ([hub.helm.sh](https://hub.helm.sh/))
@@ -1605,7 +1567,6 @@ Install with values file and values args
 ```
 helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.nip.io
 ```
-
 
 ### Own Helm Package
 
@@ -1746,20 +1707,19 @@ helm install hello sikademo/counter --set host=hello.192.168.99.100.nip.io
 
 ## Thank you! & Questions?
 
-That's it. Do you have any questions? __Let's go for a beer!__
+That's it. Do you have any questions? **Let's go for a beer!**
 
 ### Ondrej Sika
 
 - email: <ondrej@sika.io>
 - web: <https://sika.io>
 - twitter: [@ondrejsika](https://twitter.com/ondrejsika)
-- linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
+- linkedin: [/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 - Newsletter, Slack, Facebook & Linkedin Groups: <https://join.sika.io>
 
-_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn (add me [/in/ondrejsika](https://www.linkedin.com/in/ondrejsika/) and I'll send you request for recommendation). __Thanks__._
+_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn (add me [/in/ondrejsika](https://www.linkedin.com/in/ondrejsika/) and I'll send you request for recommendation). **Thanks**._
 
 Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
-
 
 ## FAQ
 
@@ -1777,8 +1737,8 @@ metadata:
 spec:
   terminationGracePeriodSeconds: 60
   containers:
-  - name: simple-hello-world
-    image: ondrejsika/go-hello-world:2
+    - name: simple-hello-world
+      image: ondrejsika/go-hello-world:2
 ```
 
 ### Show Node Taints

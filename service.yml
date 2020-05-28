@@ -4,9 +4,8 @@ metadata:
   name: example
 spec:
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
+    - port: 80
+      protocol: TCP
+      targetPort: 80
   selector:
     svc: example
-

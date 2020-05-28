@@ -7,14 +7,14 @@ metadata:
     svc: example
 spec:
   containers:
-  - name: simple-hello-world
-    image: ondrejsika/go-hello-world:2
-    ports:
-    - containerPort: 80
-    resources:
-      requests:
-        memory: 10Mi
-        cpu: 10m
-      limits:
-        memory: 20Mi
-        cpu: 20m
+    - name: simple-hello-world
+      image: ondrejsika/go-hello-world:2
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          memory: 10Mi
+          cpu: 10m
+        limits:
+          memory: 20Mi
+          cpu: 20m

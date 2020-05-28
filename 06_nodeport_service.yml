@@ -5,11 +5,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
-    # nodePort is optional
-    nodePort: 31001
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+      # nodePort is optional
+      nodePort: 31001
   selector:
     app: hello-world-deploy
-

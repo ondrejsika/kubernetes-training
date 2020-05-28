@@ -4,18 +4,17 @@ metadata:
   name: webservers
 spec:
   rules:
-  - host: nginx.192.168.99.100.xip.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: nginx
-          servicePort: 80
-  - host: apache.192.168.99.100.xip.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: apache
-          servicePort: 80
-
+    - host: nginx.192.168.99.100.xip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nginx
+              servicePort: 80
+    - host: apache.192.168.99.100.xip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: apache
+              servicePort: 80

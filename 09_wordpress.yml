@@ -4,7 +4,7 @@ metadata:
   name: mysql
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
@@ -27,30 +27,30 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mysql:5.6
-        resources:
-          requests:
-            cpu: 50m
-            memory: 300Mi
-        env:
-        - name: MYSQL_DATABASE
-          value: wordpress
-        - name: MYSQL_PASSWORD
-          value: wordpress
-        - name: MYSQL_ROOT_PASSWORD
-          value: somewordpress
-        - name: MYSQL_USER
-          value: wordpress
-        ports:
-        - containerPort: 3306
-        volumeMounts:
-        - mountPath: /var/lib/mysql
-          name: mysql
+        - name: mysql
+          image: mysql:5.6
+          resources:
+            requests:
+              cpu: 50m
+              memory: 300Mi
+          env:
+            - name: MYSQL_DATABASE
+              value: wordpress
+            - name: MYSQL_PASSWORD
+              value: wordpress
+            - name: MYSQL_ROOT_PASSWORD
+              value: somewordpress
+            - name: MYSQL_USER
+              value: wordpress
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql
       volumes:
-      - name: mysql
-        persistentVolumeClaim:
-          claimName: mysql
+        - name: mysql
+          persistentVolumeClaim:
+            claimName: mysql
 ---
 apiVersion: v1
 kind: Service
@@ -58,8 +58,8 @@ metadata:
   name: mysql
 spec:
   ports:
-  - port: 3306
-    targetPort: 3306
+    - port: 3306
+      targetPort: 3306
   selector:
     project: wordpress
     app: mysql
@@ -70,7 +70,7 @@ metadata:
   name: wordpress
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
@@ -92,28 +92,28 @@ spec:
         app: wordpress
     spec:
       containers:
-      - name: wordpress
-        image: wordpress
-        resources:
-          requests:
-            cpu: 50m
-            memory: 50Mi
-        env:
-        - name: WORDPRESS_DB_HOST
-          value: mysql:3306
-        - name: WORDPRESS_DB_PASSWORD
-          value: wordpress
-        - name: WORDPRESS_DB_USER
-          value: wordpress
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - mountPath: /var/www/html
-          name: wordpress
+        - name: wordpress
+          image: wordpress
+          resources:
+            requests:
+              cpu: 50m
+              memory: 50Mi
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mysql:3306
+            - name: WORDPRESS_DB_PASSWORD
+              value: wordpress
+            - name: WORDPRESS_DB_USER
+              value: wordpress
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: wordpress
       volumes:
-      - name: wordpress
-        persistentVolumeClaim:
-          claimName: wordpress
+        - name: wordpress
+          persistentVolumeClaim:
+            claimName: wordpress
 ---
 apiVersion: v1
 kind: Service
@@ -122,7 +122,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
+    - port: 80
   selector:
     project: wordpress
     app: wordpress
@@ -133,10 +133,10 @@ metadata:
   name: wordpress
 spec:
   rules:
-  - host: wordpress.192.168.99.100.nip.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: wordpress
-          servicePort: 80
+    - host: wordpress.192.168.99.100.nip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: wordpress
+              servicePort: 80
