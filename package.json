@@ -1,0 +1,16 @@
+{
+  "name": "kubernetes-training",
+  "version": "0.0.0",
+  "description": "Ondrej Sika's Kubernetes Training",
+  "repository": "git@github.com:ondrejsika/kubernetes-training-examples.git",
+  "author": "Ondrej Sika <ondrej@ondrejsika.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "prettier": "^2.0.5"
+  },
+  "scripts": {
+    "prettier-check": "prettier --check .",
+    "prettier-write": "prettier --write ."
+  }
+}
