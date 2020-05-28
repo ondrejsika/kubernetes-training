@@ -1180,6 +1180,26 @@ Export actual config
 kubectl config view --raw --minify > config
 ```
 
+Use custom Kubernetes config file using environment variable:
+
+Linux & Mac
+
+```bash
+export KUBECONFIG=config
+```
+
+PowerShell
+
+```powershell
+$env:KUBECONFIG = "config"
+```
+
+CMD
+
+```cmd
+set KUBECONFIG=config
+```
+
 Get token:
 
 ```
