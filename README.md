@@ -460,6 +460,12 @@ kubectl delete po/simple-hello-world
 kubectl delete po/multi-container-pod
 ```
 
+### Delete All Pods
+
+```
+kubectl delete po --all
+```
+
 ### Private Container Registry
 
 Deploy private pod
