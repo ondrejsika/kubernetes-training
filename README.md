@@ -368,6 +368,13 @@ kubectl port-forward pod/simple-hello-world 8000:80
 
 See: <http://127.0.0.1:8000>
 
+Get Pod from file:
+
+```
+kubectl get -f 01_pod.yml
+kubectl get -f 02_pod.yml
+```
+
 ### Describe Pod
 
 See informations & events in pretty output
