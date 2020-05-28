@@ -1674,14 +1674,14 @@ cp ../helm-counter.yaml templates/counter.yml
 #### See Template
 
 ```
-helm template hello .
-helm template hello . --set host=hello.192.168.99.100.nip.io
+helm template counter .
+helm template counter . --set host=counter.192.168.99.100.nip.io
 ```
 
 #### Install
 
 ```
-helm install hello . --set host=hello.192.168.99.100.nip.io
+helm install counter . --set host=counter.192.168.99.100.nip.io
 ```
 
 #### Build Package
@@ -1710,7 +1710,7 @@ scp repo/* root@helm.sikademo.com:/helm/
 Delete previous deployment
 
 ```
-helm uninstall hello
+helm uninstall counter
 ```
 
 Add repo
@@ -1722,7 +1722,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install hello sikademo/counter --set host=hello.192.168.99.100.nip.io
+helm install counter sikademo/counter --set host=counter.192.168.99.100.nip.io
 ```
 
 ## What's Next? Kubernetes Advance
