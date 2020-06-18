@@ -1,0 +1,19 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: psp-root
+spec:
+  privileged: true
+  allowPrivilegeEscalation: true
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  fsGroup:
+    rule: RunAsAny
+  volumes:
+    - "*"
+  allowedHostPaths:
+    - pathPrefix: "/"

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: attacking-pod
+  namespace: psp-example
+spec:
+  volumes:
+    - name: docker-socket
+      hostPath:
+        path: /var/run/docker.sock
+  containers:
+    - name: pause
+      image: k8s.gcr.io/pause
+      volumeMounts:
+        - mountPath: /my-docker
+          name: docker-socket
+      securityContext:
+        allowPrivilegeEscalation: true

@@ -1784,6 +1784,69 @@ Check connection with labels `--labels="access=true"`:
 kubectl run busybox --rm -ti --image=busybox --labels="access=true" -- wget --spider --timeout=1 nginx
 ```
 
+## Pod Security Policy
+
+[Docs](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)
+
+A Pod Security Policy is a cluster-level resource that controls security sensitive aspects of the pod specification.
+
+## Minikube with PSP
+
+[Docs](https://minikube.sigs.k8s.io/docs/tutorials/using_psp/)
+
+Setup:
+
+```
+mkdir -p ~/.minikube/files/etc/kubernetes/addons
+cp minikube-psp.yml ~/.minikube/files/etc/kubernetes/addons/psp.yaml
+```
+
+Start Minikube with PSP:
+
+```
+minikube start --extra-config=apiserver.enable-admission-plugins=PodSecurityPolicy
+```
+
+### Example
+
+Crate NS:
+
+```
+kubectl apply -f psp/ns.yml
+```
+
+Create PSP:
+
+```
+kubectl apply -f psp/psp.yml
+```
+
+Create RBAC config:
+
+```
+kubectl apply  -f psp/rbac.yml
+```
+
+```
+kubectl apply --as=system:serviceaccount:psp-example:hacker -f psp/pod.yml
+```
+
+Create Root PSP:
+
+```
+kubectl apply -f psp/psp-root.yml
+```
+
+Create Root RBAC config:
+
+```
+kubectl apply  -f psp/rbac-root.yml
+```
+
+```
+kubectl apply --as=system:serviceaccount:psp-example:root -f psp/pod.yml
+```
+
 ## What's Next? Kubernetes Advance
 
 - Logging (EFK / ELK)
