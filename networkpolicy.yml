@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: webservers
+spec:
+  podSelector:
+    matchLabels:
+      project: webservers
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              access: "true"

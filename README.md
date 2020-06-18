@@ -1742,6 +1742,48 @@ Resources:
 - https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/
 - https://info.rancher.com/kubernetes-networking-deep-dive
 
+## Network Policy
+
+Deploy webservers:
+
+```
+kubectl apply -f webservers.yml
+```
+
+Check connection:
+
+```
+kubectl run busybox --rm -ti --image=busybox -- wget --spider --timeout=1 nginx
+```
+
+Apply policy
+
+```
+kubectl apply -f networkpolicy.yml
+```
+
+See policy:
+
+```
+kubectl get networkpolicies
+```
+
+```
+kubectl describe -f networkpolicy.yml
+```
+
+Check connection again:
+
+```
+kubectl run busybox --rm -ti --image=busybox -- wget --spider --timeout=1 nginx
+```
+
+Check connection with labels `--labels="access=true"`:
+
+```
+kubectl run busybox --rm -ti --image=busybox --labels="access=true" -- wget --spider --timeout=1 nginx
+```
+
 ## What's Next? Kubernetes Advance
 
 - Logging (EFK / ELK)
