@@ -1847,6 +1847,69 @@ kubectl apply  -f psp/rbac-root.yml
 kubectl apply --as=system:serviceaccount:psp-example:root -f psp/pod.yml
 ```
 
+## Prometheus
+
+### Kube Prometheus
+
+Prepare Minikube
+
+```
+minikube delete
+minikube start --kubernetes-version=v1.18.1 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.address=0.0.0.0 --extra-config=controller-manager.address=0.0.0.0
+```
+
+Disable Metrics Server
+
+```
+minikube addons disable metrics-server
+```
+
+Clone `kube-prometheus`:
+
+```
+git clone https://github.com/coreos/kube-prometheus
+```
+
+Setup:
+
+```
+kubectl create -f kube-prometheus/manifests/setup
+until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; done
+kubectl create -f kube-prometheus/manifests/
+```
+
+Access Prometheus:
+
+```
+kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090
+```
+
+See: <http://localhost:9090>
+
+Access Grafana:
+
+```
+kubectl --namespace monitoring port-forward svc/grafana 3000
+```
+
+Usename: `admin`, password: `admin`
+
+See: <http://localhost:3000>
+
+Access AlertManager:
+
+```
+kubectl --namespace monitoring port-forward svc/alertmanager-main 9093
+```
+
+See: <http://localhost:9093>
+
+Cleanup:
+
+```
+kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
+```
+
 ## Links
 
 - Awesome Operators - <https://github.com/operator-framework/awesome-operators>

@@ -6,3 +6,4 @@ repo
 /counter/**
 counter-*.tgz
 
+kube-prometheus
