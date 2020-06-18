@@ -1847,6 +1847,11 @@ kubectl apply  -f psp/rbac-root.yml
 kubectl apply --as=system:serviceaccount:psp-example:root -f psp/pod.yml
 ```
 
+## Metrics
+
+- Metric Server - Simple in memory metrics server for autoscaling
+- Prometheus - Complete metrics pipeline with data persistence
+
 ## Prometheus
 
 ### Kube Prometheus
