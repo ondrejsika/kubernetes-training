@@ -1856,6 +1856,8 @@ kubectl apply --as=system:serviceaccount:psp-example:root -f psp/pod.yml
 
 ### Kube Prometheus
 
+[Homepage (Github)](https://github.com/coreos/kube-prometheus)
+
 Prepare Minikube
 
 ```
