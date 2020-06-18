@@ -1725,6 +1725,22 @@ Install package
 helm install counter sikademo/counter --set host=counter.192.168.99.100.nip.io
 ```
 
+## Kubernetes Networking
+
+[Docs](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+
+Plugins:
+
+- Flannel - Simplest network plugin, use encapsulation
+- Calico - Support network policy & isolation, use BGP
+- Wave - Mesh routing networking
+
+Resources:
+
+- https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model
+- https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/
+- https://info.rancher.com/kubernetes-networking-deep-dive
+
 ## What's Next? Kubernetes Advance
 
 - Logging (EFK / ELK)
