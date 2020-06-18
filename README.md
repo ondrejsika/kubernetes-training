@@ -1912,7 +1912,7 @@ See: <http://localhost:9093>
 Cleanup:
 
 ```
-kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
+kubectl delete --ignore-not-found=true -f kube-prometheus/manifests/ -f kube-prometheus/manifests/setup
 ```
 
 ## Links
