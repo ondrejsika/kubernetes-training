@@ -1847,12 +1847,6 @@ kubectl apply  -f psp/rbac-root.yml
 kubectl apply --as=system:serviceaccount:psp-example:root -f psp/pod.yml
 ```
 
-## What's Next? Kubernetes Advance
-
-- Logging (EFK / ELK)
-- Monitoring & Metrics (Prometheus)
-- Operators
-
 ## Links
 
 - Awesome Operators - <https://github.com/operator-framework/awesome-operators>
