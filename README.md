@@ -1391,6 +1391,7 @@ kubectl delete -f probes_readiness.yml
 ## Autoscaling (Horizontal Pod Autoscaler)
 
 - <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
+- <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/>
 
 We have to have metrics server enabled
 
