@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: readiness
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       app: readiness
@@ -13,11 +13,11 @@ spec:
         app: readiness
     spec:
       containers:
-        - image: ondrejsika/health
+        - image: ondrejsika/readiness
           name: health
           readinessProbe:
             httpGet:
-              path: /ready
+              path: /readyz
               port: 80
             initialDelaySeconds: 5
             failureThreshold: 2

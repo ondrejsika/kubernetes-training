@@ -1315,16 +1315,40 @@ Watch output:
 watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
 ```
 
+Cleanup
+
+```
+kubectl delete -f probes_liveness.yml
+```
+
 ### Readiness Probe
 
 ```
 kubectl apply -f probes_readiness.yml
 ```
 
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=readiness
+```
+
+Watch service:
+
+```
+watch -n 0.3 kubectl describe svc readiness
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/readiness/proxy/
+```
+
 Cleanup
 
 ```
-kubectl delete -f probes_liveness.yml -f probes_readiness.yml
+kubectl delete -f probes_readiness.yml
 ```
 
 ## Autoscaling (Horizontal Pod Autoscaler)
