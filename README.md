@@ -1483,7 +1483,7 @@ See update
 vimdiff strategy_recreate.yml strategy_recreate_2.yml
 ```
 
-Update without downtime
+Update with downtime
 
 ```
 kubectl apply -f strategy_recreate_2.yml
