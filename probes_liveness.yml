@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: liveness
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       app: liveness
@@ -13,11 +13,11 @@ spec:
         app: liveness
     spec:
       containers:
-        - image: ondrejsika/health
+        - image: ondrejsika/liveness
           name: health
           livenessProbe:
             httpGet:
-              path: /health
+              path: /healthz
               port: 80
             initialDelaySeconds: 5
             failureThreshold: 2

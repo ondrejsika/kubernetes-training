@@ -1303,6 +1303,18 @@ Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-livene
 kubectl apply -f probes_liveness.yml
 ```
 
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=liveness
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
+```
+
 ### Readiness Probe
 
 ```
