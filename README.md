@@ -641,45 +641,6 @@ kubectl delete -f 04_01_deployment.yml
 kubectl delete deploy/hello-world
 ```
 
-### Create DaemonSet
-
-```
-kubectl apply -f daemonset.yml
-kubectl rollout status ds hello-world
-```
-
-### List DaemonSets
-
-```
-kubectl get ds
-kubectl get ds,po
-```
-
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
-
-### Update DaemonSet
-
-See the difference
-
-```
-vimdiff daemonset.yml daemonset2.yml
-```
-
-Upgrade daemonset set
-
-```
-kubectl apply -f daemonset2.yml
-```
-
-### Delete DaemonSet
-
-```
-kubectl delete -f daemonset.yml
-
-# or
-kubectl delete ds/hello-world
-```
-
 ### Create StatefulSet
 
 ```
@@ -717,6 +678,45 @@ kubectl delete -f statefulset.yml
 
 # or
 kubectl delete sts/hello-world
+```
+
+### Create DaemonSet
+
+```
+kubectl apply -f daemonset.yml
+kubectl rollout status ds hello-world
+```
+
+### List DaemonSets
+
+```
+kubectl get ds
+kubectl get ds,po
+```
+
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+
+### Update DaemonSet
+
+See the difference
+
+```
+vimdiff daemonset.yml daemonset2.yml
+```
+
+Upgrade daemonset set
+
+```
+kubectl apply -f daemonset2.yml
+```
+
+### Delete DaemonSet
+
+```
+kubectl delete -f daemonset.yml
+
+# or
+kubectl delete ds/hello-world
 ```
 
 ### Create Job
