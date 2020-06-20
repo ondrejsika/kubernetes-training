@@ -1183,6 +1183,33 @@ Show all api resources (with verbs)
 kubectl api-resources -o wide
 ```
 
+Show all ServiceAccounts:
+
+```
+kubectl get sa -A
+```
+
+### Command Kubernetes as different service account
+
+```
+kubectl get no
+```
+
+```
+kubectl --as system:serviceaccount:kube-system:default get no
+```
+
+```
+kubectl --as system:serviceaccount:default:default get no
+```
+
+### Can I
+
+```
+kubectl auth can-i get po
+kubectl auth can-i --as system:anonymous get po
+```
+
 ### Create cluster admin
 
 ```
@@ -1263,6 +1290,16 @@ KUBECONFIG=.kube/config:kuberners-config-new.yml kubectl config view --raw > /tm
 
 ```
 kubectl apply -f 15_read.yml
+```
+
+Can I?
+
+```
+kubectl auth can-i --as system:serviceaccount:kube-system:read-user get po
+```
+
+```
+kubectl auth can-i --as system:serviceaccount:kube-system:read-user apply po
 ```
 
 Add to user to config and change context user
