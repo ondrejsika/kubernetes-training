@@ -827,6 +827,36 @@ kubectl delete svc/hello-world-clusterip
 kubectl delete deploy/hello-world
 ```
 
+### Create Ingress
+
+Create some services (& deploymnets)
+
+```
+kubectl apply -f webservers.yml
+```
+
+See:
+
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
+
+Create Ingress
+
+```
+kubectl apply -f ingress.yml
+```
+
+See:
+
+- http://nginx.192.168.99.100.nip.io
+- http://apache.192.168.99.100.nip.io
+
+Cleanup
+
+```
+kubectl delete -f webservers.yml -f ingress.yml
+```
+
 ### Deploy Application (Multiple Deployments and Services)
 
 ```
@@ -979,36 +1009,6 @@ Install Traefik Ingress Controller:
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
-```
-
-### Create Ingress
-
-Create some services (& deploymnets)
-
-```
-kubectl apply -f webservers.yml
-```
-
-See:
-
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
-
-Create Ingress
-
-```
-kubectl apply -f 10_ingress.yml
-```
-
-See:
-
-- http://nginx.192.168.99.100.nip.io
-- http://apache.192.168.99.100.nip.io
-
-Cleanup
-
-```
-kubectl delete -f webservers.yml -f 10_ingress.yml
 ```
 
 ## PersistentVolume & PersistentVolumeClaim
