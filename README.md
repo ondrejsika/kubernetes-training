@@ -827,6 +827,24 @@ kubectl delete svc/hello-world-clusterip
 kubectl delete deploy/hello-world
 ```
 
+## Ingress
+
+### Enable Ingress on Minikube
+
+```
+minikube addons enable ingress
+```
+
+### Traefik Ingress Controller
+
+See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubernetes-ingress-traefik)
+
+Install Traefik Ingress Controller:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
+```
+
 ### Create Ingress
 
 Create some services (& deploymnets)
@@ -991,24 +1009,6 @@ Stop & delete
 
 ```
 kubectl delete namespace wp
-```
-
-## Ingress
-
-### Enable Ingress on Minikube
-
-```
-minikube addons enable ingress
-```
-
-### Traefik Ingress Controller
-
-See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubernetes-ingress-traefik)
-
-Install Traefik Ingress Controller:
-
-```
-kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
 ```
 
 ## PersistentVolume & PersistentVolumeClaim
