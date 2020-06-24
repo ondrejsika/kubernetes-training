@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: metrics-example
+spec:
+  endpoints:
+    - port: http
+      interval: 15s
+      relabelings:
+        - action: replace
+          regex: (.*)
+          replacement: $1
+          sourceLabels:
+            - __meta_kubernetes_pod_node_name
+          targetLabel: instance
+  jobLabel: metrics-example
+  selector:
+    matchLabels:
+      app: metrics-example
