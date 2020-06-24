@@ -1991,6 +1991,94 @@ Cleanup:
 kubectl delete --ignore-not-found=true -f kube-prometheus/manifests/ -f kube-prometheus/manifests/setup
 ```
 
+## Logging
+
+### Elastic Cloud on Kubernetes
+
+- Intro - <https://www.elastic.co/elastic-cloud-kubernetes>
+- Docs / Tutorial - <https://www.elastic.co/guide/en/cloud-on-k8s/current/index.html>
+- Github - <https://github.com/elastic/cloud-on-k8s>
+
+### Setup ECK Operator
+
+```
+kubectl apply -f https://download.elastic.co/downloads/eck/1.1.2/all-in-one.yaml
+```
+
+See logs:
+
+```
+kubectl -n elastic-system logs -f statefulset.apps/elastic-operator
+```
+
+### Create Elastic Cluster
+
+Setup `logs` namespace:
+
+```
+kubectl apply -f eck/ns.yml
+```
+
+Create Elasticsearch cluster:
+
+```
+kubectl apply -f eck/elasticsearch.yml
+```
+
+Wait until `health=green`:
+
+```
+kubectl get -f eck/elasticsearch.yml
+```
+
+### Run Kibana
+
+```
+kubectl apply -f eck/kibana.yml
+```
+
+Wait until `health=green`:
+
+```
+kubectl get -f eck/kibana.yml
+```
+
+### Run Filebeat
+
+```
+kubectl apply -f eck/filebeat.yml
+```
+
+Wait until start:
+
+```
+kubectl get -f eck/filebeat.yml
+```
+
+See filebeet logs:
+
+```
+kubectl -n logs logs daemonset.apps/filebeat -f
+```
+
+### See Logs in Kibana
+
+Get password for user `elastic`:
+
+```
+kubectl get -n logs secret logs-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
+```
+
+Run proxy to Kibana:
+
+```
+kubectl -n logs port-forward service/logs-kb-http 5601
+```
+
+See logs in Kibana:
+
+<https://127.0.0.1:5601/app/logs/stream>
+
 ## Links
 
 - Awesome Operators - <https://github.com/operator-framework/awesome-operators>
