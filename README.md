@@ -1985,7 +1985,50 @@ kubectl --namespace monitoring port-forward svc/alertmanager-main 9093
 
 See: <http://localhost:9093>
 
-Cleanup:
+### Custom Metrics
+
+Deploy example app:
+
+```
+kubectl apply -f prom/example.yml
+```
+
+Start port forward:
+
+```
+kubectl port-forward svc/metrics-example 8000:80
+```
+
+See:
+
+- <http://127.0.0.1:8000>
+- <http://127.0.0.1:8000/metrics>
+
+Apply custom metrics collector:
+
+```
+kubectl apply -f prom/sm.yml
+```
+
+Check in Prometheus.
+
+Apply custom alerts:
+
+```
+kubectl apply -f prom/pr.yml
+```
+
+Check in Alert Manager.
+
+### Cleanup Kube Prometheus
+
+Delete custom examples & resources:
+
+```
+kubectl delete -f prom/
+```
+
+Remove Kube Prometheus:
 
 ```
 kubectl delete --ignore-not-found=true -f kube-prometheus/manifests/ -f kube-prometheus/manifests/setup
