@@ -1808,7 +1808,7 @@ Plugins:
 - Flannel - Simplest network plugin, use encapsulation
 - Calico - Support network policy & isolation, use BGP
 - Cilium - L7/HTTP Aware network plugin, support network & HTTP policies
-- Wave - Mesh routing networking
+- Weave - Mesh routing networking
 
 Resources:
 
