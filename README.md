@@ -1100,6 +1100,26 @@ Clean up
 kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 ```
 
+### NFS Client Provisioner
+
+Install using Helm:
+
+```
+helm install nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=<nfs-server> --set nfs.path=<exported-path>
+```
+
+Example with my NFS server (nfs.sikademo.com):
+
+```
+helm install nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=nfs.sikademo.com --set nfs.path=/nfs
+```
+
+You can use `nfs-client` Storage Class:
+
+```
+kubectl apply -f pvc_nfs_client.yml
+```
+
 ## ConfigMaps & Secrets
 
 ### Create secret
