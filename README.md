@@ -1408,18 +1408,46 @@ Cleanup
 kubectl delete -f probes_readiness.yml
 ```
 
+## Resource Consumption (`kubectl top`)
+
+We have to have [metric-server](https://github.com/kubernetes-sigs/metrics-server) installed.
+
+Minikube:
+
+```
+minikube addons enable metrics-server
+```
+
+Direct:
+
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
+```
+
+See nodes comsumptions:
+
+```
+kubectl top nodes
+```
+
+See pods comsumptions:
+
+```
+kubectl top pods
+```
+
+```
+kubectl top pods -A
+```
+
 ## Autoscaling (Horizontal Pod Autoscaler)
 
 - <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
 - <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/>
 
-We have to have metrics server enabled
+We also have to have metrics server enabled
 
 If you requests 200 milli-cores to pod, 50% means that Kubernetes autoscaler keeps it on 100 mili-cores. More info here: [Create Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#create-horizontal-pod-autoscaler) and [Algorithm Details](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details).
-
-```
-minikube addons enable metrics-server
-```
 
 ### Create HPA (command)
 
