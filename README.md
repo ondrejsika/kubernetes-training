@@ -451,11 +451,21 @@ kubectl apply -f nodename.yml
 kubectl apply -f nodeselector.yml
 ```
 
-### Affinity and anti-affinity
-
-If you need more than **nodeSelector**, you can try **Affinity and anti-affinity**
+### Affinity
 
 <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>
+
+#### requiredDuringSchedulingIgnoredDuringExecution
+
+```
+kubectl apply -f affinity_required.yml
+```
+
+#### preferredDuringSchedulingIgnoredDuringExecution
+
+```
+kubectl apply -f affinity_preferred.yml
+```
 
 ### Delete Pod
 
