@@ -671,6 +671,33 @@ Upgrade statefull set
 kubectl apply -f statefulset2.yml
 ```
 
+### Headless Service
+
+Service which expose pods on `<pod-name>.<svc-name>` (`<pod-name>.<svc-name>.<namespace>.svc.cluster.local`). Requires `spec.clusterIP: None`.
+
+See service in Stateful Set.
+
+Example:
+
+```
+kubectl run example -ti --rm --image=nixery.dev/shell/curl/host bash
+```
+
+And try (inside of Kubernetes):
+
+```
+host hello-world
+host hello-world-0.hello-world
+host hello-world-1.hello-world
+
+curl hello-world
+curl hello-world
+curl hello-world-0.hello-world
+curl hello-world-1.hello-world
+```
+
+![headless-service-example](./images/headless-service-example.png)
+
 ### Delete StatefulSet
 
 ```

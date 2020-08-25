@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: hello-world
 spec:
+  clusterIP: None
   ports:
     - port: 80
       protocol: TCP
