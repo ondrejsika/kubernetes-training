@@ -988,6 +988,28 @@ kubectl delete -f 08_namespace.yml
 kubectl delete ns/counter
 ```
 
+### Resource Quotas
+
+Create Resource Quotas
+
+```
+kubectl apply -f resourcequota.yml
+```
+
+See Resource Quotas:
+
+```
+kubectl describe resourcequotas
+```
+
+Try to deploy:
+
+```
+kubectl apply -f statefulset.yml
+kubectl apply -f service.yml
+kubectl apply -f 01_pod.yml
+```
+
 ### Wordpress Example
 
 Start
