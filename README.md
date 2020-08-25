@@ -387,13 +387,13 @@ kubectl describe -f 02_pod.yml
 ### Exec (Connect) Pod
 
 ```
-kubectl exec -ti multi-container-pod bash
+kubectl exec -ti multi-container-pod -- bash
 ```
 
 Connect specific container
 
 ```
-kubectl exec -ti multi-container-pod bash -c date
+kubectl exec -ti multi-container-pod -c date -- bash
 ```
 
 ### Pod Logs
@@ -1220,7 +1220,7 @@ See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/secret-example/proxy/>
 And see the variables:
 
 ```
-kubectl exec secret-example env | grep MY_
+kubectl exec secret-example -- env | grep MY_
 ```
 
 ### EnvFrom
