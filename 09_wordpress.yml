@@ -8,17 +8,6 @@ stringData:
   MYSQL_ROOT_PASSWORD: somewordpress
   MYSQL_USER: wordpress
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -29,7 +18,15 @@ spec:
     matchLabels:
       project: wordpress
       app: mysql
-  replicas: 1
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
   template:
     metadata:
       labels:
@@ -79,6 +76,7 @@ kind: Service
 metadata:
   name: mysql
 spec:
+  clusterIP: None
   ports:
     - port: 3306
       targetPort: 3306
