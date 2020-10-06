@@ -286,47 +286,6 @@ kubectl explain pod
 kubectl explain pod.spec
 ```
 
-### Kubeval
-
-- Github: <https://github.com/instrumenta/kubeval>
-- Homepage: <https://kubeval.instrumenta.dev>
-
-#### Install
-
-Install instructions: <https://kubeval.instrumenta.dev/installation/>
-
-Linux
-
-```
-wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
-tar xf kubeval-linux-amd64.tar.gz
-sudo cp kubeval /usr/local/bin
-```
-
-Mac
-
-```
-brew tap instrumenta/instrumenta
-brew install kubeval
-```
-
-#### Usage
-
-```
-kubeval <file>
-kubeval --strict <file>
-```
-
-Example
-
-```
-kubeval 01_pod.yml
-kubeval --strict 01_pod.yml
-
-# Validate all Kubernetes YAMLs
-./kubeval.sh
-```
-
 ### Get Nodes
 
 ```
