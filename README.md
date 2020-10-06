@@ -343,6 +343,11 @@ kubectl patch deployment \
 ]}]'
 ```
 
+Sources:
+
+- https://devblogs.microsoft.com/premier-developer/bypassing-authentication-for-the-local-kubernetes-cluster-dashboard/
+- https://stackoverflow.com/a/62039375/5281724
+
 ### K9s - CLI Dashboard
 
 - https://k9scli.io/
