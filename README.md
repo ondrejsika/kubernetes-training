@@ -300,6 +300,49 @@ Start proxy
 kubectl proxy
 ```
 
+### Dashboard
+
+#### Minikube
+
+```
+minikube addons enable dashboard
+```
+
+See the dashboard: <http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/>
+
+or just:
+
+```
+minikube dashboard
+```
+
+Which start a new proxy, activate the dashboard and open it in the browser.
+
+### Production cluster (AWS, RKE, Digital Ocean)
+
+Source of Kubernetes Dashboard - https://github.com/kubernetes/dashboard
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.4/aio/deploy/recommended.yaml
+```
+
+See the dashboard: http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+**DON'T RUN ON PRODUCTION**: If you want to grant permissions to dashboard without need for a token, you can run this:
+
+```
+kubectl patch deployment \
+  kubernetes-dashboard \
+  --namespace kubernetes-dashboard \
+  --type='json' \
+  --patch='[{"op": "replace", "path": "/spec/template/spec/containers/0/args", "value": [
+  "--auto-generate-certificates",
+  "--enable-insecure-login",
+  "--enable-skip-login",
+  "--namespace=kubernetes-dashboard"
+]}]'
+```
+
 ### Create Pod
 
 ```
