@@ -967,7 +967,7 @@ See example of [ondrejsika/wait-for-it](https://github.com/ondrejsika/docker-tra
 #### Setup some env example using Init Containers
 
 ```
-kubect apply -f init_cointainers_setup.yml
+kubect apply -f init_containers_setup.yml
 ```
 
 ### Create Namespace
