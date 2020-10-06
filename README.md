@@ -343,6 +343,10 @@ kubectl patch deployment \
 ]}]'
 ```
 
+### K9s - CLI Dashboard
+
+https://github.com/derailed/k9s
+
 ### Create Pod
 
 ```
