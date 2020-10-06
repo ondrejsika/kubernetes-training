@@ -1530,10 +1530,16 @@ Api v1 (same as `kubectl autoscale`)
 kubectl apply -f hpa_v1.yml
 ```
 
-Run AB:
+Run AB locally:
 
 ```
-ab -kc 20 -t 60 $(minikube service hpav1-web --url)/
+ab -c 4 -n 100000 $(minikube service hpav1-web --url)/
+```
+
+or from Kubernetes
+
+```
+kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpav1-web/
 ```
 
 See autoscaling at work
@@ -1556,10 +1562,16 @@ kubectl get hpa
 
 ### Test Autoscaling
 
-Run AB
+Run AB locally
 
 ```
-ab -kc 20 -t 60 $(minikube service apache --url)/
+ab -c 4 -n 100000 $(minikube service apache --url)/
+```
+
+or in Kubernetes:
+
+```
+kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://apache/
 ```
 
 And see
