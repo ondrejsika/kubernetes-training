@@ -330,6 +330,14 @@ See the dashboard: http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/
 
 **DON'T RUN ON PRODUCTION**: If you want to grant permissions to dashboard without need for a token, you can run this:
 
+Add `cluster-admin` role to dashboard user:
+
+```
+kubectl apply -f kubernetes-dashboard-cluster-admin.yml
+```
+
+and:
+
 ```
 kubectl patch deployment \
   kubernetes-dashboard \
