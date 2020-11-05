@@ -89,7 +89,7 @@ spec:
   selector:
     release: "{{ .Release.Name }}-counter"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: "{{ .Release.Name }}"
@@ -99,6 +99,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: "{{ .Release.Name }}-counter"
-              servicePort: 80
+              service:
+                name: "{{ .Release.Name }}-counter"
+                port:
+                  number: 80
