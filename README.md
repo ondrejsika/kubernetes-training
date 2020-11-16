@@ -640,6 +640,17 @@ kubectl apply -f 04_02_deployment.yml
 
 ### History of deployments
 
+Deploy nginx & apache for longer history
+
+```
+kubectl apply -f 04_03_deployment.yml
+kubectl rollout status deployment hello-world
+kubectl apply -f 04_04_deployment.yml
+kubectl rollout status deployment hello-world
+```
+
+See the history
+
 ```
 kubectl rollout history deploy hello-world
 ```
