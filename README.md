@@ -1691,7 +1691,7 @@ Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://o
 ### Initialize Stable Charts Repository
 
 ```
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo add stable https://charts.helm.sh/stable
 ```
 
 Source of all stable charts are in this repository: <https://github.com/helm/charts>
