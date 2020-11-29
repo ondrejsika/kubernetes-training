@@ -2196,7 +2196,7 @@ kubectl delete --ignore-not-found=true -f kube-prometheus/manifests/ -f kube-pro
 ### Setup ECK Operator
 
 ```
-kubectl apply -f https://download.elastic.co/downloads/eck/1.1.2/all-in-one.yaml
+kubectl apply -f https://download.elastic.co/downloads/eck/1.3.0/all-in-one.yaml
 ```
 
 See logs:
