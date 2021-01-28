@@ -1252,6 +1252,20 @@ Clean up
 kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 ```
 
+### Longhorn
+
+<https://longhorn.io/>
+
+Install
+
+```
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.1.0/deploy/longhorn.yaml
+```
+
+#### Longhorn Dashboard
+
+See <http://127.0.0.1:8001/api/v1/namespaces/longhorn-system/services/longhorn-frontend:80/proxy/>
+
 ### NFS Client Provisioner
 
 Install using Helm:
