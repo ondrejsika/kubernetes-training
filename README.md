@@ -195,6 +195,36 @@ Also work for zsh, eg.: `source <(kubectl completion zsh)`
 
 <!-- END Install -->
 
+### Kube PS1
+
+[jonmosco/kube-ps1](https://github.com/jonmosco/kube-ps1)
+
+#### Install
+
+```
+brew install kube-ps1
+```
+
+Add to `.bashrc`:
+
+```
+function kps1() {
+  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  export KUBE_PS1_SYMBOL_ENABLE=false
+  export PS1='$(kube_ps1)'$PS1
+}
+```
+
+See my [bashrc](https://github.com/ondrejsika/dotfiles/blob/master/core/bashrc#L99)
+
+Activate using:
+
+```
+kps1
+```
+
+![](./images/kps1.png)
+
 ### Start Minikube
 
 ```
