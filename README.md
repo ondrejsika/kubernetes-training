@@ -1161,7 +1161,7 @@ Stop & delete
 kubectl delete namespace wp
 ```
 
-## PersistentVolume & PersistentVolumeClaim
+## Storage & Volumes
 
 ### EmptyDir
 
@@ -1189,7 +1189,9 @@ kubectl apply -f emptydir_memory.yml
 
 If you use in memory volumes, files stored there counts into container's memory limit.
 
-### Claim default PV
+## PersistentVolume & PersistentVolumeClaim
+
+### PersistentVolumeClaim
 
 From default **StorageClass** (`kubectl get storageclass` or `kubectl get sc`)
 
