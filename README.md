@@ -1266,6 +1266,21 @@ kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.1.0/depl
 
 See <http://127.0.0.1:8001/api/v1/namespaces/longhorn-system/services/longhorn-frontend:80/proxy/>
 
+#### Make Longhorn Default Storage Class
+
+Clean is default from `do-block-storage` (DigitalOcean) and `standard` (Minikube).
+
+```
+kubectl patch storageclass do-block-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+```
+
+Set Longhorn as default
+
+```
+kubectl patch storageclass longhorn -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
 ### NFS Client Provisioner
 
 Install using Helm:
