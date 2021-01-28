@@ -225,6 +225,36 @@ kps1
 
 ![](./images/kps1.png)
 
+### kubectx & kubens
+
+[ahmetb/kubectx](https://github.com/ahmetb/kubectx)
+
+#### Install
+
+```
+brew install kubectx
+```
+
+Add aliases to `.bashrc`:
+
+```bash
+# kubectl
+alias k=kubectl
+complete -F _complete_alias k
+
+# kubectx
+alias kx=kubectx
+complete -F _complete_alias kx
+
+# kubens
+alias kn=kubens
+complete -F _complete_alias kn
+```
+
+See my [bashrc](https://github.com/ondrejsika/dotfiles/blob/master/core/bashrc#L87)
+
+![](./images/kubectx.png)
+
 ### Start Minikube
 
 ```
