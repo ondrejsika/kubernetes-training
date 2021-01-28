@@ -742,6 +742,65 @@ kubectl delete -f 04_01_deployment.yml
 kubectl delete deploy/hello-world
 ```
 
+## Deployment Strategies
+
+Great resources by Container Solutions
+
+- [article](https://container-solutions.com/kubernetes-deployment-strategies)
+- [repository](https://github.com/ContainerSolutions/k8s-deployment-strategies)
+
+### Ramped (without downtime)
+
+Create deployment & service
+
+```
+kubectl apply -f strategy_ramped.yml
+```
+
+See update
+
+```
+vimdiff strategy_ramped.yml strategy_ramped_2.yml
+```
+
+Update without downtime
+
+```
+kubectl apply -f strategy_ramped_2.yml
+```
+
+Clean up
+
+```
+kubectl delete -f strategy_ramped.yml
+```
+
+### Recreate
+
+Create deployment & service
+
+```
+kubectl apply -f strategy_recreate.yml
+```
+
+See update
+
+```
+vimdiff strategy_recreate.yml strategy_recreate_2.yml
+```
+
+Update with downtime
+
+```
+kubectl apply -f strategy_recreate_2.yml
+```
+
+Clean up
+
+```
+kubectl delete -f strategy_recreate.yml
+```
+
 ### Create StatefulSet
 
 ```
@@ -1714,65 +1773,6 @@ and clean up
 ```
 kubectl delete hpa/hello-world
 kubectl delete -f 04_01_deployment.yml
-```
-
-## Deployment Strategies
-
-Great resources by Container Solutions
-
-- [article](https://container-solutions.com/kubernetes-deployment-strategies)
-- [repository](https://github.com/ContainerSolutions/k8s-deployment-strategies)
-
-### Ramped (without downtime)
-
-Create deployment & service
-
-```
-kubectl apply -f strategy_ramped.yml
-```
-
-See update
-
-```
-vimdiff strategy_ramped.yml strategy_ramped_2.yml
-```
-
-Update without downtime
-
-```
-kubectl apply -f strategy_ramped_2.yml
-```
-
-Clean up
-
-```
-kubectl delete -f strategy_ramped.yml
-```
-
-### Recreate
-
-Create deployment & service
-
-```
-kubectl apply -f strategy_recreate.yml
-```
-
-See update
-
-```
-vimdiff strategy_recreate.yml strategy_recreate_2.yml
-```
-
-Update with downtime
-
-```
-kubectl apply -f strategy_recreate_2.yml
-```
-
-Clean up
-
-```
-kubectl delete -f strategy_recreate.yml
 ```
 
 ## Helm
