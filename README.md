@@ -319,7 +319,7 @@ Create own namespace (eg.: `ondrejsika`) and set it as default
 
 ```
 kubectl create ns ondrejsika
-kubectl config set-context do-fra1-sikademo --namespace=ondrejsika
+kubectl config set-context $(kubectl config current-context) --namespace=ondrejsika
 ```
 
 Sources:
