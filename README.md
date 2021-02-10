@@ -749,30 +749,30 @@ Great resources by Container Solutions
 - [article](https://container-solutions.com/kubernetes-deployment-strategies)
 - [repository](https://github.com/ContainerSolutions/k8s-deployment-strategies)
 
-### Ramped (without downtime)
+### Rolling Update (without downtime)
 
 Create deployment & service
 
 ```
-kubectl apply -f strategy_ramped.yml
+kubectl apply -f strategy_rolling_update.yml
 ```
 
 See update
 
 ```
-vimdiff strategy_ramped.yml strategy_ramped_2.yml
+vimdiff strategy_rolling_update.yml strategy_rolling_update_2.yml
 ```
 
 Update without downtime
 
 ```
-kubectl apply -f strategy_ramped_2.yml
+kubectl apply -f strategy_rolling_update_2.yml
 ```
 
 Clean up
 
 ```
-kubectl delete -f strategy_ramped.yml
+kubectl delete -f strategy_rolling_update.yml
 ```
 
 ### Recreate
