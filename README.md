@@ -923,6 +923,12 @@ Create parallel job:
 kubectl apply -f parallel_jobs.yml
 ```
 
+#### Wait for Job Completion
+
+```
+kubectl wait --for=condition=complete --timeout=600s job/pi
+```
+
 ### Create Cron Job
 
 - <https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/>
