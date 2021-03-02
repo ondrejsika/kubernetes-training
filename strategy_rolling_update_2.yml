@@ -18,6 +18,7 @@ spec:
     metadata:
       labels:
         app: ramped
+        svc: example
     spec:
       containers:
         - name: hello-world

@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: recreate
+        svc: example
     spec:
       containers:
         - name: hello-world
