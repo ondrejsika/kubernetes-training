@@ -1785,26 +1785,19 @@ kubectl delete -f 04_01_deployment.yml
 
 Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://ondrej-sika.cz/blog/helm3/>
 
-### Initialize Stable Charts Repository
+### Add Repository
 
 ```
-helm repo add stable https://charts.helm.sh/stable
-```
-
-Source of all stable charts are in this repository: <https://github.com/helm/charts>
-
-If you want update charts info, call update:
-
-```
-helm repo update
+helm repo add ondrejsika https://helm.oxs.cz
+helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
 ### Search Package
 
-Search Helm Hub ([hub.helm.sh](https://hub.helm.sh/))
+Search Artifact Hub ([artifacthub.io/](https://artifacthub.io/))
 
 ```
-helm search hub db
+helm search hub redis
 ```
 
 Search local repositories
@@ -1813,14 +1806,18 @@ Search local repositories
 helm search repo redis
 ```
 
+```
+helm search repo ondrejsika
+```
+
 ### Inspect Package
 
 ```
-helm show chart stable/redis
-helm show values stable/redis
-helm show readme stable/redis
+helm show chart bitnami/redis
+helm show values bitnami/redis
+helm show readme bitnami/redis
 
-helm show all stable/redis
+helm show all bitnami/redis
 ```
 
 ### Install Package
@@ -1832,13 +1829,13 @@ helm install <deployment_name> <chart>
 Example:
 
 ```
-helm install redis stable/redis
+helm install redis bitnami/redis
 ```
 
 Or dry run (see the Kubernetes config)
 
 ```
-helm install redis stable/redis --dry-run
+helm install redis bitnami/redis --dry-run
 ```
 
 ### Upgrade Package
@@ -1846,7 +1843,7 @@ helm install redis stable/redis --dry-run
 If you want to upgrade instance of chart, you have to call:
 
 ```
-helm upgrade redis stable/redis --set pullPolicy=Always
+helm upgrade redis bitnami/redis --set pullPolicy=Always
 ```
 
 ### Install or Upgrade
@@ -1854,7 +1851,7 @@ helm upgrade redis stable/redis --set pullPolicy=Always
 You can add `--install` to `helm upgrade` to install package if not exists. When chart exists, it will be upgraded.
 
 ```
-helm upgrade --install redis stable/redis --set pullPolicy=Always
+helm upgrade --install redis bitnami/redis --set pullPolicy=Always
 ```
 
 ### List Installed Packages
@@ -1888,14 +1885,6 @@ helm uninstall $(helm ls -a -q)
 
 ```
 helm repo list
-```
-
-#### Add repository
-
-```
-helm repo add ondrejsika https://helm.oxs.cz
-
-helm search repo ondrejsika
 ```
 
 #### Install ondrejsika/one-image
