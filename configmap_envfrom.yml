@@ -7,6 +7,14 @@ data:
   MY_WORLD: world
 ---
 apiVersion: v1
+kind: Secret
+metadata:
+  name: envfrom
+stringData:
+  MY_FOO: foo
+  MY_BAR: bar
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: envfrom
@@ -21,4 +29,13 @@ spec:
       envFrom:
         - configMapRef:
             name: envfrom
+        - secretRef:
+            name: envfrom
+      resources:
+        requests:
+          cpu: 1m
+          memory: 10Mi
+        limits:
+          cpu: 1m
+          memory: 10Mi
   restartPolicy: Never
