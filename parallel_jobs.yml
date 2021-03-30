@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: pi10
 spec:
-  activeDeadlineSeconds: 100
+  activeDeadlineSeconds: 600
   completions: 10
   parallelism: 10
   template:
@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: pi
-          image: perl
+          image: perl:slim
           command: ["perl"]
           args: ["-Mbignum=bpi", "-wle", "print bpi(20)"]
       restartPolicy: Never

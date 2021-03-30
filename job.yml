@@ -3,14 +3,14 @@ kind: Job
 metadata:
   name: pi
 spec:
-  activeDeadlineSeconds: 100
+  activeDeadlineSeconds: 600
   template:
     metadata:
       name: pi
     spec:
       containers:
         - name: pi
-          image: perl
+          image: perl:slim
           command: ["perl"]
           args: ["-Mbignum=bpi", "-wle", "print bpi(20)"]
       restartPolicy: Never
