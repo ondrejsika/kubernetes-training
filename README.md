@@ -270,12 +270,12 @@ minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switc
 Verify cluster health by
 
 ```
-kubectl get cs
+kubectl get nodes
 ```
 
 If you see something like this
 
-![minikube-cluster-up-and-running](images/minikube-cluster-up-and-running.png)
+![minikube-cluster-up-and-running](images/minikube-cluster-up-and-running-2021.png)
 
 Your cluster is up and running. Good job!
 
@@ -327,14 +327,6 @@ Sources:
 - Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
 
 ## Course
-
-### Check Cluster Status
-
-Validate cluster health after setup
-
-```
-kubectl get cs
-```
 
 ### Explain Kubernetes Resources
 
