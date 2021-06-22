@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache
+  name: hpa-apache
 spec:
   selector:
     matchLabels:
-      app: apache
+      app: hpa-apache
   replicas: 1
   template:
     metadata:
       labels:
-        app: apache
+        app: hpa-apache
     spec:
       containers:
         - name: apache
@@ -28,14 +28,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apache
+  name: hpa-service
 spec:
   type: NodePort
   ports:
     - port: 80
       targetPort: 80
   selector:
-    app: apache
+    app: hpa-apache
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler

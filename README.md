@@ -1733,13 +1733,13 @@ kubectl apply -f hpa_v1.yml
 Run AB locally:
 
 ```
-ab -c 4 -n 100000 $(minikube service hpav1-web --url)/
+ab -c 4 -n 100000 $(minikube service hpa-service --url)/
 ```
 
 or from Kubernetes
 
 ```
-kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpav1-web/
+kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
 ```
 
 See autoscaling at work
@@ -1765,13 +1765,13 @@ kubectl get hpa
 Run AB locally
 
 ```
-ab -c 4 -n 100000 $(minikube service apache --url)/
+ab -c 4 -n 100000 $(minikube service hpa-service --url)/
 ```
 
 or in Kubernetes:
 
 ```
-kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://apache/
+kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
 ```
 
 And see

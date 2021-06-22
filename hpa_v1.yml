@@ -28,7 +28,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hpav1-web
+  name: hpa-service
 spec:
   type: NodePort
   ports:
