@@ -1329,7 +1329,7 @@ Use PVC
 kubectl apply -f pvc_mount_example.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/pvc-mount-example/proxy/>
 
 Clean up
 
