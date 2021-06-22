@@ -1736,10 +1736,16 @@ Run AB locally:
 ab -c 4 -n 100000 $(minikube service hpa-service --url)/
 ```
 
-or from Kubernetes
+or from Kubernetes (kubectl run):
 
 ```
 kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
+```
+
+or using Kubernetes job:
+
+```
+kubectl apply -f ab.yml
 ```
 
 See autoscaling at work
@@ -1768,10 +1774,16 @@ Run AB locally
 ab -c 4 -n 100000 $(minikube service hpa-service --url)/
 ```
 
-or in Kubernetes:
+or in Kubernetes (kubectl run):
 
 ```
 kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
+```
+
+or using Kubernetes job:
+
+```
+kubectl apply -f ab.yml
 ```
 
 And see

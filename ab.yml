@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ab
+spec:
+  template:
+    metadata:
+      name: ab
+    spec:
+      containers:
+        - name: ab
+          image: ondrejsika/ab
+          command: ["/bin/sh", "-c"]
+          args: ["ab -c 4 -n 100000 http://hpa-service/"]
+      restartPolicy: Never
