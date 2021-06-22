@@ -336,6 +336,7 @@ kubectl explain node.spec
 
 kubectl explain pod
 kubectl explain pod.spec
+kubectl explain pod.spec.containers.image
 ```
 
 ### Get Nodes
