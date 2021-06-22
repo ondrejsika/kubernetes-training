@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: cronjob
 spec:
+  # https://crontab.guru/
   schedule: "*/1 * * * *"
   failedJobsHistoryLimit: 10
   successfulJobsHistoryLimit: 10
