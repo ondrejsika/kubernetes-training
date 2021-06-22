@@ -6,13 +6,24 @@ spec:
   affinity:
     nodeAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 1
+        - weight: 100
           preference:
             matchExpressions:
-              - key: my-node-id
+              - key: cpu-perf
                 operator: In
                 values:
-                  - c
+                  - high
+                  - high-intel
+                  - high-amd
+        - weight: 99
+          preference:
+            matchExpressions:
+              - key: cpu-perf
+                operator: In
+                values:
+                  - medium
+                  - medium-intel
+                  - medium-amd
   containers:
     - name: hello
       image: ondrejsika/go-hello-world:2
