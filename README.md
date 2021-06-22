@@ -832,7 +832,7 @@ See service in Stateful Set.
 Example:
 
 ```
-kubectl run example -ti --rm --image=sikalabs/ci bash
+kubectl run bash -ti --rm --image=sikalabs/ci bash
 ```
 
 And try (inside of Kubernetes):
