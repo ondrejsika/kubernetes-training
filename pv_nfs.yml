@@ -8,6 +8,8 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
+    - ReadOnlyMany
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   # persistentVolumeReclaimPolicy: Delete
   storageClassName: nfs
