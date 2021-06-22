@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleep20s
+spec:
+  template:
+    metadata:
+      name: sleep
+    spec:
+      containers:
+        - name: sleep
+          image: debian:10-slim
+          command: ["/bin/sh", "-c"]
+          args: ["sleep 20"]
+      restartPolicy: Never
