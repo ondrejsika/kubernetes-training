@@ -255,6 +255,16 @@ See my [bashrc](https://github.com/ondrejsika/dotfiles/blob/master/core/bashrc#L
 
 ![](./images/kubectx.png)
 
+### Alias `k`
+
+#### Windows (CMD)
+
+```
+doskey k=kubectl $*
+```
+
+Source: https://pascalnaber.wordpress.com/2017/11/09/configure-alias-on-windows-for-kubectl/
+
 ### Start Minikube
 
 ```
