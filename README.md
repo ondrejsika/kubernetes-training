@@ -1260,9 +1260,23 @@ If you use in memory volumes, files stored there counts into container's memory 
 
 ## PersistentVolume & PersistentVolumeClaim
 
+### Storage Classes
+
+A StorageClass provides a way for administrators to describe the "classes" of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators.
+
+Docs: <https://kubernetes.io/docs/concepts/storage/storage-classes/>
+
+List Storage Classes:
+
+```
+kubectl get storageclass
+# or
+kubectl get sc
+```
+
 ### PersistentVolumeClaim
 
-From default **StorageClass** (`kubectl get storageclass` or `kubectl get sc`)
+From default **StorageClass**
 
 ```
 kubectl apply -f pvc_default.yml
