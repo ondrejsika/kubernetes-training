@@ -1276,6 +1276,8 @@ kubectl get sc
 
 ### PersistentVolumeClaim
 
+- AccessModes - <https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes>
+
 From default **StorageClass**
 
 ```
