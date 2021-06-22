@@ -832,7 +832,7 @@ See service in Stateful Set.
 Example:
 
 ```
-kubectl run example -ti --rm --image=nixery.dev/shell/curl/host bash
+kubectl run example -ti --rm --image=sikalabs/ci bash
 ```
 
 And try (inside of Kubernetes):
@@ -940,7 +940,7 @@ kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
 Create deployment from command line
 
 ```
-kubectl run bash -it --rm --image=nixery.dev/shell/curl/host -- bash
+kubectl run bash -it --rm --image=sikalabs/ci -- bash
 ```
 
 Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
