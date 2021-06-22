@@ -1370,6 +1370,14 @@ You can use `nfs-client` Storage Class:
 kubectl apply -f pvc_nfs_client.yml
 ```
 
+### Direct NFS Volume mount
+
+```
+kubectl apply -f nfs-volume-example.yml
+```
+
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/nfs-volume-example/proxy/>
+
 ## ConfigMaps & Secrets
 
 ### Create secret
