@@ -18,7 +18,7 @@ spec:
     configmaps: "1"
     persistentvolumeclaims: "1"
     pods: "2"
-    replicationcontrollers: "2"
     secrets: "1"
     services: "1"
     services.loadbalancers: "1"
+    count/deployments.apps: "1"
