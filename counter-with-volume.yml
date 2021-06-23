@@ -33,6 +33,11 @@ spec:
       containers:
         - name: redis
           image: redis
+          command:
+            - redis-server
+          args:
+            - --appendonly
+            - "yes"
           resources:
             requests:
               cpu: 30m
