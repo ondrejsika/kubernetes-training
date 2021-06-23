@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: job-read
+rules:
+  - apiGroups: ["batch"]
+    resources: ["jobs"]
+    verbs:
+      - "get"
+      - "list"
+      - "watch"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: default-job-read
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: job-read
+subjects:
+  - kind: ServiceAccount
+    name: default
