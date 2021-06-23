@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis
+  labels:
+    project: counter
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis
+  labels:
+    project: counter
+spec:
+  serviceName: redis
+  selector:
+    matchLabels:
+      project: counter
+      app: redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        project: counter
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          resources:
+            requests:
+              cpu: 30m
+              memory: 50Mi
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - mountPath: /data
+              name: data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    project: counter
+spec:
+  ports:
+    - port: 6379
+  selector:
+    project: counter
+    app: redis
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter
+  labels:
+    project: counter
+spec:
+  selector:
+    matchLabels:
+      project: counter
+      app: counter
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        project: counter
+        app: counter
+    spec:
+      containers:
+        - name: counter
+          image: ondrejsika/counter
+          resources:
+            requests:
+              cpu: 20m
+              memory: 10Mi
+          env:
+            - name: REDIS
+              value: redis
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter
+  labels:
+    project: counter
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+  selector:
+    project: counter
+    app: counter
