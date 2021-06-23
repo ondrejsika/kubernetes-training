@@ -1075,7 +1075,8 @@ kubectl delete -f webservers.yml -f ingress.yml
 ### Deploy Application (Multiple Deployments and Services)
 
 ```
-kubectl apply -f 07_counter.yml
+kubectl apply -f counter
+.yml
 ```
 
 See: http://127.0.0.1:8001/api/v1/namespaces/default/services/counter/proxy/
@@ -1095,7 +1096,8 @@ minikube service counter
 ### Delete Application
 
 ```
-kubectl delete -f 07_counter.yml
+kubectl delete -f counter
+.yml
 ```
 
 ## InitContainers
@@ -1107,7 +1109,8 @@ See example [init_containers.yml](init_containers.yml)
 See also diff with counter example
 
 ```
-vimdiff 07_counter.yml init_containers.yml
+vimdiff counter
+.yml init_containers.yml
 ```
 
 Example:
@@ -1165,7 +1168,8 @@ kubectl get pods --all-namespaces
 ### Deploy to Namespace
 
 ```
-kubectl apply -f 07_counter.yml -n counter
+kubectl apply -f counter
+.yml -n counter
 ```
 
 See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
