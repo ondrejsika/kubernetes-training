@@ -1236,32 +1236,6 @@ kubectl delete namespace wp
 
 ## Storage & Volumes
 
-### EmptyDir
-
-Docs: <https://kubernetes.io/docs/concepts/storage/volumes/#emptydir>
-
-#### Stored on disk
-
-```
-kubectl apply -f emptydir.yml
-```
-
-Empty dir volemes are stored in `/var/lib/kubelet/pods/<pod uid>/volumes/kubernetes.io~empty-dir`
-
-See volumes on node:
-
-```
-tree /var/lib/kubelet/pods/$(kubectl get pods/emptydir -o jsonpath='{.metadata.uid}')/volumes/kubernetes.io~empty-dir/
-```
-
-#### Stored in memory (ramdisk)
-
-```
-kubectl apply -f emptydir_memory.yml
-```
-
-If you use in memory volumes, files stored there counts into container's memory limit.
-
 ## PersistentVolume & PersistentVolumeClaim
 
 ### Storage Classes
