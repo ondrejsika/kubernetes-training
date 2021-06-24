@@ -1342,16 +1342,23 @@ kubectl patch storageclass longhorn -p '{"metadata": {"annotations":{"storagecla
 
 ### NFS Client Provisioner
 
+Setup Helm:
+
+```
+helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+helm repo update
+```
+
 Install using Helm:
 
 ```
-helm install nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=<nfs-server> --set nfs.path=<exported-path>
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=<nfs-server> --set nfs.path=<exported-path>
 ```
 
 Example with my NFS server (nfs.sikademo.com):
 
 ```
-helm install nfs-client-provisioner stable/nfs-client-provisioner --set nfs.server=nfs.sikademo.com --set nfs.path=/nfs
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=nfs.sikademo.com --set nfs.path=/nfs
 ```
 
 You can use `nfs-client` Storage Class:
