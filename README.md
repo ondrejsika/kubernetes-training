@@ -1381,6 +1381,36 @@ kubectl apply -f nfs-volume-example.yml
 
 See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/nfs-volume-example/proxy/>
 
+### Reclaim Policy Retain
+
+#### Install Storage Classes with Reclaim Policy Retain
+
+Minikube
+
+```
+kubectl apply -f sc-minikube-retain.yml
+```
+
+DigitalOcean
+
+```
+kubectl apply -f sc-do-retain.yml
+```
+
+#### Apply PVC with Storage Class
+
+Minikube
+
+```
+kubectl apply -f pvc-minikube-retain.yml
+```
+
+DigitalOcean
+
+```
+kubectl apply -f pvc-do-retain.yml
+```
+
 ## ConfigMaps & Secrets
 
 ### Create secret
