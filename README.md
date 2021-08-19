@@ -1620,6 +1620,12 @@ kubectl --kubeconfig=config config set-context --user=devel --cluster=minikube  
 kubectl --kubeconfig=config config use-context devel
 ```
 
+Add read only access to some cluster wide resources (nodes, volumes, ...)
+
+```
+kubectl apply -f 17_namespace_admin_extra.yml
+```
+
 ## Liveness & Readiness Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
