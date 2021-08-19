@@ -1428,6 +1428,14 @@ kubectl apply -f configmap_envfrom.yml
 kubectl logs envfrom
 ```
 
+### Expand Environment Variables in Config File
+
+```
+kubectl apply -f expand_config.yml
+```
+
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/expand-config/proxy/>
+
 ### Config
 
 See / export kubeconfig

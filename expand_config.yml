@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: expand-config
+data:
+  config.yaml.txt: |
+    host: $DB_HOST
+    port: $DB_PORT
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: expand-config
+stringData:
+  DB_HOST: foo
+  DB_PORT: "111"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: expand-config
+spec:
+  volumes:
+    - name: data
+      emptyDir: {}
+    - name: config
+      configMap:
+        name: expand-config
+  initContainers:
+    - name: config
+      image: sikalabs/slu:v0.10.0
+      command:
+        - "/bin/sh"
+        - "-c"
+        - "/slu expand file -s /config/config.yaml.txt > /data/config.yaml.txt"
+      volumeMounts:
+        - mountPath: /data
+          name: data
+        - mountPath: /config
+          name: config
+      envFrom:
+        - secretRef:
+            name: envfrom
+      resources:
+        requests:
+          cpu: 10m
+          memory: 40Mi
+        limits:
+          cpu: 20m
+          memory: 40Mi
+  containers:
+    - name: main
+      image: sikalabs/nginx-public
+      volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: data
+      resources:
+        requests:
+          cpu: 10m
+          memory: 30Mi
+        limits:
+          cpu: 10m
+          memory: 30Mi
