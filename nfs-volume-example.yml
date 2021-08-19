@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: nginx:alpine
+      image: sikalabs/nginx-public
       resources:
         requests:
           cpu: 20m
