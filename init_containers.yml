@@ -23,7 +23,7 @@ spec:
           command:
             - sleep
           args:
-            - "10"
+            - "20"
       containers:
         - name: redis
           image: redis
