@@ -27,7 +27,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: devel-user
-    namespace: devel
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
