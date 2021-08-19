@@ -1130,6 +1130,12 @@ See example of [ondrejsika/wait-for-it](https://github.com/ondrejsika/docker-tra
 kubect apply -f init_containers_setup.yml
 ```
 
+#### Wait for Migrations in Init Container
+
+```
+kubectl apply -f init_containers_migrations.yml
+```
+
 ### Create Namespace
 
 ```
