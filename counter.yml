@@ -24,6 +24,9 @@ spec:
             requests:
               cpu: 30m
               memory: 50Mi
+            limits:
+              cpu: 50m
+              memory: 80Mi
           ports:
             - containerPort: 6379
 ---
@@ -65,6 +68,9 @@ spec:
             requests:
               cpu: 20m
               memory: 10Mi
+            limits:
+              cpu: 50m
+              memory: 30Mi
           env:
             - name: REDIS
               value: redis
