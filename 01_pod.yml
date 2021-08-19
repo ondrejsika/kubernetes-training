@@ -7,7 +7,7 @@ metadata:
     svc: example
 spec:
   containers:
-    - name: simple-hello-world
+    - name: main
       image: ondrejsika/go-hello-world:2
       ports:
         - containerPort: 80
