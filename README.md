@@ -502,6 +502,12 @@ kubectl logs multi-container-pod date
 
 Docs - <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/>
 
+### Select by node name (nodeName)
+
+```
+kubectl apply -f nodename.yml
+```
+
 #### See node labels
 
 ```
@@ -519,13 +525,7 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 Example
 
 ```
-kubectl label nodes minikube node=primary
-```
-
-### Select by node name (nodeName)
-
-```
-kubectl apply -f nodename.yml
+kubectl label nodes minikube foo=bar
 ```
 
 ### Select by label (nodeSelector)

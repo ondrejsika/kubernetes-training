@@ -14,4 +14,4 @@ spec:
           memory: 20Mi
           cpu: 20m
   nodeSelector:
-    node: primary
+    foo: bar
