@@ -90,3 +90,20 @@ spec:
   selector:
     project: counter
     app: counter
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: counter
+spec:
+  rules:
+    - host: counter.192.168.99.100.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: counter
+                port:
+                  number: 80
