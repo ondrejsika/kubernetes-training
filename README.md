@@ -1410,6 +1410,13 @@ DigitalOcean
 ```
 kubectl apply -f pvc-do-retain.yml
 ```
+### CephFS Example
+
+```
+kubectl apply -f cephfs-volume-example.yml
+```
+
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/cephfs-volume-example/proxy/>
 
 ## ConfigMaps & Secrets
 
