@@ -5,6 +5,7 @@ metadata:
 spec:
   # https://crontab.guru/
   schedule: "*/1 * * * *"
+  concurrencyPolicy: Allow
   failedJobsHistoryLimit: 10
   successfulJobsHistoryLimit: 10
   jobTemplate:
