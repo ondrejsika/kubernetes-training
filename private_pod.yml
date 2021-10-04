@@ -9,7 +9,7 @@ spec:
     - name: private-registry-credentials
   containers:
     - name: hello
-      image: registry.sikahq.com/pseudo-private/hello-world:latest
+      image: registry.sikalabs.com/pseudo-private/hello-world:latest
       resources:
         requests:
           memory: 10Mi
@@ -24,4 +24,4 @@ type: kubernetes.io/dockerconfigjson
 metadata:
   name: private-registry-credentials
 stringData:
-  .dockerconfigjson: '{"auths": {"registry.sikahq.com": {"auth": "cHNldWRvLXByaXZhdGUtdXNlcjphc2RmYXNkZg=="}}}'
+  .dockerconfigjson: '{"auths": {"registry.sikalabs.com": {"auth": "cHNldWRvLXByaXZhdGUtdXNlcjphc2RmYXNkZg=="}}}'
