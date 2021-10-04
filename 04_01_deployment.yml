@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  labels:
-    app: hello-world-deploy
   annotations:
     kubernetes.io/change-cause: ver1
 spec:

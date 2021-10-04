@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: hello-world-rs
-  labels:
-    app: hello-world-rs
 spec:
   replicas: 4
   selector:
