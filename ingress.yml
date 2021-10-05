@@ -4,7 +4,7 @@ metadata:
   name: webservers
 spec:
   rules:
-    - host: nginx.192.168.99.100.nip.io
+    - host: nginx.127.0.0.1.nip.io
       http:
         paths:
           - path: /
@@ -14,7 +14,7 @@ spec:
                 name: nginx
                 port:
                   number: 80
-    - host: apache.192.168.99.100.nip.io
+    - host: apache.127.0.0.1.nip.io
       http:
         paths:
           - path: /

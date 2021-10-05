@@ -1063,8 +1063,8 @@ kubectl apply -f ingress.yml
 
 See:
 
-- http://nginx.192.168.99.100.nip.io
-- http://apache.192.168.99.100.nip.io
+- http://nginx.127.0.0.1.nip.io
+- http://apache.127.0.0.1.nip.io
 
 Cleanup
 
@@ -1978,7 +1978,7 @@ helm show all ondrejsika/one-image
 Install with values in args
 
 ```
-helm install hello-world ondrejsika/one-image --set host=hello-world.192.168.99.100.nip.io
+helm install hello-world ondrejsika/one-image --set host=hello-world.127.0.0.1.nip.io
 ```
 
 Install with values file
@@ -1991,7 +1991,7 @@ helm install apache ondrejsika/one-image --values one-image-apache-values.yml
 Install with values file and values args
 
 ```
-helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.192.168.99.100.nip.io
+helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.127.0.0.1.nip.io
 ```
 
 ### Own Helm Package
@@ -2064,13 +2064,13 @@ cp ../helm-counter.yaml templates/counter.yml
 
 ```
 helm template counter .
-helm template counter . --set host=counter.192.168.99.100.nip.io
+helm template counter . --set host=counter.127.0.0.1.nip.io
 ```
 
 #### Install
 
 ```
-helm install counter . --set host=counter.192.168.99.100.nip.io
+helm install counter . --set host=counter.127.0.0.1.nip.io
 ```
 
 #### Build Package
@@ -2111,7 +2111,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install counter sikademo/counter --set host=counter.192.168.99.100.nip.io
+helm install counter sikademo/counter --set host=counter.127.0.0.1.nip.io
 ```
 
 ## Kubernetes Networking
