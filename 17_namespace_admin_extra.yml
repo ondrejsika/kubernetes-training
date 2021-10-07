@@ -5,9 +5,15 @@ metadata:
 rules:
   - apiGroups:
       - ""
-      - storage.k8s.io
     resources:
       - nodes
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - storage.k8s.io
+    resources:
       - persistentvolumes
       - storageclasses
     verbs:
