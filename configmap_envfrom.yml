@@ -20,8 +20,8 @@ metadata:
   name: envfrom
 spec:
   containers:
-    - name: debian
-      image: debian
+    - name: main
+      image: busybox
       command:
         - /bin/sh
         - -c
