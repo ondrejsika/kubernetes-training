@@ -12,8 +12,8 @@ kind: Secret
 metadata:
   name: expand-config
 stringData:
-  DB_HOST: foo
-  DB_PORT: "111"
+  DB_HOST: postgres.example.com
+  DB_PORT: "5432"
 ---
 apiVersion: v1
 kind: Pod
@@ -28,7 +28,7 @@ spec:
         name: expand-config
   initContainers:
     - name: config
-      image: sikalabs/slu:v0.10.0
+      image: sikalabs/slu:v0.19.0
       command:
         - "/bin/sh"
         - "-c"
@@ -40,7 +40,7 @@ spec:
           name: config
       envFrom:
         - secretRef:
-            name: envfrom
+            name: expand-config
       resources:
         requests:
           cpu: 10m
