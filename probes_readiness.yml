@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: readiness
+  labels:
+    app: liveness
 spec:
   replicas: 10
   selector:
