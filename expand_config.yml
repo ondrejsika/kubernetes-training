@@ -28,11 +28,11 @@ spec:
         name: expand-config
   initContainers:
     - name: config
-      image: sikalabs/slu:v0.19.0
+      image: sikalabs/slu:v0.19.1
       command:
         - "/bin/sh"
         - "-c"
-        - "/slu expand file -s /config/config.yaml.txt > /data/config.yaml.txt"
+        - "slu expand file -s /config/config.yaml.txt > /data/config.yaml.txt"
       volumeMounts:
         - mountPath: /data
           name: data
