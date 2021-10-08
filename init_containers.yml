@@ -64,6 +64,7 @@ spec:
       labels:
         project: counter
         app: counter
+        svc: example
     spec:
       initContainers:
         - name: init-redis
