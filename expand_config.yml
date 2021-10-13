@@ -43,11 +43,11 @@ spec:
             name: expand-config
       resources:
         requests:
-          cpu: 10m
-          memory: 40Mi
+          memory: 50Mi
+          cpu: 50m
         limits:
-          cpu: 20m
-          memory: 40Mi
+          memory: 100Mi
+          cpu: 100m
   containers:
     - name: main
       image: sikalabs/nginx-public
@@ -56,8 +56,8 @@ spec:
           name: data
       resources:
         requests:
-          cpu: 10m
-          memory: 30Mi
+          memory: 50Mi
+          cpu: 50m
         limits:
-          cpu: 10m
-          memory: 30Mi
+          memory: 100Mi
+          cpu: 100m
