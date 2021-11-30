@@ -68,11 +68,11 @@ spec:
     spec:
       initContainers:
         - name: init-redis
-          image: ondrejsika/wait-for-it
+          image: sikalabs/slu:v0.22.0
           args:
-            - redis:6379
-            - -t
-            - "60"
+            - /bin/sh
+            - -c
+            - slu wait-for-it -a redis:6379
       containers:
         - name: counter
           image: ondrejsika/counter
