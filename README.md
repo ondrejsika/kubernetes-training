@@ -22,6 +22,11 @@ Source of my Kubernetes Training.
 
 <https://sika.link/k8s-slides>
 
+### Chat (tlk.io)
+
+<https://sika.link/chat>
+
+
 ## 12 Factor Apps
 
 [12factor.net](https://12factor.net)
