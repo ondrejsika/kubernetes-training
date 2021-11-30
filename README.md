@@ -1593,6 +1593,12 @@ Get token:
 kubectl -n kube-system describe secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}")
 ```
 
+Get token using **slu**:
+
+```
+slu k8s token -n kube-system -s admin-user
+```
+
 Set token to user:
 
 ```
@@ -1603,6 +1609,12 @@ Or get token and create user in config on oneliner:
 
 ```
 kubectl config set-credentials admin --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+```
+
+Or oneliner with **slu**:
+
+```
+kubectl config set-credentials admin --token=$(slu k8s token -n kube-system -s admin-user)
 ```
 
 Set new user to context:
@@ -1649,11 +1661,10 @@ kubectl auth can-i --as system:serviceaccount:kube-system:read-user apply po
 Add to user to config and change context user
 
 ```
-kubectl config set-credentials read --token=<token>
-# or oneliner
 kubectl config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
 kubectl config set-context --user=read --cluster=minikube read
+
 kubectl config use-context read
 ```
 
@@ -1666,11 +1677,10 @@ kubectl apply -f 16_namespace_admin.yml
 And create user, also with default namespace changed to `devel`
 
 ```
-kubectl config set-credentials devel --token=<token>
-# or oneliner
 kubectl config set-credentials devel --token=$(kubectl -n devel get secret $(kubectl -n devel get serviceaccounts devel-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
 kubectl config set-context --user=devel --cluster=minikube  --namespace=devel devel
+
 kubectl config use-context devel
 ```
 
