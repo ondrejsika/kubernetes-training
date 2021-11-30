@@ -1873,8 +1873,6 @@ kubectl delete -f 04_01_deployment.yml
 
 ## Helm
 
-Tillerless (Helm 3) is out, check out quick overview (CS) on my blog: <https://ondrej-sika.cz/blog/helm3/>
-
 ### Add Repository
 
 ```
