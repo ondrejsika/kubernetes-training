@@ -31,7 +31,7 @@ spec:
               memory: 10Mi
               cpu: 10m
             limits:
-              memory: 20Mi
+              memory: 100Mi
               cpu: 20m
 ---
 apiVersion: v1
