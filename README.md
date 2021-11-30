@@ -1596,31 +1596,31 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get serviceaccou
 Set token to user:
 
 ```
-kubectl --kubeconfig=config config set-credentials admin --token=<token>
+kubectl config set-credentials admin --token=<token>
 ```
 
 Or get token and create user in config on oneliner:
 
 ```
-kubectl --kubeconfig=config config set-credentials admin --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+kubectl config set-credentials admin --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 ```
 
 Set new user to context:
 
 ```
-kubectl --kubeconfig=config config set-context --user=admin --cluster=minikube admin
+kubectl  config set-context --user=admin --cluster=minikube admin
 ```
 
 Use new user to context:
 
 ```
-kubectl --kubeconfig=config config use-context admin
+kubectl config use-context admin
 ```
 
 And try:
 
 ```
-kubectl --kubeconfig=config get nodes,svc
+kubectl get nodes,svc
 ```
 
 ### Join multiple kubeconfigs
@@ -1649,12 +1649,12 @@ kubectl auth can-i --as system:serviceaccount:kube-system:read-user apply po
 Add to user to config and change context user
 
 ```
-kubectl --kubeconfig=config config set-credentials read --token=<token>
+kubectl config set-credentials read --token=<token>
 # or oneliner
-kubectl --kubeconfig=config config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+kubectl config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl --kubeconfig=config config set-context --user=read --cluster=minikube read
-kubectl --kubeconfig=config config use-context read
+kubectl config set-context --user=read --cluster=minikube read
+kubectl config use-context read
 ```
 
 ### Create Namespace Admin
@@ -1666,12 +1666,12 @@ kubectl apply -f 16_namespace_admin.yml
 And create user, also with default namespace changed to `devel`
 
 ```
-kubectl --kubeconfig=config config set-credentials devel --token=<token>
+kubectl config set-credentials devel --token=<token>
 # or oneliner
-kubectl --kubeconfig=config config set-credentials devel --token=$(kubectl -n devel get secret $(kubectl -n devel get serviceaccounts devel-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+kubectl config set-credentials devel --token=$(kubectl -n devel get secret $(kubectl -n devel get serviceaccounts devel-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl --kubeconfig=config config set-context --user=devel --cluster=minikube  --namespace=devel devel
-kubectl --kubeconfig=config config use-context devel
+kubectl config set-context --user=devel --cluster=minikube  --namespace=devel devel
+kubectl config use-context devel
 ```
 
 Add read only access to some cluster wide resources (nodes, volumes, ...)
