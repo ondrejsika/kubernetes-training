@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ramped
+  name: rolling-update
   annotations:
     kubernetes.io/change-cause: ver1
 spec:
   selector:
     matchLabels:
-      app: ramped
+      app: rolling-update
   replicas: 20
   strategy:
     type: RollingUpdate
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ramped
+        app: rolling-update
         svc: example
     spec:
       containers:
@@ -36,7 +36,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ramped
+  name: rolling-update
 spec:
   type: NodePort
   ports:
@@ -44,4 +44,4 @@ spec:
       protocol: TCP
       targetPort: 80
   selector:
-    app: ramped
+    app: rolling-update
