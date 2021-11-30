@@ -97,7 +97,7 @@ metadata:
   name: counter
 spec:
   rules:
-    - host: counter.192.168.99.100.nip.io
+    - host: counter.127.0.0.1.nip.io
       http:
         paths:
           - path: /
