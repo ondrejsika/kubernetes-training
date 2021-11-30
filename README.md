@@ -1690,6 +1690,40 @@ Add read only access to some cluster wide resources (nodes, volumes, ...)
 kubectl apply -f 17_namespace_admin_extra.yml
 ```
 
+## Access Kubernetes API using CURL
+
+Get Kubernetes API URL
+
+```
+export APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+```
+
+Get `admin-user` token using **slu**
+
+```
+export TOKEN=$(slu k8s token -n kube-system -s admin-user)
+```
+
+or get `admin-user` token using kubectl only
+
+```
+export TOKEN=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts admin-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+```
+
+Try some CURLs:
+
+```
+curl -k --header "Authorization: Bearer $TOKEN" $APISERVER
+```
+
+```
+curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/metrics
+```
+
+```
+curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/api/v1/nodes
+```
+
 ## Liveness & Readiness Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
