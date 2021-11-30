@@ -1993,7 +1993,7 @@ Install with values in args
 helm install hello-world ondrejsika/one-image --set host=hello-world.127.0.0.1.nip.io
 ```
 
-Install with values file
+Install with values file on Minikube
 
 ```
 helm install nginx ondrejsika/one-image --values one-image-nginx-values.yml
@@ -2004,6 +2004,17 @@ Install with values file and values args
 
 ```
 helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.127.0.0.1.nip.io
+```
+
+Install with values file on DigitalOcean
+
+```
+helm install nginx ondrejsika/one-image \
+  -f one-image-nginx-values.yml \
+  -f one-image-nginx-values-do.yml
+helm install apache ondrejsika/one-image \
+  -f one-image-apache-values.yml \
+  -f one-image-apache-values-do.yml
 ```
 
 ### Own Helm Package
