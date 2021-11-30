@@ -1032,7 +1032,7 @@ kubectl delete deploy/hello-world
 minikube addons enable ingress
 ```
 
-### Traefik Ingress Controller
+### Traefik Ingress Controller (DigitalOcean Only)
 
 See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubernetes-ingress-traefik)
 
@@ -1055,7 +1055,7 @@ See:
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
 
-Create Ingress
+Create Ingress on Minikube
 
 ```
 kubectl apply -f ingress.yml
@@ -1066,10 +1066,22 @@ See:
 - http://nginx.127.0.0.1.nip.io
 - http://apache.127.0.0.1.nip.io
 
+Create Ingress on DigitalOcean
+
+```
+kubectl apply -f ingress-do.yml
+```
+
+See:
+
+- http://nginx.k8s.sikademo.com
+- http://apache.k8s.sikademo.com
+
+
 Cleanup
 
 ```
-kubectl delete -f webservers.yml -f ingress.yml
+kubectl delete -f webservers.yml -f ingress.yml -f ingress-do.yml
 ```
 
 ### Deploy Application (Multiple Deployments and Services)
