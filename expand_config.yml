@@ -28,7 +28,7 @@ spec:
         name: expand-config
   initContainers:
     - name: config
-      image: sikalabs/slu:v0.19.1
+      image: sikalabs/slu:v0.22.0
       command:
         - "/bin/sh"
         - "-c"
