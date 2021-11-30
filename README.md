@@ -14,9 +14,9 @@ Source of my Kubernetes Training.
 - [Kubernetes training in Czech Republic](https://ondrej-sika.cz/skoleni/kubernetes?_s=gh-kte)
 - [Kubernetes training in Europe](https://ondrej-sika.com/training/kubernetes?_s=gh-kte)
 
+<!--
 ### Related Courses
-
-- Bare Metal Kubernetes - [ondrejsika/bare-metal-kubernetes](https://github.com/ondrejsika/bare-metal-kubernetes) (on Github)
+-->
 
 ### Slides
 
