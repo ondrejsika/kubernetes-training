@@ -12,5 +12,5 @@ spec:
         - name: pi
           image: perl:slim
           command: ["perl"]
-          args: ["-Mbignum=bpi", "-wle", "print bpi(20)"]
+          args: ["-Mbignum=bpi", "-wle", "print bpi(1000)"]
       restartPolicy: Never
