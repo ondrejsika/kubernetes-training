@@ -368,6 +368,18 @@ Start proxy
 kubectl proxy
 ```
 
+Change port
+
+```
+kubectl proxy -p 8002
+```
+
+**DO NOT RUN IN PRODODUCTION**:  Run proxy on all interfaces and allow all hosts - for training only
+
+```
+kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
+```
+
 ### Dashboard
 
 #### Minikube
