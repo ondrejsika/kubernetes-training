@@ -7,6 +7,7 @@ rules:
       - ""
     resources:
       - nodes
+      - persistentvolumes
     verbs:
       - get
       - list
@@ -14,7 +15,6 @@ rules:
   - apiGroups:
       - storage.k8s.io
     resources:
-      - persistentvolumes
       - storageclasses
     verbs:
       - get
