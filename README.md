@@ -2067,7 +2067,7 @@ cd counter
 tree
 ```
 
-This default manifests are too much complicated, if you want simple examle, check out my [ondrejsika/one-image-helm](https://github.com/ondrejsika/one-image-helm).
+This default manifests are too much complicated, if you want simple examle, check out my [ondrejsika/one-image-helm](https://github.com/sikalabs/charts/tree/master/charts/one-image).
 
 We can try create helm package for our Wordpress example (09_wordpress.yml).
 
