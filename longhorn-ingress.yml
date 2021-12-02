@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: longhorn
+  namespace: longhorn-system
 spec:
   rules:
     - host: longhorn.k8s.sikademo.com
