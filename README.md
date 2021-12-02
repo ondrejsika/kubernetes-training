@@ -1161,8 +1161,16 @@ kubectl apply -f init_containers_setup.yml
 
 #### Wait for Migrations in Init Container
 
+Wait using `kubectl`
+
 ```
 kubectl apply -f init_containers_migrations.yml
+```
+
+Wait using `slu`
+
+```
+kubectl apply -f init_containers_migrations_slu.yml
 ```
 
 ### Create Namespace
