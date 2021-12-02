@@ -1918,7 +1918,7 @@ kubectl delete -f 04_01_deployment.yml
 ### Add Repository
 
 ```
-helm repo add ondrejsika https://helm.oxs.cz
+helm repo add sikalabs https://helm.oxs.cz
 ```
 
 ### Search Package
@@ -1926,17 +1926,17 @@ helm repo add ondrejsika https://helm.oxs.cz
 Search local repositories
 
 ```
-helm search repo ondrejsika
+helm search repo sikalabs
 ```
 
 ### Inspect Package
 
 ```
-helm show chart ondrejsika/hello-world
-helm show values ondrejsika/hello-world
-helm show readme ondrejsika/hello-world
+helm show chart sikalabs/hello-world
+helm show values sikalabs/hello-world
+helm show readme sikalabs/hello-world
 
-helm show all ondrejsika/hello-world
+helm show all sikalabs/hello-world
 ```
 
 ### Install Package
@@ -1948,13 +1948,13 @@ helm install <deployment_name> <chart>
 Example:
 
 ```
-helm install hello ondrejsika/hello-world
+helm install hello sikalabs/hello-world
 ```
 
 Or dry run (see the Kubernetes config)
 
 ```
-helm install hello ondrejsika/hello-world --dry-run
+helm install hello sikalabs/hello-world --dry-run
 ```
 
 ### Upgrade Package
@@ -1962,13 +1962,13 @@ helm install hello ondrejsika/hello-world --dry-run
 If you want to upgrade instance of chart, you have to call:
 
 ```
-helm upgrade hello ondrejsika/hello-world --set replicas=3
+helm upgrade hello sikalabs/hello-world --set replicas=3
 ```
 
 or
 
 ```
-helm upgrade hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
+helm upgrade hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
 ### Install or Upgrade
@@ -1976,7 +1976,7 @@ helm upgrade hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
 You can add `--install` to `helm upgrade` to install package if not exists. When chart exists, it will be upgraded.
 
 ```
-helm upgrade --install hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
+helm upgrade --install hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
 ### List Installed Packages
@@ -2012,42 +2012,42 @@ helm uninstall $(helm ls -a -q)
 helm repo list
 ```
 
-#### Install ondrejsika/one-image
+#### Install sikalabs/one-image
 
-Sources of Chart `ondrejsika/one-image` are <https://github.com/sikalabs/charts/tree/master/charts/one-image>
+Sources of Chart `sikalabs/one-image` are <https://github.com/sikalabs/charts/tree/master/charts/one-image>
 
 Inspect Package
 
 ```
-helm show all ondrejsika/one-image
+helm show all sikalabs/one-image
 ```
 
 Install with values in args
 
 ```
-helm install hello-world ondrejsika/one-image --set host=hello-world.127.0.0.1.nip.io
+helm install hello-world sikalabs/one-image --set host=hello-world.127.0.0.1.nip.io
 ```
 
 Install with values file on Minikube
 
 ```
-helm install nginx ondrejsika/one-image --values one-image-nginx-values.yml
-helm install apache ondrejsika/one-image --values one-image-apache-values.yml
+helm install nginx sikalabs/one-image --values one-image-nginx-values.yml
+helm install apache sikalabs/one-image --values one-image-apache-values.yml
 ```
 
 Install with values file and values args
 
 ```
-helm install nginx2 ondrejsika/one-image --values one-image-nginx-values.yml --set host=nginx2.127.0.0.1.nip.io
+helm install nginx2 sikalabs/one-image --values one-image-nginx-values.yml --set host=nginx2.127.0.0.1.nip.io
 ```
 
 Install with values file on DigitalOcean
 
 ```
-helm install nginx ondrejsika/one-image \
+helm install nginx sikalabs/one-image \
   -f one-image-nginx-values.yml \
   -f one-image-nginx-values-do.yml
-helm install apache ondrejsika/one-image \
+helm install apache sikalabs/one-image \
   -f one-image-apache-values.yml \
   -f one-image-apache-values-do.yml
 ```
@@ -2067,7 +2067,7 @@ cd counter
 tree
 ```
 
-This default manifests are too much complicated, if you want simple examle, check out my [ondrejsika/one-image-helm](https://github.com/sikalabs/charts/tree/master/charts/one-image).
+This default manifests are too much complicated, if you want simple examle, check out my [sikalabs/one-image](https://github.com/sikalabs/charts/tree/master/charts/one-image).
 
 We can try create helm package for our Wordpress example (09_wordpress.yml).
 
