@@ -2000,7 +2000,7 @@ helm repo list
 
 #### Install ondrejsika/one-image
 
-Sources of Chart `ondrejsika/one-image` are <https://github.com/ondrejsika/one-image-helm>
+Sources of Chart `ondrejsika/one-image` are <https://github.com/sikalabs/charts/tree/master/charts/one-image>
 
 Inspect Package
 
