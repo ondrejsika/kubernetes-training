@@ -1905,22 +1905,11 @@ kubectl delete -f 04_01_deployment.yml
 
 ```
 helm repo add ondrejsika https://helm.oxs.cz
-helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
 ### Search Package
 
-Search Artifact Hub ([artifacthub.io/](https://artifacthub.io/))
-
-```
-helm search hub redis
-```
-
 Search local repositories
-
-```
-helm search repo redis
-```
 
 ```
 helm search repo ondrejsika
@@ -1929,11 +1918,11 @@ helm search repo ondrejsika
 ### Inspect Package
 
 ```
-helm show chart bitnami/redis
-helm show values bitnami/redis
-helm show readme bitnami/redis
+helm show chart ondrejsika/hello-world
+helm show values ondrejsika/hello-world
+helm show readme ondrejsika/hello-world
 
-helm show all bitnami/redis
+helm show all ondrejsika/hello-world
 ```
 
 ### Install Package
@@ -1945,13 +1934,13 @@ helm install <deployment_name> <chart>
 Example:
 
 ```
-helm install redis bitnami/redis
+helm install hello ondrejsika/hello-world
 ```
 
 Or dry run (see the Kubernetes config)
 
 ```
-helm install redis bitnami/redis --dry-run
+helm install hello ondrejsika/hello-world --dry-run
 ```
 
 ### Upgrade Package
@@ -1959,7 +1948,7 @@ helm install redis bitnami/redis --dry-run
 If you want to upgrade instance of chart, you have to call:
 
 ```
-helm upgrade redis bitnami/redis --set pullPolicy=Always
+helm upgrade hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
 ### Install or Upgrade
@@ -1967,7 +1956,7 @@ helm upgrade redis bitnami/redis --set pullPolicy=Always
 You can add `--install` to `helm upgrade` to install package if not exists. When chart exists, it will be upgraded.
 
 ```
-helm upgrade --install redis bitnami/redis --set pullPolicy=Always
+helm upgrade --install hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
 ### List Installed Packages
@@ -1980,13 +1969,13 @@ helm ls -q
 ### Status of Package
 
 ```
-helm status redis
+helm status hello
 ```
 
 ### Delete Package
 
 ```
-helm uninstall redis
+helm uninstall hello
 ```
 
 Delete all & purge
