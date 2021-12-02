@@ -1299,39 +1299,6 @@ See PV and PVC
 kubectl get pv,pvc
 ```
 
-Delete claim & volume
-
-```
-kubectl delete -f pvc_default.yml
-kubectl get pv,pvc
-```
-
-### Create PV
-
-For example NFS storage
-
-```
-kubectl apply -f pv_nfs.yml
-```
-
-See PV
-
-```
-kubectl get pv
-```
-
-### Claim PV
-
-```
-kubectl apply -f pvc_nfs.yml
-```
-
-See
-
-```
-kubectl get pv,pvc
-```
-
 Use PVC
 
 ```

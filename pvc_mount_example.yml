@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: nginx-data
+            claimName: default-pvc
 ---
 apiVersion: v1
 kind: Service
