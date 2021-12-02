@@ -1948,6 +1948,12 @@ helm install hello ondrejsika/hello-world --dry-run
 If you want to upgrade instance of chart, you have to call:
 
 ```
+helm upgrade hello ondrejsika/hello-world --set replicas=3
+```
+
+or
+
+```
 helm upgrade hello ondrejsika/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
