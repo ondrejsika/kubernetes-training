@@ -1918,7 +1918,7 @@ kubectl delete -f 04_01_deployment.yml
 ### Add Repository
 
 ```
-helm repo add sikalabs https://helm.oxs.cz
+helm repo add sikalabs https://helm.sikalabs.io
 ```
 
 ### Search Package
