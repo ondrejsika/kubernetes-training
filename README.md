@@ -1401,6 +1401,12 @@ DigitalOcean
 kubectl apply -f sc-do-retain.yml
 ```
 
+Longhorn
+
+```
+kubectl apply -f sc-longhorn-retain.yml
+```
+
 #### Apply PVC with Storage Class
 
 Minikube
