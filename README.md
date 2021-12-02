@@ -1634,7 +1634,7 @@ kubectl auth can-i --as system:serviceaccount:kube-system:read-user get po
 ```
 
 ```
-kubectl auth can-i --as system:serviceaccount:kube-system:read-user apply po
+kubectl auth can-i --as system:serviceaccount:kube-system:read-user create po
 ```
 
 Add to user to config and change context user
