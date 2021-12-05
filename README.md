@@ -468,6 +468,12 @@ kubectl port-forward pod/simple-hello-world 8000:80
 
 See: <http://127.0.0.1:8000>
 
+Port forward on all interfaces (remote host):
+
+```
+kubectl port-forward pod/simple-hello-world 8000:80 --address 0.0.0.0
+```
+
 Get Pod from file:
 
 ```
