@@ -6,10 +6,6 @@ metadata:
     app: hello-world-sts
 spec:
   clusterIP: None
-  ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 80
   selector:
     app: hello-world-sts
 ---
