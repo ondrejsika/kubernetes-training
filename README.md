@@ -403,7 +403,7 @@ Which start a new proxy, activate the dashboard and open it in the browser.
 Source of Kubernetes Dashboard - https://github.com/kubernetes/dashboard
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.4/aio/deploy/recommended.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
 ```
 
 See the dashboard: http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
