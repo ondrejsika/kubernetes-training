@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foo-app
+spec:
+  selector:
+    matchLabels:
+      app: foo-app
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: foo-app
+        svc: foo-app
+    spec:
+      containers:
+        - name: hello-world
+          image: ondrejsika/go-hello-world:1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m

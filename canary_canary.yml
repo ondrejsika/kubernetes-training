@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foo-app-canary
+spec:
+  selector:
+    matchLabels:
+      app: foo-app-canary
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: foo-app-canary
+        svc: foo-app
+    spec:
+      containers:
+        - name: hello-world
+          image: ondrejsika/go-hello-world:2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
