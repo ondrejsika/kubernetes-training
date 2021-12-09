@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bluegreen1
+spec:
+  selector:
+    matchLabels:
+      app: bluegreen1
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: bluegreen1
+    spec:
+      containers:
+        - name: hello-world
+          image: ondrejsika/go-hello-world:1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
