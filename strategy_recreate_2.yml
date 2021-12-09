@@ -17,6 +17,7 @@ spec:
         app: recreate
         svc: example
     spec:
+      terminationGracePeriodSeconds: 2
       containers:
         - name: hello-world
           image: ondrejsika/go-hello-world:2
