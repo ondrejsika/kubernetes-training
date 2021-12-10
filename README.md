@@ -1368,13 +1368,13 @@ helm repo update
 Install using Helm:
 
 ```
-helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=<nfs-server> --set nfs.path=<exported-path>
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --namespace nfs-subdir-external-provisioner --create-namespace --set nfs.server=<nfs-server> --set nfs.path=<exported-path>
 ```
 
 Example with my NFS server (nfs.sikademo.com):
 
 ```
-helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=nfs.sikademo.com --set nfs.path=/nfs
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --namespace nfs-subdir-external-provisioner --create-namespace --set nfs.server=nfs.sikademo.com --set nfs.path=/nfs
 ```
 
 You can use `nfs-client` Storage Class:
