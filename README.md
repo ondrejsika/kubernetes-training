@@ -955,6 +955,10 @@ kubectl apply -f parallel_jobs.yml
 kubectl wait --for=condition=complete --timeout=600s job/pi
 ```
 
+#### Automatic Job Cleanup
+
+You have to set `ttlSecondsAfterFinished` in job spec.
+
 ### Create Cron Job
 
 - <https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/>
