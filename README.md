@@ -827,6 +827,20 @@ Clean up
 kubectl delete -f strategy_recreate.yml
 ```
 
+## Pods Spread Configuration (topologySpreadConstraints)
+
+Try topologySpreadConstraints configuration:
+
+```
+kubectl apply -f topology_spread_constraints.yml
+```
+
+See pod's distribution:
+
+```
+kubectl get po -l app=topology-spread-constraints -o wide
+```
+
 ### Create StatefulSet
 
 ```
