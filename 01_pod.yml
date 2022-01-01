@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: main
-      image: ondrejsika/go-hello-world:2
+      image: ondrejsika/hello-world-example
       ports:
         - containerPort: 80
       resources:

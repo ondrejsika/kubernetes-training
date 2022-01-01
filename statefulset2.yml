@@ -18,7 +18,7 @@ metadata:
   labels:
     app: hello-world-sts
   annotations:
-    kubernetes.io/change-cause: ver2
+    kubernetes.io/change-cause: yellow
 spec:
   serviceName: hello-world
   selector:
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/go-hello-world:2
+          image: sikalabs/hello-world-server:yellow
           ports:
             - containerPort: 80
           resources:

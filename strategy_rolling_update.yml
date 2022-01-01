@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: rolling-update
   annotations:
-    kubernetes.io/change-cause: ver1
+    kubernetes.io/change-cause: green
 spec:
   selector:
     matchLabels:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/go-hello-world:1
+          image: sikalabs/hello-world-server:green
           ports:
             - containerPort: 80
           resources:

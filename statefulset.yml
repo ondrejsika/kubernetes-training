@@ -14,7 +14,7 @@ kind: StatefulSet
 metadata:
   name: hello-world
   annotations:
-    kubernetes.io/change-cause: ver1
+    kubernetes.io/change-cause: green
 spec:
   serviceName: hello-world
   selector:
@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/go-hello-world:1
+          image: sikalabs/hello-world-server:green
           ports:
             - containerPort: 80
           resources:
