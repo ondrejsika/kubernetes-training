@@ -3,20 +3,21 @@ kind: Ingress
 metadata:
   name: webservers-paths
   annotations:
-    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+    nginx.ingress.kubernetes.io/rewrite-target: "/$2"
 spec:
+  ingressClassName: nginx
   rules:
     - host: k8s.sikademo.com
       http:
         paths:
-          - path: /nginx
+          - path: /nginx(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
-          - path: /apache
+          - path: /apache(/|$)(.*)
             pathType: Prefix
             backend:
               service:

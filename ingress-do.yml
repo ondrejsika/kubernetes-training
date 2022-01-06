@@ -2,7 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webservers
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - nginx.k8s.sikademo.com
+        - apache.k8s.sikademo.com
+      secretName: tls-webservers-stagging
   rules:
     - host: nginx.k8s.sikademo.com
       http:

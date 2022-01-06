@@ -3,20 +3,20 @@ kind: Ingress
 metadata:
   name: webservers-paths
   annotations:
-    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+    nginx.ingress.kubernetes.io/rewrite-target: "/$2"
 spec:
   rules:
     - host: 127.0.0.1.nip.io
       http:
         paths:
-          - path: /nginx
+          - path: /nginx(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
-          - path: /apache
+          - path: /apache(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -26,31 +26,14 @@ spec:
     - host: localhost
       http:
         paths:
-          - path: /nginx
+          - path: /nginx(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
-          - path: /apache
-            pathType: Prefix
-            backend:
-              service:
-                name: apache
-                port:
-                  number: 80
-    - host: 127.0.0.1
-      http:
-        paths:
-          - path: /nginx
-            pathType: Prefix
-            backend:
-              service:
-                name: nginx
-                port:
-                  number: 80
-          - path: /apache
+          - path: /apache(/|$)(.*)
             pathType: Prefix
             backend:
               service:
