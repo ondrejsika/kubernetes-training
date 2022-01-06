@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: hello-
+spec:
+  template:
+    metadata:
+      name: hello
+    spec:
+      containers:
+        - name: main
+          image: debian:11-slim
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo Hello World!
+      restartPolicy: Never

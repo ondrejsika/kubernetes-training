@@ -973,6 +973,40 @@ kubectl wait --for=condition=complete --timeout=600s job/pi
 
 You have to set `ttlSecondsAfterFinished` in job spec.
 
+### Job With Generated Name
+
+Create (not apply) job
+
+```
+kubectl create -f job-generate-name.yml
+```
+
+Delete all jobs
+
+```
+kubectl delete job --all
+```
+
+Example
+
+```
+ondrej@sika-mac-air:~$ kubectl create -f job-generate-name.yml
+job.batch/hello-4hjd4 created
+ondrej@sika-mac-air:~$ kubectl create -f job-generate-name.yml
+job.batch/hello-nrr8r created
+ondrej@sika-mac-air:~$ kubectl create -f job-generate-name.yml
+job.batch/hello-h8mjd created
+ondrej@sika-mac-air:~$ kubectl get job
+NAME          COMPLETIONS   DURATION   AGE
+hello-4hjd4   1/1           1s         5s
+hello-h8mjd   1/1           2s         3s
+hello-nrr8r   1/1           2s         4s
+ondrej@sika-mac-air:~$ kubectl delete job --all
+job.batch "hello-4hjd4" deleted
+job.batch "hello-h8mjd" deleted
+job.batch "hello-nrr8r" deleted
+```
+
 ### Create Cron Job
 
 - <https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/>
