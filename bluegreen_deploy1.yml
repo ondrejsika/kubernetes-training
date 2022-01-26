@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: sikalabs/hello-world-server:blue
+          image: ondrejsika/training-example:blue
           ports:
             - containerPort: 80
           resources:
