@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world
   annotations:
-    kubernetes.io/change-cause: green
+    kubernetes.io/change-cause: red
 spec:
   revisionHistoryLimit: 3
   selector:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/training-example:green
+          image: ondrejsika/training-example:red
           ports:
             - containerPort: 80
           resources:
