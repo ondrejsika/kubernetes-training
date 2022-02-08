@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: sikalabs/hello-world-server:yellow
+          image: ondrejsika/training-example:yellow
           ports:
             - containerPort: 80
           resources:

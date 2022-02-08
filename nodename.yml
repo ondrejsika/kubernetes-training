@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: hello
-      image: sikalabs/hello-world-server
+      image: ondrejsika/training-example
       resources:
         requests:
           memory: 10Mi
