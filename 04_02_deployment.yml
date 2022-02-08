@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world
   annotations:
-    kubernetes.io/change-cause: blue
+    kubernetes.io/change-cause: yellow
 spec:
   revisionHistoryLimit: 3
   selector:
