@@ -108,7 +108,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 
 #### Helm on Linux
 
-Docs <https://github.com/helm/helm/blob/master/docs/install.md>
+Docs <https://helm.sh/docs/intro/install/>
 
 ```
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
