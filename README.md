@@ -110,14 +110,6 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 
 Docs <https://github.com/helm/helm/blob/master/docs/install.md>
 
-Install using snap:
-
-```
-sudo snap install helm --classic
-```
-
-Or oneliner for Linux:
-
 ```
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
 ```
