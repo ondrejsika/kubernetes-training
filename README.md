@@ -290,35 +290,28 @@ I recommend you using Minikube (or Kubernetes support in Docker Desktop), but if
 
 Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
 
+
+#### Using training-cli
+
+```
+training-cli kubernetes connect
+```
+
+#### Manually
+
 ```
 wget https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kubeconfig
 ```
 
-Set `KUBECONFIG` environment variable to this file.
-
-On Unix:
+Copy it to `~/.kube/config`:
 
 ```
-export KUBECONFIG=kubeconfig
-```
-
-On Windows (in PowerShell):
-
-```
-Set-Variable -Name "KUBECONFIG" -Value "kubeconfig"
-```
-
-On Windows (in CMD):
-
-```
-SET KUBECONFIG=kubeconfig
-```
-
-Or save it to `.kube/config`:
-
-```
+mkdir ~/.kube
+cp ~/.kube/config ~/.kube/config.$(date +%Y-%m-%d_%H-%M-%S).backup
 mv kubeconfig ~/.kube/config
 ```
+
+#### Create owm namespace
 
 Create own namespace (eg.: `ondrejsika`) and set it as default
 
@@ -326,10 +319,6 @@ Create own namespace (eg.: `ondrejsika`) and set it as default
 kubectl create ns ondrejsika
 kubectl config set-context --current --namespace=ondrejsika
 ```
-
-Sources:
-
-- Set Default Namespace - <https://stuff.21zoo.com/posts/kubectl-set-default-namespace/>
 
 ## Course
 
