@@ -144,16 +144,6 @@ You can start Kubernetes cluster using
 minikube start --vm-driver=none
 ```
 
-#### Microk8s.io on Linux (Linux in virtual machine)
-
-If you run Ubuntu (or another linux with **snap**), you can use [microk8s.io](https://microk8s.io)
-
-```
-sudo snap install microk8s --classic
-```
-
-See more information at <https://microk8s.io/docs/>
-
 #### k3s (minimalistic kubernetes for Linux)
 
 If you can't run **minikube** (with VirtualBox or VM driver none) or **microk8s**, you can try **k3s**.
