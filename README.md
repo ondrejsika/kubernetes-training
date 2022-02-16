@@ -184,6 +184,13 @@ choco install kubernetes-helm
 choco install minikube
 ```
 
+#### training-cli & slu
+
+```
+scoop install https://raw.githubusercontent.com/ondrejsika/scoop-bucket/master/training-cli.json
+scoop install https://raw.githubusercontent.com/sikalabs/scoop-bucket/master/slu.json
+```
+
 ### Bash Completion
 
 ```
