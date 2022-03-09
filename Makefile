@@ -1,6 +1,9 @@
 help:
 	@echo see Makefile content: cat Makefile
 
+minikube-image-ls:
+	minikube image ls
+
 minikube-image-save:
 	minikube image ls > minikube-images.txt
 
