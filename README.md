@@ -1734,6 +1734,10 @@ curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/api/v1/nodes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
 
+### `/livez` vs `/healthz`
+
+Use `/livez` instead of /healthz (deprecated)
+
 ### Liveness Probe
 
 ```
