@@ -319,7 +319,7 @@ wget https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kub
 Copy it to `~/.kube/config`:
 
 ```
-mkdir ~/.kube
+mkdir -p ~/.kube
 cp ~/.kube/config ~/.kube/config.$(date +%Y-%m-%d_%H-%M-%S).backup
 mv kubeconfig ~/.kube/config
 ```
