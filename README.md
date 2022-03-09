@@ -1445,6 +1445,12 @@ kubectl apply -f 11_secret.yml
 
 ### Get Values
 
+Using **slu**
+
+```
+slu k8s get sec -s my-secret
+```
+
 Base64 encoded
 
 ```
