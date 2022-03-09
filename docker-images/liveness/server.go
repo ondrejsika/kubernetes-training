@@ -30,7 +30,7 @@ func main() {
 			w.Write([]byte("Server will be healthy for 30 seconds"))
 		}
 	})
-	http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/livez", func(w http.ResponseWriter, r *http.Request) {
 		duration := time.Since(started)
 		if health == 1 {
 			w.WriteHeader(200)
