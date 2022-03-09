@@ -1486,6 +1486,12 @@ And see the variables:
 kubectl exec secret-example -- env | grep MY_
 ```
 
+Or on Windows:
+
+```
+kubectl exec secret-example env | findstr MY_
+```
+
 ### EnvFrom
 
 Mount every variables from ConfigMap or Secret. See example:
