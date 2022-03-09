@@ -51,6 +51,11 @@ Docker:
 
 - [official instructions](https://docs.docker.com/get-docker/)
 
+Those my tools are optional, but highly recommended:
+
+- **slu** - SikaLabs Utils - [sikalabs/slu](https://github.com/sikalabs/slu)
+- **training-cli** - utils for my training sessions - [ondrejsika/training-cli](https://github.com/ondrejsika/training-cli)
+
 ### Mac
 
 #### Kubectl on Mac
