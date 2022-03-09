@@ -10,7 +10,7 @@ spec:
     - hosts:
         - nginx.k8s.sikademo.com
         - apache.k8s.sikademo.com
-      secretName: tls-webservers-stagging
+      secretName: tls-webservers
   rules:
     - host: nginx.k8s.sikademo.com
       http:
