@@ -1890,12 +1890,6 @@ Create deployment & service
 kubectl apply -f 04_01_deployment.yml
 ```
 
-Autoscale
-
-```
-kubectl autoscale deployment hello-world --min=2 --max=5 --cpu-percent=80
-```
-
 ### Create HPA (YAML)
 
 Api v1 (same as `kubectl autoscale`)
