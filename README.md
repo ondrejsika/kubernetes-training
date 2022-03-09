@@ -1738,6 +1738,8 @@ Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-livene
 
 Use `/livez` instead of /healthz (deprecated)
 
+[source](https://www.jaktech.co.uk/java/difference-between-livez-readyz-and-healthz-in-kubernetes-cluster/)
+
 ### Liveness Probe
 
 ```
