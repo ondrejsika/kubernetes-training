@@ -3,9 +3,14 @@ kind: Ingress
 metadata:
   name: webservers-paths
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
     nginx.ingress.kubernetes.io/rewrite-target: "/$2"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - k8s.sikademo.com
+      secretName: tls-webservers-paths
   rules:
     - host: k8s.sikademo.com
       http:
