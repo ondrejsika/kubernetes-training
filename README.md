@@ -2542,29 +2542,3 @@ That's it. Do you have any questions? **Let's go for a beer!**
 _Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn (add me [/in/ondrejsika](https://www.linkedin.com/in/ondrejsika/) and I'll send you request for recommendation). **Thanks**._
 
 Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
-
-## FAQ
-
-### Time Between SIGTERM and SIGKILL (Termination Grace Period)
-
-You can set termination grace period on pod using `terminationGracePeriodSeconds`, default is `10`.
-
-See example usage:
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: example
-spec:
-  terminationGracePeriodSeconds: 60
-  containers:
-    - name: simple-hello-world
-      image: ondrejsika/go-hello-world:2
-```
-
-### Show Node Taints
-
-```
-kubectl get nodes -o json | jq .items[].spec.taints
-```
