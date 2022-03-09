@@ -524,7 +524,7 @@ See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/private-pod/proxy/>
 See credentials (of example `registry.sikalabs.com`)
 
 ```
-echo $(kubectl get secret private-registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode | jq '.auths["registry.sikalabs.com"].auth' -r | base64 --decode)
+kubectl get secret private-registry-credentials -o jsonpath="{.data.\.dockerconfigjson}" | base64 --decode | jq '.auths["registry.sikalabs.com"].auth' -r | base64 --decode && echo
 ```
 
 Cleanup
@@ -1454,15 +1454,15 @@ slu k8s get sec -s my-secret
 Base64 encoded
 
 ```
-echo $(kubectl get secret my-secret -o jsonpath="{.data.password}")
-echo $(kubectl get secret my-secret -o jsonpath="{.data.token}")
+kubectl get secret my-secret -o jsonpath="{.data.password}" && echo
+kubectl get secret my-secret -o jsonpath="{.data.token}" && echo
 ```
 
 Decoded
 
 ```
-echo $(kubectl get secret my-secret -o jsonpath="{.data.password}" | base64 --decode)
-echo $(kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode)
+kubectl get secret my-secret -o jsonpath="{.data.password}" | base64 --decode && echo
+kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode && echo
 ```
 
 ### Create ConfigMap
