@@ -438,6 +438,7 @@ Sources:
 ```
 kubectl apply -f 01_pod.yml
 kubectl apply -f 02_pod.yml
+kubectl apply -f pod_redis.yml
 ```
 
 ### List Pods
@@ -465,6 +466,20 @@ Port forward on all interfaces (remote host):
 ```
 kubectl port-forward pod/simple-hello-world 8000:80 --address 0.0.0.0
 ```
+
+Redis port forward example
+
+```
+kubectl port-forward pod/redis 6379:6379
+```
+
+Test with local `redis-cli` (if you have):
+
+```
+redis-cli ping
+```
+
+![](images/port-forward-redis.png)
 
 Get Pod from file:
 
