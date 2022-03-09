@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: bluegreen2
-  replicas: 10
+  replicas: 3
   template:
     metadata:
       labels:
