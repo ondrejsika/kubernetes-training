@@ -5,8 +5,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 80
+    - name: http
+      port: 80
       protocol: TCP
       targetPort: 80
+    - name: metrics
+      port: 80
+      protocol: TCP
+      targetPort: 8000
   selector:
     app: hello-world-deploy
