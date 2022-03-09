@@ -1,6 +1,12 @@
 help:
 	@echo see Makefile content: cat Makefile
 
+fmt:
+	yarn run prettier-write
+
+fmt-check:
+	yarn run prettier-check
+
 minikube-image-ls:
 	minikube image ls
 
