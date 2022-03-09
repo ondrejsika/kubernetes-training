@@ -1012,6 +1012,7 @@ kubectl get all
 ```
 kubectl delete -f 05_clusterip_service.yml
 kubectl delete -f 06_nodeport_service.yml
+kubectl delete -f loadbalancer.yml
 
 # or
 kubectl delete svc/hello-world-nodeport
