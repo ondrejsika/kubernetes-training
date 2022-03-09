@@ -1199,6 +1199,33 @@ See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
 kubectl config set-context --current --namespace=counter
 ```
 
+### kubens
+
+I prefer alias `kn` over original command `kubens`.
+
+List namespaces
+
+```
+kn
+```
+or
+
+```
+kubens
+```
+
+Switch namespace
+
+```
+kn counter
+```
+
+or
+
+```
+kubens counter
+```
+
 ### Delete Namespace
 
 ```
