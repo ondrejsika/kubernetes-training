@@ -340,6 +340,7 @@ kubectl config set-context --current --namespace=ondrejsika
 ```
 kubectl explain node
 kubectl explain node.spec
+kubectl explain node.status.images
 
 kubectl explain pod
 kubectl explain pod.spec
