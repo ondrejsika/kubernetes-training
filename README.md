@@ -1736,7 +1736,7 @@ Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-livene
 
 ### `/livez` vs `/healthz`
 
-Use `/livez` instead of /healthz (deprecated)
+Use `/livez` instead of `/healthz` (deprecated)
 
 [source](https://www.jaktech.co.uk/java/difference-between-livez-readyz-and-healthz-in-kubernetes-cluster/)
 
