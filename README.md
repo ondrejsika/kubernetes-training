@@ -45,7 +45,7 @@ You have to install these tools:
 
 - **kubectl** - Kubernetes client [official instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - **helm** - Package manager for Kubernetes [official instructions](https://github.com/helm/helm/blob/master/docs/install.md)
-- **minikube** - Tool for local setup of Kubernetes cluster [official instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube), may require **VirtualBox**
+- **minikube** - Tool for local setup of Kubernetes cluster [official instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/#install-minikube), require **Docker**
 
 ### Mac
 
