@@ -14,12 +14,12 @@ spec:
         app: topology-spread-constraints
     spec:
       topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: ScheduleAnyway
-        labelSelector:
-          matchLabels:
-            app: topology-spread-constraints
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: topology-spread-constraints
       containers:
         - name: hello-world
           image: nginx:alpine

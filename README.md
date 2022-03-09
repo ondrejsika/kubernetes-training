@@ -26,7 +26,6 @@ Source of my Kubernetes Training.
 
 <https://sika.link/chat>
 
-
 ## 12 Factor Apps
 
 [12factor.net](https://12factor.net)
@@ -217,7 +216,6 @@ I recommend you using Minikube (or Kubernetes support in Docker Desktop), but if
 
 Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
 
-
 #### Using training-cli
 
 ```
@@ -281,7 +279,7 @@ Change port
 kubectl proxy -p 8002
 ```
 
-**DO NOT RUN IN PRODODUCTION**:  Run proxy on all interfaces and allow all hosts - for training only
+**DO NOT RUN IN PRODODUCTION**: Run proxy on all interfaces and allow all hosts - for training only
 
 ```
 kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
@@ -1077,7 +1075,6 @@ See:
 - http://nginx.k8s.sikademo.com
 - http://apache.k8s.sikademo.com
 
-
 Cleanup
 
 ```
@@ -1211,6 +1208,7 @@ List namespaces
 ```
 kn
 ```
+
 or
 
 ```
@@ -1430,6 +1428,7 @@ DigitalOcean
 ```
 kubectl apply -f pvc-do-retain.yml
 ```
+
 ### CephFS Example
 
 ```
