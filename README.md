@@ -1,4 +1,4 @@
-[Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes)
+[Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes) | [join slack](https://sika.link/slack-sikapublic), [open slack](https://sikapublic.slack.com)
 
 ![](images/kubernetes_github.svg)
 
