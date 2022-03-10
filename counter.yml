@@ -67,10 +67,10 @@ spec:
           resources:
             requests:
               cpu: 20m
-              memory: 10Mi
+              memory: 30Mi
             limits:
               cpu: 50m
-              memory: 30Mi
+              memory: 60Mi
           env:
             - name: REDIS
               value: redis
