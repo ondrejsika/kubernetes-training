@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: pi10
 spec:
+  ttlSecondsAfterFinished: 60
   activeDeadlineSeconds: 600
   completions: 30
   parallelism: 10
