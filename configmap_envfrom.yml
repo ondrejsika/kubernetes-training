@@ -33,9 +33,9 @@ spec:
             name: envfrom
       resources:
         requests:
-          cpu: 1m
+          cpu: 130m
           memory: 20Mi
         limits:
-          cpu: 1m
+          cpu: 30m
           memory: 20Mi
   restartPolicy: Never
