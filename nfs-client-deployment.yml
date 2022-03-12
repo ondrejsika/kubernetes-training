@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client
+spec:
+  selector:
+    matchLabels:
+      app: nfs-client
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nfs-client
+        svc: example
+    spec:
+      containers:
+        - name: nginx
+          image: sikalabs/nginx-public
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html/data1
+              name: nfs1
+            - mountPath: /usr/share/nginx/html/data2
+              name: nfs2
+            - mountPath: /usr/share/nginx/html/data3
+              name: nfs3
+      volumes:
+        - name: nfs1
+          persistentVolumeClaim:
+            claimName: nfs1
+        - name: nfs2
+          persistentVolumeClaim:
+            claimName: nfs2
+        - name: nfs3
+          persistentVolumeClaim:
+            claimName: nfs3
