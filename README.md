@@ -1738,7 +1738,7 @@ curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/metrics
 curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/api/v1/nodes
 ```
 
-## Liveness & Readiness Probes
+## Liveness, Readiness & Startup Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
 
@@ -1800,6 +1800,36 @@ Cleanup
 
 ```
 kubectl delete -f probes_readiness.yml
+```
+
+### Startup Probe
+
+```
+kubectl apply -f probes_startup.yml
+```
+
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=startup
+```
+
+Watch service:
+
+```
+watch -n 0.3 kubectl describe svc startup
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/startup/proxy/
+```
+
+Cleanup
+
+```
+kubectl delete -f probes_startup.yml
 ```
 
 ## Resource Consumption (`kubectl top`)
