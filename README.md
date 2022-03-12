@@ -1712,6 +1712,27 @@ Add read only access to some cluster wide resources (nodes, volumes, ...)
 kubectl apply -f 17_namespace_admin_extra.yml
 ```
 
+### RBAC example of nonResourceURLs (`/metrics`)
+
+```
+kubectl apply -f rbac_metrics.yml
+```
+
+Create context and use it
+
+```
+kubectl config set-credentials metrics --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts metrics-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
+
+kubectl config set-context --user=metrics --cluster=minikube metrics
+
+kubectl config use-context metrics
+```
+
+See:
+
+- <http://127.0.0.1:8001/>
+- <http://127.0.0.1:8001/metrics>
+
 ## Access Kubernetes API using CURL
 
 Get Kubernetes API URL
