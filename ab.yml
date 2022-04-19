@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: ab
 spec:
+  completions: 10
+  parallelism: 2
   template:
     metadata:
       name: ab
