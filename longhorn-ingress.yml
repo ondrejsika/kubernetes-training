@@ -3,7 +3,14 @@ kind: Ingress
 metadata:
   name: longhorn
   namespace: longhorn-system
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - longhorn.k8s.sikademo.com
+      secretName: tls-longhorn
   rules:
     - host: longhorn.k8s.sikademo.com
       http:
