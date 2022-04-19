@@ -33,7 +33,7 @@ spec:
             name: envfrom
       resources:
         requests:
-          cpu: 130m
+          cpu: 30m
           memory: 20Mi
         limits:
           cpu: 30m
