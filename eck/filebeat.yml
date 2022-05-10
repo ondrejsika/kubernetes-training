@@ -22,6 +22,15 @@ data:
     processors:
       - add_cloud_metadata:
       - add_host_metadata:
+      - drop_event:
+          when:
+            not:
+              regexp:
+                kubernetes.namespace: "dev-|prod-"
+      - drop_event:
+          when:
+            regexp:
+              message: "DEBUG|INFO"
 
     output.elasticsearch:
       ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]

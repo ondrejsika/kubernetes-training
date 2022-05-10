@@ -1,26 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: webservers
+  name: logs
+  namespace: logs
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  tls:
+  - hosts:
+    - kibana.k8s.sikademo.com
+    secretName: tls-logs
   rules:
-    - host: nginx.127.0.0.1.nip.io
+    - host: kibana.k8s.sikademo.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: nginx
+                name: logs-kb-http
                 port:
-                  number: 80
-    - host: apache.127.0.0.1.nip.io
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: apache
-                port:
-                  number: 80
+                  number: 5601
