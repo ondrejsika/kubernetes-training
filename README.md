@@ -889,6 +889,12 @@ kubectl apply -f parallel_jobs.yml
 kubectl wait --for=condition=complete --timeout=600s job/pi
 ```
 
+Wait for jsonpath
+
+```
+kubectl wait --for=jsonpath='{.status.phase}'=running tkc/example
+```
+
 #### Automatic Job Cleanup
 
 You have to set `ttlSecondsAfterFinished` in job spec.
