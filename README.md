@@ -972,7 +972,7 @@ And create service:
 kubectl apply -f 05_clusterip_service.yml
 ```
 
-See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip/proxy/
+See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip:80/proxy/
 
 ### Create Service NodePort
 
