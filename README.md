@@ -1036,16 +1036,6 @@ Ingress Controllers - <https://kubernetes.io/docs/concepts/services-networking/i
 minikube addons enable ingress
 ```
 
-### Traefik Ingress Controller (DigitalOcean Only)
-
-See [ondrejsika/kubernetes-ingress-traefik](https://github.com/ondrejsika/kubernetes-ingress-traefik)
-
-Install Traefik Ingress Controller:
-
-```
-kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
-```
-
 ### Create Ingress
 
 Create some services (& deploymnets)
