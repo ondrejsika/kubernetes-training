@@ -225,7 +225,7 @@ training-cli kubernetes connect
 #### Manually
 
 ```
-wget https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kubeconfig
+curl -fsSL https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kubeconfig | base64 --decode > kubeconfig
 ```
 
 Copy it to `~/.kube/config`:
