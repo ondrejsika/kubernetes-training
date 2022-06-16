@@ -2097,6 +2097,20 @@ Delete all & purge
 helm uninstall $(helm ls -a -q)
 ```
 
+### Bitnami Packages
+
+Add repo:
+
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
+
+Install RabbitMQ:
+
+```
+helm install rabbitmq bitnami/rabbitmq --values rabbitmq.values.yml
+```
+
 ### Helm Repositiories
 
 #### List repositories
