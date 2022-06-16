@@ -4,6 +4,7 @@ node_modules
 
 config
 repo
+/charts
 /counter/**
 counter-*.tgz
 /index.html
