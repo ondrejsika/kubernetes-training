@@ -1919,7 +1919,7 @@ kubectl apply -f 04_01_deployment.yml
 Api v1 (same as `kubectl autoscale`)
 
 ```
-kubectl apply -f hpa_v1.yml
+kubectl apply -f hpa-fast.yml
 ```
 
 Run AB locally:
@@ -1943,7 +1943,7 @@ kubectl apply -f ab.yml
 See autoscaling at work
 
 ```
-watch -n 0.3 -d kubectl get -f hpa_v1.yml
+watch -n 0.3 -d kubectl get -f hpa-fast.yml
 ```
 
 Api v2
