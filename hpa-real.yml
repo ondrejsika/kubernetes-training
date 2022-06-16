@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpav1-web
+spec:
+  selector:
+    matchLabels:
+      app: hpav1-web
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: hpav1-web
+    spec:
+      containers:
+        - name: app
+          image: ondrejsika/go-hello-world:2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 40m
+              memory: 30Mi
+            limits:
+              cpu: 80m
+              memory: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hpa-service
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: hpav1-web
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpav1
+spec:
+  maxReplicas: 30
+  minReplicas: 10
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hpav1-web
+  targetCPUUtilizationPercentage: 90
