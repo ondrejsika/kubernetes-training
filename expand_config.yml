@@ -4,16 +4,18 @@ metadata:
   name: expand-config
 data:
   config.yaml.txt: |
-    host: $DB_HOST
-    port: $DB_PORT
+    host: postgres
+    port: 5432
+    user: $DB_USER
+    password: $DB_PASSWORD
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: expand-config
 stringData:
-  DB_HOST: postgres.example.com
-  DB_PORT: "5432"
+  DB_USER: foo
+  DB_PASSWORD: bar
 ---
 apiVersion: v1
 kind: Pod
@@ -21,11 +23,11 @@ metadata:
   name: expand-config
 spec:
   volumes:
-    - name: data
-      emptyDir: {}
-    - name: config
+    - name: config1
       configMap:
         name: expand-config
+    - name: config2
+      emptyDir: {}
   initContainers:
     - name: config
       image: sikalabs/slu:v0.22.0
@@ -35,9 +37,9 @@ spec:
         - "slu expand file -s /config/config.yaml.txt > /data/config.yaml.txt"
       volumeMounts:
         - mountPath: /data
-          name: data
+          name: config2
         - mountPath: /config
-          name: config
+          name: config1
       envFrom:
         - secretRef:
             name: expand-config
@@ -53,7 +55,7 @@ spec:
       image: sikalabs/nginx-public
       volumeMounts:
         - mountPath: /usr/share/nginx/html
-          name: data
+          name: config2
       resources:
         requests:
           memory: 50Mi
