@@ -1938,6 +1938,20 @@ See autoscaling at work
 watch -n 0.3 -d kubectl get -f hpa-fast.yml
 ```
 
+Real HPA example
+
+See:
+
+```
+vimdiff hpa-fast.yml hpa-real.yml
+```
+
+Try:
+
+```
+kubectl apply -f hpa-real.yml
+```
+
 ### Get HPAs
 
 ```
