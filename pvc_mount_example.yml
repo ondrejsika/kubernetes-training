@@ -12,6 +12,10 @@ spec:
       labels:
         app: pvc-mount-example
     spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: default-pvc
       containers:
         - name: nginx
           image: sikalabs/nginx-public
@@ -27,10 +31,6 @@ spec:
           volumeMounts:
             - mountPath: /usr/share/nginx/html
               name: data
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: default-pvc
 ---
 apiVersion: v1
 kind: Service
