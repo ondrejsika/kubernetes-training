@@ -971,7 +971,7 @@ alias kdev="kubectl run dev-$(date +%s) --rm -ti --image sikalabs/dev -- bash"
 Create deploymnet again:
 
 ```
-kubectl apply -f 04_02_deployment.yml
+kubectl apply -f deployment.yml
 ```
 
 And create service:
