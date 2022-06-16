@@ -36,12 +36,12 @@ func main() {
 			w.WriteHeader(200)
 			w.Write([]byte("ok always"))
 		} else {
-			if duration.Seconds() > 30 {
-				w.WriteHeader(500)
-				w.Write([]byte("err"))
-			} else {
+			if duration.Seconds() < 30 {
 				w.WriteHeader(200)
 				w.Write([]byte("ok for 30 seconds"))
+			} else {
+				w.WriteHeader(500)
+				w.Write([]byte("err"))
 			}
 		}
 	})
