@@ -958,6 +958,14 @@ kubectl run bash -it --rm --image=sikalabs/dev -- bash
 
 Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
 
+### Alias `kdev`
+
+Run `sikalabs/dev`:
+
+```
+alias kdev="kubectl run dev-$(date +%s) --rm -ti --image sikalabs/dev -- bash"
+```
+
 ### Create Service ClusterIP
 
 Create deploymnet again:
