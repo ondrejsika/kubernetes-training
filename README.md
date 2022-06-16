@@ -1441,6 +1441,12 @@ DigitalOcean
 kubectl apply -f pvc-do-retain.yml
 ```
 
+Longhorn
+
+```
+kubectl apply -f pvc-longhorn-retain.yml
+```
+
 ### CephFS Example
 
 ```
