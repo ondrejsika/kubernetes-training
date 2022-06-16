@@ -40,12 +40,12 @@ func main() {
 			w.WriteHeader(200)
 			w.Write([]byte("Ready"))
 		} else {
-			if time.Now().Second() > 30 {
-				w.WriteHeader(500)
-				w.Write([]byte("Not Ready"))
-			} else {
+			if time.Now().Second() < 30 {
 				w.WriteHeader(200)
 				w.Write([]byte("Ready"))
+			} else {
+				w.WriteHeader(500)
+				w.Write([]byte("Not Ready"))
 			}
 		}
 	})
