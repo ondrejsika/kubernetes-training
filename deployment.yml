@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+  annotations:
+    kubernetes.io/change-cause: yellow
+spec:
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: example
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: example
+        svc: example
+    spec:
+      containers:
+        - name: main
+          image: ondrejsika/training-example:yellow
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
+        - name: metrics
+          image: sikalabs/slu:v0.40.0
+          command:
+            - /bin/sh
+            - -c
+            - slu metrics-generator server
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
