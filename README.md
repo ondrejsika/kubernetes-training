@@ -1938,12 +1938,6 @@ See autoscaling at work
 watch -n 0.3 -d kubectl get -f hpa-fast.yml
 ```
 
-Api v2
-
-```
-kubectl apply -f hpa.yml
-```
-
 ### Get HPAs
 
 ```
