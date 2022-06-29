@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: nodename
 spec:
-  nodeName: minikube
+  nodeName: minikube2
   containers:
     - name: hello
       image: ondrejsika/training-example

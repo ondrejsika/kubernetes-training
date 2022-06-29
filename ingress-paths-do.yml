@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - k8s.sikademo.com
+        - lab0.sikademo.com
       secretName: tls-webservers-paths
   rules:
-    - host: k8s.sikademo.com
+    - host: lab0.sikademo.com
       http:
         paths:
           - path: /nginx(/|$)(.*)

@@ -3,6 +3,7 @@ kind: Job
 metadata:
   generateName: hello-
 spec:
+  ttlSecondsAfterFinished: 20
   template:
     metadata:
       name: hello

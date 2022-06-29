@@ -4,6 +4,7 @@ metadata:
   name: standard-retain
 spec:
   storageClassName: standard-retain
+  volumeName: pvc-c287799c-faf8-4520-9ddb-cc768813eece
   accessModes:
     - ReadWriteOnce
   resources:

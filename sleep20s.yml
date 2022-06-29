@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: sleep20s
 spec:
+  ttlSecondsAfterFinished: 10
   template:
     metadata:
       name: sleep

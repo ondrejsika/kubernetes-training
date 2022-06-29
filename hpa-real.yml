@@ -19,7 +19,7 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              cpu: 40m
+              cpu: 200m
               memory: 30Mi
             limits:
               cpu: 80m
@@ -48,4 +48,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: hpav1-web
-  targetCPUUtilizationPercentage: 90
+  targetCPUUtilizationPercentage: 100

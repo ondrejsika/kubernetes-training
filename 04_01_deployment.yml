@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world
   annotations:
-    kubernetes.io/change-cause: red
+    kubernetes.io/change-cause: red3
 spec:
   revisionHistoryLimit: 3
   selector:
@@ -12,6 +12,8 @@ spec:
   replicas: 2
   template:
     metadata:
+      annotations:
+        foo: bar3
       labels:
         app: hello-world-deploy
         svc: example

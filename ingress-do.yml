@@ -8,11 +8,11 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - nginx.k8s.sikademo.com
-        - apache.k8s.sikademo.com
+        - nginx.lab0.sikademo.com
+        - apache.lab0.sikademo.com
       secretName: tls-webservers
   rules:
-    - host: nginx.k8s.sikademo.com
+    - host: nginx.lab0.sikademo.com
       http:
         paths:
           - path: /
@@ -22,7 +22,7 @@ spec:
                 name: nginx
                 port:
                   number: 80
-    - host: apache.k8s.sikademo.com
+    - host: apache.lab0.sikademo.com
       http:
         paths:
           - path: /

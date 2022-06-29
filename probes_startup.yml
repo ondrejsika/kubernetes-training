@@ -16,7 +16,7 @@ spec:
         svc: example
     spec:
       containers:
-        - image: sikalabs/slu:v0.34.0
+        - image: sikalabs/slu:v0.41.0
           command:
             - /bin/sh
             - -c
@@ -26,7 +26,7 @@ spec:
           startupProbe:
             httpGet:
               path: /
-              port: 8000
+              port: 8000 
           ports:
             - containerPort: 8000
           resources:

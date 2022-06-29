@@ -5,4 +5,4 @@ replicaCount: 3
 ingress:
   enabled: true
   path: /
-  hostname: rabbitmq.k8s.sikademo.com
+  hostname: rabbitmq.lab0.sikademo.com

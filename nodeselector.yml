@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: nodeselector
 spec:
+  nodeSelector:
+    foo: bar
   containers:
     - name: hello
       image: ondrejsika/training-example
@@ -13,5 +15,3 @@ spec:
         limits:
           memory: 20Mi
           cpu: 20m
-  nodeSelector:
-    foo: bar

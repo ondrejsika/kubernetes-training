@@ -13,5 +13,5 @@ spec:
         - name: ab
           image: ondrejsika/ab
           command: ["/bin/sh", "-c"]
-          args: ["ab -c 4 -n 100000 http://hpa-service/"]
+          args: ["ab -c 4 -n 100000000 http://hpa-service/"]
       restartPolicy: Never

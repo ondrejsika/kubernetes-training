@@ -10,7 +10,6 @@ spec:
     matchLabels:
       project: counter
       app: redis
-  replicas: 1
   template:
     metadata:
       labels:
@@ -33,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis
+  name: redis-database
   labels:
     project: counter
 spec:
@@ -54,7 +53,7 @@ spec:
     matchLabels:
       project: counter
       app: counter
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
@@ -73,7 +72,7 @@ spec:
               memory: 60Mi
           env:
             - name: REDIS
-              value: redis
+              value: redis-database
           ports:
             - containerPort: 80
 ---
@@ -84,7 +83,6 @@ metadata:
   labels:
     project: counter
 spec:
-  type: NodePort
   ports:
     - port: 80
   selector:
@@ -95,9 +93,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: counter
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - counter.lab0.sikademo.com
+      secretName: tls-counter
   rules:
-    - host: counter.127.0.0.1.nip.io
+    - host: counter.lab0.sikademo.com
       http:
         paths:
           - path: /

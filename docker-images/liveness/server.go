@@ -7,6 +7,7 @@ import (
 	"math/big"
 	"net/http"
 	"time"
+	"os"
 )
 
 func randomZeroOrOne() (int, error) {
@@ -15,19 +16,20 @@ func randomZeroOrOne() (int, error) {
 }
 
 func main() {
+	hostname, _ := os.Hostname()
 	started := time.Now()
 	health, _ := randomZeroOrOne()
 	if health == 1 {
-		fmt.Println("Server will be healthy forever")
+		fmt.Println(hostname+" Server will be healthy forever")
 	} else {
-		fmt.Println("Server will be healthy for 30 seconds")
+		fmt.Println(hostname+" Server will be healthy for 30 seconds")
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
 		if health == 1 {
-			w.Write([]byte("Server will be healthy forever"))
+			w.Write([]byte(hostname+" Server will be healthy forever\n"))
 		} else {
-			w.Write([]byte("Server will be healthy for 30 seconds"))
+			w.Write([]byte(hostname+" Server will be healthy for 30 seconds\n"))
 		}
 	})
 	http.HandleFunc("/livez", func(w http.ResponseWriter, r *http.Request) {
