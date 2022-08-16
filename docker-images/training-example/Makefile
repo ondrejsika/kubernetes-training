@@ -1,5 +1,6 @@
 build-push-all:
 	@make build-push-mavenir
+	@make build-push-ogsoft
 
 _build-push:
 	docker build \
@@ -16,5 +17,11 @@ _use:
 build-push-mavenir:
 	@make _build-push NAME=mavenir
 
+build-push-ogsoft:
+	@make _build-push NAME=ogsoft
+
 use-mavenir:
 	@make _use NAME=mavenir
+
+use-ogsoft:
+	@make _use NAME=ogsoft
