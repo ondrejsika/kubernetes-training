@@ -10,7 +10,6 @@ spec:
     matchLabels:
       project: counter
       app: redis
-  replicas: 1
   template:
     metadata:
       labels:
@@ -84,7 +83,6 @@ metadata:
   labels:
     project: counter
 spec:
-  type: NodePort
   ports:
     - port: 80
   selector:
