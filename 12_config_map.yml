@@ -4,6 +4,15 @@ metadata:
   name: my-config
 data:
   config: hello
+  config.yaml: |
+    DB_HOST: db.company.com
+    DB_PORT: 5432
+    DB_USER: root
+    DB_PASSOWRD: root
+  config.toml: |
+    [wtf]
+    hello = world
+    foo = bar
   hello.html: |
     <h1>Hello from ConfigMap</h1>
     <p>This is stored in ConfigMap</p>
