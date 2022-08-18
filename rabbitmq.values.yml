@@ -6,3 +6,7 @@ ingress:
   enabled: true
   path: /
   hostname: rabbitmq.k8s.sikademo.com
+  # TLS
+  tls: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
