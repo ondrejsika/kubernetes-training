@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: readiness
   labels:
-    app: liveness
+    app: readiness
 spec:
   replicas: 10
   selector:
