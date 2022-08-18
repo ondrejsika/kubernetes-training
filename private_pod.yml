@@ -10,6 +10,8 @@ spec:
   containers:
     - name: hello
       image: registry.sikalabs.com/pseudo-private/hello-world:latest
+      ports:
+        - containerPort: 80
       resources:
         requests:
           memory: 10Mi
