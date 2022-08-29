@@ -1,6 +1,7 @@
 build-push-all:
 	@make build-push-mavenir
 	@make build-push-ogsoft
+	@make build-push-thermofisher
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -20,8 +21,14 @@ build-push-mavenir:
 build-push-ogsoft:
 	@make _build-push NAME=ogsoft
 
+build-push-thermofisher:
+	@make _build-push NAME=thermofisher
+
 use-mavenir:
 	@make _use NAME=mavenir
 
 use-ogsoft:
 	@make _use NAME=ogsoft
+
+use-thermofisher:
+	@make _use NAME=thermofisher
