@@ -10,7 +10,6 @@ spec:
     matchLabels:
       project: counter
       app: redis
-  replicas: 1
   template:
     metadata:
       labels:
@@ -31,6 +30,9 @@ spec:
             requests:
               cpu: 30m
               memory: 50Mi
+            limits:
+              cpu: 50m
+              memory: 80Mi
           ports:
             - containerPort: 6379
 ---
@@ -64,7 +66,6 @@ spec:
       labels:
         project: counter
         app: counter
-        svc: example
     spec:
       initContainers:
         - name: init-redis
@@ -79,7 +80,10 @@ spec:
           resources:
             requests:
               cpu: 20m
-              memory: 10Mi
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 60Mi
           env:
             - name: REDIS
               value: redis
@@ -93,7 +97,6 @@ metadata:
   labels:
     project: counter
 spec:
-  type: NodePort
   ports:
     - port: 80
   selector:
