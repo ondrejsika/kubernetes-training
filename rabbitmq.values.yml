@@ -6,7 +6,6 @@ auth:
 replicaCount: 3
 ingress:
   enabled: true
-  path: /
   hostname: rabbitmq.k8s.sikademo.com
   # TLS
   tls: true
