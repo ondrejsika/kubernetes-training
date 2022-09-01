@@ -9,8 +9,8 @@ metadata:
   name: devel-user
   namespace: devel
 ---
-kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
 metadata:
   name: devel-user-full-access
   namespace: devel
