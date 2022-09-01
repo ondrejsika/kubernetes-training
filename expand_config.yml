@@ -34,11 +34,11 @@ spec:
       command:
         - "/bin/sh"
         - "-c"
-        - "slu expand file -s /config/config.yaml.txt > /data/config.yaml.txt"
+        - "slu expand file -s /config1/config.yaml.txt > /config2/config.yaml.txt"
       volumeMounts:
-        - mountPath: /data
+        - mountPath: /config2
           name: config2
-        - mountPath: /config
+        - mountPath: /config1
           name: config1
       envFrom:
         - secretRef:
