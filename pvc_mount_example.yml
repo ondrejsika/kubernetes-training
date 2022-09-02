@@ -29,8 +29,8 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - mountPath: /usr/share/nginx/html
-              name: data
+            - name: data
+              mountPath: /usr/share/nginx/html
 ---
 apiVersion: v1
 kind: Service
