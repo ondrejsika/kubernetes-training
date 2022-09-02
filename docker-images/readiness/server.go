@@ -9,20 +9,27 @@ import (
 	"time"
 )
 
-func randomZeroOrOne() (int, error) {
+func handleError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func random() bool {
 	n, err := rand.Int(rand.Reader, big.NewInt(2))
-	return int(n.Int64()), err
+	handleError(err)
+	return int(n.Int64()) == 1
 }
 
 func main() {
-	health, _ := randomZeroOrOne()
-	if health == 1 {
+	health := random()
+	if health {
 		fmt.Println("Server will be ready forever")
 	} else {
 		fmt.Println("Server will be ready for 30 seconds, then 30 second not, and again")
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if health == 1 {
+		if health {
 			w.WriteHeader(200)
 			w.Write([]byte("Server will be ready forever"))
 		} else {
@@ -36,7 +43,7 @@ func main() {
 		}
 	})
 	http.HandleFunc("/readyz", func(w http.ResponseWriter, r *http.Request) {
-		if health == 1 {
+		if health {
 			w.WriteHeader(200)
 			w.Write([]byte("Ready"))
 		} else {
