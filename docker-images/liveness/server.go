@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/big"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -24,31 +25,33 @@ func random() bool {
 func main() {
 	started := time.Now()
 	health := random()
+	hostname, err := os.Hostname()
+	handleError(err)
 	if health {
-		fmt.Printf("Server will be healthy forever")
+		fmt.Printf("[%s] Server will be healthy forever\n", hostname)
 	} else {
-		fmt.Println("Server will be healthy for 30 seconds")
+		fmt.Printf("[%s] Server will be healthy for 30 seconds\n", hostname)
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
 		if health {
-			w.Write([]byte("Server will be healthy forever"))
+			w.Write([]byte(fmt.Sprintf("[%s] Server will be healthy forever\n", hostname)))
 		} else {
-			w.Write([]byte("Server will be healthy for 30 seconds"))
+			w.Write([]byte(fmt.Sprintf("[%s] Server will be healthy for 30 seconds\n", hostname)))
 		}
 	})
 	http.HandleFunc("/livez", func(w http.ResponseWriter, r *http.Request) {
 		duration := time.Since(started)
 		if health {
 			w.WriteHeader(200)
-			w.Write([]byte("ok always"))
+			w.Write([]byte("OK\n"))
 		} else {
 			if duration.Seconds() < 30 {
 				w.WriteHeader(200)
-				w.Write([]byte("ok for 30 seconds"))
+				w.Write([]byte("ERR\n"))
 			} else {
 				w.WriteHeader(500)
-				w.Write([]byte("err"))
+				w.Write([]byte("ERR\n"))
 			}
 		}
 	})
