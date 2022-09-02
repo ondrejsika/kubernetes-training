@@ -5,8 +5,7 @@ COPY go.sum .
 COPY server.go .
 RUN go get
 ENV CGO_ENABLED=0
-RUN go build -a -ldflags \
-  '-extldflags "-static"' server.go
+RUN go build server.go
 
 FROM scratch
 COPY --from=build /build/server .
