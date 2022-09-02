@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/big"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -23,36 +24,38 @@ func random() bool {
 
 func main() {
 	health := random()
+	hostname, err := os.Hostname()
+	handleError(err)
 	if health {
-		fmt.Println("Server will be ready forever")
+		fmt.Printf("[%s] Server will be ready forever\n", hostname)
 	} else {
-		fmt.Println("Server will be ready for 30 seconds, then 30 second not, and again")
+		fmt.Printf("[%s] Server will be ready only for first 30 seconds in minute\n", hostname)
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if health {
 			w.WriteHeader(200)
-			w.Write([]byte("Server will be ready forever"))
+			w.Write([]byte(fmt.Sprintf("[%s] Server will be healthy forever\n", hostname)))
 		} else {
 			if time.Now().Second() > 30 {
 				w.WriteHeader(500)
-				w.Write([]byte("Not Ready"))
+				w.Write([]byte(fmt.Sprintf("[%s] Not Ready\n", hostname)))
 			} else {
 				w.WriteHeader(200)
-				w.Write([]byte("Ready"))
+				w.Write([]byte(fmt.Sprintf("[%s] Ready\n", hostname)))
 			}
 		}
 	})
 	http.HandleFunc("/readyz", func(w http.ResponseWriter, r *http.Request) {
 		if health {
 			w.WriteHeader(200)
-			w.Write([]byte("Ready"))
+			w.Write([]byte("OK\n"))
 		} else {
 			if time.Now().Second() < 30 {
 				w.WriteHeader(200)
-				w.Write([]byte("Ready"))
+				w.Write([]byte("OK\n"))
 			} else {
 				w.WriteHeader(500)
-				w.Write([]byte("Not Ready"))
+				w.Write([]byte("ERR\n"))
 			}
 		}
 	})
