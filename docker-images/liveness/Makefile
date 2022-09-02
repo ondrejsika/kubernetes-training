@@ -3,7 +3,7 @@ IMAGE = ondrejsika/liveness
 all: build push
 
 build:
-	docker build -t $(IMAGE) .
+	docker build --platform linux/amd64 -t $(IMAGE) .
 
 push:
 	docker push $(IMAGE)

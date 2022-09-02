@@ -3,7 +3,7 @@ build-push-all:
 	@make build-push-ogsoft
 
 _build-push:
-	docker build \
+	docker build --platform linux/amd64 \
 		--build-arg IMAGE=sikalabs/hello-world-server:${NAME} \
 		--tag ondrejsika/training-example:${NAME} \
 		- < Dockerfile
