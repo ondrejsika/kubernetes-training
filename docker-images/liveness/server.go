@@ -48,7 +48,7 @@ func main() {
 		} else {
 			if duration.Seconds() < 30 {
 				w.WriteHeader(200)
-				w.Write([]byte("ERR\n"))
+				w.Write([]byte("OK\n"))
 			} else {
 				w.WriteHeader(500)
 				w.Write([]byte("ERR\n"))
