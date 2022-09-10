@@ -9,7 +9,6 @@ spec:
     matchLabels:
       project: webservers
       app: nginx
-  replicas: 1
   template:
     metadata:
       labels:
@@ -55,7 +54,6 @@ spec:
     matchLabels:
       project: webservers
       app: apache
-  replicas: 1
   template:
     metadata:
       labels:
