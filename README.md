@@ -1057,8 +1057,8 @@ kubectl apply -f webservers.yml
 
 See:
 
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx:http/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache:http/proxy/
 
 Create Ingress on Minikube
 
