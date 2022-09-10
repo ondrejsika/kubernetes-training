@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - k8s.sikademo.com
-      secretName: tls-webservers-paths
+      secretName: webservers-paths-tls
   rules:
     - host: k8s.sikademo.com
       http:
