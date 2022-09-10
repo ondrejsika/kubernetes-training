@@ -8,7 +8,7 @@ spec:
     - port: 80
       protocol: TCP
       targetPort: 80
-      # nodePort is optional
+      # nodePort is optional (30000-32767)
       nodePort: 31001
   selector:
     app: example
