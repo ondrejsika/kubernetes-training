@@ -16,7 +16,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: nginx
+        - name: main
           image: nginx
           ports:
             - containerPort: 80
@@ -61,7 +61,7 @@ spec:
         app: apache
     spec:
       containers:
-        - name: apache
+        - name: main
           image: httpd
           ports:
             - containerPort: 80
