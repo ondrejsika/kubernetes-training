@@ -3,6 +3,7 @@ build-push-all:
 	@make build-push-ogsoft
 	@make build-push-thermofisher
 	@make build-push-aardwark
+	@make build-push-ttc
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -28,6 +29,9 @@ build-push-thermofisher:
 build-push-aardwark:
 	@make _build-push NAME=aardwark
 
+build-push-ttc:
+	@make _build-push NAME=ttc
+
 use-mavenir:
 	@make _use NAME=mavenir
 
@@ -39,3 +43,6 @@ use-thermofisher:
 
 use-aardwark:
 	@make _use NAME=aardwark
+
+use-ttc:
+	@make _use NAME=ttc
