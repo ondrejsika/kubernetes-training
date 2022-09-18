@@ -1073,6 +1073,16 @@ On local machine (win, mac), you have to run `minikube tunnel` in own tab to acc
 minikube tunnel
 ```
 
+On lab VM you have to run those proxies to access ports 80 and 443:
+
+```
+docker run -d --name proxy-ingress-80 --net host -v /root:/root sikalabs/slu:v0.50.0 slu proxy tcp -l :80 -r $(kubectl get node minikube -o jsonpath="{.status.addresses[0].address}"):$(kubectl get svc -n ingress-nginx ingress-nginx-controller -o jsonpath="{.spec.ports[0].nodePort}")
+```
+
+```
+docker run -d --name proxy-ingress-443 --net host -v /root:/root sikalabs/slu:v0.50.0 slu proxy tcp -l :443 -r $(kubectl get node minikube -o jsonpath="{.status.addresses[0].address}"):$(kubectl get svc -n ingress-nginx ingress-nginx-controller -o jsonpath="{.spec.ports[1].nodePort}")
+```
+
 ### Install Ingress Nginx on DigitalOcean
 
 ```
