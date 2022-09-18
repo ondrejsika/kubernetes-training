@@ -1915,6 +1915,12 @@ or using `kubectx`:
 kx read
 ```
 
+### Kubectx rename context
+
+```
+kx pod-read=read
+```
+
 ### Create Namespace Admin
 
 ```
