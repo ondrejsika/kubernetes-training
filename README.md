@@ -1228,6 +1228,18 @@ Or using [slu](https://github.com/sikalabs/slu):
 slu scripts kubernetes install-cert-manager
 ```
 
+Install cluster issuer:
+
+```
+kubectl apply -f clusterissuer-letsencrypt.yml
+```
+
+or using `slu`:
+
+```
+slu scripts kubernetes install-cluster-issuer
+```
+
 ```
 kubectl apply -f ingress-do.yml
 ```
