@@ -675,6 +675,12 @@ To specific revision
 kubectl rollout undo deploy hello-world --to-revision=2
 ```
 
+### Rollout Restart
+
+```
+kubectl rollout restart deploy hello-world
+```
+
 ### Clean up Policy
 
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#clean-up-policy
