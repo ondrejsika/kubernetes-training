@@ -1890,6 +1890,18 @@ Direct:
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
+Or using `slu`:
+
+```
+slu scripts kubernetes install-metrics-server
+```
+
+or short version using `slu`:
+
+```
+slu s k ims
+```
+
 See nodes comsumptions:
 
 ```
