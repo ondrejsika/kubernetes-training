@@ -1243,6 +1243,22 @@ Cleanup
 kubectl delete -f webservers.yml -f ingress.yml -f ingress-do.yml
 ```
 
+### Sticky Sessions
+
+<https://kubernetes.github.io/ingress-nginx/examples/affinity/cookie/>
+
+Minikube:
+
+```
+kubectl apply -f ingress-sticky.yml
+```
+
+DigitalOcean:
+
+```
+kubectl apply -f ingress-do-sticky.yml
+```
+
 ### Deploy Application (Multiple Deployments and Services)
 
 ```
