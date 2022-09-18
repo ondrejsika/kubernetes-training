@@ -1079,6 +1079,24 @@ See:
 
 Create Ingress on DigitalOcean
 
+We need a [cert-managet](https://cert-manager.io/) for creating HTTPS certificates. You can install it using helm:
+
+```
+helm upgrade --install \
+	cert-manager cert-manager \
+	--repo https://charts.jetstack.io \
+	--create-namespace \
+	--namespace cert-manager \
+	--set installCRDs=true \
+	--wait
+```
+
+Or using [slu](https://github.com/sikalabs/slu):
+
+```
+slu scripts kubernetes install-cert-manager
+```
+
 ```
 kubectl apply -f ingress-do.yml
 ```
