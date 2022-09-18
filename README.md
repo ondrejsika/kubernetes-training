@@ -1858,6 +1858,12 @@ Use new user to context:
 kubectl config use-context admin
 ```
 
+or using `kubectx`:
+
+```
+kx admin
+```
+
 And try:
 
 ```
@@ -1903,6 +1909,12 @@ kubectl config read set-context --user=read --cluster=minikube
 kubectl config use-context read
 ```
 
+or using `kubectx`:
+
+```
+kx read
+```
+
 ### Create Namespace Admin
 
 ```
@@ -1917,6 +1929,12 @@ kubectl config set-credentials devel --token=$(kubectl -n devel get secret $(kub
 kubectl config set-context devel --user=devel --namespace=devel  --cluster=minikube
 
 kubectl config use-context devel
+```
+
+or using `kubectx`:
+
+```
+kx devel
 ```
 
 Add read only access to some cluster wide resources (nodes, volumes, ...)
