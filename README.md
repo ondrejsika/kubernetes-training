@@ -2253,6 +2253,22 @@ You can add `--install` to `helm upgrade` to install package if not exists. When
 helm upgrade --install hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
 ```
 
+### Helm Rollback
+
+```
+helm rollback <release_name> <revision>
+```
+
+Example
+
+```
+helm rollback hello 1
+```
+
+```
+helm rollback hello 2
+```
+
 ### List Installed Packages
 
 ```
