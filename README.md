@@ -2223,7 +2223,7 @@ helm show all sikalabs/hello-world
 helm install <deployment_name> <chart>
 ```
 
-Example:
+Example [hello-world](https://github.com/sikalabs/charts/tree/master/charts/hello-world) package / chart:
 
 ```
 helm install hello sikalabs/hello-world
