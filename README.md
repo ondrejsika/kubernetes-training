@@ -1849,7 +1849,7 @@ kubectl config set-credentials admin --token=$(slu k8s token -n kube-system -s a
 Set new user to context:
 
 ```
-kubectl  config set-context --user=admin --cluster=minikube admin
+kubectl  config set-context admin --user=admin --cluster=minikube
 ```
 
 Use new user to context:
@@ -1898,7 +1898,7 @@ Add to user to config and change context user
 ```
 kubectl config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config set-context --user=read --cluster=minikube read
+kubectl config read set-context --user=read --cluster=minikube
 
 kubectl config use-context read
 ```
@@ -1914,7 +1914,7 @@ And create user, also with default namespace changed to `devel`
 ```
 kubectl config set-credentials devel --token=$(kubectl -n devel get secret $(kubectl -n devel get serviceaccounts devel-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config set-context --user=devel --cluster=minikube  --namespace=devel devel
+kubectl config set-context devel --user=devel --namespace=devel  --cluster=minikube
 
 kubectl config use-context devel
 ```
