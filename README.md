@@ -1067,6 +1067,12 @@ Ingress Controllers - <https://kubernetes.io/docs/concepts/services-networking/i
 minikube addons enable ingress
 ```
 
+On local machine (win, mac), you have to run `minikube tunnel` in own tab to access port 80 and 443:
+
+```
+minikube tunnel
+```
+
 ### Install Ingress Nginx on DigitalOcean
 
 ```
