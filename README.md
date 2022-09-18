@@ -690,6 +690,10 @@ kubectl delete -f 03_01_replica_set.yml
 kubectl delete rs/hello-world-rs
 ```
 
+### Well-Known Labels, Annotations and Taints
+
+<https://kubernetes.io/docs/reference/labels-annotations-taints/>
+
 ### Create Deployment
 
 ```
