@@ -242,7 +242,18 @@ Create own namespace (eg.: `ondrejsika`) and set it as default
 
 ```
 kubectl create ns ondrejsika
+```
+
+Switch to namespace
+
+```
 kubectl config set-context --current --namespace=ondrejsika
+```
+
+Using `kubens`
+
+```
+kn ondrejsika
 ```
 
 ## Course
