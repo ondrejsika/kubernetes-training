@@ -4,6 +4,7 @@ build-push-all:
 	@make build-push-thermofisher
 	@make build-push-aardwark
 	@make build-push-ttc
+	@make build-push-tietoevry
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -32,6 +33,9 @@ build-push-aardwark:
 build-push-ttc:
 	@make _build-push NAME=ttc
 
+build-push-tietoevry:
+	@make _build-push NAME=tietoevry
+
 use-mavenir:
 	@make _use NAME=mavenir
 
@@ -46,3 +50,6 @@ use-aardwark:
 
 use-ttc:
 	@make _use NAME=ttc
+
+use-tietoevry:
+	@make _use NAME=tietoevry
