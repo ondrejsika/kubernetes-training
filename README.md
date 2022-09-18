@@ -1918,6 +1918,18 @@ kubectl top pods
 kubectl top pods -A
 ```
 
+Sort by CPU
+
+```
+k top po -A  --sort-by=cpu
+```
+
+Sort by memory
+
+```
+k top po -A  --sort-by=memory
+```
+
 ## Autoscaling (Horizontal Pod Autoscaler)
 
 - <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
