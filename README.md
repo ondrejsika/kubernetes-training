@@ -265,6 +265,34 @@ kubectl explain pod.spec.containers.image
 kubectl get nodes
 ```
 
+```
+kubectl get node
+```
+
+```
+kubectl get no
+```
+
+```
+kubectl get no minikube
+```
+
+```
+kubectl get no/minikube
+```
+
+```
+kubectl get no minikube -o yaml
+```
+
+```
+kubectl get no minikube -o json
+```
+
+```
+kubectl get no minikube -o jsonpath="{.status.addresses[0].address }{'\n'}"
+```
+
 ### Proxy to cluster
 
 Start proxy
@@ -380,6 +408,46 @@ kubectl apply -f pod_redis.yml
 kubectl get pods
 kubectl get po
 ```
+
+```
+kubectl get po redis
+```
+
+```
+kubectl get po/redis
+```
+
+```
+kubectl get -f pod_redis.yml
+```
+
+```
+kubectl get po redis simple-hello-world
+```
+
+```
+kubectl get po/redis po/simple-hello-world
+```
+
+```
+kubectl get po/redis no/minikube
+```
+
+```
+kubectl get -f pod_redis.yml -f 01_pod.yml
+```
+
+```
+kubectl get pods -o json
+```
+
+```
+kubectl get -f 01_pod.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
+kubectl get -f 02_pod.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
+kubectl get -f pod_redis.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
+```
+
+### See Pods
 
 See:
 
