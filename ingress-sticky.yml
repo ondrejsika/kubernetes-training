@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sticky
+spec:
+  selector:
+    matchLabels:
+      app: sticky
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: sticky
+        svc: example
+    spec:
+      containers:
+        - name: main
+          image: ondrejsika/training-example
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sticky
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: sticky
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sticky
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
+spec:
+  rules:
+    - host: sticky.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sticky
+                port:
+                  number: 80
