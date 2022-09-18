@@ -281,6 +281,20 @@ kubectl proxy -p 8002
 
 **DO NOT RUN IN PRODODUCTION**: Run proxy on all interfaces and allow all hosts - for training only
 
+Export raw Kubernetes API from lab VM to all interfaces:
+
+```
+docker run --name minikube-api-raw --net host sikalabs/slu:v0.50.0 slu proxy tcp -l :8443 -r $(minikube ip):8443
+```
+
+See: <https://lab0.sikademo.com:8443>
+
+or:
+
+```
+curl -k https://lab0.sikademo.com:8443
+```
+
 ```
 kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
 ```
