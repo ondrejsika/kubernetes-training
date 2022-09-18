@@ -299,6 +299,12 @@ curl -k https://lab0.sikademo.com:8443
 kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
 ```
 
+On lab VM, you can also run proxy in Docker:
+
+```
+docker run -d --name proxy --net host -v /root:/root sikalabs/kubectl kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
+```
+
 ### Dashboard
 
 #### Minikube
