@@ -1607,7 +1607,7 @@ See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 kubectl apply -f nfs-volume-example.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/nfs-volume-example/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/nfs-volume-example:80/proxy/>
 
 ### Reclaim Policy Retain
 
