@@ -1524,6 +1524,13 @@ kubectl apply -f pvc_mount_example.yml
 
 See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/pvc-mount-example/proxy/>
 
+Example of `kubectl cp`:
+
+```
+kubectl cp index.html <pod>:usr/share/nginx/html/index.html
+kubectl cp <pod>:usr/share/nginx/html/index.html index.html
+```
+
 Clean up
 
 ```
