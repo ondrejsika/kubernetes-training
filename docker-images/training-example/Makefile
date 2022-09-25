@@ -1,4 +1,5 @@
 build-push-all:
+	@make build-push-ondrejsika
 	@make build-push-mavenir
 	@make build-push-ogsoft
 	@make build-push-thermofisher
@@ -18,6 +19,9 @@ _use:
 	docker tag ondrejsika/training-example:${NAME} ondrejsika/training-example
 	docker push ondrejsika/training-example
 
+build-push-ondrejsika:
+	@make _build-push NAME=ondrejsika
+
 build-push-mavenir:
 	@make _build-push NAME=mavenir
 
@@ -35,6 +39,9 @@ build-push-ttc:
 
 build-push-tietoevry:
 	@make _build-push NAME=tietoevry
+
+use-ondrejsika:
+	@make _use NAME=ondrejsika
 
 use-mavenir:
 	@make _use NAME=mavenir
