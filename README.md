@@ -540,6 +540,12 @@ kubectl logs multi-container-pod nginx
 kubectl logs multi-container-pod date
 ```
 
+From Kubernetes 1.25 you can see logs from first container by default
+
+```
+kubectl logs multi-container-pod
+```
+
 ### Assigning Pods to Nodes
 
 Docs - <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/>
