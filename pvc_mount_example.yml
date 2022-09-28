@@ -38,9 +38,9 @@ metadata:
   name: pvc-mount-example
 spec:
   type: ClusterIP
+  selector:
+    app: pvc-mount-example
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  selector:
-    app: pvc-mount-example

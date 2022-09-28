@@ -43,9 +43,9 @@ metadata:
   name: startup
 spec:
   type: ClusterIP
+  selector:
+    app: startup
   ports:
     - port: 80
       protocol: TCP
       targetPort: 8000
-  selector:
-    app: startup

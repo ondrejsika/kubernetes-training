@@ -47,7 +47,7 @@ kind: Service
 metadata:
   name: sts-volume
 spec:
-  ports:
-    - port: 80
   selector:
     app: sts-volume
+  ports:
+    - port: 80

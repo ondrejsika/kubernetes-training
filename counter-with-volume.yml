@@ -55,11 +55,11 @@ metadata:
   labels:
     project: counter
 spec:
-  ports:
-    - port: 6379
   selector:
     project: counter
     app: redis
+  ports:
+    - port: 6379
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -100,11 +100,11 @@ metadata:
     project: counter
 spec:
   type: NodePort
-  ports:
-    - port: 80
   selector:
     project: counter
     app: counter
+  ports:
+    - port: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

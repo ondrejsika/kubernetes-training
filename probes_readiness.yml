@@ -40,9 +40,9 @@ metadata:
   name: readiness
 spec:
   type: ClusterIP
+  selector:
+    app: readiness
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  selector:
-    app: readiness

@@ -46,10 +46,10 @@ kind: Service
 metadata:
   name: "{{ .Release.Name }}-redis"
 spec:
-  ports:
-    - port: 6379
   selector:
     release: "{{ .Release.Name }}-redis"
+  ports:
+    - port: 6379
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -84,10 +84,10 @@ metadata:
   name: "{{ .Release.Name }}-counter"
 spec:
   type: NodePort
-  ports:
-    - port: 80
   selector:
     release: "{{ .Release.Name }}-counter"
+  ports:
+    - port: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

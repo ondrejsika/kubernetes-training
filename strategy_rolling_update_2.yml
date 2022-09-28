@@ -43,9 +43,9 @@ metadata:
   name: rolling-update
 spec:
   type: NodePort
+  selector:
+    app: rolling-update
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  selector:
-    app: rolling-update

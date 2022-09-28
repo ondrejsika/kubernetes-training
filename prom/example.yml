@@ -38,10 +38,10 @@ metadata:
   labels:
     app: metrics-example
 spec:
+  selector:
+    app: metrics-example
   ports:
     - name: http
       port: 80
       protocol: TCP
       targetPort: http
-  selector:
-    app: metrics-example

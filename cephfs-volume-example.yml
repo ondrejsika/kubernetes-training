@@ -43,9 +43,9 @@ metadata:
   name: cephfs-volume-example
 spec:
   type: ClusterIP
+  selector:
+    app: cephfs-volume-example
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  selector:
-    app: cephfs-volume-example

@@ -4,7 +4,8 @@ metadata:
   name: hello-world-loadbalancer
 spec:
   type: LoadBalancer
-  ports:
-    - port: 80
   selector:
     app: example
+  ports:
+    - port: 80
+      targetPort: http

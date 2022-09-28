@@ -31,11 +31,11 @@ metadata:
   name: hpa-service
 spec:
   type: NodePort
+  selector:
+    app: hpav1-web
   ports:
     - port: 80
       targetPort: 80
-  selector:
-    app: hpav1-web
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
