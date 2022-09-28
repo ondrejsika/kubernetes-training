@@ -1,0 +1,11 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: gp2-retain
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  encrypted: 'true'
+  type: gp2
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
