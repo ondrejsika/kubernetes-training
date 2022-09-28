@@ -12,6 +12,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: cronjob
               image: busybox
@@ -19,4 +20,3 @@ spec:
                 - /bin/sh
                 - -c
                 - date; echo Hello from the Kubernetes cluster
-          restartPolicy: OnFailure

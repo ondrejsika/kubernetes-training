@@ -9,9 +9,9 @@ spec:
     metadata:
       name: pi
     spec:
+      restartPolicy: Never
       containers:
         - name: pi
           image: perl:slim
           command: ["perl"]
           args: ["-Mbignum=bpi", "-wle", "print bpi(1000)"]
-      restartPolicy: Never
