@@ -1625,6 +1625,12 @@ Minikube
 kubectl apply -f sc-minikube-retain.yml
 ```
 
+AWS GP2
+
+```
+kubectl apply -f sc-gp2-retain.yml
+```
+
 DigitalOcean
 
 ```
