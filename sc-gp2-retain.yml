@@ -4,7 +4,7 @@ metadata:
   name: gp2-retain
 provisioner: kubernetes.io/aws-ebs
 parameters:
-  encrypted: 'true'
+  encrypted: "true"
   type: gp2
 reclaimPolicy: Retain
 allowVolumeExpansion: true
