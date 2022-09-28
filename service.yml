@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: example
 spec:
-  ports:
-    - port: 80
   selector:
     svc: example
+  ports:
+    - port: 80
+      targetPort: 8000
