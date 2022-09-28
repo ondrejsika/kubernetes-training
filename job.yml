@@ -10,6 +10,7 @@ spec:
       name: pi
     spec:
       restartPolicy: Never
+      # restartPolicy: OnFailure
       containers:
         - name: pi
           image: perl:slim
