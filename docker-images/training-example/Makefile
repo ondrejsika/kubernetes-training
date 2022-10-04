@@ -40,6 +40,9 @@ build-push-ttc:
 build-push-tietoevry:
 	@make _build-push NAME=tietoevry
 
+build-push-frequentis:
+	@make _build-push NAME=frequentis
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -60,3 +63,6 @@ use-ttc:
 
 use-tietoevry:
 	@make _use NAME=tietoevry
+
+use-frequentis:
+	@make _use NAME=frequentis
