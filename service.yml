@@ -7,4 +7,3 @@ spec:
     svc: example
   ports:
     - port: 80
-      targetPort: 8000
