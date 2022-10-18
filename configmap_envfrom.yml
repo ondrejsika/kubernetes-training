@@ -3,16 +3,16 @@ kind: ConfigMap
 metadata:
   name: envfrom
 data:
-  MY_HELLO: hello
-  MY_WORLD: world
+  HELLO: hello
+  WORLD: world
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: envfrom
 stringData:
-  MY_FOO: foo
-  MY_BAR: bar
+  FOO: foo
+  BAR: bar
 ---
 apiVersion: v1
 kind: Pod
@@ -27,9 +27,11 @@ spec:
         - -c
         - env | grep MY_
       envFrom:
-        - configMapRef:
+        - prefix: MY_CONFIG_
+          configMapRef:
             name: envfrom
-        - secretRef:
+        - prefix: MY_SECRET_
+          secretRef:
             name: envfrom
       resources:
         requests:
