@@ -6,8 +6,8 @@ spec:
   hard:
     requests.cpu: 300m
     requests.memory: 400Mi
-    limits.cpu: 300m
-    limits.memory: 400Mi
+    limits.cpu: 1000m
+    limits.memory: 1200Mi
 
     services.loadbalancers: "0"
 
