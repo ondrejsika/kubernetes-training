@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readiness-exec
+  labels:
+    app: readiness-exec
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: readiness-exec
+  template:
+    metadata:
+      labels:
+        app: readiness-exec
+        svc: example
+    spec:
+      containers:
+        - image: sikalabs/slu:v0.53.0
+          name: main
+          args:
+            - /bin/sh
+            - -c
+            - slu example-server -p 80
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /tmp/ready
+            initialDelaySeconds: 5
+            failureThreshold: 2
+            periodSeconds: 1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 10Mi
+              cpu: 10m
+            limits:
+              memory: 20Mi
+              cpu: 20m
