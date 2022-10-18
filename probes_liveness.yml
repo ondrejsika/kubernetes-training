@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: liveness
+        svc: example
     spec:
       containers:
         - image: ondrejsika/liveness
