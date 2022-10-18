@@ -16,19 +16,19 @@ spec:
         svc: example
     spec:
       containers:
-        - image: sikalabs/slu:v0.34.0
+        - image: sikalabs/slu:v0.53.0
           command:
             - /bin/sh
             - -c
           args:
-            - slu sleep random --min 0 --max 30000 && slu example-server
+            - slu sleep random --min 0 --max 30000 && slu example-server -p 80
           name: main
           startupProbe:
             httpGet:
               path: /
-              port: 8000
+              port: 80
           ports:
-            - containerPort: 8000
+            - containerPort: 80
           resources:
             requests:
               memory: 10Mi
@@ -47,5 +47,3 @@ spec:
     app: startup
   ports:
     - port: 80
-      protocol: TCP
-      targetPort: 8000
