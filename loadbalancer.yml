@@ -8,4 +8,3 @@ spec:
     app: example
   ports:
     - port: 80
-      targetPort: http
