@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: readiness
+        svc: example
     spec:
       containers:
         - image: ondrejsika/readiness
