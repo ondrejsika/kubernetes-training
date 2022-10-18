@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liveness-exec
+  labels:
+    app: liveness-exec
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: liveness-exec
+  template:
+    metadata:
+      labels:
+        app: liveness-exec
+        svc: example
+    spec:
+      containers:
+        - image: sikalabs/slu:v0.53.0
+          name: main
+          args:
+            - /bin/sh
+            - -c
+            - touch /tmp/healthy; slu example-server -p 80
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /tmp/healthy
+            initialDelaySeconds: 5
+            failureThreshold: 2
+            periodSeconds: 1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 10Mi
+              cpu: 10m
+            limits:
+              memory: 100Mi
+              cpu: 20m
