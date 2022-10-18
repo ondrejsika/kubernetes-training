@@ -20,7 +20,8 @@ spec:
         - name: main
           image: ondrejsika/training-example
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 80
           resources:
             requests:
               cpu: 10m
@@ -35,7 +36,8 @@ spec:
             - -c
             - slu metrics-generator server
           ports:
-            - containerPort: 8000
+            - name: metrics
+              containerPort: 8000
           resources:
             requests:
               cpu: 10m
