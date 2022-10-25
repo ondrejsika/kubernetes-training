@@ -1120,13 +1120,13 @@ or see url:
 minikube service hello-world-nodeport --url
 ```
 
-### Create LoadBalancer Service (Public Cloud only)
+### Create LoadBalancer Service (Cloud only)
 
 ```
 kubectl apply -f loadbalancer.yml
 ```
 
-Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube.
+Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube. You have to have a loadbalancer provider.
 
 ### List Services
 
