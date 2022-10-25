@@ -542,7 +542,7 @@ kubectl logs multi-container-pod nginx
 kubectl logs multi-container-pod date
 ```
 
-From Kubernetes 1.25 you can see logs from first container by default
+From Kubernetes 1.24 you can see logs from first container by default
 
 ```
 kubectl logs multi-container-pod
