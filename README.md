@@ -882,6 +882,34 @@ See pod's distribution:
 kubectl get po -l app=topology-spread-constraints -o wide
 ```
 
+### kubectl tree
+
+```
+krew install tree
+```
+
+```
+kubectl apply -f deployment.yml
+```
+
+```
+kubectl tree deployment/example
+```
+
+### kubectl lineage
+
+```
+krew install lineage
+```
+
+```
+kubectl lineage deployment/example
+```
+
+```
+kubectl delete -f deployment.yml
+```
+
 ### Create StatefulSet
 
 ```
