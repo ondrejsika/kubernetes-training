@@ -304,6 +304,10 @@ kubectl get no minikube -o json
 kubectl get no minikube -o jsonpath="{.status.addresses[0].address }{'\n'}"
 ```
 
+```
+kubectl get no -o jsonpath="{range .items[*]}{.status.addresses[0].address} {.status.addresses[1].address}{'\n'}{end}"
+```
+
 ### Proxy to cluster
 
 Start proxy
@@ -453,9 +457,7 @@ kubectl get pods -o json
 ```
 
 ```
-kubectl get -f 01_pod.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
-kubectl get -f 02_pod.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
-kubectl get -f pod_redis.yml -o jsonpath="{.spec.containers[0].image}{'\n'}"
+kubectl get po -o jsonpath="{range .items[*]}{.spec.containers[0].image}{'\n'}{end}"
 ```
 
 ### See Pods
