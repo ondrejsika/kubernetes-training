@@ -1925,7 +1925,7 @@ Add to user to config and change context user
 ```
 kubectl config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config read set-context --user=read --cluster=minikube
+kubectl config set-context read --user=read --cluster=minikube
 
 kubectl config use-context read
 ```
