@@ -22,9 +22,13 @@ Source of my Kubernetes Training.
 
 <https://sika.link/k8s-slides>
 
-### Chat (tlk.io)
+### Chat
 
-<https://sika.link/chat>
+For sharing links & "secrets".
+
+- Slack - https://sikapublic.slack.com/
+- Microsoft Teams
+- https://sika.link/chat (tlk.io)
 
 ## 12 Factor Apps
 
