@@ -3,6 +3,17 @@ kind: ServiceAccount
 metadata:
   name: read-user
   namespace: kube-system
+secrets:
+  - name: read-user
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: read-user
+  namespace: kube-system
+  annotations:
+    kubernetes.io/service-account.name: read-user
+type: kubernetes.io/service-account-token
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
