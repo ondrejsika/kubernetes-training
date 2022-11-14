@@ -30,7 +30,7 @@ kind: Deployment
 metadata:
   name: init-container-migrations
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: init-container-migrations

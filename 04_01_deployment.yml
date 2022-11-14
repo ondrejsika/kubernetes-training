@@ -5,7 +5,7 @@ metadata:
   annotations:
     kubernetes.io/change-cause: red
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: hello-world-deploy

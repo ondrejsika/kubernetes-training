@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: topology-spread-constraints
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: topology-spread-constraints
