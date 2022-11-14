@@ -759,38 +759,13 @@ vimdiff 04_01_deployment.yml 04_02_deployment.yml
 kubectl apply -f 04_02_deployment.yml
 ```
 
-### History of deployments
-
-Deploy nginx & apache for longer history
+Wait until deployment will be rolled out
 
 ```
-kubectl apply -f 04_03_deployment.yml
-kubectl rollout status deployment hello-world
-kubectl apply -f 04_04_deployment.yml
 kubectl rollout status deployment hello-world
 ```
 
-See the history
-
-```
-kubectl rollout history deploy hello-world
-```
-
-### Rollback (Rollout)
-
-One version back
-
-```
-kubectl rollout undo deploy hello-world
-```
-
-To specific revision
-
-```
-kubectl rollout undo deploy hello-world --to-revision=2
-```
-
-### Rollout Restart
+### Restart Deployment
 
 ```
 kubectl rollout restart deploy hello-world
