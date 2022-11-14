@@ -6,6 +6,7 @@ build-push-all:
 	@make build-push-aardwark
 	@make build-push-ttc
 	@make build-push-tietoevry
+	@make build-push-spcss
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -43,6 +44,9 @@ build-push-tietoevry:
 build-push-frequentis:
 	@make _build-push NAME=frequentis
 
+build-push-spcss:
+	@make _build-push NAME=spcss
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -66,3 +70,6 @@ use-tietoevry:
 
 use-frequentis:
 	@make _use NAME=frequentis
+
+use-spcss:
+	@make _use NAME=spcss
