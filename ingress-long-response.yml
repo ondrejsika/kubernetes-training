@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: long-reponse
+spec:
+  selector:
+    matchLabels:
+      app: long-reponse
+  template:
+    metadata:
+      labels:
+        app: long-reponse
+    spec:
+      containers:
+        - name: main
+          image: sikalabs/slu:v0.56.0-dev-3
+          command:
+            - /bin/sh
+            - -c
+            - slu example-server -p 80
+          ports:
+            - containerPort: 80
+          env:
+            - name: PORT
+              value: "80"
+          resources:
+            requests:
+              cpu: 20m
+              memory: 20Mi
+            limits:
+              memory: 40Mi
+              cpu: 40m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: long-reponse
+spec:
+  selector:
+    app: long-reponse
+  ports:
+    - port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: long-reponse
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "1200"
+    # nginx.ingress.kubernetes.io/proxy-connect-timeout
+    # nginx.ingress.kubernetes.io/proxy-send-timeout
+    # nginx.ingress.kubernetes.io/proxy-read-timeout
+    # nginx.ingress.kubernetes.io/proxy-next-upstream
+    # nginx.ingress.kubernetes.io/proxy-next-upstream-timeout
+    # nginx.ingress.kubernetes.io/proxy-next-upstream-tries
+    # nginx.ingress.kubernetes.io/proxy-request-buffering
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - long-reponse.k8s.sikademo.com
+      secretName: long-reponse-tls
+  rules:
+    - host: long-reponse.k8s.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: long-reponse
+                port:
+                  number: 80
