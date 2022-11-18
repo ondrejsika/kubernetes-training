@@ -6,6 +6,7 @@ auth:
 replicaCount: 3
 ingress:
   enabled: true
+  ingressClassName: nginx
   hostname: rabbitmq.k8s.sikademo.com
   # TLS
   tls: true
