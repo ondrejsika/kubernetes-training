@@ -1,0 +1,2 @@
+host: c1.k8s.sikademo.com
+replicas: 5
