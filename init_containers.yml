@@ -53,6 +53,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: counter
+  annotations:
+    app.openshift.io/connects-to: |
+      [{"apiVersion":"apps/v1","kind":"StatefulSet","name":"redis"}]
   labels:
     project: counter
 spec:
