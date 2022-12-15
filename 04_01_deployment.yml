@@ -17,7 +17,7 @@ spec:
         svc: example
     spec:
       containers:
-        - name: hello-world
+        - name: main
           image: ondrejsika/training-example:red
           ports:
             - containerPort: 80
