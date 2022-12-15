@@ -17,7 +17,7 @@ spec:
         app: redis
     spec:
       containers:
-        - name: redis
+        - name: main
           image: redis
           resources:
             requests:
@@ -64,7 +64,7 @@ spec:
         app: counter
     spec:
       containers:
-        - name: counter
+        - name: main
           image: ondrejsika/counter
           resources:
             requests:
