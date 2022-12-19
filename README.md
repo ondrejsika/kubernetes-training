@@ -360,6 +360,10 @@ docker run -d --name proxy --net host -v /root:/root sikalabs/kubectl kubectl pr
 minikube addons enable dashboard
 ```
 
+```
+minikube addons enable metrics-server
+```
+
 See the dashboard: <http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/>
 
 or just:
