@@ -7,6 +7,7 @@ build-push-all:
 	@make build-push-ttc
 	@make build-push-tietoevry
 	@make build-push-spcss
+	@make build-push-daktela
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -47,6 +48,9 @@ build-push-frequentis:
 build-push-spcss:
 	@make _build-push NAME=spcss
 
+build-push-daktela:
+	@make _build-push NAME=daktela
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -73,3 +77,6 @@ use-frequentis:
 
 use-spcss:
 	@make _use NAME=spcss
+
+use-daktela:
+	@make _use NAME=daktela
