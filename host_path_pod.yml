@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host-path
+spec:
+  volumes:
+  - name: fs-root
+    hostPath:
+      path: /
+      type: Directory
+  containers:
+    - name: main
+      image: sikalabs/nginx-public
+      volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: fs-root
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          memory: 50Mi
+          cpu: 50m
+        limits:
+          memory: 100Mi
+          cpu: 100m
