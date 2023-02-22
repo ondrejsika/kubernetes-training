@@ -1,0 +1,10 @@
+# https://github.com/bitnami/charts/blob/master/bitnami/rabbitmq/values.yaml
+
+auth:
+  username: admin
+  password: admin
+replicaCount: 1
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: rabbitmq.127.0.0.1.nip.io
