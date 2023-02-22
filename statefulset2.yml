@@ -13,8 +13,6 @@ metadata:
   name: hello-world
   labels:
     app: hello-world-sts
-  annotations:
-    kubernetes.io/change-cause: yellow
 spec:
   serviceName: hello-world
   selector:

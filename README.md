@@ -2492,10 +2492,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
-  {{ if .Values.changeCause }}
-  annotations:
-    kubernetes.io/change-cause: {{ .Values.changeCause }}
-  {{ end }}
   labels:
     release: {{ .Release.Name }}
 spec:

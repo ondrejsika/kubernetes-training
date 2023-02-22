@@ -4,8 +4,6 @@ metadata:
   name: metrics-example
   labels:
     app: metrics-example
-  annotations:
-    kubernetes.io/change-cause: ver1
 spec:
   revisionHistoryLimit: 0
   selector:

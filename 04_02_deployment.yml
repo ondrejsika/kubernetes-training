@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  annotations:
-    kubernetes.io/change-cause: yellow
 spec:
   revisionHistoryLimit: 0
   selector:

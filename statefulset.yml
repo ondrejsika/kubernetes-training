@@ -13,8 +13,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: hello-world
-  annotations:
-    kubernetes.io/change-cause: green
 spec:
   serviceName: hello-world
   selector:

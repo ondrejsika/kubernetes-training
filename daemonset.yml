@@ -4,8 +4,6 @@ metadata:
   name: hello-world
   labels:
     app: hello-world-ds
-  annotations:
-    kubernetes.io/change-cause: ver1
 spec:
   selector:
     matchLabels:

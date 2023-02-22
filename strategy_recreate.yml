@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recreate
-  annotations:
-    kubernetes.io/change-cause: green
 spec:
   selector:
     matchLabels:

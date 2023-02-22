@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rolling-update
-  annotations:
-    kubernetes.io/change-cause: yellow
 spec:
   selector:
     matchLabels:
