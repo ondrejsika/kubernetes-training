@@ -1091,7 +1091,7 @@ Cleanup is not necessary, because `--rm` parameter deletes deployment after cont
 Run `sikalabs/dev`:
 
 ```
-alias kdev="kubectl run dev-$(date +%s) --rm -ti --image sikalabs/dev -- bash"
+alias kdev='kubectl run "dev-$(date +%s)" --rm -ti --image sikalabs/dev -- bash'
 ```
 
 ### Create Service ClusterIP
