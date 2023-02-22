@@ -41,7 +41,6 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -86,7 +85,6 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -131,4 +129,3 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 80
