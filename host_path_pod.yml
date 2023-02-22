@@ -4,10 +4,10 @@ metadata:
   name: host-path
 spec:
   volumes:
-  - name: fs-root
-    hostPath:
-      path: /
-      type: Directory
+    - name: fs-root
+      hostPath:
+        path: /
+        type: Directory
   containers:
     - name: main
       image: sikalabs/nginx-public

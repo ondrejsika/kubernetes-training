@@ -2491,22 +2491,22 @@ See example (`one-image/deployment.yaml`)
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: "{{ .Release.Name }}"
   labels:
-    release: {{ .Release.Name }}
+    release: "{{ .Release.Name }}"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      release: {{ .Release.Name }}
+      release: "{{ .Release.Name }}"
   template:
     metadata:
       labels:
-        release: {{ .Release.Name }}
+        release: "{{ .Release.Name }}"
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: {{ .Values.image }}
+        - name: "{{ .Chart.Name }}"
+          image: "{{ .Values.image }}"
           ports:
             - name: http
               containerPort: 80
