@@ -1,0 +1,9 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: hello-world
+  namespace: default
+spec:
+  repo: https://helm.sikalabs.io
+  chart: hello-world
+  targetNamespace: default
