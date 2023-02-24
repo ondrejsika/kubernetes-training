@@ -2614,6 +2614,20 @@ Install Cluster Essentials
 slu script kubernetes install-all --no-argocd --base-domain xxx
 ```
 
+### Install Helm using CRD
+
+```
+kubectl apply -f helm_hello_world.yml
+```
+
+```
+kubectl apply -f helm_hello_world.2.yml
+```
+
+```
+kubectl apply -f helm_hello_world.3.yml
+```
+
 ## Kubernetes Networking
 
 [Docs](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
