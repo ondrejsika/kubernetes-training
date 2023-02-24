@@ -2578,6 +2578,42 @@ Install package
 helm install counter sikademo/counter --set host=counter.127.0.0.1.nip.io
 ```
 
+## Helm Operator
+
+### Setup k3s cluster
+
+Install k3s without traefik on VM
+
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik" sh
+```
+
+or with TLS SAN (for example for `k3s.sikademo.com`)
+
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik --tls-san k3s.sikademo.com" sh
+```
+
+Install kubectl and helm
+
+```
+slu install-bin kubectl
+slu install-bin helm
+```
+
+Copy kubeconfig to `~/.kube/config`
+
+```
+mkdir -p ~/.kube
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+```
+
+Install Cluster Essentials
+
+```
+slu script kubernetes install-all --no-argocd --base-domain xxx
+```
+
 ## Kubernetes Networking
 
 [Docs](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
