@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress
+spec:
+  policyTypes:
+    - Egress
+  podSelector:
+    matchLabels:
+      release: hello-world
+  egress:
+    - to:
+        - podSelector:
+            matchLabels:
+              release: hello-world
+    - to:
+        - ipBlock:
+            cidr: 172.67.195.213/32
+        - ipBlock:
+            cidr: 104.21.49.239/32
+      ports:
+        - protocol: TCP
+          port: 80
+        - protocol: TCP
+          port: 443
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+      ports:
+        - protocol: TCP
+          port: 53
+        - protocol: UDP
+          port: 53

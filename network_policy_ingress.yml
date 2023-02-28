@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress
+spec:
+  policyTypes:
+    - Ingress
+  podSelector:
+    matchLabels:
+      release: hello-world
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              release: hello-world
