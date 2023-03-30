@@ -10,6 +10,7 @@ spec:
     - hosts:
         - nginx.k8s.sikademo.com
         - apache.k8s.sikademo.com
+        - caddy.k8s.sikademo.com
       secretName: webservers-tls
   rules:
     - host: nginx.k8s.sikademo.com
@@ -23,6 +24,16 @@ spec:
                 port:
                   number: 80
     - host: apache.k8s.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apache
+                port:
+                  number: 80
+    - host: caddy.k8s.sikademo.com
       http:
         paths:
           - path: /

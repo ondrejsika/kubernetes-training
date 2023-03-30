@@ -23,6 +23,13 @@ spec:
                 name: apache
                 port:
                   number: 80
+          - path: /caddy(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: caddy
+                port:
+                  number: 80
     - host: localhost
       http:
         paths:
@@ -38,5 +45,12 @@ spec:
             backend:
               service:
                 name: apache
+                port:
+                  number: 80
+          - path: /caddy(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: caddy
                 port:
                   number: 80

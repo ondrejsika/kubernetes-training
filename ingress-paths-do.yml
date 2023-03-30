@@ -29,3 +29,10 @@ spec:
                 name: apache
                 port:
                   number: 80
+          - path: /caddy(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: caddy
+                port:
+                  number: 80
