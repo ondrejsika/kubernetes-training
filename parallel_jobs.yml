@@ -1,19 +1,29 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pi10
+  name: ab
 spec:
   ttlSecondsAfterFinished: 60
   activeDeadlineSeconds: 600
-  completions: 30
-  parallelism: 10
+  completions: 20
+  parallelism: 4
   template:
     metadata:
-      name: pi
+      name: ab
     spec:
       restartPolicy: Never
       containers:
         - name: pi
-          image: perl:slim
-          command: ["perl"]
-          args: ["-Mbignum=bpi", "-wle", "print bpi(1000)"]
+          image: sikalabs/dev
+          command:
+            - /bin/bash
+            - -c
+            - |
+              ab -n 2000 -c 4 http://example/
+          resources:
+            requests:
+              memory: 10Mi
+              cpu: 200m
+            limits:
+              memory: 20Mi
+              cpu: 400m
