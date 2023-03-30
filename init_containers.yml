@@ -24,7 +24,7 @@ spec:
           args:
             - "20"
       containers:
-        - name: redis
+        - name: main
           image: redis
           resources:
             requests:
@@ -78,7 +78,7 @@ spec:
             - -c
             - slu wait-for tcp -a redis:6379
       containers:
-        - name: counter
+        - name: main
           image: ondrejsika/counter
           resources:
             requests:
