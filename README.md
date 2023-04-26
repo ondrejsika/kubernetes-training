@@ -199,7 +199,7 @@ minikube start
 Run with Hyper-V (on Windows) - <https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c>
 
 ```
-minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
+minikube start --driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
 ```
 
 Verify cluster health by
