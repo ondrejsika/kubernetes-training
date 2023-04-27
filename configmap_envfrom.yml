@@ -7,6 +7,14 @@ data:
   WORLD: world
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: envfrom2
+data:
+  MY_AAA: aaa
+  MY_BBB: bbb
+---
+apiVersion: v1
 kind: Secret
 metadata:
   name: envfrom
@@ -30,6 +38,8 @@ spec:
         - prefix: MY_CONFIG_
           configMapRef:
             name: envfrom
+        - configMapRef:
+            name: envfrom2
         - prefix: MY_SECRET_
           secretRef:
             name: envfrom
