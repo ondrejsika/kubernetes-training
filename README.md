@@ -1143,7 +1143,7 @@ or see url:
 minikube service hello-world-nodeport --url
 ```
 
-### Create LoadBalancer Service (Cloud only)
+### Create LoadBalancer Service
 
 ```
 kubectl apply -f loadbalancer.yml
