@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world-sts
+spec:
+  selector:
+    matchLabels:
+      app: hello-world-sts
+  replicas: 6
+  template:
+    metadata:
+      labels:
+        app: hello-world-sts
+        svc: example
+    spec:
+      containers:
+        - name: main
+          image: ondrejsika/training-example:yellow
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
