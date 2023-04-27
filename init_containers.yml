@@ -2,18 +2,14 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: redis
-  labels:
-    project: counter
 spec:
   serviceName: redis
   selector:
     matchLabels:
-      project: counter
       app: redis
   template:
     metadata:
       labels:
-        project: counter
         app: redis
     spec:
       initContainers:
@@ -40,11 +36,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis
-  labels:
-    project: counter
 spec:
   selector:
-    project: counter
     app: redis
   ports:
     - port: 6379
@@ -56,18 +49,14 @@ metadata:
   annotations:
     app.openshift.io/connects-to: |
       [{"apiVersion":"apps/v1","kind":"StatefulSet","name":"redis"}]
-  labels:
-    project: counter
 spec:
   selector:
     matchLabels:
-      project: counter
       app: counter
   replicas: 2
   template:
     metadata:
       labels:
-        project: counter
         app: counter
     spec:
       initContainers:
@@ -97,11 +86,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: counter
-  labels:
-    project: counter
 spec:
   selector:
-    project: counter
     app: counter
   ports:
     - port: 80
