@@ -1,2 +1,2 @@
 image: httpd:alpine
-host: apache.192.168.99.100.nip.io
+host: apache.127.0.0.1.nip.io
