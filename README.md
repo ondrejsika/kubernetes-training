@@ -1227,14 +1227,13 @@ helm upgrade --install \
   --set controller.kind=DaemonSet \
   --set controller.hostPort.enabled=true \
   --set controller.metrics.enabled=true \
-  --set controller.config.use-proxy-protocol=true \
   --wait
 ```
 
 Or using `slu`:
 
 ```
-slu scripts kubernetes install-ingress --use-proxy-protocol
+slu scripts kubernetes install-ingress
 ```
 
 ### Create Ingress
