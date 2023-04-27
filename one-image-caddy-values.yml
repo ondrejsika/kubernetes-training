@@ -1,0 +1,2 @@
+image: caddy:alpine
+host: caddy.127.0.0.1.nip.io
