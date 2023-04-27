@@ -2480,6 +2480,7 @@ Install with values file on Minikube
 ```
 helm install nginx sikalabs/one-image --values one-image-nginx-values.yml
 helm install apache sikalabs/one-image --values one-image-apache-values.yml
+helm install caddy sikalabs/one-image --values one-image-caddy-values.yml
 ```
 
 Install with values file and values args
@@ -2497,6 +2498,9 @@ helm install nginx sikalabs/one-image \
 helm install apache sikalabs/one-image \
   -f one-image-apache-values.yml \
   -f one-image-apache-values-do.yml
+helm install caddy sikalabs/one-image \
+  -f one-image-caddy-values.yml \
+  -f one-image-caddy-values-do.yml
 ```
 
 ### Own Helm Package
