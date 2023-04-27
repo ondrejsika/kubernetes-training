@@ -1151,6 +1151,22 @@ kubectl apply -f loadbalancer.yml
 
 Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube. You have to have a loadbalancer provider.
 
+### MetalLB
+
+- https://github.com/metallb/metallb
+- https://metallb.universe.tf
+- https://metallb.universe.tf/installation/
+
+```
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
+```
+
+Apply pool config:
+
+```
+kubectl apply -f metallb_pool.yml
+```
+
 ### List Services
 
 ```
