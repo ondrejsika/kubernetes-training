@@ -21,7 +21,7 @@ spec:
             matchLabels:
               app: topology-spread-constraints
       containers:
-        - name: hello-world
+        - name: main
           image: nginx:alpine
           ports:
             - containerPort: 80
