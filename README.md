@@ -188,6 +188,17 @@ See my [bashrc](https://github.com/ondrejsika/dotfiles/blob/master/core/bashrc#L
 doskey k=kubectl $*
 ```
 
+#### PowerShell
+
+```powershell
+Set-Alias -Name k -Value kubectl
+```
+
+```powershell
+Set-Alias -Name kx -Value kubectx
+Set-Alias -Name kn -Value kubens
+```
+
 Source: https://pascalnaber.wordpress.com/2017/11/09/configure-alias-on-windows-for-kubectl/
 
 ### Start Minikube
