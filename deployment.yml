@@ -4,10 +4,10 @@ metadata:
   name: example
 spec:
   revisionHistoryLimit: 0
+  replicas: 5
   selector:
     matchLabels:
       app: example
-  replicas: 5
   template:
     metadata:
       labels:
