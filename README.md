@@ -891,8 +891,19 @@ kubectl delete -f deployment.yml
 
 ### Create StatefulSet
 
+Up to Kubernetes version 1.24
+
 ```
-kubectl apply -f statefulset.yml
+kubectl apply -f statefulset24_1.yml
+```
+
+From Kubernetes version 1.25
+
+```
+kubectl apply -f statefulset25_1.yml
+```
+
+```
 kubectl rollout status sts hello-world
 ```
 
@@ -910,13 +921,25 @@ See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/serv
 See the difference
 
 ```
-vimdiff statefulset.yml statefulset2.yml
+vimdiff statefulset24_1.yml statefulset24_2.yml
+```
+
+or
+
+```
+vimdiff statefulset25_1.yml statefulset25_2.yml
 ```
 
 Upgrade statefull set
 
 ```
-kubectl apply -f statefulset2.yml
+kubectl apply -f statefulset24_2.yml
+```
+
+or
+
+```
+kubectl apply -f statefulset25_2.yml
 ```
 
 ### Headless Service
