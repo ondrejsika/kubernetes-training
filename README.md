@@ -479,6 +479,10 @@ kubectl get pods -o json
 kubectl get po -o jsonpath="{range .items[*]}{.spec.containers[0].image}{'\n'}{end}"
 ```
 
+```
+kubectl get po -o custom-columns="name:{.metadata.name},namespace:{.metadata.namespace},ip:{.status.podIP}"
+```
+
 ### See Pods
 
 See:
