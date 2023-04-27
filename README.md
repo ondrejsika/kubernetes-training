@@ -676,7 +676,13 @@ See proxy to service: <http://127.0.0.1:8001/api/v1/namespaces/default/services/
 Try apply pods:
 
 ```
-kubectl apply -f 01_pod.yml -f 02_pod.yml -f private_pod.yml
+kubectl apply -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml
+```
+
+Get pods for this service
+
+```
+kubectl get po -l svc=example
 ```
 
 Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
@@ -684,7 +690,7 @@ Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/default/serv
 Delete pods
 
 ```
-kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml
+kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml
 ```
 
 ### Create Replica Set
