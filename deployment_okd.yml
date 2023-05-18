@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-okd
+spec:
+  revisionHistoryLimit: 0
+  replicas: 5
+  selector:
+    matchLabels:
+      app: example-okd
+  template:
+    metadata:
+      labels:
+        app: example-okd
+        svc: example-okd
+    spec:
+      containers:
+        - name: main
+          image: ondrejsika/training-example-okd
+          ports:
+            - name: http
+              containerPort: 8000
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+        - name: metrics
+          image: sikalabs/slu:v0.40.0
+          command:
+            - /bin/sh
+            - -c
+            - slu metrics-generator server --port 8001
+          ports:
+            - name: metrics
+              containerPort: 8001
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
