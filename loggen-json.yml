@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loggen-json
+spec:
+  selector:
+    matchLabels:
+      app: loggen-json
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: loggen-json
+        log_format: json
+    spec:
+      containers:
+        - name: main
+          image: sikalabs/slu:v0.67.0
+          command:
+            - /bin/sh
+            - -c
+            - exec slu loggen --json
+          resources:
+            requests:
+              cpu: 30m
+              memory: 10Mi
+            limits:
+              cpu: 100m
+              memory: 50Mi
