@@ -1,0 +1,41 @@
+# https://github.com/minio/operator/blob/master/helm/tenant/values.yaml
+secrets:
+  name: minio
+  accessKey: admin
+  secretKey: asdfasdf
+tenant:
+  configuration:
+    name: minio
+  name: minio
+  pools:
+    - servers: 2
+      volumesPerServer: 4
+      size: 10Gi
+      storageClassName: longhorn
+ingress:
+  api:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    tls:
+      - hosts:
+          - minio.k8s.sikademo.com
+        secretName: ingres-api-tls
+    host: minio.k8s.sikademo.com
+    path: /
+    pathType: Prefix
+  console:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    tls:
+      - hosts:
+          - minio-console.k8s.sikademo.com
+        secretName: ingres-console-tls
+    host: minio-console.k8s.sikademo.com
+    path: /
+    pathType: Prefix
