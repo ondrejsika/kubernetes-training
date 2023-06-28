@@ -16,13 +16,13 @@ spec:
         svc: example
     spec:
       containers:
-        - image: sikalabs/slu:v0.53.0
+        - name: main
+          image: sikalabs/slu:v0.53.0
           command:
             - /bin/sh
             - -c
           args:
             - slu sleep random --min 0 --max 30000 && slu example-server -p 80
-          name: main
           startupProbe:
             httpGet:
               path: /
