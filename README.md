@@ -2102,6 +2102,12 @@ Watch output:
 watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
 ```
 
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
+```
+
 Cleanup
 
 ```
@@ -2132,6 +2138,12 @@ Watch output:
 watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/readiness/proxy/
 ```
 
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/readiness/proxy/
+```
+
 Cleanup
 
 ```
@@ -2160,6 +2172,12 @@ Watch output:
 
 ```
 watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/startup/proxy/
+```
+
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/startup/proxy/
 ```
 
 Cleanup
