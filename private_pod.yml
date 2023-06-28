@@ -26,4 +26,4 @@ type: kubernetes.io/dockerconfigjson
 metadata:
   name: private-registry-credentials
 stringData:
-  .dockerconfigjson: '{"auths": {"registry.sikalabs.com": {"auth": "cHNldWRvLXByaXZhdGUtdXNlcjphc2RmYXNkZg=="}}}'
+  .dockerconfigjson: '{"auths": {"registry.sikalabs.com": {"username": "pseudo-private-user", "password": "asdfasdf"}}}'
