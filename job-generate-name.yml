@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: debian:11-slim
+          image: debian:12-slim
           command: ["/bin/sh", "-c"]
           args:
             - |

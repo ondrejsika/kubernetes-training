@@ -31,7 +31,7 @@ docker.io/metallb/controller:<none>
 docker.io/library/redis:latest
 docker.io/library/nginx:latest
 docker.io/library/httpd:latest
-docker.io/library/debian:11-slim
+docker.io/library/debian:12-slim
 docker.io/library/caddy:latest
 docker.io/library/busybox:latest
 docker.io/library/busybox:1.28

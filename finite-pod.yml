@@ -6,7 +6,7 @@ spec:
   restartPolicy: Never
   containers:
     - name: main
-      image: debian:11-slim
+      image: debian:12-slim
       args:
         - "/bin/sh"
         - "-c"
