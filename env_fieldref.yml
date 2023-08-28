@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-fieldref
+spec:
+  containers:
+    - name: main
+      image: busybox
+      command:
+        - /bin/sh
+        - -c
+        - env | grep MY_
+      env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+      resources:
+        requests:
+          cpu: 30m
+          memory: 20Mi
+        limits:
+          cpu: 30m
+          memory: 20Mi
+  restartPolicy: Never
