@@ -8,6 +8,7 @@ build-push-all:
 	@make build-push-tietoevry
 	@make build-push-spcss
 	@make build-push-daktela
+	@make build-push-heidelbergmaterials
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -51,6 +52,9 @@ build-push-spcss:
 build-push-daktela:
 	@make _build-push NAME=daktela
 
+build-push-heidelbergmaterials:
+	@make _build-push NAME=heidelbergmaterials
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -80,3 +84,6 @@ use-spcss:
 
 use-daktela:
 	@make _use NAME=daktela
+
+use-heidelbergmaterials:
+	@make _use NAME=heidelbergmaterials
