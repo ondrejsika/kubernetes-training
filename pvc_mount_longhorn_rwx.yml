@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: pvc-mount-longhorn-rwx
+spec:
+  selector:
+    matchLabels:
+      app: pvc-mount-longhorn-rwx
+  template:
+    metadata:
+      labels:
+        app: pvc-mount-longhorn-rwx
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: longhorn-pvc-rwx
+      containers:
+        - name: nginx
+          image: sikalabs/nginx-public
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/nginx/html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pvc-mount-longhorn-rwx
+spec:
+  type: ClusterIP
+  selector:
+    app: pvc-mount-longhorn-rwx
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pvc-mount-longhorn-rwx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - pvc-mount-longhorn-rwx.k8s.sikademo.com
+      secretName: pvc-mount-longhorn-rwx-tls
+  rules:
+    - host: pvc-mount-longhorn-rwx.k8s.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pvc-mount-longhorn-rwx
+                port:
+                  number: 80
