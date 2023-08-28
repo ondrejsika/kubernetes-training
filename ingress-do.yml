@@ -40,6 +40,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: apache
+                name: caddy
                 port:
                   number: 80
