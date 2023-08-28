@@ -1807,6 +1807,16 @@ kubectl apply -f configmap_envfrom.yml
 kubectl logs envfrom
 ```
 
+### Env from fieldRef
+
+```
+kubectl apply -f env_fieldref.yml
+```
+
+```
+kubectl logs env-fieldref
+```
+
 ### Expand Environment Variables in Config File
 
 ```
