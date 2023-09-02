@@ -60,7 +60,7 @@ spec:
         app: counter
     spec:
       initContainers:
-        - name: init-redis
+        - name: wait-for-redis
           image: sikalabs/slu:v0.45.0
           args:
             - /bin/sh
