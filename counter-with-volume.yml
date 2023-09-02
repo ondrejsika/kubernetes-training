@@ -4,6 +4,9 @@ metadata:
   name: redis
 spec:
   serviceName: redis
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Delete
   volumeClaimTemplates:
     - metadata:
         name: redis
