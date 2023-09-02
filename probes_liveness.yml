@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: liveness
+      svc: example
   template:
     metadata:
       labels:
