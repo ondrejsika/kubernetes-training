@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: sikalabs/slu:v0.53.0
+          image: sikalabs/slu:v0.69.0
           command:
             - /bin/sh
             - -c
@@ -31,10 +31,10 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              memory: 10Mi
+              memory: 20Mi
               cpu: 20m
             limits:
-              memory: 20Mi
+              memory: 40Mi
               cpu: 50m
 ---
 apiVersion: v1
