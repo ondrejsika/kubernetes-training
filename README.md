@@ -693,6 +693,30 @@ Delete pods
 kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml
 ```
 
+### Pods Without Service Links (in the Environment)
+
+```
+kubectl apply -f pod_without_service_links.yml
+```
+
+See the env of each pod
+
+```
+kubectl logs pod-with-service-links
+```
+
+```
+kubectl logs pod-without-service-links
+```
+
+See the diff
+
+```
+vimdiff <(kubectl logs pod-with-service-links) <(kubectl logs pod-without-service-links)
+```
+
+![pod-without-service-links](./images/pod-without-service-links.png)
+
 ### Create Replica Set
 
 ```
