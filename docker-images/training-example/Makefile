@@ -22,6 +22,8 @@ _use:
 	docker tag ondrejsika/training-example:${NAME} ondrejsika/training-example
 	docker push ondrejsika/training-example
 
+# === Build and Push ===
+
 build-push-ondrejsika:
 	@make _build-push NAME=ondrejsika
 
@@ -54,6 +56,8 @@ build-push-daktela:
 
 build-push-heidelbergmaterials:
 	@make _build-push NAME=heidelbergmaterials
+
+# === Use ===
 
 use-ondrejsika:
 	@make _use NAME=ondrejsika
