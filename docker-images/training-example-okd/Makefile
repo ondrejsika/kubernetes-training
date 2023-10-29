@@ -1,6 +1,7 @@
 build-push-all:
 	@make build-push-ondrejsika
 	@make build-push-digiteq
+	@make build-push-ceps
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -20,8 +21,14 @@ build-push-ondrejsika:
 build-push-digiteq:
 	@make _build-push NAME=digiteq
 
+build-push-ceps:
+	@make _build-push NAME=ceps
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
 use-digiteq:
 	@make _use NAME=digiteq
+
+use-ceps:
+	@make _use NAME=ceps
