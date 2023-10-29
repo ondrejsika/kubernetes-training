@@ -7,13 +7,17 @@ _build-push:
 	docker build --platform linux/amd64 \
 		--build-arg IMAGE=sikalabs/hello-world-server:${NAME} \
 		--tag ondrejsika/training-example-okd:${NAME} \
+		--tag ghcr.io/ondrejsika/training-example-okd:${NAME} \
 		- < Dockerfile
 	docker push ondrejsika/training-example-okd:${NAME}
+	docker push ghcr.io/ondrejsika/training-example-okd:${NAME}
 
 _use:
 	docker pull ondrejsika/training-example-okd:${NAME}
 	docker tag ondrejsika/training-example-okd:${NAME} ondrejsika/training-example-okd
+	docker tag ondrejsika/training-example-okd:${NAME} ghcr.io/ondrejsika/training-example-okd
 	docker push ondrejsika/training-example-okd
+	docker push ghcr.io/ondrejsika/training-example-okd
 
 build-push-ondrejsika:
 	@make _build-push NAME=ondrejsika
