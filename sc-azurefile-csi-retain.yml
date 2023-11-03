@@ -3,9 +3,9 @@ kind: StorageClass
 metadata:
   name: azurefile-csi-retain
 mountOptions:
-- mfsymlinks
-- actimeo=30
-- nosharesock
+  - mfsymlinks
+  - actimeo=30
+  - nosharesock
 parameters:
   skuName: Standard_LRS
 provisioner: file.csi.azure.com
