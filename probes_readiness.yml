@@ -21,12 +21,13 @@ spec:
           readinessProbe:
             httpGet:
               path: /readyz
-              port: 80
+              port: http
             initialDelaySeconds: 5
             failureThreshold: 2
             periodSeconds: 1
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 8000
           resources:
             requests:
               memory: 10Mi
@@ -45,5 +46,4 @@ spec:
     app: readiness
   ports:
     - port: 80
-      protocol: TCP
-      targetPort: 80
+      targetPort: http
