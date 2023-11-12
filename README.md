@@ -1538,6 +1538,20 @@ kubectl delete -f 08_namespace.yml
 kubectl delete ns/counter
 ```
 
+### Delete Terminating Namespace
+
+- https://www.ibm.com/docs/en/cloud-private/3.2.x?topic=console-namespace-is-stuck-in-terminating-state
+
+```
+kubectl patch ns <Namespace_to_delete> -p '{"metadata":{"finalizers":null}}'
+```
+
+or using `slu`
+
+```
+slu k8s delete-ns -n name_of_the_namespac
+```
+
 ### Resource Quotas
 
 Create Resource Quotas
