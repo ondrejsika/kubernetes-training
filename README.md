@@ -2435,7 +2435,7 @@ helm show all sikalabs/hello-world
 helm install <release_name> <chart>
 ```
 
-Example [hello-world](https://github.com/sikalabs/charts/tree/master/charts/hello-world) package / chart:
+Example [hello-world](https://github.com/sikalabs/charts/tree/master/charts/hello-world) (on [ArtifactHub](https://artifacthub.io/packages/helm/sikalabs/hello-world)) package / chart:
 
 ```
 helm install hello sikalabs/hello-world
