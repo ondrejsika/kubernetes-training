@@ -1124,6 +1124,11 @@ Create deployment from command line
 kubectl run dev -it --rm --image=sikalabs/dev -- bash
 ```
 
+Images on Github
+
+- [sikalabs/dev](https://github.com/sikalabs/sikalabs-container-images/tree/master/dev)
+- [sikalabs/ci](https://github.com/sikalabs/sikalabs-container-images/tree/master/ci)
+
 Cleanup is not necessary, because `--rm` parameter deletes deployment after container exits.
 
 ### Alias `kdev`
