@@ -2447,6 +2447,12 @@ Or dry run (see the Kubernetes config)
 helm install hello sikalabs/hello-world --dry-run
 ```
 
+## Install Package Without Helm Repo Add
+
+```
+helm install hello --repo https://helm.sikalabs.io hello-world
+```
+
 ### Upgrade Package
 
 If you want to upgrade instance of chart, you have to call:
