@@ -32,7 +32,7 @@ spec:
       command: ["/bin/sh", "-c"]
       args:
         - while true; do
-          date > /html/index.html.tmp;
+          date | tee /html/index.html.tmp;
           mv /html/index.html.tmp /html/index.html;
           sleep 1;
           done
