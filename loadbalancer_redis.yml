@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 192.168.49.210
+spec:
+  type: LoadBalancer
+  selector:
+    app: redis
+  ports:
+    - port: 6379
