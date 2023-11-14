@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webservers
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - nginx.127-0-0-1.uk
+        - apache.127-0-0-1.uk
+        - caddy.127-0-0-1.uk
+      secretName: 127-0-0-1.uk-tls
+  rules:
+    - host: nginx.127-0-0-1.uk
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx
+                port:
+                  number: 80
+    - host: apache.127-0-0-1.uk
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apache
+                port:
+                  number: 80
+    - host: caddy.127-0-0-1.uk
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: caddy
+                port:
+                  number: 80
