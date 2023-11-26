@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       # restartPolicy: OnFailure
       containers:
-        - name: pi
+        - name: main
           image: perl:slim
           command: ["perl"]
           args: ["-Mbignum=bpi", "-wle", "print bpi(1000)"]
