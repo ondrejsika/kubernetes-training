@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: sleep
-          image: debian:10-slim
+          image: debian:12-slim
           command: ["/bin/sh", "-c"]
           args: ["sleep 20"]
       restartPolicy: Never
