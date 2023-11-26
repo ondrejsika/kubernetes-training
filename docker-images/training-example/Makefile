@@ -65,6 +65,9 @@ build-push-eon:
 build-push-ceps:
 	@make _build-push NAME=ceps
 
+build-push-generali:
+	@make _build-push NAME=generali
+
 # === Use ===
 
 use-ondrejsika:
@@ -105,3 +108,6 @@ use-eon:
 
 use-ceps:
 	@make _use NAME=ceps
+
+use-generali:
+	@make _use NAME=generali
