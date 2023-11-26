@@ -14,7 +14,7 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-            - name: cronjob
+            - name: main
               image: busybox
               args:
                 - /bin/sh
