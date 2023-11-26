@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-loadbalancer-azure-static-ip
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-resource-group: RESOURCE_GROUP_NAME
+    service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
+spec:
+  type: LoadBalancer
+  loadBalancerIP: XXX.XXX.XXX.XXX
+  selector:
+    app: example
+  ports:
+    - port: 80
+      targetPort: http
