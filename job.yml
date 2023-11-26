@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: pi
 spec:
-  ttlSecondsAfterFinished: 10
+  ttlSecondsAfterFinished: 20
   activeDeadlineSeconds: 600
   template:
     metadata:
