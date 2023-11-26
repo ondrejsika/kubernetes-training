@@ -1956,27 +1956,27 @@ kubectl apply -f 14_admin.yml
 Export actual config
 
 ```
-kubectl config view --raw --minify > config
+kubectl config view --raw --minify > kubeconfig.yml
 ```
 
-Use custom Kubernetes config file using environment variable:
+Use custom `kubeconfig.yml` file using environment variable:
 
 Linux & Mac
 
 ```bash
-export KUBECONFIG=config
+export KUBECONFIG=kubeconfig.yml
 ```
 
 PowerShell
 
 ```powershell
-$env:KUBECONFIG = "config"
+$env:KUBECONFIG = "kubeconfig.yml"
 ```
 
 CMD
 
 ```cmd
-set KUBECONFIG=config
+set KUBECONFIG=kubeconfig.yml
 ```
 
 Get token:
