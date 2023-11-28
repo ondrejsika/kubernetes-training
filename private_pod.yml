@@ -22,8 +22,8 @@ spec:
 ---
 apiVersion: v1
 kind: Secret
-type: kubernetes.io/dockerconfigjson
 metadata:
   name: private-registry-credentials
+type: kubernetes.io/dockerconfigjson
 stringData:
   .dockerconfigjson: '{"auths": {"registry.sikalabs.com": {"username": "pseudo-private-user", "password": "asdfasdf"}}}'
