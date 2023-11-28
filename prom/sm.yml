@@ -3,6 +3,10 @@ kind: ServiceMonitor
 metadata:
   name: metrics-example
 spec:
+  jobLabel: metrics-example
+  selector:
+    matchLabels:
+      app: metrics-example
   endpoints:
     - port: http
       interval: 15s
@@ -13,7 +17,3 @@ spec:
           sourceLabels:
             - __meta_kubernetes_pod_node_name
           targetLabel: instance
-  jobLabel: metrics-example
-  selector:
-    matchLabels:
-      app: metrics-example
