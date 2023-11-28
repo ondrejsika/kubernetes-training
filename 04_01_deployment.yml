@@ -5,6 +5,9 @@ metadata:
 spec:
   revisionHistoryLimit: 0
   replicas: 2
+  # strategy:
+  #   type: RollingUpdate
+  #   type: Recreate
   selector:
     matchLabels:
       app: hello-world-deploy
