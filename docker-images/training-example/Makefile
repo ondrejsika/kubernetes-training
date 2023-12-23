@@ -12,6 +12,7 @@ build-push-all:
 	@make build-push-heidelbergmaterials
 	@make build-push-eon
 	@make build-push-ceps
+	@make build-push-elm
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -72,6 +73,9 @@ build-push-ceps:
 build-push-generali:
 	@make _build-push NAME=generali
 
+build-push-elm:
+	@make _build-push NAME=elm
+
 # === Use ===
 
 use-default:
@@ -118,3 +122,6 @@ use-ceps:
 
 use-generali:
 	@make _use NAME=generali
+
+use-elm:
+	@make _use NAME=elm
