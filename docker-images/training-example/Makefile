@@ -1,4 +1,5 @@
 build-push-all:
+	@make build-push-default
 	@make build-push-ondrejsika
 	@make build-push-mavenir
 	@make build-push-ogsoft
@@ -25,6 +26,9 @@ _use:
 	docker push ondrejsika/training-example
 
 # === Build and Push ===
+
+build-push-default:
+	@make _build-push NAME=latest
 
 build-push-ondrejsika:
 	@make _build-push NAME=ondrejsika
@@ -69,6 +73,9 @@ build-push-generali:
 	@make _build-push NAME=generali
 
 # === Use ===
+
+use-default:
+	@make _use NAME=default
 
 use-ondrejsika:
 	@make _use NAME=ondrejsika
