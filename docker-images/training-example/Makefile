@@ -12,6 +12,7 @@ build-push-all:
 	@make build-push-heidelbergmaterials
 	@make build-push-eon
 	@make build-push-ceps
+	@make build-push-generali
 	@make build-push-elm
 
 _build-push:
