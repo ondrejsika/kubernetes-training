@@ -14,6 +14,7 @@ build-push-all:
 	@make build-push-ceps
 	@make build-push-generali
 	@make build-push-elm
+	@make build-push-t-mobile
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -77,6 +78,9 @@ build-push-generali:
 build-push-elm:
 	@make _build-push NAME=elm
 
+build-push-t-mobile:
+	@make _build-push NAME=t-mobile
+
 # === Use ===
 
 use-default:
@@ -126,3 +130,6 @@ use-generali:
 
 use-elm:
 	@make _use NAME=elm
+
+use-t-mobile:
+	@make _use NAME=t-mobile
