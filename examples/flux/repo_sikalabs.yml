@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: sikalabs
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: master
+  url: https://github.com/sikalabs/charts
