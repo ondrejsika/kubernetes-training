@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: hello-world
+  namespace: flux-hello-world
+spec:
+  interval: 5m
+  chart:
+    spec:
+      sourceRef:
+        kind: GitRepository
+        name: sikalabs
+        namespace: flux-system
+      version: master
+      chart: ./charts/hello-world
+      interval: 1m
+  values:
+    host: hello-world-flux.k8s.sikademo.com
+    TEXT: "Hello World from FluxCD!"
+    replicas: 3
