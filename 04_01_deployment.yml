@@ -10,11 +10,11 @@ spec:
   #   type: Recreate
   selector:
     matchLabels:
-      app: hello-world-deploy
+      app: hello-world
   template:
     metadata:
       labels:
-        app: hello-world-deploy
+        app: hello-world
         svc: example
     spec:
       containers:
