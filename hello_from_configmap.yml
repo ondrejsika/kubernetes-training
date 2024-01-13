@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-from-configmap
+data:
+  index.html: |
+    <h1>Hello from ConfigMap!</h1>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-from-configmap
+spec:
+  selector:
+    matchLabels:
+      app: hello-from-configmap
+  template:
+    metadata:
+      labels:
+        app: hello-from-configmap
+    spec:
+      volumes:
+        - name: www
+          configMap:
+            name: hello-from-configmap
+      containers:
+        - name: main
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: www
+              subPath: index.html
+              mountPath: /usr/share/nginx/html/index.html
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-from-configmap
+spec:
+  selector:
+    app: hello-from-configmap
+  ports:
+    - port: 80
