@@ -16,21 +16,21 @@ spec:
       http:
         paths:
           - path: /nginx(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
           - path: /apache(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: apache
                 port:
                   number: 80
           - path: /caddy(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: caddy
