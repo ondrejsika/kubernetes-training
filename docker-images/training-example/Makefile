@@ -22,11 +22,17 @@ _build-push:
 		--tag ondrejsika/training-example:${NAME} \
 		- < Dockerfile
 	docker push ondrejsika/training-example:${NAME}
+	# ghcr.io
+	docker tag ondrejsika/training-example:${NAME} ghcr.io/ondrejsika/training-example:${NAME}
+	docker push ghcr.io/ondrejsika/training-example:${NAME}
 
 _use:
 	docker pull ondrejsika/training-example:${NAME}
 	docker tag ondrejsika/training-example:${NAME} ondrejsika/training-example
 	docker push ondrejsika/training-example
+	# ghcr.io
+	docker tag ondrejsika/training-example ghcr.io/ondrejsika/training-example
+	docker push ghcr.io/ondrejsika/training-example
 
 # === Build and Push ===
 
