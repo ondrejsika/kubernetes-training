@@ -10,3 +10,4 @@ counter-*.tgz
 /index.html
 
 kube-prometheus
+*.local.yml
