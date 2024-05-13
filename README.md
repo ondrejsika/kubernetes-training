@@ -1283,20 +1283,20 @@ LOADBALANCER_IP=...
 
 ```
 helm upgrade --install \
-	ingress-nginx ingress-nginx \
-	--repo https://kubernetes.github.io/ingress-nginx \
-	--create-namespace \
-	--namespace ingress-nginx \
-	--set controller.service.type=LoadBalancer \
-	--set controller.ingressClassResource.default=true \
-	--set controller.kind=DaemonSet \
-	--set controller.hostPort.enabled=true \
-	--set controller.metrics.enabled=true \
-	--set controller.config.use-proxy-protocol=false \
+  ingress-nginx ingress-nginx \
+  --repo https://kubernetes.github.io/ingress-nginx \
+  --create-namespace \
+  --namespace ingress-nginx \
+  --set controller.service.type=LoadBalancer \
+  --set controller.ingressClassResource.default=true \
+  --set controller.kind=DaemonSet \
+  --set controller.hostPort.enabled=true \
+  --set controller.metrics.enabled=true \
+  --set controller.config.use-proxy-protocol=false \
   --set controller.service.loadBalancerIP=$LOADBALANCER_IP \
   --set controller.service.annotations.service\.beta\.kubernetes\.io/azure-load-balancer-resource-group=$RESOURCE_GROUP_NAME \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz \
-	--wait
+  --wait
 ```
 
 See [ArtifactHub](https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=values) or [values.yml](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml) for more options.
