@@ -20,22 +20,8 @@ spec:
           ports:
             - name: http
               containerPort: 80
-          resources:
-            requests:
-              cpu: 10m
-              memory: 10Mi
-            limits:
-              memory: 20Mi
-              cpu: 20m
-        - name: metrics
-          image: sikalabs/slu:v0.40.0
-          command:
-            - /bin/sh
-            - -c
-            - slu metrics-generator server
-          ports:
             - name: metrics
-              containerPort: 8000
+              containerPort: 8001
           resources:
             requests:
               cpu: 10m
