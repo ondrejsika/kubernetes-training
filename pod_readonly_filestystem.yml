@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readonly-filesystem
+spec:
+  containers:
+    - name: main
+      image: sikalabs/dev
+      command: ["slu", "sleep", "forever"]
+      resources:
+        limits:
+          memory: 500Mi
+          cpu: 500m
+      securityContext:
+        readOnlyRootFilesystem: true
