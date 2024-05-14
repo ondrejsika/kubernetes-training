@@ -16,6 +16,7 @@ build-push-all:
 	@make build-push-elm
 	@make build-push-t-mobile
 	@make build-push-rozhlas
+	@make build-push-era
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -91,6 +92,9 @@ build-push-t-mobile:
 build-push-rozhlas:
 	@make _build-push NAME=rozhlas
 
+build-push-era:
+	@make _build-push NAME=era
+
 # === Use ===
 
 use-default:
@@ -146,3 +150,6 @@ use-t-mobile:
 
 use-rozhlas:
 	@make _use NAME=rozhlas
+
+use-era:
+	@make _use NAME=era
