@@ -1277,7 +1277,6 @@ slu scripts kubernetes install-ingress
 ### Install Ingress Nginx on AKS (Azure)
 
 ```bash
-RESOURCE_GROUP_NAME=...
 LOADBALANCER_IP=...
 ```
 
@@ -1294,7 +1293,6 @@ helm upgrade --install \
   --set controller.metrics.enabled=true \
   --set controller.config.use-proxy-protocol=false \
   --set controller.service.loadBalancerIP=$LOADBALANCER_IP \
-  --set controller.service.annotations.service\.beta\.kubernetes\.io/azure-load-balancer-resource-group=$RESOURCE_GROUP_NAME \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz \
   --wait
 ```
