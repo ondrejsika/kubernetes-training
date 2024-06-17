@@ -2,6 +2,7 @@ build-push-all:
 	@make build-push-ondrejsika
 	@make build-push-digiteq
 	@make build-push-ceps
+	@make build-push-gpe
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -28,6 +29,9 @@ build-push-digiteq:
 build-push-ceps:
 	@make _build-push NAME=ceps
 
+build-push-ceps:
+	@make _build-push NAME=gpe
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -36,3 +40,6 @@ use-digiteq:
 
 use-ceps:
 	@make _use NAME=ceps
+
+use-ceps:
+	@make _use NAME=gpe
