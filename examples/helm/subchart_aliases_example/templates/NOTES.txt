@@ -1,0 +1,6 @@
+{{- if and .Values.foo.enabled .Values.foo.host -}}
+See: http://{{ .Values.foo.host }}
+{{ end }}
+{{- if and .Values.bar.enabled .Values.bar.host -}}
+See: http://{{ .Values.bar.host }}
+{{ end }}

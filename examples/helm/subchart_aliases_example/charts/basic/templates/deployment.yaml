@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "name" . }}
+  labels:
+    release: {{ include "name" . }}
+spec:
+  replicas: {{ include "replicas" . }}
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      release: {{ include "name" . }}
+  template:
+    metadata:
+      labels:
+        release: {{ include "name" . }}
+    spec:
+      containers:
+        - name: main
+          image: {{ include "image" . }}
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: PORT
+              value: "8000"
+          {{ if .Values.TEXT }}
+            - name: "TEXT"
+              value: {{ .Values.TEXT | quote }}
+          {{ end }}
+          {{ if .Values.COLOR }}
+            - name: "COLOR"
+              value: {{ .Values.COLOR | quote }}
+          {{ end }}
+          {{ if .Values.BACKGROUND_COLOR }}
+            - name: "BACKGROUND_COLOR"
+              value: {{ .Values.BACKGROUND_COLOR | quote }}
+          {{ end }}

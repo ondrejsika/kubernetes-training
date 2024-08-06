@@ -1,0 +1,14 @@
+apiVersion: v2
+name: subchart_aliases_example
+type: application
+version: 0.0.0
+dependencies:
+- alias: foo
+  condition: foo.enabled
+  name: basic
+  version: 0.1.0
+- alias: bar
+  condition: bar.enabled
+  name: basic
+  version: 0.1.0
+

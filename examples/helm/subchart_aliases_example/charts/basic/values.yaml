@@ -1,0 +1,11 @@
+# Optional
+nameOverride: null
+global:
+  image: sikalabs/hello-world-server
+  replicas: 1
+host: null
+TEXT:
+COLOR:
+BACKGROUND_COLOR:
+ingressClassName: nginx
+clusterIssuer: letsencrypt

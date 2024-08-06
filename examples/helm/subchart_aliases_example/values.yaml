@@ -1,0 +1,9 @@
+global:
+  image: sikalabs/hello-world-server:ondrejsika
+  replicas: 2
+
+foo:
+  enabled: true
+
+bar:
+  enabled: true

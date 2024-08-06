@@ -1,0 +1,12 @@
+global:
+  image: sikalabs/hello-world-server:yellow
+  replicas: 2
+
+foo:
+  enabled: true
+  host: subchart-aliases-example-ex1-foo.k8s.sikademo.com
+  image: sikalabs/hello-world-server:red
+
+bar:
+  enabled: true
+  host: subchart-aliases-example-ex1-bar.k8s.sikademo.com
