@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
         - name: main
-          image: sikalabs/slu:v0.69.0
+          image: sikalabs/slu:v0.77.0
           command:
             - /bin/sh
             - -c
           args:
-            - slu sleep random --min 0 --max 30000 && slu example-server -p 8000
+            - slu sleep random --min 0 --max 30000 --verbose && slu example-server -p 8000
           startupProbe:
             httpGet:
               path: /
