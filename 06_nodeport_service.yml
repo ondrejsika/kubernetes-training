@@ -4,7 +4,7 @@ metadata:
   name: hello-world-nodeport
 spec:
   type: NodePort
-  externalTrafficPolicy: Cluster
+  # externalTrafficPolicy: Cluster
   # externalTrafficPolicy: Local
   selector:
     app: example
