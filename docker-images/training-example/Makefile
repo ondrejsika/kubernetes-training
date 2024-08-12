@@ -18,6 +18,7 @@ build-push-all:
 	@make build-push-rozhlas
 	@make build-push-era
 	@make build-push-gpe
+	@make build-push-exainfra
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -99,6 +100,9 @@ build-push-era:
 build-push-gpe:
 	@make _build-push NAME=gpe
 
+build-push-exainfra:
+	@make _build-push NAME=exainfra
+
 # === Use ===
 
 use-default:
@@ -160,3 +164,6 @@ use-era:
 
 use-gpe:
 	@make _use NAME=gpe
+
+use-exainfra:
+	@make _use NAME=exainfra
