@@ -67,7 +67,7 @@ spec:
             - slu wait-for tcp -a redis:6379
       containers:
         - name: main
-          image: ondrejsika/counter
+          image: ghcr.io/ondrejsika/counter
           resources:
             requests:
               cpu: 20m

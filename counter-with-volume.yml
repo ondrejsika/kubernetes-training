@@ -73,7 +73,7 @@ spec:
     spec:
       containers:
         - name: counter
-          image: ondrejsika/counter
+          image: ghcr.io/ondrejsika/counter
           resources:
             requests:
               cpu: 20m
