@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: sikalabs/slu:v0.77.0
+          image: sikalabs/slu:v0.80.0
           command:
             - /bin/sh
             - -c
