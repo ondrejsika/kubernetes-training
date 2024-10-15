@@ -29,3 +29,11 @@ spec:
             limits:
               memory: 20Mi
               cpu: 20m
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: 80
+          livenessProbe:
+            httpGet:
+              path: /livez
+              port: 80
