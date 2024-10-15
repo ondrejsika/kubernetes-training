@@ -60,7 +60,7 @@ spec:
     spec:
       initContainers:
         - name: wait-for-redis
-          image: sikalabs/slu:v0.71.0
+          image: sikalabs/slu:v0.80.0
           args:
             - /bin/sh
             - -c
