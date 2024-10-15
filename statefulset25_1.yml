@@ -3,10 +3,10 @@ kind: StatefulSet
 metadata:
   name: hello-world
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: hello-world-sts
-  replicas: 5
   template:
     metadata:
       labels:
