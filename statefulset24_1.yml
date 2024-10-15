@@ -15,10 +15,10 @@ metadata:
   name: hello-world
 spec:
   serviceName: hello-world
+  replicas: 5
   selector:
     matchLabels:
       app: hello-world-sts
-  replicas: 5
   template:
     metadata:
       labels:
