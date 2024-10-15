@@ -22,6 +22,10 @@ spec:
       labels:
         app: sts-volume
     spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data
       containers:
         - name: main
           image: sikalabs/nginx-public
@@ -37,10 +41,6 @@ spec:
           volumeMounts:
             - mountPath: /usr/share/nginx/html
               name: data
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: data
 ---
 apiVersion: v1
 kind: Service
