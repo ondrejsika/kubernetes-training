@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pvc-mount-example-okd
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: pvc-mount-example-okd
+  template:
+    metadata:
+      labels:
+        app: pvc-mount-example-okd
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: default-pvc
+      containers:
+        - name: main
+          image: sikalabs/slu:v0.80.0
+          command: ["/bin/sh", "-c", "cd /data && slu serve"]
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: data
+              mountPath: /data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pvc-mount-example-okd
+spec:
+  type: ClusterIP
+  selector:
+    app: pvc-mount-example-okd
+  ports:
+    - port: 80
+      targetPort: 8000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pvc-mount-example-okd
+spec:
+  ingressClassName: openshift-default
+  rules:
+    - host: pvc-mount-example-okd.apps.okd0.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pvc-mount-example-okd
+                port:
+                  number: 80
