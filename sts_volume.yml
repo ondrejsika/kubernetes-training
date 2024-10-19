@@ -20,6 +20,7 @@ spec:
   template:
     metadata:
       labels:
+        svc: example
         app: sts-volume
     spec:
       volumes:
