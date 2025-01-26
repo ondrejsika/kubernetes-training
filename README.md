@@ -1910,12 +1910,6 @@ kubectl create secret tls sikademo.com-tls \
 
 ### Get Values
 
-Using **slu**
-
-```
-slu k8s get sec -s my-secret
-```
-
 Base64 encoded
 
 ```
@@ -1938,6 +1932,12 @@ kubectl get secret my-secret -o go-template='{{.data.token|base64decode}}{{"\n"}
 ```
 kubectl get secret my-secret -o jsonpath="{.data.password}" | base64 --decode && echo
 kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode && echo
+```
+
+or using **slu**
+
+```
+slu k8s get sec -s my-secret
 ```
 
 ### Create ConfigMap
