@@ -2006,6 +2006,31 @@ Or using `slu`:
 slu k8s config add -p kubeconfig-new.yml
 ```
 
+### Join multiple kubeconfigs on Windows
+
+Backup your kubeconfig first
+
+```powershell
+Copy-Item -Path $HOME\.kube\config -Destination "$HOME\.kube\config.$((Get-Date -Format 'yyyy-MM-dd_HH-mm-ss')).backup"
+```
+
+Add `kubeconfig-new.yml` to your kubeconfig
+
+```powershell
+$env:KUBECONFIG = "kubeconfig-new.yml;$HOME\.kube\config"
+```
+
+```powershell
+kubectl config view --raw > $HOME\.kube\config_tmp
+```
+
+```powershell
+Remove-Item $HOME\.kube\config
+Move-Item $HOME\.kube\config_tmp $HOME\.kube\config
+```
+
+Source: https://dbafromthecold.com/2020/02/21/merge-kubectl-config-files-on-windows/
+
 ### RBAC
 
 Show all api resources (with verbs)
