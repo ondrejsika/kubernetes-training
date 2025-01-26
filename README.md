@@ -31,6 +31,64 @@ For sharing links & "secrets".
 - Microsoft Teams
 - https://sika.link/chat (tlk.io)
 
+## Introduction to Kubernetes
+
+### What is Kubernetes
+
+- **Platform for running (containerized) applications**
+
+### What does Kubernetes do?
+
+- Abstract away the underlying hardware
+- Deploy your desired state
+- Minimize manual tasks & toil
+- Auto Scaling & High Availability
+- Service Discovery
+- Plug-in based architecture (network, storage, monitoring)
+- Native support for many cloud native tools (monitoring, logging, …)
+
+### No vendor lock
+
+Kubernetes is no vendor locked to specific provider, you can run Kubernetes on various platforms
+
+In cloud:
+
+- Big 3
+  - Azure
+  - AWS
+  - GCP
+- Smaller cloud providers
+  - DigitalOcean
+  - Hetzner Cloud
+- Local cloud / hosting providers
+  - CRA.cz
+  - VSHosting.cz
+
+On-premise:
+
+- Rancher (rke2, k3s)
+- OpenShift
+- VMware Tanzu
+
+### Schema
+
+[![kubernetes_components.png](images/kubernetes_components.png)](https://raw.githubusercontent.com/ondrejsika/kubernetes-training/refs/heads/master/images/kubernetes_components.png)
+
+### Kubernetes Cluster Components
+
+- **API Server** - Stateless API server backed by distributed Etcd
+- **Controller Manager** - ensure the actual state of the cluster equals the desired state
+- **Scheduler** - Binds an unbound Pod to a Node
+- **Kubelet** - Client for API Server, run Pods
+- **Kube Proxy** - Forward traffic into cluster
+
+### Tools
+
+- **kubectl** - Kubernetes client
+- **helm** - Package manager
+- **minikube** - Run Kubernetes locally
+- **k9s** - CLI Dashboard
+
 ## 12 Factor Apps
 
 [12factor.net](https://12factor.net)
