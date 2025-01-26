@@ -487,6 +487,11 @@ Sources:
 - https://k9scli.io/
 - https://github.com/derailed/k9s
 
+### Kubectl Cheat Sheets
+
+- https://kubernetes.io/docs/reference/kubectl/quick-reference/
+- https://aiidecoe.com/images/Kubernetes%20Cheat%20Sheet.pdf
+
 ### Create Pod
 
 ```
