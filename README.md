@@ -26,6 +26,7 @@ Source of my Kubernetes Training.
 
 For sharing links & "secrets".
 
+- Zoom Chat
 - Slack - https://sikapublic.slack.com/
 - Microsoft Teams
 - https://sika.link/chat (tlk.io)
