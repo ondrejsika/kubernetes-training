@@ -607,6 +607,16 @@ kubectl describe -f 02_pod.yml
 ### Exec (Connect) Pod
 
 ```
+kubectl exec redis -- redis-cli ping
+```
+
+```
+kubectl exec -ti redis -- redis-cli
+```
+
+Defaut container is first one in multi-container pod
+
+```
 kubectl exec -ti multi-container-pod -- bash
 ```
 
