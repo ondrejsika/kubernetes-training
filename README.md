@@ -495,6 +495,12 @@ kubectl apply -f 02_pod.yml
 kubectl apply -f pod_redis.yml
 ```
 
+### Validate YAML using kubectl
+
+```
+k apply --dry-run=server -f pod_invalid_yaml.yml
+```
+
 ### List Pods
 
 ```
