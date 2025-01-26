@@ -487,6 +487,10 @@ Sources:
 - https://k9scli.io/
 - https://github.com/derailed/k9s
 
+### VS Code Kubernetes Plugin
+
+- https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools
+
 ### Kubectl Cheat Sheets
 
 - https://kubernetes.io/docs/reference/kubectl/quick-reference/
