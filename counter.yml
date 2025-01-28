@@ -42,6 +42,7 @@ metadata:
     app.openshift.io/connects-to: |
       [{"apiVersion":"apps/v1","kind":"StatefulSet","name":"redis"}]
 spec:
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: counter
