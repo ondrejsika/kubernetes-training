@@ -8,8 +8,6 @@ kind: ServiceAccount
 metadata:
   name: devel-user
   namespace: devel
-secrets:
-  - name: devel-user
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
