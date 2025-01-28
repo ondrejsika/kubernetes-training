@@ -90,20 +90,3 @@ spec:
     app: counter
   ports:
     - port: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: counter
-spec:
-  rules:
-    - host: counter.127.0.0.1.nip.io
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: counter
-                port:
-                  number: 80
