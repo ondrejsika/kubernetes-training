@@ -1899,7 +1899,7 @@ Create secret file `tls_secret_127-0-0-1.uk.local.yaml`
 
 ```
 kubectl create secret tls sikademo.com-tls \
-  --key=/sikademo.com.key \
+  --key=sikademo.com.key \
   --cert=sikademo.com.crt \
   --dry-run=client -o yaml | tee secret_tls_sikademo_com.local.yml
 ```
@@ -1908,7 +1908,7 @@ Create secret in Kubernetes cluster
 
 ```
 kubectl create secret tls sikademo.com-tls \
-  --key=/sikademo.com.key \
+  --key=sikademo.com.key \
   --cert=sikademo.com.crt
 ```
 
