@@ -1277,7 +1277,7 @@ Wait until get external IP address. Works only in public clouds (like Digital Oc
 - https://metallb.universe.tf/installation/
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
 ```
 
 Apply pool config:
