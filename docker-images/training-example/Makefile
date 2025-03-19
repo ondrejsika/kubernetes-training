@@ -20,6 +20,7 @@ build-push-all:
 	@make build-push-gpe
 	@make build-push-exainfra
 	@make build-push-cloud-native-bratislava
+	@make build-push-continental
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -107,6 +108,9 @@ build-push-exainfra:
 build-push-cloud-native-bratislava:
 	@make _build-push NAME=cloud-native-bratislava
 
+build-push-continental:
+	@make _build-push NAME=continental
+
 # === Use ===
 
 use-default:
@@ -174,3 +178,6 @@ use-exainfra:
 
 use-cloud-native-bratislava:
 	@make _use NAME=cloud-native-bratislava
+
+use-continental:
+	@make _use NAME=continental
