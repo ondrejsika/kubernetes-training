@@ -16,7 +16,7 @@ spec:
         svc: example
     spec:
       containers:
-        - image: sikalabs/slu:v0.53.0
+        - image: sikalabs/slu:v0.85.0
           name: main
           args:
             - /bin/sh
