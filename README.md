@@ -503,6 +503,7 @@ Sources:
 ```
 kubectl apply -f 01_pod.yml
 kubectl apply -f 02_pod.yml
+kubectl apply -f pod_php.yaml
 kubectl apply -f pod_redis.yml
 ```
 
@@ -762,7 +763,7 @@ See proxy to service: <http://127.0.0.1:8001/api/v1/namespaces/default/services/
 Try apply pods:
 
 ```
-kubectl apply -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml
+kubectl apply -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml -f pod_php.yaml
 ```
 
 Get pods for this service
@@ -776,7 +777,7 @@ Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/default/serv
 Delete pods
 
 ```
-kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml
+kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml -f pod_php.yaml
 ```
 
 ### Pods Without Service Links (in the Environment)
