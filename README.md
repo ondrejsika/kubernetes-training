@@ -426,6 +426,31 @@ docker run -d --name proxy --net host -v /root:/root sikalabs/kubectl kubectl pr
 
 ### Dashboard
 
+#### Headlamp
+
+- https://headlamp.dev
+- https://github.com/kubernetes-sigs/headlamp
+- https://headlamp.dev/docs/latest/installation/in-cluster/#using-helm
+
+#### Install Headlamp
+
+```
+helm upgrade --install \
+  headlamp \
+  --repo https://kubernetes-sigs.github.io/headlamp/ \
+  headlamp \
+  --namespace kube-system \
+  --values headlamp.values.yaml
+```
+
+Create token for Headlamp
+
+```
+kubectl create token headlamp --namespace kube-system
+```
+
+Go to Headlamp: <https://headlamp.k8s.sikademo.com>
+
 #### Minikube
 
 ```
