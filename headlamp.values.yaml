@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  hosts:
+    - host: headlamp.k8s.sikademo.com
+      paths:
+        - path: /
+          type: ImplementationSpecific
+  tls:
+    - secretName: headlamp.k8s.sikademo.com-tls
+      hosts:
+        - headlamp.k8s.sikademo.com
