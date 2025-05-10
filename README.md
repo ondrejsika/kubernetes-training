@@ -31,6 +31,15 @@ For sharing links & "secrets".
 - Microsoft Teams
 - https://sika.link/chat (tlk.io)
 
+## About Me - [Ondrej Sika](https://sika.io)
+
+**Freelance DevOps Engineer, Consultant & Lecturer**
+
+- Complete DevOps Pipeline
+- Open Source / Linux Stack
+- Cloud & On-Premise
+- Technologies: Git, Gitlab, Gitlab CI, Docker, Kubernetes, Terraform, Prometheus, ELK / EFK, Rancher, Proxmox, DigitalOcean, AWS
+
 ## Introduction to Kubernetes
 
 ### What is Kubernetes
