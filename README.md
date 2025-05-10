@@ -1774,7 +1774,7 @@ kubectl delete -f pv_nfs.yml -f pvc_nfs.yml -f pvc_mount_example.yml
 Install
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.8.0/deploy/longhorn.yaml
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.8.1/deploy/longhorn.yaml
 ```
 
 #### Longhorn Dashboard
