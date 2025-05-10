@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-daily
+spec:
+  schedule: "0 0 * * *" # This cron job will run daily at midnight
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: dogsay
+              image: sikalabs/dogsay:v0.1.0
+              args:
+                - dogsay
+                - I'm pawsome!
