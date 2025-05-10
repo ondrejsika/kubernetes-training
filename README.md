@@ -1194,6 +1194,14 @@ job.batch "hello-nrr8r" deleted
 kubectl apply -f cronjob.yml
 ```
 
+Trigger cron job manually using `kubectl`
+
+```
+kubectl create job --from=cronjob/cronjob-daily cronjob-daily-$(date +%s)
+```
+
+In `k9s` use `t` as trigger job (from cronjob).
+
 ### Delete Jobs
 
 ```
