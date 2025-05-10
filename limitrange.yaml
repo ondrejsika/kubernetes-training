@@ -4,17 +4,16 @@ metadata:
   name: limitrange
 spec:
   limits:
-  - type: Container
-    default: # this section defines default limits
-      cpu: 30m
-      memory: 30Mi
-    defaultRequest: # this section defines default requests
-      cpu: 20m
-      memory: 20Mi
-    max: # max and min define the limit range
-      cpu: 100m
-      memory: 100Mi
-    min:
-      cpu: 10m
-      memory: 10Mi
-    
+    - type: Container
+      default: # this section defines default limits
+        cpu: 30m
+        memory: 30Mi
+      defaultRequest: # this section defines default requests
+        cpu: 20m
+        memory: 20Mi
+      max: # max and min define the limit range
+        cpu: 100m
+        memory: 100Mi
+      min:
+        cpu: 10m
+        memory: 10Mi
