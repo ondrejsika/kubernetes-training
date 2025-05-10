@@ -70,9 +70,11 @@ On-premise:
 - OpenShift
 - VMware Tanzu
 
-### Schema
+### Cluster Architecture
 
-[![kubernetes_components.png](images/kubernetes_components.png)](https://raw.githubusercontent.com/ondrejsika/kubernetes-training/refs/heads/master/images/kubernetes_components.png)
+[![kubernetes_cluster_architecture.svg](images/kubernetes_cluster_architecture.svg)](https://raw.githubusercontent.com/ondrejsika/kubernetes-training/refs/heads/master/images/kubernetes_cluster_architecture.svg)
+
+[old image of architecture](images/kubernetes_components.png)
 
 ### Kubernetes Cluster Components
 
