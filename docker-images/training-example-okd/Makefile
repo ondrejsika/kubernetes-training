@@ -3,6 +3,7 @@ build-push-all:
 	@make build-push-digiteq
 	@make build-push-ceps
 	@make build-push-gpe
+	@make build-push-generali
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -32,6 +33,9 @@ build-push-ceps:
 build-push-ceps:
 	@make _build-push NAME=gpe
 
+build-push-generali:
+	@make _build-push NAME=generali
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -43,3 +47,6 @@ use-ceps:
 
 use-ceps:
 	@make _use NAME=gpe
+
+use-generali:
+	@make _use NAME=generali
