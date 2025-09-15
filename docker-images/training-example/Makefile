@@ -22,6 +22,7 @@ build-push-all:
 	@make build-push-cloud-native-bratislava
 	@make build-push-continental
 	@make build-push-cez
+	@make build-push-vitkovice
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -115,6 +116,9 @@ build-push-continental:
 build-push-cez:
 	@make _build-push NAME=cez
 
+build-push-vitkovice:
+	@make _build-push NAME=vitkovice
+
 # === Use ===
 
 use-default:
@@ -188,3 +192,6 @@ use-continental:
 
 use-cez:
 	@make _use NAME=cez
+
+use-vitkovice:
+	@make _use NAME=vitkovice
