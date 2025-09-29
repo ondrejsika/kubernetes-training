@@ -1,6 +1,7 @@
 build-push-all:
 	@make build-push-default
 	@make build-push-ondrejsika
+	@make build-push-argocd
 	@make build-push-mavenir
 	@make build-push-ogsoft
 	@make build-push-thermofisher
@@ -50,6 +51,9 @@ build-push-default:
 
 build-push-ondrejsika:
 	@make _build-push NAME=ondrejsika
+
+build-push-argocd:
+	@make _build-push NAME=argocd
 
 build-push-mavenir:
 	@make _build-push NAME=mavenir
@@ -130,6 +134,9 @@ use-default:
 
 use-ondrejsika:
 	@make _use NAME=ondrejsika
+
+use-argocd:
+	@make _use NAME=argocd
 
 use-mavenir:
 	@make _use NAME=mavenir
