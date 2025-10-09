@@ -271,6 +271,19 @@ Set-Alias -Name kn -Value kubens
 
 Source: https://pascalnaber.wordpress.com/2017/11/09/configure-alias-on-windows-for-kubectl/
 
+### Start k3d Kubernetes Cluster
+
+```
+k3d cluster create default \
+  --k3s-arg --disable=traefik@server:0 \
+  --servers 1 \
+  --port 80:80@loadbalancer \
+  --port 443:443@loadbalancer \
+  --wait
+```
+
+![k3d_cluster_create.png](./_images/k3d_cluster_create.png)
+
 ### Start Minikube
 
 ```
