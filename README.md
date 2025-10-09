@@ -1,6 +1,6 @@
 [Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io> | [go to course ->](#course) | [install kubernetes ->](#install-kubernetes) | [join slack](https://sika.link/slack-sikapublic), [open slack](https://sikapublic.slack.com) | [join.sika.io](https://join.sika.io)
 
-![](images/kubernetes_github.svg)
+![](./_images/kubernetes_github.svg)
 
 # Kubernetes Training
 
@@ -81,9 +81,9 @@ On-premise:
 
 ### Cluster Architecture
 
-[![kubernetes_cluster_architecture.svg](images/kubernetes_cluster_architecture.svg)](https://raw.githubusercontent.com/ondrejsika/kubernetes-training/refs/heads/master/images/kubernetes_cluster_architecture.svg)
+[![kubernetes_cluster_architecture.svg](./_images/kubernetes_cluster_architecture.svg)](https://raw.githubusercontent.com/ondrejsika/kubernetes-training/refs/heads/master/_images/kubernetes_cluster_architecture.svg)
 
-[old image of architecture](images/kubernetes_components.png)
+[old image of architecture](./_images/kubernetes_components.png)
 
 ### Kubernetes Cluster Components
 
@@ -218,7 +218,7 @@ Activate using:
 kps1
 ```
 
-![](./images/kps1.png)
+![](./_images/kps1.png)
 
 ### kubectx & kubens
 
@@ -248,7 +248,7 @@ complete -F _complete_alias kn
 
 See my [bashrc](https://github.com/ondrejsika/dotfiles/blob/master/core/bashrc#L87)
 
-![](./images/kubectx.png)
+![](./_images/kubectx.png)
 
 ### Alias `k`
 
@@ -291,7 +291,7 @@ kubectl get nodes
 
 If you see something like this
 
-![minikube-cluster-up-and-running](images/minikube-cluster-up-and-running-2021.png)
+![minikube-cluster-up-and-running](./_images/minikube-cluster-up-and-running-2021.png)
 
 Your cluster is up and running. Good job!
 
@@ -627,7 +627,7 @@ Test with local `redis-cli` (if you have):
 redis-cli ping
 ```
 
-![](images/port-forward-redis.png)
+![](./_images/port-forward-redis.png)
 
 Get Pod from file:
 
@@ -836,7 +836,7 @@ See the diff
 vimdiff <(kubectl logs pod-with-service-links) <(kubectl logs pod-without-service-links)
 ```
 
-![pod-without-service-links](./images/pod-without-service-links.png)
+![pod-without-service-links](./_images/pod-without-service-links.png)
 
 ### Create Replica Set
 
@@ -1105,7 +1105,7 @@ curl hello-world-0.hello-world
 curl hello-world-1.hello-world
 ```
 
-![headless-service-example](./images/headless-service-example.png)
+![headless-service-example](./_images/headless-service-example.png)
 
 ### Delete StatefulSet
 
