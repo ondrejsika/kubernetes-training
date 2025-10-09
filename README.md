@@ -3264,3 +3264,12 @@ That's it. Do you have any questions? **Let's go for a beer!**
 _Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn (add me [/in/ondrejsika](https://www.linkedin.com/in/ondrejsika/) and I'll send you request for recommendation). **Thanks**._
 
 Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
+
+## Past Training Sessions
+
+### 2025-10-08 Ataccama
+
+- https://github.com/sika-training-examples/2025-10-08_ataccama-kubernetes-example (YAML manifests)
+- https://github.com/sika-training-examples/2025-10-08_ataccama-helm-example (Helm chart)
+- https://github.com/sika-training-examples/2025-10-09_ataccama_argocd_apps (ArgoCD Apps)
+- https://github.com/sika-training-examples/2025-10-09_ataccama_values (Values for Helm chart from ArgoCD)
