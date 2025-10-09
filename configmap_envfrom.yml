@@ -19,7 +19,7 @@ kind: ConfigMap
 metadata:
   name: envfrom2override
 data:
-  MY_AAA: '111'
+  MY_AAA: "111"
   MY_CCC: ccc
 ---
 apiVersion: v1
