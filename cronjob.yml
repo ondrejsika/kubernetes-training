@@ -15,8 +15,8 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: main
-              image: busybox
+              image: ghcr.io/sikalabs/slu:v0.91.0
               args:
                 - /bin/sh
                 - -c
-                - date; echo Hello from the Kubernetes cluster
+                - slu ondrejsika dogsay "Hello from the Kubernetes cluster"
