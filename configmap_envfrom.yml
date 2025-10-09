@@ -15,6 +15,14 @@ data:
   MY_BBB: bbb
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: envfrom2override
+data:
+  MY_AAA: '111'
+  MY_CCC: ccc
+---
+apiVersion: v1
 kind: Secret
 metadata:
   name: envfrom
@@ -40,6 +48,8 @@ spec:
             name: envfrom
         - configMapRef:
             name: envfrom2
+        - configMapRef:
+            name: envfrom2override
         - prefix: MY_SECRET_
           secretRef:
             name: envfrom
