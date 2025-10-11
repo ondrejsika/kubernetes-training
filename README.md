@@ -562,6 +562,10 @@ See:
 or using port forward:
 
 ```
+kubectl port-forward simple-hello-world 8000:80
+```
+
+```
 kubectl port-forward pod/simple-hello-world 8000:80
 ```
 
@@ -570,13 +574,13 @@ See: <http://127.0.0.1:8000>
 Port forward on all interfaces (remote host):
 
 ```
-kubectl port-forward pod/simple-hello-world 8000:80 --address 0.0.0.0
+kubectl port-forward simple-hello-world 8000:80 --address 0.0.0.0
 ```
 
 Redis port forward example
 
 ```
-kubectl port-forward pod/redis 6379:6379
+kubectl port-forward redis 6379:6379
 ```
 
 Test with local `redis-cli` (if you have):
