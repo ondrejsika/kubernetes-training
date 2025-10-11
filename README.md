@@ -308,6 +308,32 @@ If you see something like this
 
 Your cluster is up and running. Good job!
 
+### Switch to training namespace
+
+Create namespace `training`
+
+```
+kubectl create ns training
+```
+
+Switch to namespace `training`
+
+```
+kubectl config set-context --current --namespace training
+```
+
+or using `kubens`
+
+```
+kubens training
+```
+
+or with `kn` alias of `kubens`
+
+```
+kn training
+```
+
 ### Connect My Demo Cluster
 
 I recommend you using Minikube (or Kubernetes support in Docker Desktop), but if you can't run any of those local kubernetes clusters, you can connect to my Kubernetes cluster on Digital Ocean.
