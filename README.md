@@ -285,30 +285,6 @@ k3d cluster create default \
 
 ![k3d_cluster_create.png](./_images/k3d_cluster_create.png)
 
-### Start Minikube
-
-```
-minikube start
-```
-
-Run with Hyper-V (on Windows) - <https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c>
-
-```
-minikube start --driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"
-```
-
-Verify cluster health by
-
-```
-kubectl get nodes
-```
-
-If you see something like this
-
-![minikube-cluster-up-and-running](./_images/minikube-cluster-up-and-running-2021.png)
-
-Your cluster is up and running. Good job!
-
 ### Switch to training namespace
 
 Create namespace `training`
