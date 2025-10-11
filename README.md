@@ -1487,6 +1487,8 @@ See [ArtifactHub](https://artifacthub.io/packages/helm/ingress-nginx/ingress-ngi
 
 ### Create Ingress
 
+### Webservers and Ingress
+
 Create some services (& deploymnets)
 
 ```
@@ -1497,17 +1499,19 @@ See:
 
 - http://127.0.0.1:8001/api/v1/namespaces/training/services/nginx:http/proxy/
 - http://127.0.0.1:8001/api/v1/namespaces/training/services/apache:http/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/services/caddy:http/proxy/
 
-Create Ingress on Minikube
+Create Ingress on localhost (`*.127.0.0.1.nip.io`)
 
 ```
-kubectl apply -f ingress.yml
+kubectl apply -f ingress_webservers_localhost.yml
 ```
 
 See:
 
 - http://nginx.127.0.0.1.nip.io
 - http://apache.127.0.0.1.nip.io
+- http://caddy.127.0.0.1.nip.io
 
 Create Ingress on DigitalOcean
 
@@ -1541,8 +1545,16 @@ or using `slu`:
 slu scripts kubernetes install-cluster-issuer
 ```
 
+Create Ingress on lab0 (`*.lab0.sikademo.com`) with Let's Encrypt certifikates
+
 ```
-kubectl apply -f ingress-do.yml
+kubectl apply -f ingress_webservers_lab0.yml
+```
+
+Create Ingress on sikademo cluster (`*.k8s.sikademo.com`) with Let's Encrypt certifikates
+
+```
+kubectl apply -f ingress_webservers_k8s.yml
 ```
 
 See:
