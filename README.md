@@ -18,10 +18,6 @@ Source of my Kubernetes Training.
 ### Related Courses
 -->
 
-### Slides
-
-<https://sika.link/k8s-slides>
-
 ### Chat
 
 For sharing links & "secrets".
