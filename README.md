@@ -637,8 +637,8 @@ kubectl get po -o custom-columns="name:{.metadata.name},namespace:{.metadata.nam
 
 See:
 
-- http://127.0.0.1:8001/api/v1/namespaces/default/pods/simple-hello-world/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/pods/multi-container-pod/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/pods/simple-hello-world/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/pods/multi-container-pod/proxy/
 
 or using port forward:
 
@@ -807,7 +807,7 @@ Deploy private pod
 kubectl apply -f private_pod.yml
 ```
 
-See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/private-pod/proxy/>
+See <http://127.0.0.1:8001/api/v1/namespaces/training/pods/private-pod/proxy/>
 
 See credentials (of example `registry.sikalabs.com`)
 
@@ -831,7 +831,7 @@ We will talk about services later.
 kubectl apply -f service.yml
 ```
 
-See proxy to service: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+See proxy to service: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 Try apply pods:
 
@@ -845,7 +845,7 @@ Get pods for this service
 kubectl get po -l svc=example
 ```
 
-Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+Check service proxt again. <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 Delete pods
 
@@ -891,7 +891,7 @@ kubectl get rs
 kubectl get rs,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 or using port forward:
 
@@ -946,7 +946,7 @@ kubectl get deploy
 kubectl get deploy,rs,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 or using port forward:
 
@@ -1091,7 +1091,7 @@ kubectl get sts
 kubectl get sts,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world/proxy/>
 
 ### Update StatefulSet
 
@@ -1169,7 +1169,7 @@ kubectl get ds
 kubectl get ds,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 ### Update DaemonSet
 
@@ -1323,8 +1323,8 @@ kubectl apply -f 05_clusterip_service.yml
 
 See:
 
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip:80/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-clusterip:8080/proxy/metrics
+- http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-clusterip:80/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-clusterip:8080/proxy/metrics
 
 ### Create Service NodePort
 
@@ -1332,7 +1332,7 @@ See:
 kubectl apply -f 06_nodeport_service.yml
 ```
 
-See: http://127.0.0.1:8001/api/v1/namespaces/default/services/hello-world-nodeport/proxy/
+See: http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-nodeport/proxy/
 
 You can also open NodePort directly using:
 
@@ -1495,8 +1495,8 @@ kubectl apply -f webservers.yml
 
 See:
 
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx:http/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/default/services/apache:http/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/services/nginx:http/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/services/apache:http/proxy/
 
 Create Ingress on Minikube
 
@@ -1578,7 +1578,7 @@ kubectl apply -f ingress-do-sticky.yml
 kubectl apply -f counter.yml
 ```
 
-See: http://127.0.0.1:8001/api/v1/namespaces/default/services/counter/proxy/
+See: http://127.0.0.1:8001/api/v1/namespaces/training/services/counter/proxy/
 
 ### List components
 
@@ -1826,7 +1826,7 @@ Use PVC
 kubectl apply -f pvc_mount_example.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/pvc-mount-example/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/training/services/pvc-mount-example/proxy/>
 
 Example of `kubectl cp`:
 
@@ -1903,7 +1903,7 @@ Mount example:
 kubectl apply -f nfs-client-deployment.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
 ### Direct NFS Volume mount
 
@@ -1911,7 +1911,7 @@ See: <http://127.0.0.1:8001/api/v1/namespaces/default/services/example/proxy/>
 kubectl apply -f nfs-volume-example.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/nfs-volume-example:80/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/training/pods/nfs-volume-example:80/proxy/>
 
 ### Reclaim Policy Retain
 
@@ -1967,7 +1967,7 @@ kubectl apply -f pvc-longhorn-retain.yml
 kubectl apply -f cephfs-volume-example.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/cephfs-volume-example/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/training/pods/cephfs-volume-example/proxy/>
 
 ## ConfigMaps & Secrets
 
@@ -2040,7 +2040,7 @@ kubectl apply -f 12_config_map.yml
 kubectl apply -f 13_secret_example.yml
 ```
 
-See <http://127.0.0.1:8001/api/v1/namespaces/default/pods/secret-example/proxy/>
+See <http://127.0.0.1:8001/api/v1/namespaces/training/pods/secret-example/proxy/>
 
 And see the variables:
 
@@ -2079,7 +2079,7 @@ kubectl logs env-fieldref
 kubectl apply -f expand_config.yml
 ```
 
-See: <http://127.0.0.1:8001/api/v1/namespaces/default/pods/expand-config/proxy/>
+See: <http://127.0.0.1:8001/api/v1/namespaces/training/pods/expand-config/proxy/>
 
 ### Config
 
@@ -2417,13 +2417,13 @@ watch -n 0.3 kubectl get deploy,rs,po -l app=liveness
 Watch output:
 
 ```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
 ```
 
 or using slu watch
 
 ```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/liveness/proxy/
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
 ```
 
 Cleanup
@@ -2453,13 +2453,13 @@ watch -n 0.3 kubectl describe svc readiness
 Watch output:
 
 ```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/readiness/proxy/
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
 ```
 
 or using slu watch
 
 ```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/readiness/proxy/
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
 ```
 
 Cleanup
@@ -2489,13 +2489,13 @@ watch -n 0.3 kubectl describe svc startup
 Watch output:
 
 ```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/startup/proxy/
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
 ```
 
 or using slu watch
 
 ```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/default/services/startup/proxy/
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
 ```
 
 Cleanup
