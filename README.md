@@ -99,6 +99,7 @@ On-premise:
 - **helm** - Package manager
 - **minikube** - Run Kubernetes locally
 - **k9s** - CLI Dashboard
+- **k3d** - run [k3s](https://k3s.io) Kubernetes locally in Docker (we will use this for the training)
 
 ## 12 Factor Apps
 
