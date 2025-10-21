@@ -26,6 +26,7 @@ build-push-all:
 	@make build-push-vitkovice
 	@make build-push-ostrava
 	@make build-push-ataccama
+	@make build-push-ica
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -131,6 +132,9 @@ build-push-ostrava:
 build-push-ataccama:
 	@make _build-push NAME=ataccama
 
+build-push-ica:
+	@make _build-push NAME=ica
+
 # === Use ===
 
 use-default:
@@ -216,3 +220,6 @@ use-ostrava:
 
 use-ataccama:
 	@make _use NAME=ataccama
+
+use-ica:
+	@make _use NAME=ica
