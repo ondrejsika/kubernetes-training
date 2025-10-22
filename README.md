@@ -2120,6 +2120,12 @@ kubectl auth can-i --as system:anonymous get po
 kubectl apply -f 14_admin.yml
 ```
 
+### Backup Kubeconfig before RBAC changes
+
+```
+cp ~/.kube/config ~/.kube/config.before_rbac.$(date +%Y-%m-%d_%H-%M-%S).backup
+```
+
 ### Create kubeconfig for admin
 
 Export actual config
