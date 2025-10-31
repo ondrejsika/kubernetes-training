@@ -7,7 +7,7 @@ spec:
     foo: bar
   containers:
     - name: hello
-      image: ondrejsika/training-example
+      image: ghcr.io/ondrejsika/training-example
       resources:
         requests:
           memory: 10Mi
