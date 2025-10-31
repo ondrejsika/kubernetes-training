@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/training-example:blue
+          image: ghcr.io/ondrejsika/training-example:blue
           ports:
             - containerPort: 80
           resources:
