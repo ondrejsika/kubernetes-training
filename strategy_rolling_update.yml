@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: ondrejsika/training-example:green
+          image: ghcr.io/ondrejsika/training-example:green
           ports:
             - containerPort: 80
           startupProbe:
