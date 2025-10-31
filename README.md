@@ -1339,16 +1339,22 @@ kubectl delete -f ingress_webservers_k8s.yml
 
 <https://kubernetes.github.io/ingress-nginx/examples/affinity/cookie/>
 
-Minikube:
+Localhost:
 
 ```
-kubectl apply -f ingress-sticky.yml
+kubectl apply -f ingress_sticky_localhost.yml
 ```
 
-DigitalOcean:
+DigitalOcean (`*.k8s.sikademo.com`):
 
 ```
-kubectl apply -f ingress-do-sticky.yml
+kubectl apply -f ingress_sticky_k8s.yml
+```
+
+Lab0 (`*.lab0.sikademo.com`):
+
+```
+kubectl apply -f ingress_sticky_lab0.yml
 ```
 
 ### Deploy Application (Multiple Deployments and Services)
