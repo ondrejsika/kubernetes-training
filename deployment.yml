@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: ondrejsika/training-example
+          image: ghcr.io/ondrejsika/training-example
           ports:
             - name: http
               containerPort: 80
