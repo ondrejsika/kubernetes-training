@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: main
-      image: ondrejsika/training-example
+      image: ghcr.io/ondrejsika/training-example
       ports:
         - containerPort: 80
       resources:
