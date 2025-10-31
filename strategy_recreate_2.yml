@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 2
       containers:
         - name: hello-world
-          image: ondrejsika/training-example:yellow
+          image: ghcr.io/ondrejsika/training-example:yellow
           ports:
             - containerPort: 80
           resources:
