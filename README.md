@@ -1329,7 +1329,10 @@ See:
 Cleanup
 
 ```
-kubectl delete -f webservers.yml -f ingress.yml -f ingress-do.yml
+kubectl delete -f webservers.yml
+kubectl delete -f ingress_webservers_localhost.yml
+kubectl delete -f ingress_webservers_lab0.yml
+kubectl delete -f ingress_webservers_k8s.yml
 ```
 
 ### Sticky Sessions
