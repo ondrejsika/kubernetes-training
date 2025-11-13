@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-openshift-domain
+  annotations:
+    route.openshift.io/termination: "edge"
+    route.openshift.io/insecureEdgeTerminationPolicy: "Redirect"
+spec:
+  ingressClassName: openshift-default
+  rules:
+    - host: example-openshift-domain.apps.training.germanywestcentral.aroapp.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: example
+                port:
+                  number: 80
