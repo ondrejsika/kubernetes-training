@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-openshift-custom-domain
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: openshift-default
+  tls:
+    - hosts:
+        - example-openshift-custom-domain.openshift.sikademo.com
+      secretName: example-openshift-custom-domain.openshift.sikademo.com-tls
+  rules:
+    - host: example-openshift-custom-domain.openshift.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: example
+                port:
+                  number: 80
