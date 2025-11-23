@@ -5,18 +5,25 @@ metadata:
 spec:
   revisionHistoryLimit: 0
   replicas: 2
+  # strategy:
+  #   type: RollingUpdate
+  #   type: Recreate
   selector:
     matchLabels:
-      app: hello-world-deploy
+      app: hello-world
   template:
     metadata:
       labels:
-        app: hello-world-deploy
+        app: hello-world
         svc: example
     spec:
       containers:
         - name: main
-          image: ondrejsika/not-existing-image
+          image: ghcr.io/ondrejsika/training-example:v1
+          # image: ghcr.io/ondrejsika/training-example:v2
+          # image: ghcr.io/ondrejsika/training-example:v3
+          # image: ghcr.io/ondrejsika/training-example:v4
+          # image: ondrejsika/not-existing-image
           ports:
             - containerPort: 80
           resources:

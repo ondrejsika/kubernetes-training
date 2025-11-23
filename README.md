@@ -681,7 +681,7 @@ kubectl delete rs/hello-world-rs
 ### Create Deployment
 
 ```
-kubectl apply -f 04_01_deployment.yml
+kubectl apply -f 04_deployment.yml
 ```
 
 You can wait until Deployment (DaemonSet, StatefulSet) will be rolled out
@@ -710,14 +710,10 @@ See: <http://127.0.0.1:8000>
 
 ### Update Deployment
 
-See the difference
+Update deplyoyment image and apply again
 
 ```
-vimdiff 04_01_deployment.yml 04_02_deployment.yml
-```
-
-```
-kubectl apply -f 04_02_deployment.yml
+kubectl apply -f 04_deployment.yml
 ```
 
 Wait until deployment will be rolled out
@@ -739,7 +735,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#clean-up-p
 ### Delete Deployment
 
 ```
-kubectl delete -f 04_01_deployment.yml
+kubectl delete -f 04_deployment.yml
 
 # or
 kubectl delete deploy/hello-world
@@ -2436,7 +2432,7 @@ and clean up
 
 ```
 kubectl delete hpa/hello-world
-kubectl delete -f 04_01_deployment.yml
+kubectl delete -f 04_deployment.yml
 ```
 
 ## Helm
