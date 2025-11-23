@@ -1,0 +1,5 @@
+ARG IMAGE=sikalabs/hello-world-server
+FROM ${IMAGE}
+ENV PORT=80
+ARG VERSION=v0
+ENV TEXT_SUFFIX=${VERSION}
