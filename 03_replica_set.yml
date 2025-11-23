@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: main
-          image: ghcr.io/ondrejsika/training-example
+          image: ghcr.io/ondrejsika/training-example:v1
+          # image: ghcr.io/ondrejsika/training-example:v2
           ports:
             - containerPort: 80
           resources:

@@ -644,7 +644,7 @@ vimdiff <(kubectl logs pod-with-service-links) <(kubectl logs pod-without-servic
 ### Create Replica Set
 
 ```
-kubectl apply -f 03_01_replica_set.yml
+kubectl apply -f 03_replica_set.yml
 ```
 
 ### List Replica Sets
@@ -665,22 +665,10 @@ kubectl port-forward rs/hello-world-rs 8000:80
 
 See: <http://127.0.0.1:8000>
 
-### Update Replica Set
-
-See the difference
-
-```
-vimdiff 03_01_replica_set.yml 03_02_replica_set.yml
-```
-
-```
-kubectl apply -f 03_02_replica_set.yml
-```
-
 ### Delete Replica Set
 
 ```
-kubectl delete -f 03_01_replica_set.yml
+kubectl delete -f 03_replica_set.yml
 
 # or
 kubectl delete rs/hello-world-rs
