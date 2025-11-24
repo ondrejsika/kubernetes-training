@@ -152,52 +152,6 @@ or with `kn` alias of `kubens`
 kn training
 ```
 
-### Connect My Demo Cluster
-
-I recommend you using Minikube (or Kubernetes support in Docker Desktop), but if you can't run any of those local kubernetes clusters, you can connect to my Kubernetes cluster on Digital Ocean.
-
-Download & use my Digital Ocean Kubernetes confing (repository [ondrejsika/kubeconfig-sikademo](https://github.com/ondrejsika/kubeconfig-sikademo/)). This Kubernetes cluster is created by [ondrejsika/terraform-do-kubernetes-example](https://github.com/ondrejsika/terraform-do-kubernetes-example) on Digital Ocean.
-
-#### Using training-cli
-
-```
-training-cli kubernetes connect
-```
-
-#### Manually
-
-```
-curl -fsSL https://raw.githubusercontent.com/ondrejsika/kubeconfig-sikademo/master/kubeconfig | base64 --decode > kubeconfig
-```
-
-Copy it to `~/.kube/config`:
-
-```
-mkdir -p ~/.kube
-cp ~/.kube/config ~/.kube/config.$(date +%Y-%m-%d_%H-%M-%S).backup
-mv kubeconfig ~/.kube/config
-```
-
-#### Create owm namespace
-
-Create own namespace (eg.: `ondrejsika`) and set it as default
-
-```
-kubectl create ns ondrejsika
-```
-
-Switch to namespace
-
-```
-kubectl config set-context --current --namespace=ondrejsika
-```
-
-Using `kubens`
-
-```
-kn ondrejsika
-```
-
 ## Course
 
 ### Explain Kubernetes Resources
