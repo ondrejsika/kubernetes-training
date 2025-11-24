@@ -1511,9 +1511,33 @@ or
 kubectl get sc
 ```
 
-### PersistentVolumeClaim
+### Access Modes
 
-- AccessModes - <https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes>
+Docs: <https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes>
+
+**ReadWriteOnce**
+
+the volume can be mounted as read-write by a single node. ReadWriteOnce access mode still can allow multiple pods to access (read from or write to) that volume when the pods are running on the same node. For single pod access, please see ReadWriteOncePod.
+
+Used mostly for databases on block storage (azure-disk, ...).
+
+**ReadWriteMany**
+
+the volume can be mounted as read-write by many nodes.
+
+Mostly used in applications which need shared storage (like web servers) on file storage (azure-file, NFS, ...).
+
+#### Other (not so popular) Access Modes:
+
+**ReadOnlyMany**
+
+the volume can be mounted as read-only by many nodes.
+
+**ReadWriteOncePod**
+
+the volume can be mounted as read-write by a single Pod. Use ReadWriteOncePod access mode if you want to ensure that only one pod across the whole cluster can read that PVC or write to it.
+
+### PersistentVolumeClaim
 
 From default **StorageClass**
 
