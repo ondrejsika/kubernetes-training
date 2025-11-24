@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: nodename
 spec:
-  nodeName: minikube
+  nodeName: k3d-default-server-0
   containers:
     - name: hello
       image: ghcr.io/ondrejsika/training-example
