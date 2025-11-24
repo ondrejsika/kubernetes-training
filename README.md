@@ -1705,6 +1705,9 @@ See: <http://127.0.0.1:8001/api/v1/namespaces/training/pods/cephfs-volume-exampl
 
 ## ConfigMaps & Secrets
 
+- **ConfigMaps** - for non-sensitive configuration data.
+- **Secrets** - for sensitive data (passwords, tokens, keys).
+
 ### Create secret
 
 ```
