@@ -292,7 +292,7 @@ helm upgrade --install \
   --repo https://kubernetes-sigs.github.io/headlamp/ \
   headlamp \
   --namespace kube-system \
-  --values headlamp.values.yaml
+  --values examples/helm/values/headlamp.values.yaml
 ```
 
 Create token for Headlamp
