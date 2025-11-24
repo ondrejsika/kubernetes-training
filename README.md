@@ -746,7 +746,7 @@ kubectl apply -f statefulset24_1.yml
 From Kubernetes version 1.25
 
 ```
-kubectl apply -f statefulset25_1.yml
+kubectl apply -f statefulset25.yml
 ```
 
 ```
@@ -761,32 +761,6 @@ kubectl get sts,po
 ```
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world/proxy/>
-
-### Update StatefulSet
-
-See the difference
-
-```
-vimdiff statefulset24_1.yml statefulset24_2.yml
-```
-
-or
-
-```
-vimdiff statefulset25_1.yml statefulset25_2.yml
-```
-
-Upgrade statefull set
-
-```
-kubectl apply -f statefulset24_2.yml
-```
-
-or
-
-```
-kubectl apply -f statefulset25_2.yml
-```
 
 ### Headless Service
 
