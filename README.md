@@ -1210,7 +1210,7 @@ kubectl get all -l project=counter
 kubectl delete -f counter.yml
 ```
 
-## Liveness, Readiness & Startup Probes
+## Startup & Liveness Probes
 
 Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
 
