@@ -2352,7 +2352,7 @@ helm upgrade hello sikalabs/hello-world --set replicas=3
 or
 
 ```
-helm upgrade hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
+helm upgrade hello sikalabs/hello-world --set host=hello.lab0.sikademo.com
 ```
 
 ### Install or Upgrade
@@ -2360,7 +2360,7 @@ helm upgrade hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
 You can add `--install` to `helm upgrade` to install package if not exists. When chart exists, it will be upgraded.
 
 ```
-helm upgrade --install hello sikalabs/hello-world --set host=hello.127.0.0.1.nip.io
+helm upgrade --install hello sikalabs/hello-world --set host=hello.lab0.sikademo.com
 ```
 
 ### Helm History
@@ -2437,7 +2437,7 @@ helm show all sikalabs/one-image
 Install with values in args
 
 ```
-helm install hello-world sikalabs/one-image --set host=hello-world.127.0.0.1.nip.io
+helm install hello-world sikalabs/one-image --set host=hello-world.lab0.sikademo.com
 ```
 
 Install with values file on Minikube
@@ -2451,7 +2451,7 @@ helm install caddy sikalabs/one-image --values one-image-caddy-values.yml
 Install with values file and values args
 
 ```
-helm install nginx2 sikalabs/one-image --values one-image-nginx-values.yml --set host=nginx2.127.0.0.1.nip.io
+helm install nginx2 sikalabs/one-image --values one-image-nginx-values.yml --set host=nginx2.lab0.sikademo.com
 ```
 
 Install with values file on DigitalOcean
@@ -2534,13 +2534,13 @@ cp ../helm-counter.yaml templates/counter.yml
 
 ```
 helm template counter .
-helm template counter . --set host=counter.127.0.0.1.nip.io
+helm template counter . --set host=counter.lab0.sikademo.com
 ```
 
 #### Install
 
 ```
-helm install counter . --set host=counter.127.0.0.1.nip.io
+helm install counter . --set host=counter.lab0.sikademo.com
 ```
 
 #### Build Package
@@ -2581,7 +2581,7 @@ helm repo add sikademo https://helm.sikademo.com
 Install package
 
 ```
-helm install counter sikademo/counter --set host=counter.127.0.0.1.nip.io
+helm install counter sikademo/counter --set host=counter.lab0.sikademo.com
 ```
 
 ## Helm Operator
