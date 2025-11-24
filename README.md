@@ -814,20 +814,6 @@ kubectl get ds,po
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
-### Update DaemonSet
-
-See the difference
-
-```
-vimdiff daemonset.yml daemonset2.yml
-```
-
-Upgrade daemonset set
-
-```
-kubectl apply -f daemonset2.yml
-```
-
 ### Delete DaemonSet
 
 ```
