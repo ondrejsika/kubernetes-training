@@ -1491,11 +1491,13 @@ kubectl apply -f 01_pod.yml
 
 Image source: <https://medium.com/devops-mojo/kubernetes-storage-options-overview-persistent-volumes-pv-claims-pvc-and-storageclass-sc-k8s-storage-df71ca0fccc3>
 
-## PersistentVolume & PersistentVolumeClaim
+## StorageClass, PersistentVolumeClaim, PersistentVolume
 
-### Storage Classes
+- **StorageClass** - provides a way to select storage types. For example azure-disk (fast, expensive block storage) and azure-file (slower, cheap storage).
+- **PersistentVolumeClaim (PVC)** - a request for storage used by pods.
+- **PersistentVolume (PV)** - a piece of storage in the cluster that has been dynamically provisioned using Storage Classes or statically created by an administrator.
 
-A StorageClass provides a way for administrators to describe the "classes" of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators.
+### StorageClass
 
 Docs: <https://kubernetes.io/docs/concepts/storage/storage-classes/>
 
