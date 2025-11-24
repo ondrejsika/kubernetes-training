@@ -876,7 +876,7 @@ See service in Stateful Set.
 Example:
 
 ```
-kubectl run dev -ti --rm --image=sikalabs/dev -- bash
+kubectl run dev -ti --rm --image=ghcr.io/sikalabs/dev -- bash
 ```
 
 And try (inside of Kubernetes):
@@ -1037,7 +1037,7 @@ kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
 Create deployment from command line
 
 ```
-kubectl run dev -it --rm --image=sikalabs/dev -- zsh
+kubectl run dev -it --rm --image=ghcr.io/sikalabs/dev -- zsh
 ```
 
 Images on Github
@@ -1052,7 +1052,7 @@ Cleanup is not necessary, because `--rm` parameter deletes deployment after cont
 Run `sikalabs/dev`:
 
 ```
-alias kdev='kubectl run "dev-$(date +%s)" --rm -ti --image sikalabs/dev -- zsh'
+alias kdev='kubectl run "dev-$(date +%s)" --rm -ti --image=ghcr.io/sikalabs/dev -- zsh'
 ```
 
 ### Create Service ClusterIP
