@@ -36,6 +36,12 @@ For sharing links & "secrets".
 - Cloud & On-Premise
 - Technologies: Git, Gitlab, Gitlab CI, Docker, Kubernetes, Terraform, Prometheus, ELK / EFK, Rancher, Proxmox, DigitalOcean, AWS
 
+### Related Courses
+
+- ArgoCD - [Skoleni ArgoCD](https://ondrej-sika.cz/skoleni/argocd)
+- Prometheus (Monitoring & Alerting) - [Skoleni Prometheus](https://ondrej-sika.cz/skoleni/prometheus)
+- Loki (Log Management) - [Skoleni Loki](https://ondrej-sika.cz/skoleni/loki)
+
 ## Introduction to Kubernetes
 
 ### What is Kubernetes
