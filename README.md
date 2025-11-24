@@ -1373,23 +1373,6 @@ kubectl apply -f service.yml
 kubectl apply -f 01_pod.yml
 ```
 
-### Wordpress Example
-
-Start
-
-```
-kubectl create namespace wp
-kubectl -n wp apply -f 09_wordpress.yml
-```
-
-See: http://127.0.0.1:8001/api/v1/namespaces/wp/services/wordpress/proxy/
-
-Stop & delete
-
-```
-kubectl delete namespace wp
-```
-
 ## Storage & Volumes
 
 ## PersistentVolume & PersistentVolumeClaim
