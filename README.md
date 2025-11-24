@@ -1487,6 +1487,10 @@ kubectl apply -f 01_pod.yml
 
 ## Storage & Volumes
 
+![storage](_images/storage.png)
+
+Image source: <https://medium.com/devops-mojo/kubernetes-storage-options-overview-persistent-volumes-pv-claims-pvc-and-storageclass-sc-k8s-storage-df71ca0fccc3>
+
 ## PersistentVolume & PersistentVolumeClaim
 
 ### Storage Classes
