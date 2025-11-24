@@ -1756,12 +1756,6 @@ kubectl get secret my-secret -o jsonpath="{.data.password}" | base64 --decode &&
 kubectl get secret my-secret -o jsonpath="{.data.token}" | base64 --decode && echo
 ```
 
-or using **slu**
-
-```
-slu k8s get sec -s my-secret
-```
-
 ### Create ConfigMap
 
 ```
