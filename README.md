@@ -1023,25 +1023,13 @@ kubectl apply -f 06_nodeport_service.yml
 
 See: http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-nodeport/proxy/
 
-You can also open NodePort directly using:
-
-```
-minikube service hello-world-nodeport
-```
-
-or see url:
-
-```
-minikube service hello-world-nodeport --url
-```
-
 ### Create LoadBalancer Service
 
 ```
 kubectl apply -f loadbalancer.yml
 ```
 
-Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube. You have to have a loadbalancer provider.
+Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in k3d. You have to have a loadbalancer provider.
 
 ### MetalLB
 
@@ -1274,12 +1262,6 @@ See: http://127.0.0.1:8001/api/v1/namespaces/training/services/counter/proxy/
 kubectl get all -l project=counter
 ```
 
-### Open in Browser
-
-```
-minikube service counter
-```
-
 ### Delete Application
 
 ```
@@ -1304,8 +1286,6 @@ Example:
 kubectl apply -f init_containers.yml
 
 kubectl get -f init_containers.yml
-
-minikube service counter
 
 kubectl delete -f init_containers.yml
 ```
@@ -1462,12 +1442,6 @@ kubectl -n wp apply -f 09_wordpress.yml
 
 See: http://127.0.0.1:8001/api/v1/namespaces/wp/services/wordpress/proxy/
 
-Open
-
-```
-minikube -n wp service wordpress
-```
-
 Stop & delete
 
 ```
@@ -1545,10 +1519,11 @@ See <http://127.0.0.1:8001/api/v1/namespaces/longhorn-system/services/longhorn-f
 
 #### Make Longhorn Default Storage Class
 
-Clean is default from `do-block-storage` (DigitalOcean) and `standard` (Minikube).
+Clean is default from `do-block-storage` (DigitalOcean), `local-path` in k3d and `standard` (Minikube).
 
 ```
 kubectl patch storageclass do-block-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
@@ -2200,14 +2175,6 @@ kubectl delete -f probes_startup.yml
 
 ## Resource Consumption (`kubectl top`)
 
-We have to have [metric-server](https://github.com/kubernetes-sigs/metrics-server) installed.
-
-Minikube:
-
-```
-minikube addons enable metrics-server
-```
-
 Direct:
 
 ```
@@ -2271,13 +2238,7 @@ Api v1 (same as `kubectl autoscale`)
 kubectl apply -f hpa-fast.yml
 ```
 
-Run AB locally:
-
-```
-ab -c 4 -n 100000 $(minikube service hpa-service --url)/
-```
-
-or from Kubernetes (kubectl run):
+Run from Kubernetes (kubectl run):
 
 ```
 kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
@@ -2317,13 +2278,7 @@ kubectl get hpa
 
 ### Test Autoscaling
 
-Run AB locally
-
-```
-ab -c 4 -n 100000 $(minikube service hpa-service --url)/
-```
-
-or in Kubernetes (kubectl run):
+Run in Kubernetes (kubectl run):
 
 ```
 kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
