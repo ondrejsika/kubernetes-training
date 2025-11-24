@@ -1,0 +1,8 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: k3d
+  namespace: metallb-system
+spec:
+  addresses:
+    - 172.18.0.200 - 172.18.0.220
