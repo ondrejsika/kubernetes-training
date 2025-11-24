@@ -1220,6 +1220,42 @@ Use `/livez` instead of `/healthz` (deprecated)
 
 [source](https://www.jaktech.co.uk/java/difference-between-livez-readyz-and-healthz-in-kubernetes-cluster/)
 
+### Startup Probe
+
+```
+kubectl apply -f probes_startup.yml
+```
+
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=startup
+```
+
+Watch service:
+
+```
+watch -n 0.3 kubectl describe svc startup
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
+```
+
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
+```
+
+Cleanup
+
+```
+kubectl delete -f probes_startup.yml
+```
+
 ### Liveness Probe
 
 ```
@@ -1284,42 +1320,6 @@ Cleanup
 
 ```
 kubectl delete -f probes_readiness.yml
-```
-
-### Startup Probe
-
-```
-kubectl apply -f probes_startup.yml
-```
-
-Watch pods:
-
-```
-watch -n 0.3 kubectl get deploy,rs,po -l app=startup
-```
-
-Watch service:
-
-```
-watch -n 0.3 kubectl describe svc startup
-```
-
-Watch output:
-
-```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
-```
-
-or using slu watch
-
-```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
-```
-
-Cleanup
-
-```
-kubectl delete -f probes_startup.yml
 ```
 
 ## InitContainers
