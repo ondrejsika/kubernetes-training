@@ -1210,6 +1210,118 @@ kubectl get all -l project=counter
 kubectl delete -f counter.yml
 ```
 
+## Liveness, Readiness & Startup Probes
+
+Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
+
+### `/livez` vs `/healthz`
+
+Use `/livez` instead of `/healthz` (deprecated)
+
+[source](https://www.jaktech.co.uk/java/difference-between-livez-readyz-and-healthz-in-kubernetes-cluster/)
+
+### Liveness Probe
+
+```
+kubectl apply -f probes_liveness.yml
+```
+
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=liveness
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
+```
+
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
+```
+
+Cleanup
+
+```
+kubectl delete -f probes_liveness.yml
+```
+
+### Readiness Probe
+
+```
+kubectl apply -f probes_readiness.yml
+```
+
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=readiness
+```
+
+Watch service:
+
+```
+watch -n 0.3 kubectl describe svc readiness
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
+```
+
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
+```
+
+Cleanup
+
+```
+kubectl delete -f probes_readiness.yml
+```
+
+### Startup Probe
+
+```
+kubectl apply -f probes_startup.yml
+```
+
+Watch pods:
+
+```
+watch -n 0.3 kubectl get deploy,rs,po -l app=startup
+```
+
+Watch service:
+
+```
+watch -n 0.3 kubectl describe svc startup
+```
+
+Watch output:
+
+```
+watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
+```
+
+or using slu watch
+
+```
+slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
+```
+
+Cleanup
+
+```
+kubectl delete -f probes_startup.yml
+```
+
 ## InitContainers
 
 More about init containers here: <https://kubernetes.io/docs/concepts/workloads/pods/init-containers/>
@@ -1984,118 +2096,6 @@ curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/metrics
 
 ```
 curl -k --header "Authorization: Bearer $TOKEN" $APISERVER/api/v1/nodes
-```
-
-## Liveness, Readiness & Startup Probes
-
-Docs: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
-
-### `/livez` vs `/healthz`
-
-Use `/livez` instead of `/healthz` (deprecated)
-
-[source](https://www.jaktech.co.uk/java/difference-between-livez-readyz-and-healthz-in-kubernetes-cluster/)
-
-### Liveness Probe
-
-```
-kubectl apply -f probes_liveness.yml
-```
-
-Watch pods:
-
-```
-watch -n 0.3 kubectl get deploy,rs,po -l app=liveness
-```
-
-Watch output:
-
-```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
-```
-
-or using slu watch
-
-```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/liveness/proxy/
-```
-
-Cleanup
-
-```
-kubectl delete -f probes_liveness.yml
-```
-
-### Readiness Probe
-
-```
-kubectl apply -f probes_readiness.yml
-```
-
-Watch pods:
-
-```
-watch -n 0.3 kubectl get deploy,rs,po -l app=readiness
-```
-
-Watch service:
-
-```
-watch -n 0.3 kubectl describe svc readiness
-```
-
-Watch output:
-
-```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
-```
-
-or using slu watch
-
-```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/readiness/proxy/
-```
-
-Cleanup
-
-```
-kubectl delete -f probes_readiness.yml
-```
-
-### Startup Probe
-
-```
-kubectl apply -f probes_startup.yml
-```
-
-Watch pods:
-
-```
-watch -n 0.3 kubectl get deploy,rs,po -l app=startup
-```
-
-Watch service:
-
-```
-watch -n 0.3 kubectl describe svc startup
-```
-
-Watch output:
-
-```
-watch -n 0.3 curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
-```
-
-or using slu watch
-
-```
-slu w -- curl -fsSL http://127.0.0.1:8001/api/v1/namespaces/training/services/startup/proxy/
-```
-
-Cleanup
-
-```
-kubectl delete -f probes_startup.yml
 ```
 
 ## Resource Consumption (`kubectl top`)
