@@ -1055,6 +1055,8 @@ Run `sikalabs/dev`:
 alias kdev='kubectl run "dev-$(date +%s)" --rm -ti --image=ghcr.io/sikalabs/dev -- zsh'
 ```
 
+We have also `slu kdev` which does exactly the same.
+
 ### Create Service ClusterIP
 
 Create deploymnet again:
