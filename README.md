@@ -50,7 +50,7 @@ For sharing links & "secrets".
 
 ### What does Kubernetes do?
 
-- Abstract away the underlying hardware
+- Abstract away the underlying infrastructure - one large pool of resources
 - Deploy your desired state
 - Minimize manual tasks & toil
 - Auto Scaling & High Availability
