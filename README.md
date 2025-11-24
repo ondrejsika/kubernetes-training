@@ -2443,29 +2443,29 @@ helm install hello-world sikalabs/one-image --set host=hello-world.lab0.sikademo
 Install with values file on Minikube
 
 ```
-helm install nginx sikalabs/one-image --values one-image-nginx-values.yml
-helm install apache sikalabs/one-image --values one-image-apache-values.yml
-helm install caddy sikalabs/one-image --values one-image-caddy-values.yml
+helm install nginx sikalabs/one-image --values examples/helm/values/one-image-nginx.values.yml
+helm install apache sikalabs/one-image --values examples/helm/values/one-image-apache.values.yml
+helm install caddy sikalabs/one-image --values examples/helm/values/one-image-caddy.values.yml
 ```
 
 Install with values file and values args
 
 ```
-helm install nginx2 sikalabs/one-image --values one-image-nginx-values.yml --set host=nginx2.lab0.sikademo.com
+helm install nginx2 sikalabs/one-image --values examples/helm/values/one-image-nginx.values.yml --set host=nginx2.lab0.sikademo.com
 ```
 
 Install with values file on DigitalOcean
 
 ```
 helm install nginx sikalabs/one-image \
-  -f one-image-nginx-values.yml \
-  -f one-image-nginx-values-do.yml
+  -f examples/helm/values/one-image-nginx.values.yml \
+  -f examples/helm/values/one-image-nginx-do.values.yml
 helm install apache sikalabs/one-image \
-  -f one-image-apache-values.yml \
-  -f one-image-apache-values-do.yml
+  -f examples/helm/values/one-image-apache.values.yml \
+  -f examples/helm/values/one-image-apache-do.values.yml
 helm install caddy sikalabs/one-image \
-  -f one-image-caddy-values.yml \
-  -f one-image-caddy-values-do.yml
+  -f examples/helm/values/one-image-caddy.values.yml \
+  -f examples/helm/values/one-image-caddy-do.values.yml
 ```
 
 ### Own Helm Package
