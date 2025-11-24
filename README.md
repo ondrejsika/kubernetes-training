@@ -315,7 +315,6 @@ Go to Headlamp: <https://headlamp.k8s.sikademo.com>
 ### Kubectl Cheat Sheets
 
 - https://kubernetes.io/docs/reference/kubectl/quick-reference/
-- https://aiidecoe.com/images/Kubernetes%20Cheat%20Sheet.pdf
 
 ### Create Pod
 
