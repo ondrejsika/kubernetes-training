@@ -14,7 +14,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: main
-          image: sikalabs/dev
+          image: ghcr.io/sikalabs/dev
           command:
             - /bin/bash
             - -c
