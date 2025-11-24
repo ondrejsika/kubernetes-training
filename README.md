@@ -1499,7 +1499,11 @@ List Storage Classes:
 
 ```
 kubectl get storageclass
-# or
+```
+
+or
+
+```
 kubectl get sc
 ```
 
