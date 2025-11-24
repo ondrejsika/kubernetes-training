@@ -562,30 +562,6 @@ Delete pods
 kubectl delete -f 01_pod.yml -f 02_pod.yml -f private_pod.yml -f pod_redis.yml -f pod_php.yaml
 ```
 
-### Pods Without Service Links (in the Environment)
-
-```
-kubectl apply -f pod_without_service_links.yml
-```
-
-See the env of each pod
-
-```
-kubectl logs pod-with-service-links
-```
-
-```
-kubectl logs pod-without-service-links
-```
-
-See the diff
-
-```
-vimdiff <(kubectl logs pod-with-service-links) <(kubectl logs pod-without-service-links)
-```
-
-![pod-without-service-links](./_images/pod-without-service-links.png)
-
 ### Create Replica Set
 
 ```
@@ -2757,3 +2733,29 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 - https://github.com/sika-training-examples/2025-10-08_ataccama-helm-example (Helm chart)
 - https://github.com/sika-training-examples/2025-10-09_ataccama_argocd_apps (ArgoCD Apps)
 - https://github.com/sika-training-examples/2025-10-09_ataccama_values (Values for Helm chart from ArgoCD)
+
+## Advanced Topics
+
+### Pods Without Service Links (in the Environment)
+
+```
+kubectl apply -f pod_without_service_links.yml
+```
+
+See the env of each pod
+
+```
+kubectl logs pod-with-service-links
+```
+
+```
+kubectl logs pod-without-service-links
+```
+
+See the diff
+
+```
+vimdiff <(kubectl logs pod-with-service-links) <(kubectl logs pod-without-service-links)
+```
+
+![pod-without-service-links](./_images/pod-without-service-links.png)
