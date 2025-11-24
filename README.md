@@ -740,7 +740,7 @@ kubectl get po -l app=topology-spread-constraints -o wide
 Up to Kubernetes version 1.24
 
 ```
-kubectl apply -f statefulset24_1.yml
+kubectl apply -f statefulset24.yml
 ```
 
 From Kubernetes version 1.25
