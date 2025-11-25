@@ -1,0 +1,3 @@
+image: redmine
+host: redmine.lab0.sikademo.com
+containerPort: 3000
