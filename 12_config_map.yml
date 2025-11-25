@@ -16,5 +16,3 @@ data:
   hello.html: |
     <h1>Hello from ConfigMap</h1>
     <p>This is stored in ConfigMap</p>
-binaryData:
-  password: c2VjcmV0a2V5
