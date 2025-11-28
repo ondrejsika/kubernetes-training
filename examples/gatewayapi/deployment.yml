@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gwapitest
+spec:
+  revisionHistoryLimit: 0
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gwapitest
+  template:
+    metadata:
+      labels:
+        app: gwapitest
+    spec:
+      containers:
+        - name: main
+          image: ghcr.io/ondrejsika/training-example
+          ports:
+            - containerPort: 80
+          env:
+            - name: TEXT
+              value: "Hello T-Mobile from GatewayAPI!"
+          resources:
+            requests:
+              cpu: 20m
+              memory: 20Mi
+            limits:
+              memory: 40Mi
