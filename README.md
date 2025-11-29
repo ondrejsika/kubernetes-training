@@ -1881,6 +1881,14 @@ Source: https://dbafromthecold.com/2020/02/21/merge-kubectl-config-files-on-wind
 
 ### RBAC
 
+### Who am I?
+
+```
+kubectl auth whoami
+```
+
+### Api Resources
+
 Show all api resources (with verbs)
 
 ```
