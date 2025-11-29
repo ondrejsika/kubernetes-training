@@ -1,2 +1,3 @@
 kube-prometheus
 examples/helm/
+*.local.json
