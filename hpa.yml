@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hpav1-web
+  name: autoscaling-example
 spec:
   selector:
     matchLabels:
-      app: hpav1-web
-  replicas: 10
+      app: autoscaling-example
+  replicas: 2
   template:
     metadata:
       labels:
-        app: hpav1-web
+        app: autoscaling-example
     spec:
       containers:
         - name: app
-          image: ondrejsika/go-hello-world:2
+          image: ghcr.io/ondrejsika/training-example
           ports:
             - containerPort: 80
           resources:
@@ -28,24 +28,31 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hpa-service
+  name: autoscaling-example
 spec:
-  type: NodePort
   ports:
     - port: 80
-      targetPort: 80
   selector:
-    app: hpav1-web
+    app: autoscaling-example
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpav1
+  name: autoscaling-example
 spec:
-  maxReplicas: 30
-  minReplicas: 10
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: hpav1-web
-  targetCPUUtilizationPercentage: 90
+    name: autoscaling-example
+  minReplicas: 4
+  maxReplicas: 30
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 0
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          averageUtilization: 90
+          type: Utilization

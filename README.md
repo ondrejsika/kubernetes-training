@@ -2188,42 +2188,20 @@ If you requests 200 milli-cores to pod, 50% means that Kubernetes autoscaler kee
 
 ### Create HPA
 
-Api v1 (same as `kubectl autoscale`)
-
 ```
-kubectl apply -f hpa-fast.yml
-```
-
-Run from Kubernetes (kubectl run):
-
-```
-kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
-```
-
-or using Kubernetes job:
-
-```
-kubectl apply -f ab.yml
+kubectl apply -f hpa.yml
 ```
 
 See autoscaling at work
 
 ```
-watch -n 0.3 -d kubectl get -f hpa-fast.yml
+watch -n 0.3 -d kubectl get hpa,deploy,po
 ```
 
-Real HPA example
-
-See:
+Run laod (using ab - apache benchmark) from Kubernetes (kubectl run):
 
 ```
-vimdiff hpa-fast.yml hpa-real.yml
-```
-
-Try:
-
-```
-kubectl apply -f hpa-real.yml
+kubectl run ab --image=ghcr.io/sikalabs/dev --rm -ti -- ab -c 4 -n 100000 http://autoscaling-example/
 ```
 
 ### Get HPAs
@@ -2232,37 +2210,10 @@ kubectl apply -f hpa-real.yml
 kubectl get hpa
 ```
 
-### Test Autoscaling
-
-Run in Kubernetes (kubectl run):
-
-```
-kubectl run ab --image=ondrejsika/ab --rm -ti -- ab -c 4 -n 100000 http://hpa-service/
-```
-
-or using Kubernetes job:
-
-```
-kubectl apply -f ab.yml
-```
-
-And see
-
-```
-kubectl get hpa,po
-```
-
 ### Delete HPA
 
 ```
 kubectl delete -f hpa.yml
-```
-
-and clean up
-
-```
-kubectl delete hpa/hello-world
-kubectl delete -f 04_deployment.yml
 ```
 
 ## Helm
