@@ -1917,8 +1917,21 @@ kubectl --as system:serviceaccount:default:default get no
 
 ### Can I
 
+List my permissions:
+
+```
+kubectl auth can-i --list
+```
+
+test permissions:
+
 ```
 kubectl auth can-i get po
+```
+
+As another user:
+
+```
 kubectl auth can-i --as system:anonymous get po
 ```
 
