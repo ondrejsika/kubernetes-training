@@ -211,32 +211,6 @@ kubectl get no k3d-default-server-0 -o jsonpath="{.status.addresses[0].address }
 kubectl get no -o jsonpath="{range .items[*]}{.status.addresses[0].address} {.status.addresses[1].address}{'\n'}{end}"
 ```
 
-### Proxy to cluster
-
-Start proxy
-
-```
-kubectl proxy
-```
-
-Change port
-
-```
-kubectl proxy -p 8002
-```
-
-**DO NOT RUN IN PRODODUCTION**: Run proxy on all interfaces and allow all hosts - for training only
-
-```
-kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
-```
-
-On lab VM, you can also run proxy in Docker:
-
-```
-docker run -d --name proxy --net host -v /root:/root sikalabs/kubectl kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
-```
-
 ### Dashboard
 
 #### Headlamp
@@ -339,14 +313,7 @@ kubectl get po -o jsonpath="{range .items[*]}{.spec.containers[0].image}{'\n'}{e
 kubectl get po -o custom-columns="name:{.metadata.name},namespace:{.metadata.namespace},ip:{.status.podIP}"
 ```
 
-### See Pods
-
-See:
-
-- http://127.0.0.1:8001/api/v1/namespaces/training/pods/simple-hello-world/proxy/
-- http://127.0.0.1:8001/api/v1/namespaces/training/pods/multi-container-pod/proxy/
-
-or using port forward:
+### Port Forward
 
 ```
 kubectl port-forward simple-hello-world 8000:80
@@ -378,7 +345,42 @@ redis-cli ping
 
 ![](./_images/port-forward-redis.png)
 
-Get Pod from file:
+### Proxy to cluster
+
+Start proxy
+
+```
+kubectl proxy
+```
+
+Change port
+
+```
+kubectl proxy -p 8002
+```
+
+**DO NOT RUN IN PRODODUCTION**: Run proxy on all interfaces and allow all hosts - for training only
+
+```
+kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
+```
+
+On lab VM, you can also run proxy in Docker:
+
+```
+docker run -d --name proxy --net host -v /root:/root sikalabs/kubectl kubectl proxy --address 0.0.0.0 --accept-hosts=".*"
+```
+
+### See Pods using kubectl proxy
+
+See:
+
+- http://127.0.0.1:8001/api/v1/namespaces/training/pods/simple-hello-world/proxy/
+- http://127.0.0.1:8001/api/v1/namespaces/training/pods/multi-container-pod/proxy/
+
+### Get from file
+
+Get pods from file
 
 ```
 kubectl get -f 01_pod.yml
