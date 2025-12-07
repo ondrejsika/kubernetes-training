@@ -77,6 +77,7 @@ In cloud:
 
 On-premise:
 
+- Upstream Kubernetes (vanilla, kubeadm)
 - Rancher (rke2, k3s)
 - OpenShift
 - VMware Tanzu
