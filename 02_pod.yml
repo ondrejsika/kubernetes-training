@@ -5,6 +5,7 @@ metadata:
   labels:
     app: multi-container-pod
     svc: example
+    as: df
 spec:
   volumes:
     - name: html
