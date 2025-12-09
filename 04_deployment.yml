@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: my-deployment
 spec:
   revisionHistoryLimit: 0
   replicas: 2
@@ -10,11 +10,11 @@ spec:
   #   type: Recreate
   selector:
     matchLabels:
-      app: hello-world
+      app: my-deployment
   template:
     metadata:
       labels:
-        app: hello-world
+        app: my-deployment
         svc: example
     spec:
       containers:
