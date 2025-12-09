@@ -792,7 +792,7 @@ See service in Stateful Set.
 Example:
 
 ```
-kubectl run dev -ti --rm --image=ghcr.io/sikalabs/dev -- bash
+kubectl run dev -ti --rm --image=ghcr.io/sikalabs/dev
 ```
 
 And try (inside of Kubernetes):
