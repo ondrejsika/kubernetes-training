@@ -5,6 +5,7 @@ metadata:
   labels:
     app: simple-hello-world
     svc: example
+    as: df
 spec:
   containers:
     - name: main
