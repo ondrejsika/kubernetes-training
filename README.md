@@ -575,7 +575,13 @@ kubectl apply -f 03_replica_set.yml
 
 ```
 kubectl get replicasets
+```
+
+```
 kubectl get rs
+```
+
+```
 kubectl get rs,po
 ```
 
@@ -584,7 +590,7 @@ See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/ser
 or using port forward:
 
 ```
-kubectl port-forward rs/hello-world-rs 8000:80
+kubectl port-forward rs/my-rs 8000:80
 ```
 
 See: <http://127.0.0.1:8000>
@@ -593,9 +599,12 @@ See: <http://127.0.0.1:8000>
 
 ```
 kubectl delete -f 03_replica_set.yml
+```
 
-# or
-kubectl delete rs/hello-world-rs
+or
+
+```
+kubectl delete rs/my-rs
 ```
 
 ### Well-Known Labels, Annotations and Taints
