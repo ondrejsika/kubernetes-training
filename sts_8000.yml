@@ -43,7 +43,7 @@ spec:
             - containerPort: 8000
           env:
             - name: PORT
-              value: '8000'
+              value: "8000"
           resources:
             requests:
               cpu: 10m
