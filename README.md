@@ -620,14 +620,20 @@ kubectl apply -f 04_deployment.yml
 You can wait until Deployment (DaemonSet, StatefulSet) will be rolled out
 
 ```
-kubectl rollout status deployment hello-world
+kubectl rollout status deployment my-deployment
 ```
 
 ### List Deployments
 
 ```
 kubectl get deployments
+```
+
+```
 kubectl get deploy
+```
+
+```
 kubectl get deploy,rs,po
 ```
 
@@ -636,7 +642,7 @@ See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/ser
 or using port forward:
 
 ```
-kubectl port-forward deploy/hello-world 8000:80
+kubectl port-forward deploy/my-deployment 8000:80
 ```
 
 See: <http://127.0.0.1:8000>
@@ -652,13 +658,13 @@ kubectl apply -f 04_deployment.yml
 Wait until deployment will be rolled out
 
 ```
-kubectl rollout status deployment hello-world
+kubectl rollout status deployment my-deployment
 ```
 
 ### Restart Deployment
 
 ```
-kubectl rollout restart deploy hello-world
+kubectl rollout restart deploy my-deployment
 ```
 
 ### Clean up Policy
@@ -669,9 +675,12 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#clean-up-p
 
 ```
 kubectl delete -f 04_deployment.yml
+```
 
-# or
-kubectl delete deploy/hello-world
+or
+
+```
+kubectl delete deploy/my-deployment
 ```
 
 ## Deployment Strategies
