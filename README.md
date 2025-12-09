@@ -781,7 +781,7 @@ kubectl get sts
 kubectl get sts,po
 ```
 
-See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world/proxy/>
+See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-headless/proxy/>
 
 ### Headless Service
 
@@ -798,14 +798,14 @@ kubectl run dev -ti --rm --image=ghcr.io/sikalabs/dev -- bash
 And try (inside of Kubernetes):
 
 ```
-host hello-world
-host hello-world-0.hello-world
-host hello-world-1.hello-world
+host hello-world-headless
+host hello-world-0.hello-world-headless
+host hello-world-1.hello-world-headless
 
-curl hello-world
-curl hello-world
-curl hello-world-0.hello-world
-curl hello-world-1.hello-world
+curl hello-world-headless
+curl hello-world-headless
+curl hello-world-0.hello-world-headless
+curl hello-world-1.hello-world-headless
 ```
 
 ![headless-service-example](./_images/headless-service-example.png)
