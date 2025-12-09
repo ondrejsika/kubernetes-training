@@ -409,13 +409,21 @@ kubectl exec -ti redis -- redis-cli
 Defaut container is first one in multi-container pod
 
 ```
-kubectl exec -ti multi-container-pod -- bash
+kubectl exec multi-container-pod -- ls /usr/share/nginx/html
+```
+
+```
+kubectl exec multi-container-pod -- ls /html
 ```
 
 Connect specific container
 
 ```
-kubectl exec -ti multi-container-pod -c date -- bash
+kubectl exec multi-container-pod -c date -- ls /html
+```
+
+```
+kubectl exec multi-container-pod -c date -- ls /usr/share/nginx/html
 ```
 
 ### Pod Logs
