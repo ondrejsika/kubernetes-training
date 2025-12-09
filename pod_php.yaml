@@ -18,6 +18,8 @@ spec:
           cpu: 100m
     - name: nginx
       image: ondrejsika/php-example-nginx
+      ports:
+        - containerPort: 80
       resources:
         requests:
           memory: 50Mi
