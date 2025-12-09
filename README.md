@@ -2441,6 +2441,22 @@ helm install caddy sikalabs/one-image \
   -f examples/helm/values/one_image/caddy-do.values.yml
 ```
 
+Install with lab0 values
+
+```
+helm install nginx sikalabs/one-image \
+  -f examples/helm/values/one_image/nginx.values.yml \
+  -f examples/helm/values/one_image/nginx_lab0.values.yml
+
+helm install apache sikalabs/one-image \
+  -f examples/helm/values/one_image/apache.values.yml \
+  -f examples/helm/values/one_image/apache_lab0.values.yml
+
+helm install caddy sikalabs/one-image \
+  -f examples/helm/values/one_image/caddy.values.yml \
+  -f examples/helm/values/one_image/caddy_lab0.values.yml
+```
+
 ### Own Helm Package
 
 You can init package using
