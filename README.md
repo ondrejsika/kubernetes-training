@@ -1427,6 +1427,12 @@ kubectl apply -f counter.yml -n counter
 
 See: http://127.0.0.1:8001/api/v1/namespaces/counter/services/counter/proxy/
 
+### Deploy to Namespace using metadata.namespace
+
+```
+kubectl apply -f deployment_in_namespace.yml
+```
+
 ### Switch Namespace in Current Context
 
 ```
