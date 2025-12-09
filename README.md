@@ -219,7 +219,7 @@ kubectl get no -o jsonpath="{range .items[*]}{.status.addresses[0].address} {.st
 - https://github.com/kubernetes-sigs/headlamp
 - https://headlamp.dev/docs/latest/installation/in-cluster/#using-helm
 
-#### Install Headlamp
+#### Install Headlamp on DigitalOcean (k8s.sikademo.com)
 
 ```
 helm upgrade --install \
@@ -237,6 +237,30 @@ kubectl create token headlamp --namespace kube-system
 ```
 
 Go to Headlamp: <https://headlamp.k8s.sikademo.com>
+
+#### Install Headlamp on lab0 (local k3d cluster, lab0.sikademo.com)
+
+```
+helm upgrade --install \
+  headlamp \
+  --repo https://kubernetes-sigs.github.io/headlamp/ \
+  headlamp \
+  --namespace kube-system
+```
+
+Create token for Headlamp
+
+```
+kubectl create token headlamp --namespace kube-system
+```
+
+Run port-forward
+
+```
+kubectl port-forward -n kube-system svc/headlamp 4466:80 --address 0.0.0.0
+```
+
+Go to Headlamp: <http://lab0.sikademo.com:4466>
 
 ### K9s - CLI Dashboard
 
