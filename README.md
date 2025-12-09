@@ -270,6 +270,7 @@ kubectl apply --dry-run=server -f pod_invalid_yaml.yml
 
 ```
 kubectl get pods
+kubectl get pod
 kubectl get po
 ```
 
