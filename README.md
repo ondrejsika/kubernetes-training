@@ -620,14 +620,6 @@ kubectl get rs,po
 
 See pods in service proxy: <http://127.0.0.1:8001/api/v1/namespaces/training/services/example/proxy/>
 
-or using port forward:
-
-```
-kubectl port-forward rs/my-rs 8000:80
-```
-
-See: <http://127.0.0.1:8000>
-
 ### Delete Replica Set
 
 ```
