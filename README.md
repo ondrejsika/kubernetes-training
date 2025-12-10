@@ -218,7 +218,7 @@ kubectl get no -o jsonpath="{range .items[*]}{.status.addresses[0].address} {.st
 - https://k9scli.io/
 - https://github.com/derailed/k9s
 
-#### Headlamp
+### Headlamp
 
 - https://headlamp.dev
 - https://github.com/kubernetes-sigs/headlamp
