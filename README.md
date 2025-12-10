@@ -1071,7 +1071,7 @@ kubectl delete deploy/hello-world
 
 Ingress Controllers - <https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/>
 
-### Install Ingress Nginx on DigitalOcean
+### Install Ingress Nginx on DigitalOcean and k3d (lab)
 
 ```
 helm upgrade --install \
