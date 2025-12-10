@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend
+  namespace: ns2
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - netpol-namespace-isolation-ns2.k8s2.sikademo.com
+      secretName: netpol-namespace-isolation-ns2.k8s2.sikademo.com-tls
+  rules:
+    - host: netpol-namespace-isolation-ns2.k8s2.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
