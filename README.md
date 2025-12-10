@@ -629,7 +629,7 @@ kubectl delete -f 03_replica_set.yml
 or
 
 ```
-kubectl delete rs/my-rs
+kubectl delete rs/my-replicaset
 ```
 
 ### Well-Known Labels, Annotations and Taints
