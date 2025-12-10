@@ -213,6 +213,11 @@ kubectl get no -o jsonpath="{range .items[*]}{.status.addresses[0].address} {.st
 
 ### Dashboard
 
+### K9s - CLI Dashboard
+
+- https://k9scli.io/
+- https://github.com/derailed/k9s
+
 #### Headlamp
 
 - https://headlamp.dev
@@ -261,11 +266,6 @@ kubectl port-forward -n kube-system svc/headlamp 4466:80 --address 0.0.0.0
 ```
 
 Go to Headlamp: <http://lab0.sikademo.com:4466>
-
-### K9s - CLI Dashboard
-
-- https://k9scli.io/
-- https://github.com/derailed/k9s
 
 ### VS Code Kubernetes Plugin
 
