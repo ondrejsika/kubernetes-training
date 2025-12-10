@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: my-rs
+  name: my-replicaset
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-rs
+      app: my-replicaset
   template:
     metadata:
       labels:
-        app: my-rs
+        app: my-replicaset
         svc: example
     spec:
       containers:
