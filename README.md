@@ -964,7 +964,13 @@ kubectl delete -f job.yml -f parallel_jobs.yml -f cronjob.yml
 Create a pod from command line
 
 ```
-kubectl run dev -it --rm --image=ghcr.io/sikalabs/dev -- zsh
+kubectl run dev -it --rm --image=ghcr.io/sikalabs/dev
+```
+
+with custom command
+
+```
+kubectl run dev -it --rm --image=ghcr.io/sikalabs/dev -- bash
 ```
 
 Images on Github
