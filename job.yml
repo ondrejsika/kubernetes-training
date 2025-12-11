@@ -6,8 +6,6 @@ spec:
   ttlSecondsAfterFinished: 20
   activeDeadlineSeconds: 600
   template:
-    metadata:
-      name: pi
     spec:
       restartPolicy: Never
       # restartPolicy: OnFailure
