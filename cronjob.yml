@@ -6,8 +6,8 @@ spec:
   # https://crontab.guru/
   schedule: "*/1 * * * *"
   concurrencyPolicy: Allow
-  # concurrencyPolicy: Replace
   # concurrencyPolicy: Forbid
+  # concurrencyPolicy: Replace
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 1
   jobTemplate:
