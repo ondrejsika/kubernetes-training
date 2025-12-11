@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nfs-client
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - nfs-client.k8s.sikademo.com
+      secretName: nfs-client.k8s.sikademo.com-tls
+  rules:
+    - host: nfs-client.k8s.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nfs-client
+                port:
+                  number: 80
