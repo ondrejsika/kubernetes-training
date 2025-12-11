@@ -36,12 +36,12 @@ func main() {
 			w.WriteHeader(200)
 			w.Write([]byte(fmt.Sprintf("[%s] Server will be healthy forever\n", hostname)))
 		} else {
-			if time.Now().Second() > 30 {
-				w.WriteHeader(500)
-				w.Write([]byte(fmt.Sprintf("[%s] Not Ready\n", hostname)))
-			} else {
+			if time.Now().Second() < 30 {
 				w.WriteHeader(200)
 				w.Write([]byte(fmt.Sprintf("[%s] Ready\n", hostname)))
+			} else {
+				w.WriteHeader(500)
+				w.Write([]byte(fmt.Sprintf("[%s] Not Ready\n", hostname)))
 			}
 		}
 	})
