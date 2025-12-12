@@ -2747,6 +2747,14 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 
 ## Past Training Sessions
 
+### 2025-12-10 Public Training
+
+- https://github.com/sika-training-examples/2025-12-10_counter_kubernetes_example
+- https://github.com/sika-training-examples/2025-12-11_sealed_secrert_example
+- https://github.com/sika-training-examples/2025-12-11_counter_helm_example
+- https://github.com/sika-training-examples/2025-12-11_helm_repo_example
+- https://github.com/sika-training-examples/2025-12-11_argocd_apps_example
+
 ### 2025-12-08 Public Training
 
 - https://github.com/sika-training-examples/2025-12-08_counter_kubernetes_example
