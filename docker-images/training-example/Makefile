@@ -28,6 +28,7 @@ build-push-all:
 	@make build-push-ataccama
 	@make build-push-ica
 	@make build-push-dhl
+	@make build-push-egd
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -142,6 +143,9 @@ build-push-ica:
 build-push-dhl:
 	@make _build-push NAME=dhl
 
+build-push-egd:
+	@make _build-push NAME=egd
+
 # === Use ===
 
 use-default:
@@ -233,3 +237,6 @@ use-ica:
 
 use-dhl:
 	@make _use NAME=dhl
+
+use-egd:
+	@make _use NAME=egd
