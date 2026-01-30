@@ -49,7 +49,7 @@ use-digiteq:
 use-ceps:
 	@make _use NAME=ceps
 
-use-ceps:
+use-gpe:
 	@make _use NAME=gpe
 
 use-generali:
