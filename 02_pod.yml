@@ -26,7 +26,7 @@ spec:
           memory: 50Mi
           cpu: 30m
     - name: date
-      image: debian:12-slim
+      image: debian:13-slim
       volumeMounts:
         - name: html
           mountPath: /html
