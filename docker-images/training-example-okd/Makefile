@@ -5,6 +5,7 @@ build-push-all:
 	@make build-push-gpe
 	@make build-push-generali
 	@make build-push-ica
+	@make build-push-egd
 
 _build-push:
 	docker build --platform linux/amd64 \
@@ -40,6 +41,9 @@ build-push-generali:
 build-push-ica:
 	@make _build-push NAME=ica
 
+build-push-egd:
+	@make _build-push NAME=egd
+
 use-ondrejsika:
 	@make _use NAME=ondrejsika
 
@@ -57,3 +61,6 @@ use-generali:
 
 use-ica:
 	@make _use NAME=ica
+
+use-egd:
+	@make _use NAME=egd
