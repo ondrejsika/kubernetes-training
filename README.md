@@ -136,6 +136,10 @@ The `--ports` parameter is necessary for using Ingress Controller in Minikube.
 
 ![minikube_start_2026.png](./_images/minikube_start_2026.png)
 
+Works also on Windows
+
+![minikube_start_2026_windows.png](./_images/minikube_start_2026_windows.png)
+
 ### Switch to training namespace
 
 Create namespace `training`
