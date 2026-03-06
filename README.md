@@ -476,6 +476,18 @@ From Kubernetes 1.24 you can see logs from first container by default
 kubectl logs multi-container-pod
 ```
 
+Logs by selector
+
+```
+kubectl logs -l svc=example
+```
+
+with `--max-log-requests` (Specify maximum number of concurrent logs to follow when using by a selector. Defaults to 5.)
+
+```
+kubectl logs -l svc=example --max-log-requests=10
+```
+
 ### Assigning Pods to Nodes
 
 Docs - <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/>
