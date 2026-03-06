@@ -101,8 +101,8 @@ On-premise:
 - **kubectl** - Kubernetes client
 - **helm** - Package manager
 - **k9s** - CLI Dashboard
-- **k3d** - run [k3s](https://k3s.io) Kubernetes locally in Docker (we will use this for the training)
-- **minikube** - Run Kubernetes locally (we don't use this for the training)
+- **minikube** - run Kubernetes locally in Docker (we will use this for the training)
+- **k3d** - run [k3s](https://k3s.io) Kubernetes locally in Docker
 
 ## 12 Factor Apps
 
@@ -120,18 +120,21 @@ Checkout install instructions here
 
 - <https://ondrej-sika.cz/navody/lokalni-instalace-kubernetes/> (in Czech)
 
-### Start k3d Kubernetes Cluster
+### Start Kubernetes Cluster in Minikube
 
 ```
-k3d cluster create default \
-  --k3s-arg --disable=traefik@server:0 \
-  --servers 1 \
-  --port 80:80@loadbalancer \
-  --port 443:443@loadbalancer \
-  --wait
+minikube start --driver=docker --ports=80:80,443:443
 ```
 
-![k3d_cluster_create.png](./_images/k3d_cluster_create.png)
+if u run as root (like in training labs), you have to use `--force`
+
+```
+minikube start --driver=docker --ports=80:80,443:443 --force
+```
+
+The `--ports` parameter is necessary for using Ingress Controller in Minikube.
+
+![minikube_start_2026.png](./_images/minikube_start_2026.png)
 
 ### Switch to training namespace
 
@@ -188,23 +191,23 @@ kubectl get no
 ```
 
 ```
-kubectl get no k3d-default-server-0
+kubectl get no minikube
 ```
 
 ```
-kubectl get no/k3d-default-server-0
+kubectl get no/minikube
 ```
 
 ```
-kubectl get no k3d-default-server-0 -o yaml
+kubectl get no minikube -o yaml
 ```
 
 ```
-kubectl get no k3d-default-server-0 -o json
+kubectl get no minikube -o json
 ```
 
 ```
-kubectl get no k3d-default-server-0 -o jsonpath="{.status.addresses[0].address }{'\n'}"
+kubectl get no minikube -o jsonpath="{.status.addresses[0].address }{'\n'}"
 ```
 
 ```
@@ -243,7 +246,7 @@ kubectl create token headlamp --namespace kube-system
 
 Go to Headlamp: <https://headlamp.k8s.sikademo.com>
 
-#### Install Headlamp on lab0 (local k3d cluster, lab0.sikademo.com)
+#### Install Headlamp on lab0 (local minikube cluster, lab0.sikademo.com)
 
 ```
 helm upgrade --install \
@@ -319,7 +322,7 @@ kubectl get po/redis po/simple-hello-world
 ```
 
 ```
-kubectl get po/redis no/k3d-default-server-0
+kubectl get po/redis no/minikube
 ```
 
 ```
@@ -515,7 +518,7 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 Example
 
 ```
-kubectl label nodes k3d-default-server-0 foo=bar
+kubectl label nodes minikube foo=bar
 ```
 
 ### Select by label (nodeSelector)
@@ -1035,7 +1038,7 @@ See: http://127.0.0.1:8001/api/v1/namespaces/training/services/hello-world-nodep
 kubectl apply -f loadbalancer.yml
 ```
 
-Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in k3d. You have to have a loadbalancer provider.
+Wait until get external IP address. Works only in public clouds (like Digital Ocean, AWS) NOT in minikube. You have to have a loadbalancer provider.
 
 ### MetalLB
 
@@ -1081,7 +1084,7 @@ kubectl delete deploy/hello-world
 
 Ingress Controllers - <https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/>
 
-### Install Ingress Nginx on DigitalOcean and k3d (lab)
+### Install Ingress Nginx on DigitalOcean and Minikube (lab)
 
 ```
 helm upgrade --install \
@@ -2078,7 +2081,7 @@ kubectl config set-credentials admin --token=$(slu k8s token -n kube-system -s a
 Set new user to context:
 
 ```
-kubectl  config set-context admin --user=admin --cluster=k3d-default-server-0
+kubectl  config set-context admin --user=admin --cluster=minikube
 ```
 
 Use new user to context:
@@ -2120,7 +2123,7 @@ Add to user to config and change context user
 ```
 kubectl config set-credentials read --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts read-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config set-context read --user=read --cluster=k3d-default-server-0
+kubectl config set-context read --user=read --cluster=minikube
 
 kubectl config use-context read
 ```
@@ -2148,7 +2151,7 @@ And create user, also with default namespace changed to `devel`
 ```
 kubectl config set-credentials devel --token=$(kubectl -n devel get secret $(kubectl -n devel get serviceaccounts devel-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config set-context devel --user=devel --namespace=devel  --cluster=k3d-default-server-0
+kubectl config set-context devel --user=devel --namespace=devel  --cluster=minikube
 
 kubectl config use-context devel
 ```
@@ -2176,7 +2179,7 @@ Create context and use it
 ```
 kubectl config set-credentials metrics --token=$(kubectl -n kube-system get secret $(kubectl -n kube-system get serviceaccounts metrics-user -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode)
 
-kubectl config set-context --user=metrics --cluster=k3d-default-server-0 metrics
+kubectl config set-context --user=metrics --cluster=minikube metrics
 
 kubectl config use-context metrics
 ```
