@@ -33,7 +33,7 @@ build-push-digiteq:
 build-push-ceps:
 	@make _build-push NAME=ceps
 
-build-push-ceps:
+build-push-gpe:
 	@make _build-push NAME=gpe
 
 build-push-generali:

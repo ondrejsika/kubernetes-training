@@ -137,9 +137,6 @@ build-push-ataccama:
 build-push-ica:
 	@make _build-push NAME=ica
 
-build-push-ica:
-	@make _build-push NAME=ica
-
 build-push-dhl:
 	@make _build-push NAME=dhl
 
