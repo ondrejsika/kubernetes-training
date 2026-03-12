@@ -1,0 +1,5 @@
+ingressClassName: openshift-default
+ingressExtraAnnotations:
+  route.openshift.io/termination: "edge"
+  route.openshift.io/insecureEdgeTerminationPolicy: "Redirect"
+tls: false
