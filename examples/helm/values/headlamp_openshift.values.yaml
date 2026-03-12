@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  ingressClassName: openshift-default
+  annotations:
+    route.openshift.io/termination: "edge"
+    route.openshift.io/insecureEdgeTerminationPolicy: "Redirect"
+  hosts:
+    - host: headlamp.apps.training.germanywestcentral.aroapp.io
+      paths:
+        - path: /
+          type: ImplementationSpecific
