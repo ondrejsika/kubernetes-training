@@ -1,0 +1,7 @@
+replicas: 3
+host: hello.apps.training.germanywestcentral.aroapp.io
+ingressClassName: openshift-default
+ingressExtraAnnotations:
+  route.openshift.io/termination: "edge"
+  route.openshift.io/insecureEdgeTerminationPolicy: "Redirect"
+ingressTlsDisable: true
