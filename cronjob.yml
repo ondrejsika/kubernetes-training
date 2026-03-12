@@ -17,7 +17,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: main
-              image: ghcr.io/sikalabs/slu:v0.91.0
+              image: ghcr.io/sikalabs/slu:v0.99.0
               args:
                 - /bin/sh
                 - -c
