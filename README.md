@@ -1282,6 +1282,8 @@ Lab0 (`*.lab0.sikademo.com`):
 kubectl apply -f ingress_sticky_lab0.yml
 ```
 
+## Gateway API
+
 ### Deploy Application (Multiple Deployments and Services)
 
 ```
