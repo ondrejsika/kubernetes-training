@@ -1297,8 +1297,8 @@ helm upgrade --install \
   ngf oci://ghcr.io/nginx/charts/nginx-gateway-fabric \
   --namespace nginx-gateway \
   --create-namespace \
-  --set service.type=ClusterIP \
   --set nginx.kind=daemonSet \
+  --set nginx.service.type=ClusterIP \
   --set "nginx.container.hostPorts[0].port=80" \
   --set "nginx.container.hostPorts[0].containerPort=80" \
   --set "nginx.container.hostPorts[1].port=443" \
