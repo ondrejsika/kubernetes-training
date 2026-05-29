@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: ListenerSet
+metadata:
+  name: bar
+  namespace: bar
+spec:
+  parentRef:
+    name: gateway
+    namespace: gateway
+  listeners:
+    - name: https
+      hostname: bar.rke2.sikademo.com
+      port: 443
+      protocol: HTTPS
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - kind: Secret
+            name: bar.rke2.sikademo.com-tls
