@@ -1284,6 +1284,27 @@ kubectl apply -f ingress_sticky_lab0.yml
 
 ## Gateway API
 
+### Ensure Gateway API CRDs
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
+```
+
+### Install Nginx Gateway Fabric
+
+```bash
+helm upgrade --install \
+  ngf oci://ghcr.io/nginx/charts/nginx-gateway-fabric \
+  --namespace nginx-gateway \
+  --create-namespace \
+  --set service.type=ClusterIP \
+  --set nginx.kind=daemonSet \
+  --set "nginx.container.hostPorts[0].port=80" \
+  --set "nginx.container.hostPorts[0].containerPort=80" \
+  --set "nginx.container.hostPorts[1].port=443" \
+  --set "nginx.container.hostPorts[1].containerPort=443"
+```
+
 ### Deploy Application (Multiple Deployments and Services)
 
 ```
