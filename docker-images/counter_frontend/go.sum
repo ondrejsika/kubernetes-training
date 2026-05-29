@@ -1,0 +1,13 @@
+github.com/mattn/go-colorable v0.1.14 h1:9A9LHSqF/7dyVVX6g0U9cwm9pG3kP9gSzcuIPHPsaIE=
+github.com/mattn/go-colorable v0.1.14/go.mod h1:6LmQG8QLFO4G5z1gPvYEzlUgJ2wF+stgPZH1UqBm1s8=
+github.com/mattn/go-isatty v0.0.22 h1:j8l17JJ9i6VGPUFUYoTUKPSgKe/83EYU2zBC7YNKMw4=
+github.com/mattn/go-isatty v0.0.22/go.mod h1:ZXfXG4SQHsB/w3ZeOYbR0PrPwLy+n6xiMrJlRFqopa4=
+github.com/ondrejsika/counter-frontend-go v0.5.0 h1:4lBVz91c4GjAwzw+ytA+k7XDRc49QagA6r6fA4G1tqI=
+github.com/ondrejsika/counter-frontend-go v0.5.0/go.mod h1:/1FP0X3uvmLRg2ph6NOpYmH72wTXdQ39J+OcePBnUus=
+github.com/ondrejsika/counter-frontend-go v0.8.0 h1:5Az6Fw/jLb4QlhGIlG3U/MDZvYhkuAJ/SH+AkxCnVcg=
+github.com/ondrejsika/counter-frontend-go v0.8.0/go.mod h1:BzqKatuz5BeXRJ1M/58oieBoGahCA+KC4/B218XlM+k=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/rs/zerolog v1.35.1 h1:m7xQeoiLIiV0BCEY4Hs+j2NG4Gp2o2KPKmhnnLiazKI=
+github.com/rs/zerolog v1.35.1/go.mod h1:EjML9kdfa/RMA7h/6z6pYmq1ykOuA8/mjWaEvGI+jcw=
+golang.org/x/sys v0.44.0 h1:ildZl3J4uzeKP07r2F++Op7E9B29JRUy+a27EibtBTQ=
+golang.org/x/sys v0.44.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
