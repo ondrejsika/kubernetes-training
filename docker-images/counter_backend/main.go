@@ -12,7 +12,7 @@ var BUILD_ID string = "0"
 
 func main() {
 	setDefault("API_ONLY", "1")
-	version.Version = fmt.Sprintf("build-%s", BUILD_ID)
+	version.Version = fmt.Sprintf("be-%s", BUILD_ID)
 	server.Server(server.ServerOptions{})
 }
 
