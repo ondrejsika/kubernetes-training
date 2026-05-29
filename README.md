@@ -2820,6 +2820,13 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 
 ## Past Training Sessions
 
+### 2026-05-29 T-Mobile Training
+
+- Docker, Kubernetes, Helm Example - https://github.com/sika-training-examples/2026-05-27-t-mobile-docker-and-kubernetes-example
+- FluxCD GitOps - https://github.com/sika-training-examples/2026-05-27-t-mobile-gitops-example
+- Gateway API Example - https://github.com/sika-training-examples/2026-05-27_t-mobile_gw_api_example
+- Kargo Pipeline Example - https://github.com/sika-training-examples/2026-05-27_t-mobile_kargo_example
+
 ### 2025-12-10 Public Training
 
 - https://github.com/sika-training-examples/2025-12-10_counter_kubernetes_example
