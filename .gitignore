@@ -1,6 +1,8 @@
 .DS_Store
 .vscode
 node_modules
+*.local.yml
+*.local.yaml
 
 kubeconfig.yml
 repo
