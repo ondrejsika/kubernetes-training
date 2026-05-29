@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: hello-world-masters
+  labels:
+    app: hello-world-masters
+spec:
+  selector:
+    matchLabels:
+      app: hello-world-masters
+  template:
+    metadata:
+      labels:
+        app: hello-world-masters
+        svc: example
+    spec:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Exists
+      containers:
+        - name: hello-world
+          image: ghcr.io/ondrejsika/training-example:v1
+          # image: ghcr.io/ondrejsika/training-example:v2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
+            limits:
+              memory: 20Mi
+              cpu: 20m
