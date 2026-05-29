@@ -10,6 +10,6 @@ import (
 var BUILD_ID string = "0"
 
 func main() {
-	version.Version = fmt.Sprintf("build-%s", BUILD_ID)
+	version.Version = fmt.Sprintf("fe-%s", BUILD_ID)
 	server.Server()
 }
