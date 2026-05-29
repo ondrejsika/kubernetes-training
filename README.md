@@ -1098,6 +1098,19 @@ kubectl delete deploy/hello-world
 
 Ingress Controllers - <https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/>
 
+### Install Haproxy Ingress
+
+```bash
+helm upgrade --install \
+  haproxy-ingress haproxy-ingress \
+  --repo https://haproxy-ingress.github.io/charts \
+  --create-namespace --namespace ingress-controller \
+  --version 0.16.0 --devel \
+  --set controller.ingressClassResource.enabled=true \
+  --set controller.kind=DaemonSet \
+  --set controller.daemonset.useHostPort=true
+```
+
 ### Install Ingress Nginx on DigitalOcean and Minikube (lab)
 
 ```
