@@ -1111,6 +1111,24 @@ helm upgrade --install \
   --set controller.daemonset.useHostPort=true
 ```
 
+### Install Haproxy Ingress with LB With Static IP
+
+For example for AKS
+
+```bash
+LOADBALANCER_IP=20.79.115.61
+```
+
+```bash
+helm upgrade --install \
+  haproxy-ingress haproxy-ingress \
+  --repo https://haproxy-ingress.github.io/charts \
+  --create-namespace --namespace ingress-controller \
+  --version 0.16.0 --devel \
+  --set controller.ingressClassResource.enabled=true \
+  --set controller.service.loadBalancerIP=$LOADBALANCER_IP
+```
+
 ### Install Ingress Nginx on DigitalOcean and Minikube (lab)
 
 ```
