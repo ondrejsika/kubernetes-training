@@ -3,7 +3,7 @@ module probes_example_server_echo
 go 1.26.1
 
 require (
-	github.com/labstack/echo/v4 v4.15.2
+	github.com/labstack/echo/v4 v4.15.3
 	github.com/spf13/cobra v1.10.2
 )
 
