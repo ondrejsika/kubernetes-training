@@ -51,7 +51,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  ingressClassName: nginx
   tls:
     - hosts:
         - pvc-mount-longhorn-rwx.k8s.sikademo.com
