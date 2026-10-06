@@ -16,3 +16,5 @@ subjects:
   - kind: ServiceAccount
     name: admin-user
     namespace: kube-system
+  - kind: User
+    name: ondrej@sika.io
