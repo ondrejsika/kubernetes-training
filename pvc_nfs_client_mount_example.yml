@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-pvc-mount-example
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nfs-pvc-mount-example
+  template:
+    metadata:
+      labels:
+        app: nfs-pvc-mount-example
+    spec:
+      volumes:
+        - name: nfs
+          nfs:
+            path: /nfs
+            server: lab0.sikademo.com
+        - name: nfs1
+          persistentVolumeClaim:
+            claimName: nfs1
+        - name: nfs2
+          persistentVolumeClaim:
+            claimName: nfs2
+        - name: nfs3
+          persistentVolumeClaim:
+            claimName: nfs3
+      containers:
+        - name: nginx
+          image: sikalabs/nginx-public
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nfs
+              mountPath: /usr/share/nginx/html/nfs
+            - name: nfs1
+              mountPath: /usr/share/nginx/html/nfs1
+            - name: nfs2
+              mountPath: /usr/share/nginx/html/nfs2
+            - name: nfs3
+              mountPath: /usr/share/nginx/html/nfs3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nfs-pvc-mount-example
+spec:
+  type: ClusterIP
+  selector:
+    app: nfs-pvc-mount-example
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
