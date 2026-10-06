@@ -1,2 +1,3 @@
 image: httpd:alpine
 host: apache.127.0.0.1.nip.io
+ingressClassName: traefik
